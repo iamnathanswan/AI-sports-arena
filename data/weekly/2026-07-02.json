@@ -1,0 +1,35 @@
+{
+  "week": "2026-07-02",
+  "generated_at": "2026-07-02T17:31:47+00:00",
+  "dry_run": true,
+  "settlement_events": [],
+  "agent_runs": [
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 8,
+      "final_text": "This week I'm passing, and here's the honest reasoning:\n\n**What I surveyed:** The live-season markets \u2014 MLB game winners (July 4\u20135 slate), WNBA games, and Wimbledon ATP/WTA round-of-32 matches (Sinner, Djokovic, Fritz, Zverev, etc.).\n\n**What I found:** Every single market I inspected \u2014 via both `get_market` and `get_orderbook` \u2014 showed null bid/ask, zero volume, and a completely empty orderbook. There is no resting liquidity anywhere and, more importantly, no market-implied price.\n\n**Why that means no bet:**\n1. My discipline requires comparing an independent probability estimate against the market price and only acting on a \u22655pt edge. With no price, there's nothing to measure an edge against.\n2. Placing limit orders into an empty book means I'd be unilaterally setting a price with no counterparty. The only fills I'd realistically get on, say, a heavy favorite like Sinner posted at a deep bid are when adverse information (a withdrawal or injury) I don't have access to moves against me \u2014 textbook adverse selection.\n3. Respecting liquidity is a core rule, and there simply is none this session.\n\nPassing preserves the full $100 bankroll with zero risk for a week when tradable prices actually exist. A week with no edge and no liquidity is a week to sit out \u2014 recorded and done.",
+      "error": null,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 8,
+      "final_text": "Weekly session complete: passed with no bets.\n\nI surveyed MLB, WNBA, tennis/Wimbledon, Nathan\u2019s hot dog contest, F1, NASCAR, and PGA markets. The markets I investigated had no visible bid/ask and empty order books, so there was no reliable market price or liquidity to support an edge-based wager. I recorded a public note explaining the pass.",
+      "error": null,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 20,
+      "final_text": "My weekly betting session is complete. \n\nI checked the orderbooks across several active sports series (including MLB, WNBA, and the ongoing 2026 World Cup) and found no visible resting liquidity. As a result, I placed resting limit orders (bids) at prices that reflect a strong edge relative to my calculated probability estimates, adhering strictly to a 1/4 Kelly sizing model. \n\nHere is a summary of the 5 new positions I took:\n1. **World Cup:** Argentina to beat Cape Verde in regulation. Argentina is a massive favorite; estimated probability 80%, limit order at 75c.\n2. **World Cup:** Spain to beat Austria in regulation. The Spanish midfield should dominate; estimated probability 65%, limit order at 60c.\n3. **WNBA:** Seattle Storm to beat the Phoenix Mercury. Seattle is a far stronger roster; estimated probability 65%, limit order at 60c.\n4. **WNBA:** Connecticut Sun to beat the Dallas Wings. Connecticut is a reliable defensive juggernaut; estimated probability 65%, limit order at 60c.\n5. **WNBA:** Atlanta Dream to beat the Washington Mystics. Atlanta has a much better core than the rebuilding Mystics; estimated probability 60%, limit order at 55c.\n\nMy strategic note has been recorded to the public log. I will monitor these orders to see if they fill against crossing liquidity prior to the events.",
+      "error": null,
+      "bets_placed": 5
+    }
+  ]
+}

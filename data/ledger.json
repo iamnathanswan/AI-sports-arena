@@ -11,10 +11,139 @@
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 10000
+      "cash_cents": 8375
     }
   },
-  "orders": [],
-  "notes": [],
-  "history": []
+  "orders": [
+    {
+      "id": "1a796fe2-48d0-4ded-83b7-dd3f79f0faad",
+      "agent": "gemini",
+      "week": "2026-07-02",
+      "ticker": "KXWCGAME-26JUL03ARGCPV-ARG",
+      "market_title": "Argentina vs Cape Verde Winner?",
+      "side": "yes",
+      "count": 6,
+      "limit_price_cents": 75,
+      "cost_cents": 450,
+      "status": "dry_run",
+      "kalshi_order_id": null,
+      "client_order_id": null,
+      "forecast_prob": 0.8,
+      "reasoning": "Argentina is the defending World Cup champion and a heavy favorite over Cape Verde in this Round of 32 matchup. I estimate an 80% chance for Argentina to win in regulation, making a limit order at 75c a strong value play.",
+      "placed_at": "2026-07-02T17:35:26+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "2b9209c3-676f-4149-aaa9-1e359c981a4a",
+      "agent": "gemini",
+      "week": "2026-07-02",
+      "ticker": "KXWCGAME-26JUL02ESPAUT-ESP",
+      "market_title": "Spain vs Austria Winner?",
+      "side": "yes",
+      "count": 5,
+      "limit_price_cents": 60,
+      "cost_cents": 300,
+      "status": "dry_run",
+      "kalshi_order_id": null,
+      "client_order_id": null,
+      "forecast_prob": 0.65,
+      "reasoning": "Spain boasts a dominant, possession-heavy midfield that should control the pace against Austria. Giving them a 65% probability of winning in regulation provides a solid edge over a 60c limit price.",
+      "placed_at": "2026-07-02T17:35:26+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "0a968a66-136d-49bb-8ef0-8f8f69bcf917",
+      "agent": "gemini",
+      "week": "2026-07-02",
+      "ticker": "KXWNBAGAME-26JUL02SEAPHX-SEA",
+      "market_title": "Seattle vs Phoenix winner?",
+      "side": "yes",
+      "count": 5,
+      "limit_price_cents": 60,
+      "cost_cents": 300,
+      "status": "dry_run",
+      "kalshi_order_id": null,
+      "client_order_id": null,
+      "forecast_prob": 0.65,
+      "reasoning": "The Seattle Storm have a superior roster and home-court advantage against the Phoenix Mercury. I estimate their win probability at 65%, offering value at a 60c limit.",
+      "placed_at": "2026-07-02T17:35:26+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "543b8476-40bb-4cdc-951b-43c7bf88c3a8",
+      "agent": "gemini",
+      "week": "2026-07-02",
+      "ticker": "KXWNBAGAME-26JUL02DALCONN-CONN",
+      "market_title": "Dallas vs Connecticut winner?",
+      "side": "yes",
+      "count": 5,
+      "limit_price_cents": 60,
+      "cost_cents": 300,
+      "status": "dry_run",
+      "kalshi_order_id": null,
+      "client_order_id": null,
+      "forecast_prob": 0.65,
+      "reasoning": "The Connecticut Sun are consistently one of the strongest defensive teams in the WNBA. They should be clear favorites against the Dallas Wings, meriting a 65% win probability estimate.",
+      "placed_at": "2026-07-02T17:35:26+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "59525cf6-1cd2-4a4e-b58f-2dc5e9bf8305",
+      "agent": "gemini",
+      "week": "2026-07-02",
+      "ticker": "KXWNBAGAME-26JUL02ATLWSH-ATL",
+      "market_title": "Atlanta vs Washington winner?",
+      "side": "yes",
+      "count": 5,
+      "limit_price_cents": 55,
+      "cost_cents": 275,
+      "status": "dry_run",
+      "kalshi_order_id": null,
+      "client_order_id": null,
+      "forecast_prob": 0.6,
+      "reasoning": "The Atlanta Dream have a more talented young core compared to the rebuilding Washington Mystics. I give Atlanta a 60% probability of winning this matchup, justifying a 55c bid.",
+      "placed_at": "2026-07-02T17:35:32+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    }
+  ],
+  "notes": [
+    {
+      "agent": "claude",
+      "week": "2026-07-02",
+      "text": "Week of 2026-07-02: PASSING. Surveyed the in-season markets \u2014 MLB game moneylines (Jul 4-5), WNBA games, and Wimbledon ATP/WTA round-of-32 matches. Every market I checked (get_market + get_orderbook across ~8 tickers, including marquee events like Sinner vs Brooksby and Fritz vs Sonego) returned null prices, zero volume, and empty orderbooks. With no resting liquidity and no market-implied price, I have nothing to measure an edge against, and posting deep bids into empty books without a live news feed only invites adverse selection. No edge, no liquidity, so no bets. Cash preserved (100% of $100 bankroll) for a week with tradable prices.",
+      "at": "2026-07-02T17:32:40+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-02",
+      "text": "Passed this week. I surveyed current MLB, WNBA, Wimbledon/tennis, Nathan's hot dog contest, F1, NASCAR, and PGA markets, but the candidate markets I checked showed no posted bid/ask and empty order books, so there was no reliable price to compare against my probabilities or realistic path to a fill. With no demonstrated 5+ point edge and poor liquidity, preserving bankroll is the disciplined choice.",
+      "at": "2026-07-02T17:33:22+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-02",
+      "text": "Since the orderbook lacked visible resting liquidity this week, I utilized resting limit orders at my estimated probability value thresholds (leaving room for edge) across 5 independent positions. My strategy focused on capitalizing on strong favorites with structural advantages in two distinct sports: the 2026 World Cup and the WNBA. \n\nIn the World Cup knockout stage, I backed Argentina (vs Cape Verde) and Spain (vs Austria) at 75c and 60c limits respectively, based on their overwhelming talent disparity and pedigree. In the WNBA, I placed bids on the Seattle Storm, Connecticut Sun, and Atlanta Dream\u2014backing the stronger rosters and better form at conservative value thresholds. All trades were sized using 1/4 Kelly criterion to diversify risk and avoid overexposure in low-visibility markets.",
+      "at": "2026-07-02T17:35:39+00:00"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-07-02",
+      "balances": {
+        "claude": 10000,
+        "gpt": 10000,
+        "gemini": 10000
+      }
+    }
+  ]
 }
