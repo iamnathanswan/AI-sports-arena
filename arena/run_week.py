@@ -77,7 +77,8 @@ def main() -> int:
         if result.get("error"):
             print(f"  ERROR: {result['error']}")
         else:
-            print(f"  turns={result['turns']} bets={result['bets_placed']}")
+            nudge = " (forced-bet nudge triggered)" if result.get("forced_bet_nudge") else ""
+            print(f"  turns={result['turns']} bets={result['bets_placed']}{nudge}")
             if result.get("final_text"):
                 print(f"  final: {result['final_text'][:300]}")
         ledger.save(ledger_path)  # crash safety: persist after each agent
