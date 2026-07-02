@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-07-02T16:10:13+00:00",
+  "agents": {
+    "claude": {
+      "initial_cents": 10000,
+      "cash_cents": 10000
+    },
+    "gpt": {
+      "initial_cents": 10000,
+      "cash_cents": 10000
+    },
+    "gemini": {
+      "initial_cents": 10000,
+      "cash_cents": 10000
+    }
+  },
+  "orders": [],
+  "notes": [],
+  "history": []
+}

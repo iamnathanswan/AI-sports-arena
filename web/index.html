@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Sports Arena</title>
+<style>
+  :root {
+    --surface-1: #fcfcfb;
+    --page: #f9f9f7;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #898781;
+    --grid: #e1e0d9;
+    --baseline: #c3c2b7;
+    --border: rgba(11,11,11,0.10);
+    --good: #006300;
+    --bad: #d03b3b;
+    --series-1: #2a78d6;  /* claude */
+    --series-2: #1baf7a;  /* gpt */
+    --series-3: #eda100;  /* gemini */
+    --series-4: #4a3aa7;
+    --series-5: #e34948;
+    --series-6: #e87ba4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1: #1a1a19;
+      --page: #0d0d0d;
+      --text-primary: #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted: #898781;
+      --grid: #2c2c2a;
+      --baseline: #383835;
+      --border: rgba(255,255,255,0.10);
+      --good: #0ca30c;
+      --bad: #e66767;
+      --series-1: #3987e5;
+      --series-2: #199e70;
+      --series-3: #c98500;
+      --series-4: #9085e9;
+      --series-5: #e66767;
+      --series-6: #d55181;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--page); color: var(--text-primary);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 28px 20px 64px; }
+  header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+  h1 { font-size: 24px; margin: 0; letter-spacing: -0.01em; }
+  h2 { font-size: 16px; margin: 36px 0 12px; }
+  .sub { color: var(--text-muted); font-size: 13px; }
+  .badge {
+    font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 999px;
+    border: 1px solid var(--border); color: var(--text-secondary);
+  }
+  .badge.live { color: var(--bad); border-color: var(--bad); }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 18px; }
+  .card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .card .agent { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+  .swatch { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+  .card .model { color: var(--text-muted); font-size: 12px; margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .card .value { font-size: 34px; font-weight: 600; margin-top: 10px; }
+  .delta { font-size: 13px; font-weight: 600; }
+  .delta.up { color: var(--good); }
+  .delta.down { color: var(--bad); }
+  .delta.flat { color: var(--text-muted); font-weight: 400; }
+  .statrow { display: flex; gap: 14px; margin-top: 12px; color: var(--text-secondary); font-size: 12.5px; }
+  .statrow b { color: var(--text-primary); font-weight: 600; }
+  .rank { color: var(--text-muted); font-size: 12px; margin-left: auto; }
+
+  .panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  .chart-wrap { position: relative; }
+  svg text { font: 11.5px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--text-muted); }
+  svg .endlabel { font-weight: 600; fill: var(--text-secondary); font-size: 12px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 2px 0 12px; font-size: 13px; color: var(--text-secondary); }
+  .legend .key { display: inline-block; width: 16px; height: 2px; border-radius: 1px; vertical-align: middle; margin-right: 6px; }
+  .tooltip {
+    position: absolute; pointer-events: none; display: none; z-index: 5;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 12px; font-size: 12.5px; box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    min-width: 150px;
+  }
+  .tooltip .t-date { color: var(--text-muted); margin-bottom: 4px; }
+  .tooltip .t-row { display: flex; align-items: center; gap: 7px; margin-top: 2px; }
+  .tooltip .t-key { width: 12px; height: 2px; border-radius: 1px; flex: none; }
+  .tooltip .t-val { font-weight: 600; margin-left: auto; font-variant-numeric: tabular-nums; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: left; color: var(--text-muted); font-weight: 500; font-size: 12px;
+       padding: 6px 10px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+  td { padding: 8px 10px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .agent-cell { display: inline-flex; align-items: center; gap: 7px; font-weight: 600; white-space: nowrap; }
+  .pill { font-size: 11.5px; font-weight: 600; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--border); white-space: nowrap; }
+  .pill.won { color: var(--good); border-color: var(--good); }
+  .pill.lost { color: var(--bad); border-color: var(--bad); }
+  .pill.open { color: var(--text-secondary); }
+  .reason { color: var(--text-secondary); max-width: 460px; }
+  .table-scroll { overflow-x: auto; }
+  .empty { color: var(--text-muted); padding: 26px 0; text-align: center; }
+  .note-item { border-bottom: 1px solid var(--grid); padding: 10px 0; }
+  .note-item:last-child { border-bottom: none; }
+  .note-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 2px; }
+  footer { margin-top: 44px; color: var(--text-muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AI Sports Arena</h1>
+    <span id="mode-badge" class="badge">loading…</span>
+    <span class="sub" id="generated"></span>
+  </header>
+  <div class="sub">Claude vs GPT vs Gemini — same bankroll, same rules, same tools. Real sports markets on Kalshi, one betting session per week.</div>
+
+  <div class="cards" id="cards"></div>
+
+  <h2>Bankroll over time</h2>
+  <div class="panel">
+    <div class="legend" id="chart-legend"></div>
+    <div class="chart-wrap" id="chart-wrap">
+      <svg id="chart" width="100%" height="300" role="img" aria-label="Bankroll over time per model"></svg>
+      <div class="tooltip" id="chart-tooltip"></div>
+    </div>
+  </div>
+
+  <h2>Open positions</h2>
+  <div class="panel table-scroll" id="positions"></div>
+
+  <h2>Bet log</h2>
+  <div class="panel table-scroll" id="bets"></div>
+
+  <h2>Weekly strategy notes</h2>
+  <div class="panel" id="notes"></div>
+
+  <footer>
+    Money shown per-agent from a shared exchange account, tracked by an audited virtual ledger.
+    Forecast calibration is Brier-scored from each bet's stated probability. This is an experiment, not financial advice.
+  </footer>
+</div>
+
+<script>
+(async function () {
+  const SERIES_VARS = ['--series-1','--series-2','--series-3','--series-4','--series-5','--series-6'];
+  const css = getComputedStyle(document.documentElement);
+  const seriesColor = i => css.getPropertyValue(SERIES_VARS[i % SERIES_VARS.length]).trim();
+  const $ = id => document.getElementById(id);
+  const el = (tag, cls, text) => {
+    const node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  };
+  const usd = cents => (cents < 0 ? '-' : '') + '$' + (Math.abs(cents) / 100).toFixed(2);
+  const pct = v => (v * 100).toFixed(0) + '%';
+
+  async function loadData() {
+    for (const path of ['data/leaderboard.json', '../data/leaderboard.json']) {
+      try {
+        const resp = await fetch(path, { cache: 'no-store' });
+        if (resp.ok) return await resp.json();
+      } catch (e) { /* try next */ }
+    }
+    return null;
+  }
+
+  const data = await loadData();
+  if (!data) {
+    $('mode-badge').textContent = 'no data yet';
+    $('cards').append(el('div', 'empty', 'No results yet — the arena publishes data after its first weekly run.'));
+    ['positions','bets','notes'].forEach(id => $(id).append(el('div','empty','—')));
+    return;
+  }
+
+  const agents = data.agents || [];
+  const colorOf = {};
+  agents.forEach((a, i) => { colorOf[a.name] = seriesColor(i); });
+
+  // Header
+  const badge = $('mode-badge');
+  if (data.dry_run) { badge.textContent = 'PAPER TRADING (dry run)'; }
+  else { badge.textContent = 'LIVE · Kalshi ' + (data.kalshi_env || 'prod'); badge.classList.add('live'); }
+  $('generated').textContent = 'updated ' + (data.generated_at || '').replace('T', ' ').replace('+00:00', ' UTC');
+
+  // Leaderboard cards
+  const cards = $('cards');
+  agents.forEach((a, i) => {
+    const card = el('div', 'card');
+    const head = el('div', 'agent');
+    const sw = el('span', 'swatch'); sw.style.background = colorOf[a.name];
+    head.append(sw, el('span', null, a.name), el('span', 'rank', '#' + (i + 1)));
+    card.append(head, el('div', 'model', a.model));
+    card.append(el('div', 'value', usd(a.equity_cents)));
+    const dir = a.pnl_cents > 0 ? 'up' : a.pnl_cents < 0 ? 'down' : 'flat';
+    const sign = a.pnl_cents > 0 ? '+' : '';
+    card.append(el('div', 'delta ' + dir,
+      sign + usd(a.pnl_cents) + ' (' + (a.roi_pct >= 0 ? '+' : '') + a.roi_pct + '%) all-time'));
+    const stats = el('div', 'statrow');
+    const record = el('span'); record.append('record ', Object.assign(el('b'), { textContent: a.settled_bets ? `${a.wins}–${a.settled_bets - a.wins}` : '—' }));
+    const wr = el('span'); wr.append('win ', Object.assign(el('b'), { textContent: a.win_rate == null ? '—' : pct(a.win_rate) }));
+    const brier = el('span'); brier.append('brier ', Object.assign(el('b'), { textContent: a.brier == null ? '—' : a.brier.toFixed(3) }));
+    stats.append(record, wr, brier);
+    card.append(stats);
+    cards.append(card);
+  });
+
+  // ---- Bankroll line chart ----
+  const history = data.history || [];
+  const legend = $('chart-legend');
+  agents.forEach(a => {
+    const item = el('span');
+    const key = el('span', 'key'); key.style.background = colorOf[a.name];
+    item.append(key, document.createTextNode(a.name));
+    legend.append(item);
+  });
+
+  const svg = $('chart');
+  function drawChart() {
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    const W = svg.clientWidth || 980, H = 300;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    if (history.length === 0) {
+      const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      t.setAttribute('x', W / 2); t.setAttribute('y', H / 2); t.setAttribute('text-anchor', 'middle');
+      t.textContent = 'No snapshots yet — the chart fills in week by week.';
+      svg.append(t);
+      return null;
+    }
+    const M = { top: 16, right: 96, bottom: 28, left: 52 };
+    const dates = history.map(h => h.date);
+    const values = [];
+    agents.forEach(a => history.forEach(h => {
+      if (h.balances[a.name] != null) values.push(h.balances[a.name]);
+    }));
+    const init = agents[0] ? agents[0].initial_cents : 10000;
+    let lo = Math.min(...values, init), hi = Math.max(...values, init);
+    const pad = Math.max((hi - lo) * 0.12, 200);
+    lo = Math.max(lo - pad, 0); hi = hi + pad;
+    const x = i => dates.length === 1
+      ? M.left + (W - M.left - M.right) / 2
+      : M.left + (W - M.left - M.right) * (i / (dates.length - 1));
+    const y = v => M.top + (H - M.top - M.bottom) * (1 - (v - lo) / (hi - lo));
+    const NS = 'http://www.w3.org/2000/svg';
+    const mk = (tag, attrs) => {
+      const node = document.createElementNS(NS, tag);
+      for (const k in attrs) node.setAttribute(k, attrs[k]);
+      return node;
+    };
+
+    // gridlines + y ticks (clean dollar steps)
+    const span = hi - lo;
+    const step = [500, 1000, 2000, 2500, 5000, 10000].find(s => span / s <= 6) || 10000;
+    for (let v = Math.ceil(lo / step) * step; v <= hi; v += step) {
+      svg.append(mk('line', { x1: M.left, x2: W - M.right, y1: y(v), y2: y(v), stroke: 'var(--grid)', 'stroke-width': 1 }));
+      const t = mk('text', { x: M.left - 8, y: y(v) + 4, 'text-anchor': 'end' });
+      t.textContent = '$' + Math.round(v / 100);
+      svg.append(t);
+    }
+    // x ticks (first / middle / last)
+    const tickIdx = dates.length <= 4 ? dates.map((_, i) => i)
+      : [0, Math.floor(dates.length / 2), dates.length - 1];
+    tickIdx.forEach(i => {
+      const t = mk('text', { x: x(i), y: H - 8, 'text-anchor': 'middle' });
+      t.textContent = dates[i].slice(5);
+      svg.append(t);
+    });
+    // baseline at starting bankroll
+    svg.append(mk('line', { x1: M.left, x2: W - M.right, y1: y(init), y2: y(init), stroke: 'var(--baseline)', 'stroke-width': 1, 'stroke-dasharray': '' }));
+
+    // series lines + end markers + direct end labels
+    agents.forEach(a => {
+      const pts = history.map((h, i) => [x(i), y(h.balances[a.name] ?? init)]);
+      if (pts.length > 1) {
+        const d = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+        svg.append(mk('path', { d, fill: 'none', stroke: colorOf[a.name], 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }));
+      }
+      const last = pts[pts.length - 1];
+      svg.append(mk('circle', { cx: last[0], cy: last[1], r: 4.5, fill: colorOf[a.name], stroke: 'var(--surface-1)', 'stroke-width': 2 }));
+      const lbl = mk('text', { x: last[0] + 10, y: last[1] + 4, class: 'endlabel' });
+      lbl.textContent = a.name;
+      svg.append(lbl);
+    });
+
+    return { x, y, M, W, H, dates };
+  }
+
+  let geom = drawChart();
+  addEventListener('resize', () => { geom = drawChart(); });
+
+  // crosshair + tooltip: snap to nearest date, list every series
+  const wrapEl = $('chart-wrap'), tip = $('chart-tooltip');
+  let crosshair = null;
+  wrapEl.addEventListener('pointermove', ev => {
+    if (!geom || history.length === 0) return;
+    const rect = svg.getBoundingClientRect();
+    const px = (ev.clientX - rect.left) * (geom.W / rect.width);
+    if (px < geom.M.left || px > geom.W - geom.M.right) { hideTip(); return; }
+    let best = 0, bestDist = Infinity;
+    geom.dates.forEach((_, i) => {
+      const d = Math.abs(geom.x(i) - px);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    if (!crosshair) {
+      crosshair = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      crosshair.setAttribute('stroke', 'var(--baseline)');
+      crosshair.setAttribute('stroke-width', 1);
+      svg.append(crosshair);
+    }
+    const cx = geom.x(best);
+    crosshair.setAttribute('x1', cx); crosshair.setAttribute('x2', cx);
+    crosshair.setAttribute('y1', geom.M.top); crosshair.setAttribute('y2', geom.H - geom.M.bottom);
+    crosshair.style.display = '';
+
+    tip.replaceChildren();
+    tip.append(el('div', 't-date', geom.dates[best]));
+    const h = history[best];
+    agents.forEach(a => {
+      const row = el('div', 't-row');
+      const key = el('span', 't-key'); key.style.background = colorOf[a.name];
+      row.append(key, el('span', null, a.name), el('span', 't-val', usd(h.balances[a.name] ?? 0)));
+      tip.append(row);
+    });
+    tip.style.display = 'block';
+    const wrapRect = wrapEl.getBoundingClientRect();
+    const tipX = (cx / geom.W) * rect.width;
+    tip.style.left = Math.min(tipX + 14, wrapRect.width - tip.offsetWidth - 6) + 'px';
+    tip.style.top = '18px';
+  });
+  function hideTip() { tip.style.display = 'none'; if (crosshair) crosshair.style.display = 'none'; }
+  wrapEl.addEventListener('pointerleave', hideTip);
+
+  // ---- Open positions table ----
+  const positions = [];
+  agents.forEach(a => (a.open_positions || []).forEach(p => positions.push({ agent: a.name, ...p })));
+  const posHost = $('positions');
+  if (positions.length === 0) {
+    posHost.append(el('div', 'empty', 'No open positions.'));
+  } else {
+    const table = el('table');
+    const thead = el('thead'); const hr = el('tr');
+    ['Agent', 'Market', 'Side', 'Contracts', 'At risk', 'Forecast'].forEach((h, i) => {
+      hr.append(el('th', i >= 3 ? 'num' : null, h));
+    });
+    thead.append(hr); table.append(thead);
+    const tbody = el('tbody');
+    positions.forEach(p => {
+      const tr = el('tr');
+      const agentTd = el('td');
+      const cell = el('span', 'agent-cell');
+      const sw = el('span', 'swatch'); sw.style.background = colorOf[p.agent];
+      cell.append(sw, document.createTextNode(p.agent)); agentTd.append(cell);
+      tr.append(agentTd, el('td', null, p.title || p.ticker), el('td', null, p.side.toUpperCase()),
+        el('td', 'num', String(p.contracts)), el('td', 'num', usd(p.cost_cents)),
+        el('td', 'num', p.forecast_prob != null ? pct(p.forecast_prob) : '—'));
+      tbody.append(tr);
+    });
+    table.append(tbody); posHost.append(table);
+  }
+
+  // ---- Bet log ----
+  const bets = data.bets || [];
+  const betHost = $('bets');
+  if (bets.length === 0) {
+    betHost.append(el('div', 'empty', 'No bets yet.'));
+  } else {
+    const table = el('table');
+    const thead = el('thead'); const hr = el('tr');
+    ['Agent', 'Week', 'Market', 'Bet', 'Cost', 'Forecast', 'Result', 'Reasoning'].forEach((h) => {
+      hr.append(el('th', ['Cost', 'Forecast'].includes(h) ? 'num' : null, h));
+    });
+    thead.append(hr); table.append(thead);
+    const tbody = el('tbody');
+    bets.forEach(b => {
+      const tr = el('tr');
+      const agentTd = el('td');
+      const cell = el('span', 'agent-cell');
+      const sw = el('span', 'swatch'); sw.style.background = colorOf[b.agent] || 'var(--text-muted)';
+      cell.append(sw, document.createTextNode(b.agent)); agentTd.append(cell);
+      const resultTd = el('td');
+      if (b.result === 'won') resultTd.append(el('span', 'pill won', 'Won ' + usd(b.payout_cents)));
+      else if (b.result === 'lost') resultTd.append(el('span', 'pill lost', 'Lost'));
+      else if (b.result === 'unfilled') resultTd.append(el('span', 'pill open', 'Unfilled'));
+      else resultTd.append(el('span', 'pill open', b.status === 'dry_run' ? 'Open (paper)' : 'Open'));
+      tr.append(
+        agentTd,
+        el('td', null, b.week),
+        el('td', null, b.title || b.ticker),
+        el('td', null, `${b.side.toUpperCase()} ×${b.contracts} @ ${b.price_cents}c`),
+        el('td', 'num', usd(b.cost_cents)),
+        el('td', 'num', b.forecast_prob != null ? pct(b.forecast_prob) : '—'),
+        resultTd,
+        el('td', 'reason', b.reasoning || '')
+      );
+      tbody.append(tr);
+    });
+    table.append(tbody); betHost.append(table);
+  }
+
+  // ---- Notes ----
+  const notes = data.notes || [];
+  const noteHost = $('notes');
+  if (notes.length === 0) {
+    noteHost.append(el('div', 'empty', 'No strategy notes yet.'));
+  } else {
+    notes.forEach(n => {
+      const item = el('div', 'note-item');
+      const meta = el('div', 'note-meta');
+      const cell = el('span', 'agent-cell');
+      const sw = el('span', 'swatch'); sw.style.background = colorOf[n.agent] || 'var(--text-muted)';
+      cell.append(sw, document.createTextNode(n.agent));
+      meta.append(cell, document.createTextNode('  ·  week of ' + n.week));
+      item.append(meta, el('div', null, n.text));
+      noteHost.append(item);
+    });
+  }
+})();
+</script>
+</body>
+</html>

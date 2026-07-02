@@ -1,0 +1,41 @@
+# AI Sports Arena configuration.
+# Model IDs, bankrolls, and risk limits are all edited here — no code changes needed.
+
+# Each agent gets its own virtual bankroll inside your single Kalshi account.
+# 10000 cents = $100. Total money at risk = bankroll_cents x number of agents.
+bankroll_cents: 10000
+
+# Max tool-use turns per agent per weekly run (hard stop on runaway loops).
+max_turns: 40
+
+# Hard risk limits — enforced in code on every order, regardless of what any
+# model decides. Preset: Conservative.
+risk:
+  max_stake_pct_per_market: 10     # max % of an agent's current equity on one market
+  max_new_positions_per_week: 5    # max new markets an agent can enter per weekly run
+  max_deployed_pct: 50             # max % of equity tied up in open positions at once
+  min_price_cents: 5               # refuse extreme longshots / near-certainties
+  max_price_cents: 95
+  order_expiration_minutes: 60     # live limit orders auto-expire after this
+
+# Which sports markets agents may see and bet on.
+sports:
+  # Kalshi series categories to browse (Kalshi files all sports under "Sports").
+  categories: ["Sports"]
+  # Optional allowlist of series-ticker prefixes (e.g. ["KXMLB", "KXNFL"]).
+  # Empty = every sports series currently open on Kalshi.
+  series_allowlist: []
+
+# The competitors. Same system prompt, same tools, same bankroll — only the
+# model differs. Add/remove/swap models freely; each provider needs its API
+# key present or the agent is skipped with a log line.
+agents:
+  - name: claude
+    provider: anthropic
+    model: claude-opus-4-8
+  - name: gpt
+    provider: openai
+    model: gpt-5.5
+  - name: gemini
+    provider: google
+    model: gemini-3.1-pro-preview

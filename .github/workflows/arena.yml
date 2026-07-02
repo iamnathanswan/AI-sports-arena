@@ -1,0 +1,87 @@
+name: AI Sports Arena — weekly run
+
+on:
+  schedule:
+    # Mondays 16:00 UTC: settle last week's bets, then place this week's.
+    - cron: "0 16 * * 1"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ["web/**", "data/**"]  # redeploy the dashboard on content changes
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: arena
+  cancel-in-progress: false
+
+jobs:
+  run-arena:
+    # Only the cron/dispatch path actually runs agents; pushes just redeploy.
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -e .
+
+      - name: Run weekly arena session
+        env:
+          # Flags (repo VARIABLES) — DRY_RUN defaults to true in code if unset.
+          DRY_RUN: ${{ vars.DRY_RUN }}
+          KILL_SWITCH: ${{ vars.KILL_SWITCH }}
+          KALSHI_ENV: ${{ vars.KALSHI_ENV }}
+          # Credentials (repo SECRETS)
+          KALSHI_API_KEY_ID: ${{ secrets.KALSHI_API_KEY_ID }}
+          KALSHI_PRIVATE_KEY: ${{ secrets.KALSHI_PRIVATE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -m arena.run_week
+
+      - name: Commit results
+        run: |
+          git config user.name "arena-bot"
+          git config user.email "arena-bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "Weekly arena run $(date -u +%F)"
+          git push
+
+  deploy-dashboard:
+    runs-on: ubuntu-latest
+    needs: [run-arena]
+    # Deploy even when run-arena is skipped (push events) — but not if it failed.
+    if: always() && needs.run-arena.result != 'failure'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Assemble site
+        run: |
+          git pull --ff-only origin main   # pick up the results commit
+          mkdir -p site
+          cp web/index.html site/
+          cp -r data site/data
+          rm -rf site/data/local || true
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
