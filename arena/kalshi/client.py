@@ -226,7 +226,11 @@ class KalshiClient:
             # no side, each priced in its own dollar terms (same semantics as
             # the old yes_price/no_price, just renamed and in dollars).
             "side": "bid" if side == "yes" else "ask",
-            "count": count,
+            # V2's Go struct wants count as a numeric string, not a JSON
+            # number -- sending an int here 400s with "cannot unmarshal
+            # number into Go struct field CreateOrderV2Request.count of
+            # type string". Same fixed-point-string convention as price.
+            "count": str(count),
             "price": f"{limit_price_cents / 100:.4f}",
             "time_in_force": "good_till_canceled",
             "self_trade_prevention_type": "taker_at_cross",

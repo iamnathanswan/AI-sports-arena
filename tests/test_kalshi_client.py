@@ -41,6 +41,16 @@ class TestCreateOrderV2Migration:
         assert body["price"] == "0.5500"
         assert "yes_price" not in body and "no_price" not in body and "type" not in body
 
+    def test_count_is_sent_as_a_string_not_a_number(self, monkeypatch):
+        # V2 400s with "cannot unmarshal number into Go struct field
+        # CreateOrderV2Request.count of type string" if count is a JSON int.
+        client = make_client()
+        captured = capture_request(client, monkeypatch)
+        client.create_order(ticker="T1", side="yes", count=10, limit_price_cents=55)
+        body = captured["json_body"]
+        assert body["count"] == "10"
+        assert isinstance(body["count"], str)
+
     def test_no_side_maps_to_ask(self, monkeypatch):
         client = make_client()
         captured = capture_request(client, monkeypatch)
@@ -71,7 +81,7 @@ class TestCreateOrderV2Migration:
         body = captured["json_body"]
         assert body["ticker"] == "T1"
         assert body["client_order_id"]
-        assert body["count"] == 1
+        assert body["count"] == "1"
         assert body["self_trade_prevention_type"] == "taker_at_cross"
 
     def test_result_extracted_from_response(self, monkeypatch):
