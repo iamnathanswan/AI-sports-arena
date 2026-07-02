@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 from .config import load_settings
 from .kalshi.client import KalshiClient
@@ -23,7 +23,11 @@ from .tools import ToolContext
 def main() -> int:
     settings = load_settings()
     today = date.today()
-    week = today.isoformat()
+    # "week" is the Monday of the current ISO week, not today's exact date —
+    # so a scheduled Monday run and a manual re-run on, say, Wednesday of the
+    # same week share one weekly position cap (as intended), while a run in a
+    # genuinely new week gets a fresh cap.
+    week = (today - timedelta(days=today.weekday())).isoformat()
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
     mode = "DRY RUN (paper trading)" if settings.dry_run else f"LIVE on Kalshi {settings.kalshi_env}"
