@@ -17,6 +17,22 @@ from ..tools import TOOL_SCHEMAS, ToolContext, execute_tool
 PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "system.md"
 USER_KICKOFF = "Begin your weekly betting session now."
 
+# Fairness-preserving backstop: every agent's system prompt already mandates at
+# least one bet per session. If a model still ends without placing one (despite
+# the prompt), every agent gets exactly one identical, forced second attempt
+# before the session is allowed to end with zero bets. Same nudge, same wording,
+# same turn budget for every model — no agent gets an advantage from complying
+# on the first try vs. the second.
+FORCE_BET_KICKOFF = (
+    "Your last session ended without placing any bet, which violates your mandate "
+    "to place at least one bet every session. Re-check the board and place your "
+    "single most defensible bet now, sized conservatively if your edge is thin — "
+    "even one contract is fine. Only end without betting if you can confirm there "
+    "are truly zero open sports markets anywhere on the exchange right now; if so, "
+    "say that plainly via record_note."
+)
+FORCE_BET_MAX_TURNS = 20
+
 REQUIRED_ENV = {
     "anthropic": "ANTHROPIC_API_KEY",
     "openai": "OPENAI_API_KEY",
@@ -58,6 +74,7 @@ def run_agent(spec: AgentSpec, ctx: ToolContext, system_prompt: str, max_turns: 
         "turns": 0,
         "final_text": "",
         "error": None,
+        "forced_bet_nudge": False,
     }
 
     if not has_api_key(spec):
@@ -84,6 +101,19 @@ def run_agent(spec: AgentSpec, ctx: ToolContext, system_prompt: str, max_turns: 
             max_turns=max_turns,
         )
         summary.update(result)
+
+        if not ctx.bets_placed:
+            forced = adapter.run(
+                model=spec.model,
+                system_prompt=system_prompt,
+                user_prompt=FORCE_BET_KICKOFF,
+                schemas=TOOL_SCHEMAS,
+                execute=execute,
+                max_turns=min(max_turns, FORCE_BET_MAX_TURNS),
+            )
+            summary["turns"] += forced.get("turns", 0)
+            summary["final_text"] = forced.get("final_text", summary["final_text"])
+            summary["forced_bet_nudge"] = True
     except Exception as exc:
         summary["error"] = f"{type(exc).__name__}: {exc}"
     return summary
