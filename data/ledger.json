@@ -7,7 +7,7 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 10000
+      "cash_cents": 8105
     },
     "gemini": {
       "initial_cents": 10000,
@@ -114,6 +114,46 @@
       "result": null,
       "payout_cents": 0,
       "settled_at": null
+    },
+    {
+      "id": "2196c1f7-87f3-4822-847a-30b99c579271",
+      "agent": "gpt",
+      "week": "2026-07-02",
+      "ticker": "KXNATHANSHD-26MEN-JCHE",
+      "market_title": "Will Joey Chestnut win the Men's Division in the 2026 Nathan's Famous Fourth of July International Hot Dog Eating Contest?",
+      "side": "yes",
+      "count": 12,
+      "limit_price_cents": 80,
+      "cost_cents": 960,
+      "status": "dry_run",
+      "kalshi_order_id": null,
+      "client_order_id": null,
+      "forecast_prob": 0.88,
+      "reasoning": "Chestnut is still the clear top men's competitive eater when he participates, and this field's recent Nathan's winners/contenders have generally been well below his established ceiling. The main uncertainty is health/participation and contest-specific variance, but if he is on stage I make him a strong favorite. At an 80c limit my estimate leaves a meaningful edge.",
+      "placed_at": "2026-07-02T18:07:26+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "ab266234-fb59-4767-ba07-7907bd7f750c",
+      "agent": "gpt",
+      "week": "2026-07-02",
+      "ticker": "KXNATHANSHD-26WOMEN-MSUD",
+      "market_title": "Will Miki Sudo win the Women's Division in the 2026 Nathan's Famous Fourth of July International Hot Dog Eating Contest?",
+      "side": "yes",
+      "count": 11,
+      "limit_price_cents": 85,
+      "cost_cents": 935,
+      "status": "dry_run",
+      "kalshi_order_id": null,
+      "client_order_id": null,
+      "forecast_prob": 0.93,
+      "reasoning": "Miki Sudo has been historically dominant in the women's Nathan's contest, with only rare interruption when she did not compete, and the listed challengers have generally not shown the same ceiling. Participation/health and judging variance keep this below certainty, but I make her a materially stronger favorite than 85%. Small, capped position because the orderbook is illiquid/empty.",
+      "placed_at": "2026-07-02T18:07:35+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
     }
   ],
   "notes": [
@@ -134,6 +174,24 @@
       "week": "2026-07-02",
       "text": "Since the orderbook lacked visible resting liquidity this week, I utilized resting limit orders at my estimated probability value thresholds (leaving room for edge) across 5 independent positions. My strategy focused on capitalizing on strong favorites with structural advantages in two distinct sports: the 2026 World Cup and the WNBA. \n\nIn the World Cup knockout stage, I backed Argentina (vs Cape Verde) and Spain (vs Austria) at 75c and 60c limits respectively, based on their overwhelming talent disparity and pedigree. In the WNBA, I placed bids on the Seattle Storm, Connecticut Sun, and Atlanta Dream\u2014backing the stronger rosters and better form at conservative value thresholds. All trades were sized using 1/4 Kelly criterion to diversify risk and avoid overexposure in low-visibility markets.",
       "at": "2026-07-02T17:35:39+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-07-02",
+      "text": "Week of 2026-07-02: PASSING. Surveyed the board broadly \u2014 MLB game winners, 2026 World Cup knockout matches (Spain-Austria, Argentina-Cape Verde, Portugal-Croatia, etc.), WNBA games, and tennis. Every market I inspected returned null bid/ask, no last price, zero volume, and an empty orderbook. With no live prices there is no way to measure an edge against the market, and no resting liquidity to fill against \u2014 any order would be a blind bet violating my liquidity and edge discipline. No edge, no liquidity, so I deploy zero capital this week and preserve bankroll for a week with tradeable prices. Passing is a decision, not a failure.",
+      "at": "2026-07-02T18:06:21+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-02",
+      "text": "Placed two small paper positions in Nathan's winners: Joey Chestnut YES at 80c (88% forecast) and Miki Sudo YES at 85c (93% forecast). I surveyed MLB/WNBA/CFL/tennis/golf/F1/NASCAR, but most markets showed no displayed bid/ask or empty orderbooks, so I avoided broader action and kept sizing below the 10% per-market cap despite perceived edge.",
+      "at": "2026-07-02T18:07:39+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-02",
+      "text": "This week, my bankroll indicates that I have already reached my limit of 5 new positions for the week (new_positions_remaining_this_week: 0). I investigated my currently open positions (World Cup games involving Argentina and Spain, and WNBA games involving Seattle, Connecticut, and Atlanta), but the orderbooks for all five markets are completely empty, leaving no liquidity to add to or adjust my stakes. With no actionable edges and hard limits restricting new entries, the optimal and only disciplined move is to pass and sit the week out.",
+      "at": "2026-07-02T18:08:14+00:00"
     }
   ],
   "history": [
