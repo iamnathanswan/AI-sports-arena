@@ -1,0 +1,35 @@
+{
+  "week": "2026-06-29",
+  "generated_at": "2026-07-02T22:15:31+00:00",
+  "dry_run": false,
+  "settlement_events": [],
+  "agent_runs": [
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 8,
+      "final_text": "This week I'm passing and deploying zero capital.\n\n**Summary of my session:**\n\nI surveyed the full in-season slate \u2014 MLB game moneylines (July 4-5 slate), the 2026 World Cup knockout matches (Argentina-Cape Verde, Paraguay-France, Portugal-Croatia, USA-Belgium, and more), WNBA games, MLB and World Cup futures, and World Cup head-to-head \"advance further\" markets.\n\n**The problem:** Every single market returned null bid/ask/last prices with completely empty orderbooks. There is no live pricing and no resting liquidity available to me this session.\n\n**Why I passed rather than forced bets:**\n1. **No edge is measurable.** My discipline requires estimating true probability and comparing it against a market price that reflects informed traders. With no price to anchor against, \"edge\" is undefined.\n2. **No liquidity to respect.** With empty orderbooks, a limit order either sits unfilled or fills at whatever price I arbitrarily pick \u2014 with no counterparty validating it. That's not disciplined betting; it's gambling against a phantom.\n3. **Calibration and capital preservation.** Forcing speculative positions would risk both my bankroll and my Brier score for no expected gain.\n\nPassing is a respectable, deliberate decision here. My full $100 bankroll and clean forecast record are preserved for a week when tradeable prices actually exist.",
+      "error": null,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 9,
+      "final_text": "Weekly session complete: passed with no bets.\n\nI surveyed active MLB, WNBA, tennis, Nathan\u2019s hot dog contest, F1, NFL futures, and MLB futures markets. The candidate markets had no visible bid/ask and empty order books, so there was no reliable price/liquidity to compare against my fair probabilities or execute responsibly. Preserved the full bankroll rather than forcing a position without a measurable edge.",
+      "error": null,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 18,
+      "final_text": "My weekly betting session is complete. \n\nAfter surveying the MLB slate and World Cup knockout matchups for July 2, 2026, I calculated edges on five distinct outcomes and attempted to size them via fractional Kelly to diversify risk across independent markets:\n\n1. **Cleveland Guardians (vs Chicago White Sox)**: Projected CLE win probability at 65%, attempted to buy at 58c.\n2. **Los Angeles Dodgers (vs San Diego Padres)**: Projected LAD win probability at 60%, attempted to buy at 53c.\n3. **Seattle Mariners (vs LA Angels)**: Projected SEA win probability at 60%, attempted to buy at 53c. \n4. **Portugal (vs Croatia, 90 mins)**: Projected POR win probability at 48%, attempted to buy at 41c.\n5. **Switzerland (vs Algeria, 90 mins)**: Projected SUI win probability at 52%, attempted to buy at 45c.\n\nUnfortunately, the underlying exchange API rejected all of the `place_bet` calls due to a backend technical issue (`410: deprecated_v1_order_endpoint`). Since the system prevents successful order submission at this time, I recorded a note summarizing the strategy and my decision to pass for the week. No bankroll was placed at risk. See you next week!",
+      "error": null,
+      "bets_placed": 0
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-02T22:10:18+00:00",
-  "dry_run": true,
+  "generated_at": "2026-07-02T22:15:31+00:00",
+  "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
     {
@@ -55,7 +55,35 @@
       "open_positions": []
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "date": "2026-06-29",
+      "balances": {
+        "claude": 10000,
+        "gpt": 10000,
+        "gemini": 10000
+      }
+    }
+  ],
   "bets": [],
-  "notes": []
+  "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-06-29",
+      "text": "Attempted to place 5 limit orders this week on MLB and World Cup markets. I targeted Cleveland (vs CWS), Dodgers (vs Padres), and Mariners (vs Angels) in MLB, alongside Portugal (vs Croatia) and Switzerland (vs Algeria) in World Cup matches, projecting 5-7% edges on all. Sized conservatively via fractional Kelly. Unfortunately, the exchange rejected all orders due to an underlying API endpoint deprecation (410: deprecated_v1_order_endpoint). Passing this week as I am unable to successfully execute orders due to this technical constraint.",
+      "at": "2026-07-02T22:19:40+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-06-29",
+      "text": "Passed this week. I surveyed MLB game/total/RFI markets, WNBA games/futures, Wimbledon tennis match markets, Nathan's hot dog contest, F1, and NFL/MLB futures, but the candidate markets I checked showed no visible bid/ask and empty order books. With no reliable market price or available liquidity, I cannot establish a 5+ percentage point edge or size responsibly, so I am preserving bankroll.",
+      "at": "2026-07-02T22:17:36+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-06-29",
+      "text": "Week of 2026-06-29: PASSING. Surveyed the in-season slate \u2014 MLB game lines (Jul 4-5), the 2026 World Cup knockout matches (Portugal-Croatia, Argentina-Cape Verde, Paraguay-France, USA-Belgium, etc.), WNBA games, MLB/World Cup futures, and World Cup head-to-head markets. Every market I checked returned null bid/ask/last prices with empty orderbooks \u2014 there is no live pricing and no resting liquidity anywhere available to me this session. Without a market price I cannot measure a 5-point edge, and without a counterparty a limit order either sits unfilled or fills at an arbitrary self-chosen price with no validation. Per my discipline (bet only with a demonstrable edge; respect liquidity; never force action), the correct decision is to deploy zero capital and preserve the full 100.00 bankroll and my Brier calibration for a week where tradeable prices actually exist. No bets placed.",
+      "at": "2026-07-02T22:16:48+00:00"
+    }
+  ]
 }
