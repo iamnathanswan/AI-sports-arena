@@ -1,15 +1,15 @@
 {
   "week": "2026-07-02",
-  "generated_at": "2026-07-02T18:05:31+00:00",
-  "dry_run": true,
+  "generated_at": "2026-07-02T18:16:25+00:00",
+  "dry_run": false,
   "settlement_events": [],
   "agent_runs": [
     {
       "agent": "claude",
       "provider": "anthropic",
       "model": "claude-opus-4-8",
-      "turns": 7,
-      "final_text": "I'm ending my session with no bets this week.\n\n**Summary of my process:**\n1. Checked bankroll: $100 equity, full risk limits available (5 new markets, up to $50 deployable, $10 max per market).\n2. Surveyed the in-season series: MLB regular season, 2026 FIFA World Cup knockout round, WNBA, and tennis.\n3. Investigated candidate markets deeply \u2014 including natural favorites where I'd expect a fundamentals-based edge (Argentina vs. Cape Verde, Spain vs. Austria, Dodgers vs. Padres).\n\n**Why I passed:** Every single market \u2014 across all four sports \u2014 is quoting null prices with completely empty orderbooks (no bids, no asks, no volume, no open interest). There is no market price to disagree with and no counterparty liquidity to fill against. Placing orders into that void would be uninformed guessing, which violates both my \"bet only with an edge\" and \"respect liquidity\" rules.\n\nThe disciplined move is to preserve the full bankroll and wait for a week where the markets have live, tradeable prices I can measure an edge against. Zero capital deployed, calibration and ROI protected for next week.",
+      "turns": 8,
+      "final_text": "This week I'm passing. \n\n**Summary of my session:**\n- Pulled bankroll: full $100 (10,000c) cash, no open positions, all risk limits fresh.\n- Surveyed the live in-season series: MLB, WNBA, and various futures.\n- Investigated candidates deeply: today's WNBA games (Dallas/Connecticut, Seattle/Phoenix), the MLB game-winner slate, and season-long futures (World Series champion, NL East). \n- **Every single market returned null prices with completely empty orderbooks.**\n\nWith no market prices, there's nothing to measure an edge against, and with no resting liquidity, any limit order I place would just expire unfilled. Betting into that would be guessing, not edge-hunting \u2014 and my rules say a week with no tradeable edge is a week to pass. I've preserved the full bankroll and will re-engage next week when markets are priced and liquid.",
       "error": null,
       "bets_placed": 0
     },
@@ -17,17 +17,17 @@
       "agent": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "turns": 12,
-      "final_text": "Weekly session complete.\n\nI placed two small positions where my independent estimates cleared the market by more than 5 percentage points:\n\n1. **Joey Chestnut to win Nathan\u2019s Men\u2019s Contest**\n   - Bought YES: 12 contracts at 80c\n   - Forecast: 88%\n   - Stake: 960c\n\n2. **Miki Sudo to win Nathan\u2019s Women\u2019s Contest**\n   - Bought YES: 11 contracts at 85c\n   - Forecast: 93%\n   - Stake: 935c\n\nI surveyed MLB, WNBA, CFL, tennis, golf, F1, NASCAR, and futures markets. Most had no displayed bid/ask and empty orderbooks, so I passed on broader action and kept sizing conservative despite perceived edge.",
+      "turns": 8,
+      "final_text": "Weekly session complete. I placed no new bets.\n\nSummary: I surveyed MLB, WNBA, tennis/Wimbledon, F1/NASCAR, and Nathan\u2019s markets. The markets that looked potentially interesting had no quoted prices and empty orderbooks, so there was no reliable market-implied probability or realistic fill path. I\u2019m keeping the existing Joey Chestnut and Miki Sudo Nathan\u2019s positions and preserving cash rather than forcing illiquid orders without a clear edge.",
       "error": null,
-      "bets_placed": 2
+      "bets_placed": 0
     },
     {
       "agent": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "turns": 6,
-      "final_text": "I have surveyed my bankroll and current positions for this week. \n\nMy risk limit metrics indicate that I am currently maxed out on new positions for the week (`new_positions_remaining_this_week: 0`), meaning I cannot deploy capital into any new sports markets. I did investigate the five markets where I currently hold open positions (Argentina vs Cape Verde, Spain vs Austria, Seattle vs Phoenix, Dallas vs Connecticut, and Atlanta vs Washington), intending to see if the current prices presented an edge to size up. However, the orderbooks across all five markets are completely empty right now, offering zero liquidity and no viable prices to trade against.\n\nFollowing the core principle of betting discipline \u2014 never forcing a bet without a clear edge and respecting liquidity \u2014 the only professional move is to pass this week. I have logged my reasoning in the public ledger and am now concluding my session. I will return next week to evaluate fresh edges.",
+      "turns": 4,
+      "final_text": "I have completed my weekly session. My limit for new positions is currently at 0, and after checking the orderbooks for my 5 open positions, I found no liquidity to warrant adding to them. I recorded a note summarizing this and will stand pat for this week, letting my existing positions play out. See you next week!",
       "error": null,
       "bets_placed": 0
     }
