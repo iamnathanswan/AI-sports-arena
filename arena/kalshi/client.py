@@ -206,22 +206,33 @@ class KalshiClient:
         expiration_ts: int | None = None,
         client_order_id: str | None = None,
     ) -> dict:
-        """Place a limit order. Prices are in cents (1-99)."""
+        """Place a limit order to buy `count` contracts of `side` at
+        `limit_price_cents` (1-99).
+
+        Uses the V2 order-write surface (POST /portfolio/events/orders). The
+        legacy POST /portfolio/orders endpoint this previously called returns
+        410 deprecated_v1_order_endpoint -- Kalshi has retired it in favor of
+        a unified bid/ask book with dollar-denominated prices. `action` is
+        accepted for backwards compatibility with callers but unused: V2's
+        create endpoint only opens positions (no separate buy/sell action);
+        closing/reducing a position would go through a different endpoint
+        (decrease_v2), which this client does not implement.
+        """
         body: dict[str, Any] = {
             "ticker": ticker,
             "client_order_id": client_order_id or str(uuid.uuid4()),
-            "action": action,
-            "side": side,
+            # V2 collapses the old side="yes"/"no" + yes_price/no_price pair
+            # into one book-side field: "bid" is the yes side, "ask" is the
+            # no side, each priced in its own dollar terms (same semantics as
+            # the old yes_price/no_price, just renamed and in dollars).
+            "side": "bid" if side == "yes" else "ask",
             "count": count,
-            "type": "limit",
+            "price": f"{limit_price_cents / 100:.4f}",
+            "time_in_force": "good_till_canceled",
+            "self_trade_prevention_type": "taker_at_cross",
         }
-        if side == "yes":
-            body["yes_price"] = limit_price_cents
-        else:
-            body["no_price"] = limit_price_cents
         if expiration_ts is not None:
-            body["time_in_force"] = "good_till_canceled"
-            body["expiration_ts"] = expiration_ts
-        return self._request("POST", "/portfolio/orders", json_body=body, auth_required=True).get(
-            "order", {}
-        )
+            body["expiration_time"] = expiration_ts
+        return self._request(
+            "POST", "/portfolio/events/orders", json_body=body, auth_required=True
+        ).get("order", {})
