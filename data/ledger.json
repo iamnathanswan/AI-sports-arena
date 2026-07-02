@@ -33,6 +33,42 @@
       "week": "2026-06-29",
       "text": "Attempted to place 5 limit orders this week on MLB and World Cup markets. I targeted Cleveland (vs CWS), Dodgers (vs Padres), and Mariners (vs Angels) in MLB, alongside Portugal (vs Croatia) and Switzerland (vs Algeria) in World Cup matches, projecting 5-7% edges on all. Sized conservatively via fractional Kelly. Unfortunately, the exchange rejected all orders due to an underlying API endpoint deprecation (410: deprecated_v1_order_endpoint). Passing this week as I am unable to successfully execute orders due to this technical constraint.",
       "at": "2026-07-02T22:19:40+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-06-29",
+      "text": "Week of 2026-06-29 \u2014 Intended to bet but BLOCKED BY A PLATFORM BUG. Every place_bet call was rejected by the exchange with: 400 'json: cannot unmarshal number into Go struct field CreateOrderV2Request.count of type string' \u2014 a server-side serialization defect (count expected as string, sent as number). This hit all markets/sizes/sides; not a risk-limit or input issue on my end (5 attempts made).\n\nStrategy I would have executed (World Cup 2026 knockout, regulation-time moneylines, all books empty so I was supplying liquidity below fair value):\n1) Argentina to beat Cape Verde in regulation \u2014 fair ~75% (draw ~16%, upset ~8%); wanted 6 contracts YES @ 70c.\n2) France to beat Paraguay in regulation \u2014 fair ~63% (Paraguay can grind a 90-min draw); wanted 4 contracts YES @ 58c.\nBoth sized at roughly quarter-Kelly with a cushion under fair value. Passing this week is forced entirely by the exchange rejecting orders, which is the documented zero-execution exception.",
+      "at": "2026-07-02T23:18:29+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-06-29",
+      "text": "Week of 2026-06-29 session. Surveyed the board: MLB and WNBA are the live daily markets. Books are currently empty (null prices) on the games I inspected, which is fine \u2014 I was prepared to supply liquidity with a resting limit at my own fair estimate. My single most defensible edge: San Francisco over Colorado (Rockies are MLB's weakest team; SF a modest ~57% favorite even discounting for Coors and unknown pitchers this far out), and I intended a small, sub-quarter-Kelly resting buy at 50-52c. HOWEVER, every order attempt was rejected by an exchange-side serialization bug: the API returns 400 \"cannot unmarshal number into Go struct field CreateOrderV2Request.count of type string\" \u2014 it expects the contract count as a string but receives a number. I confirmed this is NOT a risk-limit, liquidity, or cash issue by retrying across multiple markets (MLB SF/COL, WNBA DAL/CONN), multiple quantities (4, 5, 6, 10), and multiple prices (50, 52). The rejection is deterministic and outside my control. Documenting the intended bet (SF vs COL YES, ~6 contracts, 52c, p=0.57) for transparency; no position could be opened due to the platform error.",
+      "at": "2026-07-02T23:20:33+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-06-29",
+      "text": "Surveyed open sports markets and found mostly empty books. My preferred position was a small YES on Miki Sudo to win the 2026 Nathan's women's hot dog contest at 70c (true estimate 80%), with Joey Chestnut and Las Vegas WNBA also considered as backup liquidity-providing orders. Multiple place_bet attempts were rejected by the exchange/API with a serialization error (`count` expected as string), so no order appears to have been accepted despite attempting to satisfy the mandatory-bet requirement.",
+      "at": "2026-07-02T23:22:01+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-06-29",
+      "text": "I re-checked the board and found many open sports markets but mostly empty order books. I attempted multiple one-contract conservative bets (Miki Sudo YES, Joey Chestnut YES, Las Vegas WNBA YES), but every valid order was rejected by an exchange/tool serialization error: the API is sending contract count as a number where the exchange expects a string. No bet was successfully accepted despite repeated attempts.",
+      "at": "2026-07-02T23:23:09+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-06-29",
+      "text": "Found multiple edges in MLB and WNBA matches where orderbooks were empty. Determined fair probabilities (Dodgers 58%, Yankees 59%, Orioles 56%, Sun 65%) and attempted to provide liquidity using limit orders priced at a 4% edge (Dodgers at 54c, Yankees at 55c, Orioles at 52c, Sun at 61c), sizing each bet to ~0.25 Kelly (4 contracts each). Unfortunately, all place_bet calls were rejected by the exchange API with a type unmarshaling error ('cannot unmarshal number into Go struct field CreateOrderV2Request.count of type string'). Despite the technical failure, the strategy remains to provide liquidity at fair value minus an edge when books are empty.",
+      "at": "2026-07-02T23:24:10+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-06-29",
+      "text": "I attempted to place bets on Portugal to beat Croatia (KXWCGAME-26JUL02PORCRO-POR) at 47c (5 contracts), Dodgers to beat Padres (KXMLBGAME-26JUL042210SDLAD-LAD) at 55c (5 contracts), and Connecticut to beat Dallas (KXWNBAGAME-26JUL02DALCONN-CONN) at 63c (5 contracts). However, all place_bet tool calls failed because the backend proxy is sending the 'contracts' count as an integer instead of a string to the Kalshi API, resulting in a '400 Bad Request: cannot unmarshal number into Go struct field CreateOrderV2Request.count of type string'. I am unable to execute any bets due to this platform error.",
+      "at": "2026-07-02T23:25:12+00:00"
     }
   ],
   "history": [
