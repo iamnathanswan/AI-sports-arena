@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-07-02T16:10:13+00:00",
+  "dry_run": true,
+  "kalshi_env": "prod",
+  "agents": [
+    {
+      "name": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "equity_cents": 10000,
+      "cash_cents": 10000,
+      "initial_cents": 10000,
+      "pnl_cents": 0,
+      "roi_pct": 0.0,
+      "settled_bets": 0,
+      "wins": 0,
+      "win_rate": null,
+      "staked_cents": 0,
+      "returned_cents": 0,
+      "brier": null,
+      "open_positions": []
+    },
+    {
+      "name": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "equity_cents": 10000,
+      "cash_cents": 10000,
+      "initial_cents": 10000,
+      "pnl_cents": 0,
+      "roi_pct": 0.0,
+      "settled_bets": 0,
+      "wins": 0,
+      "win_rate": null,
+      "staked_cents": 0,
+      "returned_cents": 0,
+      "brier": null,
+      "open_positions": []
+    },
+    {
+      "name": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "equity_cents": 10000,
+      "cash_cents": 10000,
+      "initial_cents": 10000,
+      "pnl_cents": 0,
+      "roi_pct": 0.0,
+      "settled_bets": 0,
+      "wins": 0,
+      "win_rate": null,
+      "staked_cents": 0,
+      "returned_cents": 0,
+      "brier": null,
+      "open_positions": []
+    }
+  ],
+  "history": [],
+  "bets": [],
+  "notes": []
+}
