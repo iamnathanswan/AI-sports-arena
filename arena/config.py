@@ -35,6 +35,12 @@ class AgentSpec:
     name: str
     provider: str  # anthropic | openai | google
     model: str
+    # Pricing in dollars per 1M tokens, for cost tracking -- edit these if a
+    # provider changes prices. 0 disables cost tracking for that category.
+    price_per_million_input: float = 0.0
+    price_per_million_output: float = 0.0
+    price_per_million_cache_write: float = 0.0
+    price_per_million_cache_read: float = 0.0
 
 
 @dataclass
@@ -83,7 +89,15 @@ def load_settings(settings_path: Path | None = None) -> Settings:
 
     sports = raw.get("sports", {})
     agents = [
-        AgentSpec(name=a["name"], provider=a["provider"], model=a["model"])
+        AgentSpec(
+            name=a["name"],
+            provider=a["provider"],
+            model=a["model"],
+            price_per_million_input=float(a.get("price_per_million_input", 0)),
+            price_per_million_output=float(a.get("price_per_million_output", 0)),
+            price_per_million_cache_write=float(a.get("price_per_million_cache_write", 0)),
+            price_per_million_cache_read=float(a.get("price_per_million_cache_read", 0)),
+        )
         for a in raw.get("agents", [])
     ]
 

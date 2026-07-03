@@ -79,8 +79,16 @@ def main() -> int:
         else:
             nudge = " (forced-bet nudge triggered)" if result.get("forced_bet_nudge") else ""
             print(f"  turns={result['turns']} bets={result['bets_placed']}{nudge}")
+            usage = result.get("usage") or {}
+            tokens_in = usage.get("input_tokens", 0)
+            tokens_out = usage.get("output_tokens", 0)
+            print(
+                f"  tokens: {tokens_in:,} in / {tokens_out:,} out"
+                f" -- cost ${result.get('cost_cents', 0) / 100:.4f}"
+            )
             if result.get("final_text"):
                 print(f"  final: {result['final_text'][:300]}")
+            ledger.record_usage(spec.name, usage, result.get("cost_cents", 0))
         ledger.save(ledger_path)  # crash safety: persist after each agent
 
     # 3. Snapshot + outputs.

@@ -6,6 +6,8 @@ from typing import Callable
 
 import anthropic
 
+from ..pricing import empty_usage
+
 
 def run(
     model: str,
@@ -28,6 +30,7 @@ def run(
     messages: list[dict] = [{"role": "user", "content": user_prompt}]
     turns = 0
     final_text = ""
+    usage = empty_usage()
 
     while turns < max_turns:
         turns += 1
@@ -40,6 +43,11 @@ def run(
             messages=messages,
         )
         messages.append({"role": "assistant", "content": response.content})
+        if response.usage:
+            usage["input_tokens"] += response.usage.input_tokens or 0
+            usage["output_tokens"] += response.usage.output_tokens or 0
+            usage["cache_write_tokens"] += response.usage.cache_creation_input_tokens or 0
+            usage["cache_read_tokens"] += response.usage.cache_read_input_tokens or 0
 
         if response.stop_reason == "refusal":
             final_text = "(model refused the request)"
@@ -68,4 +76,4 @@ def run(
     else:
         final_text = "(turn budget exhausted)"
 
-    return {"turns": turns, "final_text": final_text}
+    return {"turns": turns, "final_text": final_text, "usage": usage}

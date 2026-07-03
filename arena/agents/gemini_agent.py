@@ -8,6 +8,8 @@ from typing import Callable
 from google import genai
 from google.genai import types
 
+from ..pricing import empty_usage
+
 
 def run(
     model: str,
@@ -34,10 +36,19 @@ def run(
     contents: list = [types.Content(role="user", parts=[types.Part(text=user_prompt)])]
     turns = 0
     final_text = ""
+    usage = empty_usage()
 
     while turns < max_turns:
         turns += 1
         response = client.models.generate_content(model=model, contents=contents, config=config)
+        um = response.usage_metadata
+        if um:
+            usage["input_tokens"] += um.prompt_token_count or 0
+            # Thinking tokens are billed as output on Gemini's pricing model.
+            usage["output_tokens"] += (um.candidates_token_count or 0) + (
+                getattr(um, "thoughts_token_count", 0) or 0
+            )
+            usage["cache_read_tokens"] += getattr(um, "cached_content_token_count", 0) or 0
         candidate = response.candidates[0]
         contents.append(candidate.content)
 
@@ -62,4 +73,4 @@ def run(
     else:
         final_text = "(turn budget exhausted)"
 
-    return {"turns": turns, "final_text": final_text}
+    return {"turns": turns, "final_text": final_text, "usage": usage}
