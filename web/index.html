@@ -223,7 +223,8 @@
     const record = el('span'); record.append('record ', Object.assign(el('b'), { textContent: a.settled_bets ? `${a.wins}–${a.settled_bets - a.wins}` : '—' }));
     const wr = el('span'); wr.append('win ', Object.assign(el('b'), { textContent: a.win_rate == null ? '—' : pct(a.win_rate) }));
     const brier = el('span'); brier.append('brier ', Object.assign(el('b'), { textContent: a.brier == null ? '—' : a.brier.toFixed(3) }));
-    stats.append(record, wr, brier);
+    const fees = el('span'); fees.append('fees ', Object.assign(el('b'), { textContent: usd(a.fees_paid_cents || 0) }));
+    stats.append(record, wr, brier, fees);
     card.append(stats);
     cards.append(card);
   });

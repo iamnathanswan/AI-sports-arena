@@ -28,9 +28,16 @@ def run(
         }
         for s in schemas
     ]
+    # Google Search grounding (native, server-side) alongside our custom
+    # function tools -- supported together on Gemini 3+. This is Google's own
+    # search; see the fairness note in the README. Each grounded query Gemini
+    # runs is separately billed by Google.
     config = types.GenerateContentConfig(
         system_instruction=system_prompt,
-        tools=[types.Tool(function_declarations=declarations)],
+        tools=[
+            types.Tool(function_declarations=declarations),
+            types.Tool(google_search=types.GoogleSearch()),
+        ],
         automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
     )
     contents: list = [types.Content(role="user", parts=[types.Part(text=user_prompt)])]

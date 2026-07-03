@@ -112,6 +112,13 @@ def build_leaderboard(ledger: Ledger, settings: Settings, generated_at: str) -> 
         wins = [o for o in settled if o["result"] == "won"]
         staked = sum(o["cost_cents"] for o in settled)
         returned = sum(o["payout_cents"] for o in settled)
+        # Fees are paid on any order that filled (open or settled), not on
+        # fully-unfilled ones (their fee was refunded).
+        fees_paid = sum(
+            o.get("fee_cents", 0)
+            for o in ledger.data["orders"]
+            if o["agent"] == name and o.get("result") != "unfilled"
+        )
         briers = [
             (o["forecast_prob"] - (1.0 if o["result"] == "won" else 0.0)) ** 2
             for o in settled
@@ -134,6 +141,7 @@ def build_leaderboard(ledger: Ledger, settings: Settings, generated_at: str) -> 
                 "win_rate": round(len(wins) / len(settled), 3) if settled else None,
                 "staked_cents": staked,
                 "returned_cents": returned,
+                "fees_paid_cents": fees_paid,
                 "brier": round(sum(briers) / len(briers), 4) if briers else None,
                 "usage": ledger.usage_totals(name),
                 "open_positions": [
@@ -161,6 +169,7 @@ def build_leaderboard(ledger: Ledger, settings: Settings, generated_at: str) -> 
             "contracts": o["count"],
             "price_cents": o["limit_price_cents"],
             "cost_cents": o["cost_cents"],
+            "fee_cents": o.get("fee_cents", 0),
             "forecast_prob": o["forecast_prob"],
             "reasoning": o["reasoning"],
             "status": o["status"],

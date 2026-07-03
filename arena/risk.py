@@ -31,6 +31,7 @@ def check_order(
     count: int,
     limit_price_cents: int,
     kill_switch: bool = False,
+    fee_cents: int = 0,
 ) -> RiskDecision:
     if kill_switch:
         return RiskDecision(False, "KILL_SWITCH is active — all order placement is halted.")
@@ -47,9 +48,12 @@ def check_order(
 
     cost = count * limit_price_cents
     cash = ledger.cash(agent)
-    if cost > cash:
+    # Cash must cover stake plus the trading fee. The position-size caps below
+    # are measured on stake only -- the fee is an expense, not capital at risk.
+    if cost + fee_cents > cash:
         return RiskDecision(
-            False, f"order costs {cost}c but you only have {cash}c cash available."
+            False,
+            f"order costs {cost}c + {fee_cents}c fee but you only have {cash}c cash available.",
         )
 
     equity = ledger.equity(agent)

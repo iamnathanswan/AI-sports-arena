@@ -137,10 +137,14 @@ class Ledger:
         reasoning: str,
         kalshi_order_id: str | None = None,
         client_order_id: str | None = None,
+        fee_cents: int = 0,
     ) -> dict:
         cost = count * limit_price_cents
-        if cost > self.cash(agent):
-            raise ValueError(f"{agent} has {self.cash(agent)}c cash, order costs {cost}c")
+        total = cost + fee_cents
+        if total > self.cash(agent):
+            raise ValueError(
+                f"{agent} has {self.cash(agent)}c cash, order costs {cost}c + {fee_cents}c fee"
+            )
         order = {
             "id": str(uuid.uuid4()),
             "agent": agent,
@@ -151,6 +155,7 @@ class Ledger:
             "count": count,
             "limit_price_cents": limit_price_cents,
             "cost_cents": cost,
+            "fee_cents": fee_cents,
             "status": status,
             "kalshi_order_id": kalshi_order_id,
             "client_order_id": client_order_id,
@@ -161,7 +166,7 @@ class Ledger:
             "payout_cents": 0,
             "settled_at": None,
         }
-        self.data["agents"][agent]["cash_cents"] -= cost
+        self.data["agents"][agent]["cash_cents"] -= total
         self.data["orders"].append(order)
         return order
 
@@ -170,13 +175,27 @@ class Ledger:
 
     def refund_unfilled(self, order: dict, filled_count: int) -> int:
         """Live order partially/never filled: shrink the position to what filled
-        and return the reserved cash for the rest. Returns cents refunded."""
-        unfilled = max(order["count"] - filled_count, 0)
-        refund = unfilled * order["limit_price_cents"]
+        and return the reserved cash (and the estimated fee) for the rest.
+        Fees are only charged on contracts that actually fill. Returns total
+        cents refunded (stake + fee)."""
+        original_count = order["count"]
+        unfilled = max(original_count - filled_count, 0)
+        stake_refund = unfilled * order["limit_price_cents"]
+
+        original_fee = order.get("fee_cents", 0)
+        if original_count > 0:
+            kept_fee = round(original_fee * filled_count / original_count)
+        else:
+            kept_fee = 0
+        fee_refund = original_fee - kept_fee
+
+        refund = stake_refund + fee_refund
         if refund > 0:
             self.data["agents"][order["agent"]]["cash_cents"] += refund
+        if unfilled > 0:
             order["count"] = filled_count
             order["cost_cents"] = filled_count * order["limit_price_cents"]
+            order["fee_cents"] = kept_fee
         if filled_count == 0:
             order["result"] = "unfilled"
             order["settled_at"] = _now()

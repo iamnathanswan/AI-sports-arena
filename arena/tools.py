@@ -14,6 +14,7 @@ from dataclasses import dataclass, field
 from typing import Any, Callable
 
 from .config import Settings
+from .fees import trading_fee_cents
 from .kalshi.client import KalshiClient, KalshiError
 from .ledger import Ledger
 from .risk import check_order
@@ -104,10 +105,11 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
         "name": "place_bet",
         "description": (
             "Place a limit order to BUY contracts on one side of a market. "
-            "Cost = contracts x limit_price_cents. Winning contracts pay 100 cents each. "
-            "Every bet MUST include your probability estimate and reasoning — these are "
-            "recorded and scored after the market settles. The order is checked against "
-            "hard risk limits and may be rejected."
+            "Cost = contracts x limit_price_cents, plus a small Kalshi trading fee "
+            "(~0.07 x contracts x price x (1-price), highest near 50c, lowest near the "
+            "extremes). Winning contracts pay 100 cents each. Every bet MUST include your "
+            "probability estimate and reasoning — these are recorded and scored after the "
+            "market settles. The order is checked against hard risk limits and may be rejected."
         ),
         "parameters": {
             "type": "object",
@@ -277,6 +279,7 @@ def place_bet(ctx: ToolContext, args: dict) -> dict:
     if not _series_allowed(ticker, ctx.settings):
         return {"rejected": True, "reason": f"{ticker} is not in this arena's allowlist"}
 
+    fee = trading_fee_cents(count, price)
     decision = check_order(
         ctx.ledger,
         ctx.settings.risk,
@@ -286,6 +289,7 @@ def place_bet(ctx: ToolContext, args: dict) -> dict:
         count,
         price,
         kill_switch=ctx.settings.kill_switch,
+        fee_cents=fee,
     )
     if not decision:
         return {"rejected": True, "reason": decision.reason}
@@ -334,6 +338,7 @@ def place_bet(ctx: ToolContext, args: dict) -> dict:
         reasoning=reasoning,
         kalshi_order_id=kalshi_order_id,
         client_order_id=client_order_id,
+        fee_cents=fee,
     )
     ctx.bets_placed.append(order)
     return {
@@ -344,6 +349,7 @@ def place_bet(ctx: ToolContext, args: dict) -> dict:
         "contracts": count,
         "limit_price_cents": price,
         "cost_cents": order["cost_cents"],
+        "fee_cents": fee,
         "cash_remaining_cents": ctx.ledger.cash(ctx.agent),
         "note": (
             "DRY RUN: recorded as a paper trade, no real order sent."

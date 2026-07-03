@@ -66,9 +66,11 @@ python -m http.server -d . 8000         # dashboard at http://localhost:8000/web
 ## Fairness notes & known caveats
 
 - Agents run **sequentially** in one workflow run, so prices can drift slightly between sessions; the run order **rotates weekly** to average this out.
-- Agents have no live news feed — they reason from model knowledge plus market prices/orderbooks. That's part of the experiment.
+- **Web search uses each provider's *native* search** (Anthropic, OpenAI, Google) — so a model researches with its own provider's engine, not a shared one. This is a deliberate tradeoff: no extra API key, but a win could partly reflect a better *search engine* rather than a better *model*. If you'd rather compare pure reasoning, swap all three to one shared search backend later (the adapters are where this lives).
+- Each web search costs a little extra: Anthropic and OpenAI bill per search, and **Google bills per grounded query Gemini runs**. It's small at a weekly cadence, and it shows up in the "API cost & token usage" section along with token cost.
+- Kalshi charges a small **trading fee** when an order fills (~1.75c per contract at 50c, less toward the extremes). It's deducted from each agent's cash and shown as "fees" on the leaderboard cards. The dashboard models the conservative (taker) fee, so real costs may run a touch lower.
 - Two agents may take opposite sides of the same market; that's allowed (it's a model comparison, not a fund).
-- Live limit orders that don't fill within 60 minutes expire and the cash is returned at the next settlement.
+- Live limit orders that don't fill within 60 minutes expire and the stake **and** the fee for the unfilled portion are returned at the next settlement.
 - In dry-run mode, paper bets assume a full fill at the limit price and settle against real market results.
 
 ## Responsible gambling
