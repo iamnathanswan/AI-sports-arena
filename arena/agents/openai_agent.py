@@ -7,6 +7,8 @@ from typing import Callable
 
 from openai import OpenAI
 
+from ..pricing import empty_usage
+
 
 def run(
     model: str,
@@ -34,10 +36,16 @@ def run(
     ]
     turns = 0
     final_text = ""
+    usage = empty_usage()
 
     while turns < max_turns:
         turns += 1
         response = client.chat.completions.create(model=model, messages=messages, tools=tools)
+        if response.usage:
+            usage["input_tokens"] += response.usage.prompt_tokens or 0
+            usage["output_tokens"] += response.usage.completion_tokens or 0
+            details = response.usage.prompt_tokens_details
+            usage["cache_read_tokens"] += (getattr(details, "cached_tokens", 0) or 0) if details else 0
         message = response.choices[0].message
         messages.append(
             {
@@ -63,4 +71,4 @@ def run(
     else:
         final_text = "(turn budget exhausted)"
 
-    return {"turns": turns, "final_text": final_text}
+    return {"turns": turns, "final_text": final_text, "usage": usage}

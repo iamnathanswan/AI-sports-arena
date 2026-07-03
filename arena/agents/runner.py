@@ -12,6 +12,7 @@ from datetime import date
 from pathlib import Path
 
 from ..config import AgentSpec, Settings
+from ..pricing import add_usage, compute_cost_cents, empty_usage
 from ..tools import TOOL_SCHEMAS, ToolContext, execute_tool
 
 PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "system.md"
@@ -75,6 +76,8 @@ def run_agent(spec: AgentSpec, ctx: ToolContext, system_prompt: str, max_turns: 
         "final_text": "",
         "error": None,
         "forced_bet_nudge": False,
+        "usage": empty_usage(),
+        "cost_cents": 0,
     }
 
     if not has_api_key(spec):
@@ -114,6 +117,9 @@ def run_agent(spec: AgentSpec, ctx: ToolContext, system_prompt: str, max_turns: 
             summary["turns"] += forced.get("turns", 0)
             summary["final_text"] = forced.get("final_text", summary["final_text"])
             summary["forced_bet_nudge"] = True
+            add_usage(summary["usage"], forced.get("usage"))
+
+        summary["cost_cents"] = compute_cost_cents(spec, summary["usage"])
     except Exception as exc:
         summary["error"] = f"{type(exc).__name__}: {exc}"
     return summary

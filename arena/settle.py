@@ -135,6 +135,7 @@ def build_leaderboard(ledger: Ledger, settings: Settings, generated_at: str) -> 
                 "staked_cents": staked,
                 "returned_cents": returned,
                 "brier": round(sum(briers) / len(briers), 4) if briers else None,
+                "usage": ledger.usage_totals(name),
                 "open_positions": [
                     {
                         "ticker": o["ticker"],

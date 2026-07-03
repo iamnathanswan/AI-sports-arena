@@ -107,6 +107,11 @@
   .reason { color: var(--text-secondary); max-width: 460px; }
   .table-scroll { overflow-x: auto; }
   .empty { color: var(--text-muted); padding: 26px 0; text-align: center; }
+  .cost-sub { margin: -4px 0 12px; }
+  .cost-cell { display: flex; align-items: center; gap: 10px; justify-content: flex-end; }
+  .cost-value { font-variant-numeric: tabular-nums; font-weight: 600; min-width: 64px; text-align: right; }
+  .cost-meter { width: 90px; height: 6px; border-radius: 3px; background: var(--grid); overflow: hidden; flex: none; }
+  .cost-meter-fill { height: 100%; border-radius: 3px; }
   .note-item { border-bottom: 1px solid var(--grid); padding: 10px 0; }
   .note-item:last-child { border-bottom: none; }
   .note-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 2px; }
@@ -132,6 +137,10 @@
       <div class="tooltip" id="chart-tooltip"></div>
     </div>
   </div>
+
+  <h2>API cost &amp; token usage</h2>
+  <div class="sub cost-sub">Running the models costs real money, separate from the betting bankroll above — it's never deducted from an agent's stake.</div>
+  <div class="panel table-scroll" id="usage"></div>
 
   <h2>Open positions</h2>
   <div class="panel table-scroll" id="positions"></div>
@@ -162,6 +171,12 @@
   };
   const usd = cents => (cents < 0 ? '-' : '') + '$' + (Math.abs(cents) / 100).toFixed(2);
   const pct = v => (v * 100).toFixed(0) + '%';
+  const compact = n => {
+    n = n || 0;
+    if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M';
+    if (n >= 1_000) return (n / 1_000).toFixed(1) + 'K';
+    return String(n);
+  };
 
   async function loadData() {
     for (const path of ['data/leaderboard.json', '../data/leaderboard.json']) {
@@ -337,6 +352,49 @@
   });
   function hideTip() { tip.style.display = 'none'; if (crosshair) crosshair.style.display = 'none'; }
   wrapEl.addEventListener('pointerleave', hideTip);
+
+  // ---- API cost & token usage ----
+  const usageHost = $('usage');
+  const usageRows = agents.map(a => ({ agent: a.name, model: a.model, ...(a.usage || {}) }));
+  const anyCost = usageRows.some(u => (u.cost_cents || 0) > 0 || (u.sessions || 0) > 0);
+  if (!anyCost) {
+    usageHost.append(el('div', 'empty', 'No sessions run yet — cost appears after the first weekly run.'));
+  } else {
+    const maxCost = Math.max(...usageRows.map(u => u.cost_cents || 0), 1);
+    const table = el('table');
+    const thead = el('thead'); const hr = el('tr');
+    ['Agent', 'Sessions', 'Input tokens', 'Output tokens', 'Cache read', 'API cost'].forEach((h, i) => {
+      hr.append(el('th', i >= 1 ? 'num' : null, h));
+    });
+    thead.append(hr); table.append(thead);
+    const tbody = el('tbody');
+    usageRows.forEach(u => {
+      const tr = el('tr');
+      const agentTd = el('td');
+      const cell = el('span', 'agent-cell');
+      const sw = el('span', 'swatch'); sw.style.background = colorOf[u.agent] || 'var(--text-muted)';
+      cell.append(sw, document.createTextNode(u.agent)); agentTd.append(cell);
+      const costTd = el('td', 'num');
+      const costCell = el('div', 'cost-cell');
+      const meter = el('div', 'cost-meter');
+      const fill = el('div', 'cost-meter-fill');
+      fill.style.width = (((u.cost_cents || 0) / maxCost) * 100).toFixed(0) + '%';
+      fill.style.background = colorOf[u.agent] || 'var(--text-muted)';
+      meter.append(fill);
+      costCell.append(meter, el('span', 'cost-value', usd(u.cost_cents || 0)));
+      costTd.append(costCell);
+      tr.append(
+        agentTd,
+        el('td', 'num', String(u.sessions || 0)),
+        el('td', 'num', compact(u.input_tokens)),
+        el('td', 'num', compact(u.output_tokens)),
+        el('td', 'num', compact(u.cache_read_tokens)),
+        costTd
+      );
+      tbody.append(tr);
+    });
+    table.append(tbody); usageHost.append(table);
+  }
 
   // ---- Open positions table ----
   const positions = [];

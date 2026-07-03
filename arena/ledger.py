@@ -55,6 +55,39 @@ class Ledger:
                 "cash_cents": initial_cents,
             }
 
+    def record_usage(self, agent: str, usage: dict, cost_cents: int) -> None:
+        """Accumulate a session's token usage and API cost for `agent`. This is
+        tracked separately from the betting bankroll -- token cost is never
+        deducted from cash_cents."""
+        totals = self.data["agents"][agent].setdefault(
+            "usage",
+            {
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cache_write_tokens": 0,
+                "cache_read_tokens": 0,
+                "cost_cents": 0,
+                "sessions": 0,
+            },
+        )
+        for key in ("input_tokens", "output_tokens", "cache_write_tokens", "cache_read_tokens"):
+            totals[key] += int(usage.get(key, 0) or 0)
+        totals["cost_cents"] += cost_cents
+        totals["sessions"] += 1
+
+    def usage_totals(self, agent: str) -> dict:
+        return self.data["agents"][agent].get(
+            "usage",
+            {
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cache_write_tokens": 0,
+                "cache_read_tokens": 0,
+                "cost_cents": 0,
+                "sessions": 0,
+            },
+        )
+
     def cash(self, agent: str) -> int:
         return self.data["agents"][agent]["cash_cents"]
 

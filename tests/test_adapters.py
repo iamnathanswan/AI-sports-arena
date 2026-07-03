@@ -35,9 +35,17 @@ class FakeAnthropicClient:
             block = SimpleNamespace(
                 type="tool_use", id="tu_1", name="get_bankroll", input={}
             )
-            return SimpleNamespace(stop_reason="tool_use", content=[block])
+            usage = SimpleNamespace(
+                input_tokens=100, output_tokens=20,
+                cache_creation_input_tokens=0, cache_read_input_tokens=0,
+            )
+            return SimpleNamespace(stop_reason="tool_use", content=[block], usage=usage)
         text = SimpleNamespace(type="text", text="Done betting.")
-        return SimpleNamespace(stop_reason="end_turn", content=[text])
+        usage = SimpleNamespace(
+            input_tokens=150, output_tokens=30,
+            cache_creation_input_tokens=5, cache_read_input_tokens=40,
+        )
+        return SimpleNamespace(stop_reason="end_turn", content=[text], usage=usage)
 
 
 def test_anthropic_adapter_loop(monkeypatch):
@@ -53,6 +61,10 @@ def test_anthropic_adapter_loop(monkeypatch):
     assert EXECUTED == [("get_bankroll", {})]
     assert result["final_text"] == "Done betting."
     assert result["turns"] == 2
+    assert result["usage"] == {
+        "input_tokens": 250, "output_tokens": 50,
+        "cache_write_tokens": 5, "cache_read_tokens": 40,
+    }
 
 
 # ---------------- OpenAI ----------------
@@ -80,9 +92,12 @@ class FakeOpenAIClient:
         self.calls += 1
         if self.calls == 1:
             msg = SimpleNamespace(content=None, tool_calls=[FakeToolCall()])
+            usage = SimpleNamespace(prompt_tokens=200, completion_tokens=15, prompt_tokens_details=None)
         else:
             msg = SimpleNamespace(content="All set.", tool_calls=None)
-        return SimpleNamespace(choices=[SimpleNamespace(message=msg)])
+            details = SimpleNamespace(cached_tokens=50)
+            usage = SimpleNamespace(prompt_tokens=210, completion_tokens=25, prompt_tokens_details=details)
+        return SimpleNamespace(choices=[SimpleNamespace(message=msg)], usage=usage)
 
 
 def test_openai_adapter_loop(monkeypatch):
@@ -99,6 +114,10 @@ def test_openai_adapter_loop(monkeypatch):
     assert EXECUTED == [("record_note", {"text": "hi"})]
     assert result["final_text"] == "All set."
     assert result["turns"] == 2
+    assert result["usage"] == {
+        "input_tokens": 410, "output_tokens": 40,
+        "cache_write_tokens": 0, "cache_read_tokens": 50,
+    }
 
 
 # ---------------- Gemini ----------------
@@ -117,10 +136,20 @@ class FakeGeminiModels:
                 function_call=SimpleNamespace(name="get_bankroll", args={})
             )
             content = SimpleNamespace(role="model", parts=[part])
-            return SimpleNamespace(candidates=[SimpleNamespace(content=content)], text=None)
+            usage = SimpleNamespace(
+                prompt_token_count=90, candidates_token_count=10,
+                thoughts_token_count=0, cached_content_token_count=0,
+            )
+            return SimpleNamespace(
+                candidates=[SimpleNamespace(content=content)], text=None, usage_metadata=usage
+            )
         content = types.Content(role="model", parts=[types.Part(text="Finished.")])
+        usage = SimpleNamespace(
+            prompt_token_count=95, candidates_token_count=12,
+            thoughts_token_count=3, cached_content_token_count=20,
+        )
         return SimpleNamespace(
-            candidates=[SimpleNamespace(content=content)], text="Finished."
+            candidates=[SimpleNamespace(content=content)], text="Finished.", usage_metadata=usage
         )
 
 
@@ -138,3 +167,8 @@ def test_gemini_adapter_loop(monkeypatch):
     assert EXECUTED == [("get_bankroll", {})]
     assert result["final_text"] == "Finished."
     assert result["turns"] == 2
+    # thinking tokens (3) fold into output_tokens alongside candidates_token_count
+    assert result["usage"] == {
+        "input_tokens": 185, "output_tokens": 25,
+        "cache_write_tokens": 0, "cache_read_tokens": 20,
+    }
