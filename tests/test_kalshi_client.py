@@ -89,3 +89,25 @@ class TestCreateOrderV2Migration:
         capture_request(client, monkeypatch)
         result = client.create_order(ticker="T1", side="yes", count=1, limit_price_cents=50)
         assert result["order_id"] == "kalshi-order-1"
+
+
+class TestNetworkErrorHandling:
+    def test_connection_error_wrapped_as_kalshi_error(self, monkeypatch):
+        import requests
+
+        from arena.kalshi.client import KalshiError, KalshiClient
+
+        client = KalshiClient(env="demo", min_request_interval=0)
+
+        def always_fail(*a, **k):
+            raise requests.exceptions.ProxyError("tunnel failed")
+
+        monkeypatch.setattr(client._session, "request", always_fail)
+        monkeypatch.setattr("time.sleep", lambda *_: None)  # skip backoff waits
+
+        import pytest
+
+        # A raw network error must surface as KalshiError so settlement can skip
+        # gracefully instead of crashing the whole weekly run.
+        with pytest.raises(KalshiError):
+            client.get_market("SOME-TICKER")

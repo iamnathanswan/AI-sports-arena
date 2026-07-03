@@ -70,34 +70,32 @@ def test_anthropic_adapter_loop(monkeypatch):
 # ---------------- OpenAI ----------------
 
 
-class FakeToolCall:
-    def __init__(self):
-        self.id = "call_1"
-        self.function = SimpleNamespace(name="record_note", arguments='{"text": "hi"}')
+class FakeResponses:
+    """Stands in for client.responses (the Responses API)."""
 
-    def model_dump(self):
-        return {
-            "id": self.id,
-            "type": "function",
-            "function": {"name": "record_note", "arguments": '{"text": "hi"}'},
-        }
+    def __init__(self):
+        self.calls = 0
+        self.seen_previous_ids = []
+
+    def create(self, **kwargs):
+        self.calls += 1
+        self.seen_previous_ids.append(kwargs.get("previous_response_id"))
+        if self.calls == 1:
+            fc = SimpleNamespace(
+                type="function_call", name="record_note",
+                arguments='{"text": "hi"}', call_id="call_1",
+            )
+            usage = SimpleNamespace(input_tokens=200, output_tokens=15, input_tokens_details=None)
+            return SimpleNamespace(id="resp_1", output=[fc], output_text="", usage=usage)
+        msg = SimpleNamespace(type="message")
+        details = SimpleNamespace(cached_tokens=50)
+        usage = SimpleNamespace(input_tokens=210, output_tokens=25, input_tokens_details=details)
+        return SimpleNamespace(id="resp_2", output=[msg], output_text="All set.", usage=usage)
 
 
 class FakeOpenAIClient:
     def __init__(self):
-        self.calls = 0
-        self.chat = SimpleNamespace(completions=SimpleNamespace(create=self._create))
-
-    def _create(self, **kwargs):
-        self.calls += 1
-        if self.calls == 1:
-            msg = SimpleNamespace(content=None, tool_calls=[FakeToolCall()])
-            usage = SimpleNamespace(prompt_tokens=200, completion_tokens=15, prompt_tokens_details=None)
-        else:
-            msg = SimpleNamespace(content="All set.", tool_calls=None)
-            details = SimpleNamespace(cached_tokens=50)
-            usage = SimpleNamespace(prompt_tokens=210, completion_tokens=25, prompt_tokens_details=details)
-        return SimpleNamespace(choices=[SimpleNamespace(message=msg)], usage=usage)
+        self.responses = FakeResponses()
 
 
 def test_openai_adapter_loop(monkeypatch):
@@ -114,6 +112,8 @@ def test_openai_adapter_loop(monkeypatch):
     assert EXECUTED == [("record_note", {"text": "hi"})]
     assert result["final_text"] == "All set."
     assert result["turns"] == 2
+    # second turn chains on the first response's id
+    assert fake.responses.seen_previous_ids == [None, "resp_1"]
     assert result["usage"] == {
         "input_tokens": 410, "output_tokens": 40,
         "cache_write_tokens": 0, "cache_read_tokens": 50,

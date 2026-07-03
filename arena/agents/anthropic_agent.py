@@ -18,7 +18,11 @@ def run(
     max_turns: int,
 ) -> dict:
     client = anthropic.Anthropic()
-    tools = [
+    # Native server-side web search (executed on Anthropic's side, results
+    # injected automatically) alongside our client-side betting tools. This is
+    # Anthropic's own search engine -- see the fairness note in the README.
+    tools: list = [{"type": "web_search_20260209", "name": "web_search"}]
+    tools += [
         {
             "name": s["name"],
             "description": s["description"],

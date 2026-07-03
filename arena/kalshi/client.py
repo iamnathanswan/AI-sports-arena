@@ -103,14 +103,23 @@ class KalshiClient:
         for attempt in range(4):
             self._throttle()
             headers = self._auth_headers(method, path)
-            resp = self._session.request(
-                method,
-                self.base_url + path,
-                params=params,
-                json=json_body,
-                headers=headers,
-                timeout=self.timeout,
-            )
+            try:
+                resp = self._session.request(
+                    method,
+                    self.base_url + path,
+                    params=params,
+                    json=json_body,
+                    headers=headers,
+                    timeout=self.timeout,
+                )
+            except requests.exceptions.RequestException as exc:
+                # Connection-level failure (timeout, DNS, proxy, reset). Retry a
+                # few times, then surface as a KalshiError so callers (e.g.
+                # settlement) can skip gracefully instead of crashing the run.
+                if attempt < 3:
+                    time.sleep(2**attempt)
+                    continue
+                raise KalshiError(f"{method} {endpoint} network error: {exc}") from exc
             if resp.status_code == 429 or resp.status_code >= 500:
                 if attempt < 3:
                     time.sleep(2**attempt)

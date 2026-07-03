@@ -3,6 +3,7 @@
 from datetime import datetime, timedelta, timezone
 
 from arena.config import RiskLimits, Settings
+from arena.fees import trading_fee_cents
 from arena.ledger import Ledger
 from arena.settle import build_leaderboard, settle_open_orders
 from arena.tools import ToolContext, execute_tool
@@ -98,7 +99,10 @@ class TestTools:
         )
         assert '"placed": true' in result and '"dry_run"' in result
         assert kalshi.created_orders == []
-        assert ledger.cash("claude") == 10000 - 550
+        # 550c stake + Kalshi fee on 10 contracts @ 55c
+        fee = trading_fee_cents(10, 55)
+        assert ledger.cash("claude") == 10000 - 550 - fee
+        assert f'"fee_cents": {fee}' in result
 
     def test_live_mode_places_real_order(self):
         ledger, kalshi = make_world()
