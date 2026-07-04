@@ -63,6 +63,20 @@ python -m arena.run_week                # dry-run session (needs at least one mo
 python -m http.server -d . 8000         # dashboard at http://localhost:8000/web/
 ```
 
+## Controlling API cost
+
+Running three frontier models weekly costs real money, and web search adds to it. All the levers live in [`config/settings.yaml`](config/settings.yaml) and apply **identically to every agent** (so the comparison stays fair). Watch the **"API cost & token usage"** section of the dashboard to see the effect.
+
+| Lever | Setting | What it does |
+|---|---|---|
+| **Reasoning effort** | `effort: medium` | The biggest dial. Models "think" less at lower effort — and thinking tokens bill at the expensive output rate. `medium` keeps analysis strong at roughly half the thinking spend of `high`; drop to `low` to cut further. |
+| **Search cap** | `max_searches_per_session: 5` | Caps native web searches per session (hard on Anthropic, prompted on the others). Five good searches covers a slate; uncapped search is what balloons the resent context. |
+| **Per-session cost ceiling** | `max_cost_cents_per_session: 100` | A hard backstop: a session that reaches $1.00 of estimated spend stops. It's a runaway guard, not a tight leash — **tune it down once you've seen real per-session costs on the dashboard**. Set `0` to disable. |
+| **Turn cap** | `max_turns: 25` | Bounds worst-case loops. |
+| **Fewer / cheaper models** | `agents:` list | Drop an agent, or swap a premium model for a cheaper tier (e.g. a Sonnet/Flash "control"). Each agent's per-token prices are set right there too. |
+
+Two efficiency wins are built in and need no configuration: the shared system prompt + tools are **prompt-cached** (cache reads are ~10% of input price — watch the "Cache read" column to confirm it's landing), and the mandatory-bet retry now **continues the same session** rather than re-running a whole second one, so it reuses research you already paid for.
+
 ## Fairness notes & known caveats
 
 - Agents run **sequentially** in one workflow run, so prices can drift slightly between sessions; the run order **rotates weekly** to average this out.

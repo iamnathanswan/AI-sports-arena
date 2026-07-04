@@ -103,3 +103,26 @@ class TestLedgerUsageTracking:
         ledger.save(path)
         loaded = Ledger.load(path)
         assert loaded.usage_totals("claude")["cost_cents"] == 15
+
+
+# ---------------- RunOptions cost-control helpers ----------------
+
+from arena.agents.base import RunOptions
+
+
+class TestRunOptions:
+    def test_over_budget_true_when_cost_reaches_ceiling(self):
+        opts = RunOptions(budget_cents=50, cost_of=lambda u: u["cost"])
+        assert opts.over_budget({"cost": 50}) is True
+        assert opts.over_budget({"cost": 60}) is True
+        assert opts.over_budget({"cost": 49}) is False
+
+    def test_over_budget_false_when_disabled(self):
+        assert RunOptions().over_budget({"cost": 999}) is False
+        assert RunOptions(budget_cents=0, cost_of=lambda u: 999).over_budget({}) is False
+
+    def test_wants_followup(self):
+        assert RunOptions(followup_prompt="x", should_continue=lambda: True).wants_followup() is True
+        assert RunOptions(followup_prompt="x", should_continue=lambda: False).wants_followup() is False
+        assert RunOptions(followup_prompt="x").wants_followup() is False  # no should_continue
+        assert RunOptions(should_continue=lambda: True).wants_followup() is False  # no prompt

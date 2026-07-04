@@ -7,6 +7,7 @@ returns the shared summary shape.
 
 from types import SimpleNamespace
 
+from arena.agents.base import RunOptions
 from arena.tools import TOOL_SCHEMAS
 
 EXECUTED = []
@@ -19,6 +20,13 @@ def fake_execute(name, args):
 
 def setup_function(_):
     EXECUTED.clear()
+
+
+def _anthropic_usage(inp=100, out=20, cw=0, cr=0):
+    return SimpleNamespace(
+        input_tokens=inp, output_tokens=out,
+        cache_creation_input_tokens=cw, cache_read_input_tokens=cr,
+    )
 
 
 # ---------------- Anthropic ----------------
@@ -172,3 +180,107 @@ def test_gemini_adapter_loop(monkeypatch):
         "input_tokens": 185, "output_tokens": 25,
         "cache_write_tokens": 0, "cache_read_tokens": 20,
     }
+
+
+# ---------------- Cost-control options (Anthropic as representative) ----------------
+
+
+class ConfigurableAnthropicClient:
+    """Fake whose per-turn behavior is scripted, and which records the kwargs
+    passed to messages.create (to check effort / max_uses wiring)."""
+
+    def __init__(self, script):
+        # script: list of ("tool"|"end", usage) describing each turn's response
+        self.script = script
+        self.turn = 0
+        self.create_kwargs = []
+        self.message_snapshots = []  # copy of messages at each call (list is mutated in place)
+        self.messages = SimpleNamespace(create=self._create)
+
+    def _create(self, **kwargs):
+        self.create_kwargs.append(kwargs)
+        self.message_snapshots.append(list(kwargs.get("messages", [])))
+        kind, usage = self.script[min(self.turn, len(self.script) - 1)]
+        self.turn += 1
+        if kind == "tool":
+            block = SimpleNamespace(type="tool_use", id=f"tu_{self.turn}", name="get_bankroll", input={})
+            return SimpleNamespace(stop_reason="tool_use", content=[block], usage=usage)
+        text = SimpleNamespace(type="text", text="done")
+        return SimpleNamespace(stop_reason="end_turn", content=[text], usage=usage)
+
+
+def _patch_anthropic(monkeypatch, client):
+    import anthropic as anthropic_sdk
+    from arena.agents import anthropic_agent
+    monkeypatch.setattr(anthropic_sdk, "Anthropic", lambda: client)
+
+
+def test_anthropic_effort_and_search_cap_wired(monkeypatch):
+    from arena.agents import anthropic_agent
+
+    client = ConfigurableAnthropicClient([("end", _anthropic_usage())])
+    _patch_anthropic(monkeypatch, client)
+    anthropic_agent.run(
+        model="m", system_prompt="s", user_prompt="go", schemas=TOOL_SCHEMAS,
+        execute=fake_execute, max_turns=5,
+        options=RunOptions(effort="medium", max_searches=5),
+    )
+    kwargs = client.create_kwargs[0]
+    assert kwargs["output_config"] == {"effort": "medium"}
+    web_search = kwargs["tools"][0]
+    assert web_search["type"] == "web_search_20260209"
+    assert web_search["max_uses"] == 5
+
+
+def test_anthropic_in_session_followup(monkeypatch):
+    """Model ends without betting; should_continue True -> adapter injects the
+    followup and continues the SAME conversation once, no second run()."""
+    from arena.agents import anthropic_agent
+
+    client = ConfigurableAnthropicClient([("end", _anthropic_usage()), ("end", _anthropic_usage())])
+    _patch_anthropic(monkeypatch, client)
+    bets = []
+    result = anthropic_agent.run(
+        model="m", system_prompt="s", user_prompt="go", schemas=TOOL_SCHEMAS,
+        execute=fake_execute, max_turns=5,
+        options=RunOptions(
+            followup_prompt="PLACE A BET NOW",
+            should_continue=lambda: not bets,  # never bets -> always wants followup
+        ),
+    )
+    assert result["forced_followup"] is True
+    # create called twice: initial end, then again after the followup injection
+    assert len(client.create_kwargs) == 2
+    # the followup was appended as a user turn on the second call
+    assert client.message_snapshots[1][-1] == {"role": "user", "content": "PLACE A BET NOW"}
+
+
+def test_anthropic_followup_not_triggered_when_bet_placed(monkeypatch):
+    from arena.agents import anthropic_agent
+
+    client = ConfigurableAnthropicClient([("end", _anthropic_usage())])
+    _patch_anthropic(monkeypatch, client)
+    result = anthropic_agent.run(
+        model="m", system_prompt="s", user_prompt="go", schemas=TOOL_SCHEMAS,
+        execute=fake_execute, max_turns=5,
+        options=RunOptions(followup_prompt="X", should_continue=lambda: False),
+    )
+    assert result["forced_followup"] is False
+    assert len(client.create_kwargs) == 1
+
+
+def test_anthropic_cost_ceiling_stops_session(monkeypatch):
+    """Budget exceeded after turn 1 -> session stops even though the model
+    asked for another tool call."""
+    from arena.agents import anthropic_agent
+
+    # turn 1 asks for a tool (would normally continue), but usage is huge
+    client = ConfigurableAnthropicClient([("tool", _anthropic_usage(inp=10_000_000))])
+    _patch_anthropic(monkeypatch, client)
+    result = anthropic_agent.run(
+        model="m", system_prompt="s", user_prompt="go", schemas=TOOL_SCHEMAS,
+        execute=fake_execute, max_turns=10,
+        options=RunOptions(budget_cents=10, cost_of=lambda u: u["input_tokens"] // 1000),
+    )
+    assert "cost ceiling" in result["final_text"]
+    assert len(client.create_kwargs) == 1  # stopped after the first turn

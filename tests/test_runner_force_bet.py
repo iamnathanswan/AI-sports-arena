@@ -1,6 +1,7 @@
-"""Verify the runner's mandatory-bet backstop: any agent that ends its first
-session without placing a bet gets exactly one forced retry, applied
-identically regardless of which model it is."""
+"""run_agent wiring: it calls the adapter once, passes cost-control options,
+and surfaces the in-session mandatory-bet nudge. The nudge *mechanism* itself
+(continuing the same conversation) is exercised at the adapter level in
+test_adapters.py."""
 
 from arena.agents import runner
 from arena.config import AgentSpec, RiskLimits, Settings
@@ -18,6 +19,9 @@ def make_settings():
         sports_categories=["Sports"],
         series_allowlist=[],
         agents=[AgentSpec(name="claude", provider="anthropic", model="m")],
+        effort="medium",
+        max_searches_per_session=5,
+        max_cost_cents_per_session=100,
     )
 
 
@@ -29,89 +33,91 @@ class FakeKalshi:
 def make_ctx():
     ledger = Ledger()
     ledger.ensure_agent("claude", 10000)
-    settings = make_settings()
-    return ToolContext(kalshi=FakeKalshi(), ledger=ledger, settings=settings, agent="claude", week=WEEK)
+    return ToolContext(
+        kalshi=FakeKalshi(), ledger=ledger, settings=make_settings(), agent="claude", week=WEEK
+    )
 
 
 class RecordingAdapter:
-    """Stands in for anthropic_agent/openai_agent/gemini_agent — records every
-    call's user_prompt and optionally places a bet via the real execute()."""
+    """Captures the options run_agent passes, and returns a canned result."""
 
-    def __init__(self, bet_on_call: int | None):
-        self.calls: list[dict] = []
-        self.bet_on_call = bet_on_call
+    def __init__(self, forced_followup=False, usage=None):
+        self.captured_options = None
+        self.call_count = 0
+        self.forced_followup = forced_followup
+        self.usage = usage or {
+            "input_tokens": 1000, "output_tokens": 200,
+            "cache_write_tokens": 0, "cache_read_tokens": 0,
+        }
 
-    def run(self, model, system_prompt, user_prompt, schemas, execute, max_turns):
-        call_index = len(self.calls) + 1
-        self.calls.append(
-            {"user_prompt": user_prompt, "max_turns": max_turns, "system_prompt": system_prompt}
-        )
-        if self.bet_on_call == call_index:
-            execute(
-                "place_bet",
-                {
-                    "ticker": "T1",
-                    "side": "yes",
-                    "contracts": 1,
-                    "limit_price_cents": 50,
-                    "forecast_prob": 0.55,
-                    "reasoning": "forced-bet test",
-                },
-            )
-        return {"turns": 3, "final_text": f"done call {call_index}"}
+    def run(self, model, system_prompt, user_prompt, schemas, execute, max_turns, options=None):
+        self.call_count += 1
+        self.captured_options = options
+        return {
+            "turns": 3,
+            "final_text": "done",
+            "usage": self.usage,
+            "forced_followup": self.forced_followup,
+        }
 
 
-def run_with_fake_adapter(monkeypatch, adapter):
-    # `from . import anthropic_agent as adapter` inside run_agent resolves via
-    # the already-imported package attribute, not sys.modules -- so patch the
-    # real module's `run` function directly (same technique as test_adapters.py).
+def run_with(monkeypatch, adapter):
     monkeypatch.setattr(runner, "has_api_key", lambda spec: True)
     monkeypatch.setattr("arena.agents.anthropic_agent.run", adapter.run)
     ctx = make_ctx()
     spec = AgentSpec(name="claude", provider="anthropic", model="m")
-    result = runner.run_agent(spec, ctx, system_prompt="SYSTEM", max_turns=10)
-    return result, ctx, adapter
+    return runner.run_agent(spec, ctx, system_prompt="SYSTEM", max_turns=10), ctx
 
 
-class TestForcedBetBackstop:
-    def test_bets_on_first_try_no_nudge(self, monkeypatch):
-        adapter = RecordingAdapter(bet_on_call=1)
-        result, ctx, adapter = run_with_fake_adapter(monkeypatch, adapter)
-        assert len(adapter.calls) == 1
-        assert adapter.calls[0]["user_prompt"] == runner.USER_KICKOFF
-        assert result["forced_bet_nudge"] is False
-        assert result["turns"] == 3
-        assert len(ctx.bets_placed) == 1
+class TestRunnerWiring:
+    def test_calls_adapter_exactly_once(self, monkeypatch):
+        adapter = RecordingAdapter()
+        run_with(monkeypatch, adapter)
+        assert adapter.call_count == 1  # no more second full run
 
-    def test_passes_then_forced_to_bet(self, monkeypatch):
-        adapter = RecordingAdapter(bet_on_call=2)
-        result, ctx, adapter = run_with_fake_adapter(monkeypatch, adapter)
-        assert len(adapter.calls) == 2
-        assert adapter.calls[0]["user_prompt"] == runner.USER_KICKOFF
-        assert adapter.calls[1]["user_prompt"] == runner.FORCE_BET_KICKOFF
-        # same system prompt both times -- fairness: no extra/different info
-        assert adapter.calls[0]["system_prompt"] == adapter.calls[1]["system_prompt"] == "SYSTEM"
-        # run_agent is called with max_turns=10 in this test, which is below
-        # FORCE_BET_MAX_TURNS (20) -- the retry respects the smaller cap.
-        assert adapter.calls[1]["max_turns"] == 10
-        assert result["forced_bet_nudge"] is True
-        assert result["turns"] == 6  # 3 + 3
-        assert result["final_text"] == "done call 2"
-        assert len(ctx.bets_placed) == 1
+    def test_passes_cost_control_options(self, monkeypatch):
+        adapter = RecordingAdapter()
+        run_with(monkeypatch, adapter)
+        opts = adapter.captured_options
+        assert opts is not None
+        assert opts.effort == "medium"
+        assert opts.max_searches == 5
+        assert opts.budget_cents == 100
+        assert callable(opts.cost_of)
+        assert callable(opts.should_continue)
+        assert opts.followup_prompt == runner.FORCE_BET_KICKOFF
 
-    def test_passes_both_times_still_reports_zero_bets_honestly(self, monkeypatch):
-        adapter = RecordingAdapter(bet_on_call=None)
-        result, ctx, adapter = run_with_fake_adapter(monkeypatch, adapter)
-        assert len(adapter.calls) == 2
-        assert result["forced_bet_nudge"] is True
-        assert ctx.bets_placed == []  # never fabricates a bet on the model's behalf
+    def test_should_continue_reflects_bets_placed(self, monkeypatch):
+        adapter = RecordingAdapter()
+        _, ctx = run_with(monkeypatch, adapter)
+        opts = adapter.captured_options
+        # No bets placed -> the adapter would be told to keep going.
+        assert opts.should_continue() is True
+        ctx.bets_placed.append({"fake": "bet"})
+        assert opts.should_continue() is False
 
-    def test_forced_retry_turn_budget_never_exceeds_configured_max(self, monkeypatch):
-        adapter = RecordingAdapter(bet_on_call=None)
+    def test_cost_of_computes_from_spec_prices(self, monkeypatch):
+        adapter = RecordingAdapter()
+        run_with(monkeypatch, adapter)
+        # spec has no prices set in this test -> cost is 0, but callable works.
+        assert adapter.captured_options.cost_of({"input_tokens": 1_000_000}) == 0
+
+    def test_surfaces_forced_followup_flag(self, monkeypatch):
+        adapter = RecordingAdapter(forced_followup=True)
+        summary, _ = run_with(monkeypatch, adapter)
+        assert summary["forced_bet_nudge"] is True
+
+    def test_no_nudge_when_adapter_did_not_follow_up(self, monkeypatch):
+        adapter = RecordingAdapter(forced_followup=False)
+        summary, _ = run_with(monkeypatch, adapter)
+        assert summary["forced_bet_nudge"] is False
+
+    def test_budget_disabled_when_zero(self, monkeypatch):
+        adapter = RecordingAdapter()
         monkeypatch.setattr(runner, "has_api_key", lambda spec: True)
         monkeypatch.setattr("arena.agents.anthropic_agent.run", adapter.run)
         ctx = make_ctx()
+        ctx.settings.max_cost_cents_per_session = 0
         spec = AgentSpec(name="claude", provider="anthropic", model="m")
-        # max_turns smaller than FORCE_BET_MAX_TURNS -- retry must respect the cap
-        runner.run_agent(spec, ctx, system_prompt="SYSTEM", max_turns=5)
-        assert adapter.calls[1]["max_turns"] == 5
+        runner.run_agent(spec, ctx, system_prompt="SYSTEM", max_turns=10)
+        assert adapter.captured_options.budget_cents is None
