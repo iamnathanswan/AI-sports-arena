@@ -80,8 +80,13 @@ jobs:
           rm -rf site/data/local || true
 
       - uses: actions/configure-pages@v5
+      # Unique artifact name per run + attempt, so re-running a workflow never
+      # leaves two "github-pages" artifacts that make deploy-pages ambiguous.
       - uses: actions/upload-pages-artifact@v3
         with:
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: site
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
