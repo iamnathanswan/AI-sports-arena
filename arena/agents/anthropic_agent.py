@@ -51,6 +51,14 @@ def run(
     final_text = ""
     usage = empty_usage()
     injected_followup = False
+    # Rolling conversation cache breakpoint. Unlike OpenAI/Gemini, Anthropic does
+    # not auto-cache the growing conversation, so without this every turn re-sends
+    # all prior tool results (large web-search payloads) at full input price. We
+    # move one ephemeral breakpoint onto the newest tool_result each turn so the
+    # whole prefix is read from cache (~10% price) next turn. Kept to a single
+    # rolling marker (+ the static system marker) to stay under the 4-breakpoint
+    # limit.
+    cache_anchor: dict | None = None
 
     while turns < max_turns:
         turns += 1
@@ -78,6 +86,13 @@ def run(
                     tool_results.append(
                         {"type": "tool_result", "tool_use_id": block.id, "content": result}
                     )
+            if tool_results:
+                # Move the rolling cache breakpoint to the newest tool_result,
+                # clearing the previous one so we never exceed the breakpoint cap.
+                if cache_anchor is not None:
+                    cache_anchor.pop("cache_control", None)
+                tool_results[-1]["cache_control"] = {"type": "ephemeral"}
+                cache_anchor = tool_results[-1]
             messages.append({"role": "user", "content": tool_results})
             continue
 
