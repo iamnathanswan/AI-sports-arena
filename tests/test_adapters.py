@@ -241,6 +241,34 @@ def test_anthropic_effort_and_search_cap_wired(monkeypatch):
     assert web_search["max_uses"] == 5
 
 
+def test_anthropic_rolling_conversation_cache(monkeypatch):
+    """Each turn's newest tool_result carries an ephemeral cache breakpoint, and
+    the previous one is cleared -- so the growing conversation is cached without
+    ever exceeding the breakpoint cap."""
+    from arena.agents import anthropic_agent
+
+    client = ConfigurableAnthropicClient(
+        [("tool", _anthropic_usage()), ("tool", _anthropic_usage()), ("end", _anthropic_usage())]
+    )
+    _patch_anthropic(monkeypatch, client)
+    anthropic_agent.run(
+        model="m", system_prompt="s", user_prompt="go", schemas=TOOL_SCHEMAS,
+        execute=fake_execute, max_turns=5,
+    )
+    # The final message list: user, assistant, tool_result(turn1), assistant,
+    # tool_result(turn2), assistant. Exactly one tool_result should carry a
+    # cache breakpoint (the most recent), never more than one at a time.
+    final_messages = client.message_snapshots[-1]
+    cached_tool_results = [
+        blk
+        for m in final_messages
+        if isinstance(m.get("content"), list)
+        for blk in m["content"]
+        if isinstance(blk, dict) and blk.get("type") == "tool_result" and "cache_control" in blk
+    ]
+    assert len(cached_tool_results) == 1
+
+
 def test_anthropic_in_session_followup(monkeypatch):
     """Model ends without betting; should_continue True -> adapter injects the
     followup and continues the SAME conversation once, no second run()."""

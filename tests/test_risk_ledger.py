@@ -81,6 +81,17 @@ class TestRisk:
         # (though it may hit the per-market cap).
         assert check_order(ledger, LIMITS, "claude", WEEK, "T0", 1, 50)
 
+    def test_unfilled_orders_do_not_consume_weekly_slots(self):
+        # An agent whose 5 resting orders never filled (all refunded) must not
+        # stay locked out -- those never became positions.
+        ledger = make_ledger(cash=100000)
+        for i in range(5):
+            order = place(ledger, ticker=f"T{i}", count=5, price=50, status="live")
+            ledger.refund_unfilled(order, filled_count=0)  # nothing filled
+        assert ledger.new_positions_in_week("claude", WEEK) == 0
+        # ...so the agent can enter a new market again.
+        assert check_order(ledger, LIMITS, "claude", WEEK, "T-fresh", 1, 50)
+
     def test_deployment_cap(self):
         limits = RiskLimits(
             max_stake_pct_per_market=100,

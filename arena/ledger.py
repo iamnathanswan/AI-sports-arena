@@ -114,10 +114,17 @@ class Ledger:
         return {o["ticker"] for o in self.open_orders(agent)}
 
     def new_positions_in_week(self, agent: str, week: str) -> int:
+        # Count markets the agent actually entered this week. An order that
+        # never filled and was refunded (result == "unfilled") did NOT become a
+        # position, so it must not keep consuming a weekly slot -- otherwise an
+        # agent whose resting orders never fill gets permanently locked out.
         tickers = {
             o["ticker"]
             for o in self.data["orders"]
-            if o["agent"] == agent and o["week"] == week and o["status"] in OPEN_STATUSES
+            if o["agent"] == agent
+            and o["week"] == week
+            and o["status"] in OPEN_STATUSES
+            and o.get("result") != "unfilled"
         }
         return len(tickers)
 
