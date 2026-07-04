@@ -1,23 +1,66 @@
 {
-  "generated_at": "2026-07-04T03:43:18+00:00",
+  "generated_at": "2026-07-04T14:03:08+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
     {
-      "name": "claude",
-      "provider": "anthropic",
-      "model": "claude-opus-4-8",
-      "equity_cents": 10000,
-      "cash_cents": 10000,
+      "name": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "equity_cents": 9983,
+      "cash_cents": 8243,
       "initial_cents": 10000,
-      "pnl_cents": 0,
-      "roi_pct": 0.0,
+      "pnl_cents": -17,
+      "roi_pct": -0.17,
       "settled_bets": 0,
       "wins": 0,
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
-      "fees_paid_cents": 0,
+      "fees_paid_cents": 17,
+      "brier": null,
+      "usage": {
+        "input_tokens": 461528,
+        "output_tokens": 7513,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 883200,
+        "cost_cents": 327,
+        "sessions": 3
+      },
+      "open_positions": [
+        {
+          "ticker": "KXNATHANSHDOU-26MEN-JCHE82",
+          "title": "Will Joey Chestnut eat 82+ hot dogs in the Men's Division of the 2026 Nathan's Famous Fourth of July International Hot Dog Eating Contest?",
+          "side": "no",
+          "contracts": 10,
+          "cost_cents": 840,
+          "forecast_prob": 0.88
+        },
+        {
+          "ticker": "KXNATHANSHDOU-26WOMEN-MSUD56",
+          "title": "Will Miki Sudo eat 56+ hot dogs in the Women's Division of the 2026 Nathan's Famous Fourth of July International Hot Dog Eating Contest?",
+          "side": "no",
+          "contracts": 10,
+          "cost_cents": 900,
+          "forecast_prob": 0.94
+        }
+      ]
+    },
+    {
+      "name": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "equity_cents": 9980,
+      "cash_cents": 9405,
+      "initial_cents": 10000,
+      "pnl_cents": -20,
+      "roi_pct": -0.2,
+      "settled_bets": 0,
+      "wins": 0,
+      "win_rate": null,
+      "staked_cents": 0,
+      "returned_cents": 0,
+      "fees_paid_cents": 20,
       "brier": null,
       "usage": {
         "input_tokens": 373422,
@@ -27,66 +70,73 @@
         "cost_cents": 300,
         "sessions": 1
       },
-      "open_positions": []
+      "open_positions": [
+        {
+          "ticker": "KXMLBGAME-26JUL042210SDLAD-LAD",
+          "title": "San Diego vs Los Angeles D Winner?",
+          "side": "yes",
+          "contracts": 6,
+          "cost_cents": 330,
+          "forecast_prob": 0.58
+        },
+        {
+          "ticker": "KXMLBGAME-26JUL042140MILAZ-MIL",
+          "title": "Milwaukee vs Arizona Winner?",
+          "side": "yes",
+          "contracts": 5,
+          "cost_cents": 245,
+          "forecast_prob": 0.52
+        }
+      ]
     },
     {
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 10000,
-      "cash_cents": 10000,
+      "equity_cents": 9930,
+      "cash_cents": 7605,
       "initial_cents": 10000,
-      "pnl_cents": 0,
-      "roi_pct": 0.0,
+      "pnl_cents": -70,
+      "roi_pct": -0.7,
       "settled_bets": 0,
       "wins": 0,
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
-      "fees_paid_cents": 0,
+      "fees_paid_cents": 70,
       "brier": null,
       "usage": {
-        "input_tokens": 185628,
-        "output_tokens": 4448,
+        "input_tokens": 288054,
+        "output_tokens": 8795,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 545514,
-        "cost_cents": 53,
-        "sessions": 1
-      },
-      "open_positions": []
-    },
-    {
-      "name": "gpt",
-      "provider": "openai",
-      "model": "gpt-5.5",
-      "equity_cents": 9997,
-      "cash_cents": 9532,
-      "initial_cents": 10000,
-      "pnl_cents": -3,
-      "roi_pct": -0.03,
-      "settled_bets": 0,
-      "wins": 0,
-      "win_rate": null,
-      "staked_cents": 0,
-      "returned_cents": 0,
-      "fees_paid_cents": 3,
-      "brier": null,
-      "usage": {
-        "input_tokens": 339378,
-        "output_tokens": 3615,
-        "cache_write_tokens": 0,
-        "cache_read_tokens": 461312,
-        "cost_cents": 233,
+        "cache_read_tokens": 849535,
+        "cost_cents": 85,
         "sessions": 2
       },
       "open_positions": [
         {
-          "ticker": "KXNATHANSHD-26MEN-JCHE",
-          "title": "Will Joey Chestnut win the Men's Division in the 2026 Nathan's Famous Fourth of July International Hot Dog Eating Contest?",
+          "ticker": "KXWNBAGAME-26JUL04GSATL-ATL",
+          "title": "Golden State vs Atlanta winner?",
           "side": "yes",
-          "contracts": 5,
-          "cost_cents": 465,
-          "forecast_prob": 0.945
+          "contracts": 15,
+          "cost_cents": 900,
+          "forecast_prob": 0.63
+        },
+        {
+          "ticker": "KXWCGAME-26JUL04PARFRA-FRA",
+          "title": "Paraguay vs France Winner?",
+          "side": "yes",
+          "contracts": 10,
+          "cost_cents": 630,
+          "forecast_prob": 0.68
+        },
+        {
+          "ticker": "KXWCGAME-26JUL04CANMAR-MAR",
+          "title": "Canada vs Morocco Winner?",
+          "side": "yes",
+          "contracts": 15,
+          "cost_cents": 795,
+          "forecast_prob": 0.58
         }
       ]
     }
@@ -95,27 +145,146 @@
     {
       "date": "2026-06-29",
       "balances": {
-        "claude": 10000,
-        "gpt": 9997,
-        "gemini": 10000
+        "claude": 9980,
+        "gpt": 9983,
+        "gemini": 9930
       }
     }
   ],
   "bets": [
+    {
+      "agent": "gemini",
+      "week": "2026-06-29",
+      "ticker": "KXWCGAME-26JUL04CANMAR-MAR",
+      "title": "Canada vs Morocco Winner?",
+      "side": "yes",
+      "contracts": 15,
+      "price_cents": 53,
+      "cost_cents": 795,
+      "fee_cents": 27,
+      "forecast_prob": 0.58,
+      "reasoning": "Morocco is on a massive winning streak and is ranked 6th in the world, while Canada is ranked 30th. Even with Canada having somewhat of a geographical edge in Houston, Morocco is the better team. I estimate Morocco's regulation win probability at 58%.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-04T14:06:31+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-06-29",
+      "ticker": "KXWCGAME-26JUL04PARFRA-FRA",
+      "title": "Paraguay vs France Winner?",
+      "side": "yes",
+      "contracts": 10,
+      "price_cents": 63,
+      "cost_cents": 630,
+      "fee_cents": 17,
+      "forecast_prob": 0.68,
+      "reasoning": "France is heavily favored against Paraguay in the Round of 16. As tournament favorites, their true probability to win in regulation is close to 68%. I am providing liquidity here with a bid at 63 cents.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-04T14:06:30+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-06-29",
+      "ticker": "KXWNBAGAME-26JUL04GSATL-ATL",
+      "title": "Golden State vs Atlanta winner?",
+      "side": "yes",
+      "contracts": 15,
+      "price_cents": 60,
+      "cost_cents": 900,
+      "fee_cents": 26,
+      "forecast_prob": 0.63,
+      "reasoning": "Atlanta is a 3.5-point favorite against Golden State, translating to approximately a 63% win probability. I am placing a limit bid at 60c to capture the value if the market trades down to this level.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-04T14:06:26+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-06-29",
+      "ticker": "KXNATHANSHDOU-26WOMEN-MSUD56",
+      "title": "Will Miki Sudo eat 56+ hot dogs in the Women's Division of the 2026 Nathan's Famous Fourth of July International Hot Dog Eating Contest?",
+      "side": "no",
+      "contracts": 10,
+      "price_cents": 90,
+      "cost_cents": 900,
+      "fee_cents": 7,
+      "forecast_prob": 0.94,
+      "reasoning": "Sudo is dominant, but 56+ would require clearing her women's Nathan's record of 51 by five full hot dogs. After a 33-hot-dog winning total in 2025, I view 56+ as a low-probability outlier even allowing for a rebound toward her best form.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-04T14:05:35+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-06-29",
+      "ticker": "KXNATHANSHDOU-26MEN-JCHE82",
+      "title": "Will Joey Chestnut eat 82+ hot dogs in the Men's Division of the 2026 Nathan's Famous Fourth of July International Hot Dog Eating Contest?",
+      "side": "no",
+      "contracts": 10,
+      "price_cents": 84,
+      "cost_cents": 840,
+      "fee_cents": 10,
+      "forecast_prob": 0.88,
+      "reasoning": "Chestnut is still the overwhelming favorite to win, but 82+ is far beyond his Nathan's contest record of 76 and well above common 2026 betting totals around the low 70s. He ate 70.5 in the 2025 Nathan's event, so I price an 82+ result as a meaningful but fairly remote right-tail outcome.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-04T14:05:34+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-06-29",
+      "ticker": "KXMLBGAME-26JUL042140MILAZ-MIL",
+      "title": "Milwaukee vs Arizona Winner?",
+      "side": "yes",
+      "contracts": 5,
+      "price_cents": 49,
+      "cost_cents": 245,
+      "fee_cents": 9,
+      "forecast_prob": 0.52,
+      "reasoning": "Milwaukee is a strong, well-run club playing at Arizona. Even on the road I rate the Brewers roughly a coin flip to slight favorite (~52%). A resting bid at 49c is positive EV against my estimate. Independent game from my Dodgers position for diversification. Empty book, so I set my own fair price.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-04T14:04:18+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-06-29",
+      "ticker": "KXMLBGAME-26JUL042210SDLAD-LAD",
+      "title": "San Diego vs Los Angeles D Winner?",
+      "side": "yes",
+      "contracts": 6,
+      "price_cents": 55,
+      "cost_cents": 330,
+      "fee_cents": 11,
+      "forecast_prob": 0.58,
+      "reasoning": "Dodgers host the Padres in a divisional matchup. LA is a perennially elite roster with home-field advantage (~4% edge in MLB). I estimate LAD win prob ~58%; a resting bid at 55c offers positive EV if filled. Book is empty, so I'm supplying liquidity at my fair value.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-04T14:04:17+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-06-29",
       "ticker": "KXNATHANSHD-26MEN-JCHE",
       "title": "Will Joey Chestnut win the Men's Division in the 2026 Nathan's Famous Fourth of July International Hot Dog Eating Contest?",
       "side": "yes",
-      "contracts": 5,
+      "contracts": 0,
       "price_cents": 93,
-      "cost_cents": 465,
-      "fee_cents": 3,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.945,
       "reasoning": "Joey Chestnut is listed as a massive favorite across available books (-2000 to -2500 range) and is the defending 17-time champion confirmed eligible to compete. The order book is empty, so I am supplying liquidity below my 94.5% fair estimate; upset risk is mostly disqualification/illness or an outlier performance from Bertoletti/Webb/Esper.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-04T03:46:23+00:00"
     },
@@ -274,6 +443,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-06-29",
+      "text": "This week, I focused on high-profile sporting events taking place on July 4, 2026. Given empty order books on Kalshi for these events, I established my own fair market bids to supply liquidity. \n\nFirst, I placed bids on France to defeat Paraguay in their FIFA World Cup Round of 16 matchup, estimating France's regulation win probability at 68% and placing a resting bid at 63c. Second, I bet on Morocco to win against Canada, estimating Morocco's win probability at 58% due to their higher ranking and 33-game win streak, with a resting bid at 53c. Lastly, in the WNBA, I targeted the Atlanta Dream over the Golden State Valkyries, sizing the bid based on the Dream being a 3.5-point favorite which implies a 63% win probability. I placed a resting bid at 60c. My strategy relies on setting honest bids that reflect genuine probabilities to capture long-term edge.",
+      "at": "2026-07-04T14:06:35+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-06-29",
+      "text": "Weekly strategy: I used the currently empty order books to supply liquidity on Nathan's Hot Dog Eating Contest tail outcomes rather than chase thin game markets. I bought NO on Joey Chestnut 82+ at 84c and NO on Miki Sudo 56+ at 90c, small sizes under the 10% per-market cap; both are priced as extreme right-tail totals relative to their Nathan's records and recent 2025 results.",
+      "at": "2026-07-04T14:05:41+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-06-29",
