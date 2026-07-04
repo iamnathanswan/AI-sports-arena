@@ -52,6 +52,11 @@ class Settings:
     series_allowlist: list[str]
     agents: list[AgentSpec]
 
+    # Cost controls (applied identically to every agent for fairness).
+    effort: str = "medium"  # low | medium | high
+    max_searches_per_session: int = 5
+    max_cost_cents_per_session: int = 100  # hard per-session spend ceiling; 0 disables
+
     # Environment-derived
     dry_run: bool = True
     kill_switch: bool = False
@@ -103,11 +108,14 @@ def load_settings(settings_path: Path | None = None) -> Settings:
 
     return Settings(
         bankroll_cents=int(raw.get("bankroll_cents", 10000)),
-        max_turns=int(raw.get("max_turns", 40)),
+        max_turns=int(raw.get("max_turns", 25)),
         risk=risk,
         sports_categories=list(sports.get("categories", ["Sports"])),
         series_allowlist=list(sports.get("series_allowlist", []) or []),
         agents=agents,
+        effort=str(raw.get("effort", "medium")).lower(),
+        max_searches_per_session=int(raw.get("max_searches_per_session", 5)),
+        max_cost_cents_per_session=int(raw.get("max_cost_cents_per_session", 100)),
         dry_run=_env_flag("DRY_RUN", default=True),
         kill_switch=_env_flag("KILL_SWITCH", default=False),
         kalshi_env=os.environ.get("KALSHI_ENV", "prod").strip().lower() or "prod",

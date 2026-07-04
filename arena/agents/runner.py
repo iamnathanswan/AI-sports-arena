@@ -12,27 +12,27 @@ from datetime import date
 from pathlib import Path
 
 from ..config import AgentSpec, Settings
-from ..pricing import add_usage, compute_cost_cents, empty_usage
+from ..pricing import compute_cost_cents, empty_usage
 from ..tools import TOOL_SCHEMAS, ToolContext, execute_tool
+from .base import RunOptions
 
 PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "system.md"
 USER_KICKOFF = "Begin your weekly betting session now."
 
 # Fairness-preserving backstop: every agent's system prompt already mandates at
-# least one bet per session. If a model still ends without placing one (despite
-# the prompt), every agent gets exactly one identical, forced second attempt
-# before the session is allowed to end with zero bets. Same nudge, same wording,
-# same turn budget for every model — no agent gets an advantage from complying
-# on the first try vs. the second.
+# least one bet per session. If a model would end without placing one, the
+# adapter injects this nudge and continues the SAME conversation once (reusing
+# the research it already did, rather than paying for a fresh second session).
+# Same nudge, same wording for every model.
 FORCE_BET_KICKOFF = (
-    "Your last session ended without placing any bet, which violates your mandate "
-    "to place at least one bet every session. Re-check the board and place your "
-    "single most defensible bet now, sized conservatively if your edge is thin — "
-    "even one contract is fine. Only end without betting if you can confirm there "
-    "are truly zero open sports markets anywhere on the exchange right now; if so, "
-    "say that plainly via record_note."
+    "You are about to end this session without placing any bet, which violates "
+    "your mandate to place at least one bet every session. From the markets you "
+    "already reviewed, place your single most defensible bet now, sized "
+    "conservatively if your edge is thin — even one contract is fine. Only end "
+    "without betting if you have confirmed there are truly zero open sports "
+    "markets anywhere on the exchange right now; if so, say that plainly via "
+    "record_note."
 )
-FORCE_BET_MAX_TURNS = 20
 
 REQUIRED_ENV = {
     "anthropic": "ANTHROPIC_API_KEY",
@@ -51,6 +51,7 @@ def build_system_prompt(settings: Settings, week: str, today: date) -> str:
         "{{MAX_DEPLOYED_PCT}}": f"{settings.risk.max_deployed_pct:.0f}",
         "{{MIN_PRICE}}": str(settings.risk.min_price_cents),
         "{{MAX_PRICE}}": str(settings.risk.max_price_cents),
+        "{{MAX_SEARCHES}}": str(settings.max_searches_per_session),
     }
     for token, value in replacements.items():
         text = text.replace(token, value)
@@ -95,6 +96,19 @@ def run_agent(spec: AgentSpec, ctx: ToolContext, system_prompt: str, max_turns: 
             summary["error"] = f"unknown provider {spec.provider!r}"
             return summary
 
+        settings = ctx.settings
+        options = RunOptions(
+            effort=settings.effort,
+            max_searches=settings.max_searches_per_session,
+            budget_cents=settings.max_cost_cents_per_session or None,
+            cost_of=lambda u: compute_cost_cents(spec, u),
+            # Mandatory-bet backstop: if the model would end without betting,
+            # the adapter continues the SAME session (reusing its cached
+            # research) rather than paying for a whole fresh second run.
+            followup_prompt=FORCE_BET_KICKOFF,
+            should_continue=lambda: not ctx.bets_placed,
+        )
+
         result = adapter.run(
             model=spec.model,
             system_prompt=system_prompt,
@@ -102,23 +116,10 @@ def run_agent(spec: AgentSpec, ctx: ToolContext, system_prompt: str, max_turns: 
             schemas=TOOL_SCHEMAS,
             execute=execute,
             max_turns=max_turns,
+            options=options,
         )
         summary.update(result)
-
-        if not ctx.bets_placed:
-            forced = adapter.run(
-                model=spec.model,
-                system_prompt=system_prompt,
-                user_prompt=FORCE_BET_KICKOFF,
-                schemas=TOOL_SCHEMAS,
-                execute=execute,
-                max_turns=min(max_turns, FORCE_BET_MAX_TURNS),
-            )
-            summary["turns"] += forced.get("turns", 0)
-            summary["final_text"] = forced.get("final_text", summary["final_text"])
-            summary["forced_bet_nudge"] = True
-            add_usage(summary["usage"], forced.get("usage"))
-
+        summary["forced_bet_nudge"] = result.get("forced_followup", False)
         summary["cost_cents"] = compute_cost_cents(spec, summary["usage"])
     except Exception as exc:
         summary["error"] = f"{type(exc).__name__}: {exc}"
