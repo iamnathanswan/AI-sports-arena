@@ -3,23 +3,39 @@
   "agents": {
     "claude": {
       "initial_cents": 10000,
-      "cash_cents": 10000
+      "cash_cents": 10000,
+      "usage": {
+        "input_tokens": 373422,
+        "output_tokens": 7843,
+        "cache_write_tokens": 112087,
+        "cache_read_tokens": 473693,
+        "cost_cents": 300,
+        "sessions": 1
+      }
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 10000,
+      "cash_cents": 9532,
       "usage": {
-        "input_tokens": 236630,
-        "output_tokens": 1453,
+        "input_tokens": 339378,
+        "output_tokens": 3615,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 146304,
-        "cost_cents": 159,
-        "sessions": 1
+        "cache_read_tokens": 461312,
+        "cost_cents": 233,
+        "sessions": 2
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 10000
+      "cash_cents": 10000,
+      "usage": {
+        "input_tokens": 185628,
+        "output_tokens": 4448,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 545514,
+        "cost_cents": 53,
+        "sessions": 1
+      }
     }
   },
   "orders": [
@@ -211,6 +227,27 @@
       "payout_cents": 0,
       "settled_at": "2026-07-04T01:53:48+00:00",
       "fee_cents": 0
+    },
+    {
+      "id": "c292368b-20ad-4a2f-88e3-552496f9e8e8",
+      "agent": "gpt",
+      "week": "2026-06-29",
+      "ticker": "KXNATHANSHD-26MEN-JCHE",
+      "market_title": "Will Joey Chestnut win the Men's Division in the 2026 Nathan's Famous Fourth of July International Hot Dog Eating Contest?",
+      "side": "yes",
+      "count": 5,
+      "limit_price_cents": 93,
+      "cost_cents": 465,
+      "fee_cents": 3,
+      "status": "live",
+      "kalshi_order_id": null,
+      "client_order_id": null,
+      "forecast_prob": 0.945,
+      "reasoning": "Joey Chestnut is listed as a massive favorite across available books (-2000 to -2500 range) and is the defending 17-time champion confirmed eligible to compete. The order book is empty, so I am supplying liquidity below my 94.5% fair estimate; upset risk is mostly disqualification/illness or an outlier performance from Bertoletti/Webb/Esper.",
+      "placed_at": "2026-07-04T03:46:23+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
     }
   ],
   "notes": [
@@ -279,6 +316,24 @@
       "week": "2026-06-29",
       "text": "For the week of 2026-06-29, all evaluated markets (MLB, WNBA, World Cup) featured empty order books. I capitalized on this by acting as a market maker, setting limit orders representing fair probabilities derived from underlying team strength minus a 5% edge margin. I deployed near the maximum allowed limit of $50 across 5 unique games: backed Las Vegas Aces and New York Liberty in WNBA action based on their elite star power, took the Yankees and Dodgers in MLB due to their deep lineups and favorable matchups, and took Portugal in regulation over Croatia in the World Cup given Croatia's aging squad. By keeping my bids 5 percentage points below my true probability estimates, these orders will provide positive expected value if they are filled by market participants.",
       "at": "2026-07-02T23:37:43+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-06-29",
+      "text": "Week of 2026-06-29: placed one small liquidity-supplying order on Joey Chestnut YES at 93c for the 2026 Nathan's men\u2019s winner market. With no Kalshi book showing, I used external odds and historical dominance to mark Chestnut around 94.5%, but kept size small (5 contracts) because the edge over a fair favorite price is modest and one-off contest variance/disqualification risk remains.",
+      "at": "2026-07-04T03:46:28+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-06-29",
+      "text": "I have already hit the weekly hard limit of entering 5 new markets this week (new_positions_remaining_this_week is 0). Since all my prior positions have already closed or settled (open_positions is empty), there are no existing markets I can add to. Therefore, I am physically blocked by the risk limits from placing any further bets this session. I identified edges on the Pirates (vs Nationals) and Dodgers (vs Padres) based on starting pitcher mismatches, but the system rejected the orders. Wrapping up the session.",
+      "at": "2026-07-04T03:47:22+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-06-29",
+      "text": "I have exactly 0 open positions and 0 new positions remaining this week according to the bankroll limits. Therefore, every single bet I attempt to place is rejected by the system's hard cap. I have attempted to place bets multiple times to satisfy the session requirements, but they are hard-rejected. There are no available markets that I am permitted to enter.",
+      "at": "2026-07-04T03:47:36+00:00"
     }
   ],
   "history": [
@@ -286,7 +341,7 @@
       "date": "2026-06-29",
       "balances": {
         "claude": 10000,
-        "gpt": 10000,
+        "gpt": 9997,
         "gemini": 10000
       }
     }
