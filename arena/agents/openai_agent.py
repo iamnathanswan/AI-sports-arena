@@ -66,12 +66,14 @@ def run(
         previous_response_id = response.id
 
         if response.usage:
-            usage["input_tokens"] += response.usage.input_tokens or 0
-            usage["output_tokens"] += response.usage.output_tokens or 0
             details = getattr(response.usage, "input_tokens_details", None)
-            usage["cache_read_tokens"] += (
-                (getattr(details, "cached_tokens", 0) or 0) if details else 0
-            )
+            cached = (getattr(details, "cached_tokens", 0) or 0) if details else 0
+            # OpenAI's input_tokens INCLUDES cached tokens. Record only the
+            # uncached remainder at full input price; cached tokens are billed
+            # separately and much cheaper (avoids ~3x cost double-counting).
+            usage["input_tokens"] += max((response.usage.input_tokens or 0) - cached, 0)
+            usage["cache_read_tokens"] += cached
+            usage["output_tokens"] += response.usage.output_tokens or 0
 
         if options.over_budget(usage):
             final_text = "(stopped early: session cost ceiling reached)"

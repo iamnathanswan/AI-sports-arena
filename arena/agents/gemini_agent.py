@@ -60,6 +60,10 @@ def run(
             types.Tool(google_search=types.GoogleSearch()),
         ],
         "automatic_function_calling": types.AutomaticFunctionCallingConfig(disable=True),
+        # Required to use a built-in tool (google_search) together with custom
+        # function declarations in one request -- without this Gemini 3 rejects
+        # the call with INVALID_ARGUMENT.
+        "tool_config": types.ToolConfig(include_server_side_tool_invocations=True),
     }
     thinking = _thinking_config(options.effort)
     if thinking is not None:
@@ -77,12 +81,16 @@ def run(
         response = client.models.generate_content(model=model, contents=contents, config=config)
         um = response.usage_metadata
         if um:
-            usage["input_tokens"] += um.prompt_token_count or 0
+            # Gemini's prompt_token_count INCLUDES cached tokens. Record only the
+            # uncached remainder as full-price input so cost isn't double-counted
+            # (cached tokens are billed separately, far cheaper).
+            cached = getattr(um, "cached_content_token_count", 0) or 0
+            usage["input_tokens"] += max((um.prompt_token_count or 0) - cached, 0)
+            usage["cache_read_tokens"] += cached
             # Thinking tokens are billed as output on Gemini's pricing model.
             usage["output_tokens"] += (um.candidates_token_count or 0) + (
                 getattr(um, "thoughts_token_count", 0) or 0
             )
-            usage["cache_read_tokens"] += getattr(um, "cached_content_token_count", 0) or 0
         candidate = response.candidates[0]
         contents.append(candidate.content)
 

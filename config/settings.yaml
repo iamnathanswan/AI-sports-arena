@@ -16,10 +16,11 @@ max_turns: 25
 effort: medium
 # Soft cap on native web searches per session (also a hard cap on Anthropic).
 max_searches_per_session: 5
-# Hard per-session spend ceiling in cents ($1.00). A session that hits this
-# stops early. It's a runaway backstop, not a tight leash — tune it DOWN once
-# you've seen real per-session costs on the dashboard. 0 disables the cap.
-max_cost_cents_per_session: 100
+# Hard per-session spend ceiling in cents ($1.50). A session that hits this
+# stops early. It's a runaway backstop, not a tight leash. Now that cached
+# tokens are priced correctly (they were briefly triple-counted), real
+# per-session cost runs well under this for most sessions. 0 disables the cap.
+max_cost_cents_per_session: 150
 
 # Hard risk limits — enforced in code on every order, regardless of what any
 # model decides. Preset: Conservative.
@@ -47,7 +48,7 @@ sports:
 # it never touches the betting bankroll. Update these if a provider reprices
 # (checked as of 2026-07-02):
 #   Claude Opus 4.8:  $5.00 / $25.00  (cache write $6.25, cache read $0.50)
-#   GPT-5.5:          $5.00 / $30.00  (cache read ~50% off input, $2.50)
+#   GPT-5.5:          $5.00 / $30.00  (cache read ~90% off input, $0.50)
 #   Gemini 3.1 Pro:   $2.00 / $12.00  (cache read 10% of input, $0.20)
 agents:
   - name: claude
@@ -63,7 +64,7 @@ agents:
     price_per_million_input: 5.00
     price_per_million_output: 30.00
     price_per_million_cache_write: 5.00
-    price_per_million_cache_read: 2.50
+    price_per_million_cache_read: 0.50
   - name: gemini
     provider: google
     model: gemini-3.1-pro-preview

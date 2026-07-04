@@ -122,8 +122,10 @@ def test_openai_adapter_loop(monkeypatch):
     assert result["turns"] == 2
     # second turn chains on the first response's id
     assert fake.responses.seen_previous_ids == [None, "resp_1"]
+    # input excludes cached tokens (200 uncached + (210-50) uncached = 360);
+    # cached 50 tracked separately so it isn't charged at the full input rate.
     assert result["usage"] == {
-        "input_tokens": 410, "output_tokens": 40,
+        "input_tokens": 360, "output_tokens": 40,
         "cache_write_tokens": 0, "cache_read_tokens": 50,
     }
 
@@ -134,11 +136,13 @@ def test_openai_adapter_loop(monkeypatch):
 class FakeGeminiModels:
     def __init__(self):
         self.calls = 0
+        self.configs = []
 
     def generate_content(self, **kwargs):
         from google.genai import types
 
         self.calls += 1
+        self.configs.append(kwargs.get("config"))
         if self.calls == 1:
             part = SimpleNamespace(
                 function_call=SimpleNamespace(name="get_bankroll", args={})
@@ -175,11 +179,16 @@ def test_gemini_adapter_loop(monkeypatch):
     assert EXECUTED == [("get_bankroll", {})]
     assert result["final_text"] == "Finished."
     assert result["turns"] == 2
-    # thinking tokens (3) fold into output_tokens alongside candidates_token_count
+    # thinking tokens (3) fold into output_tokens; input excludes cached tokens
+    # (90 uncached + (95-20) uncached = 165), cached 20 tracked separately.
     assert result["usage"] == {
-        "input_tokens": 185, "output_tokens": 25,
+        "input_tokens": 165, "output_tokens": 25,
         "cache_write_tokens": 0, "cache_read_tokens": 20,
     }
+    # google_search + function calling in one request requires this flag, or
+    # Gemini 3 rejects the call with INVALID_ARGUMENT.
+    cfg = fake.models.configs[0]
+    assert cfg.tool_config.include_server_side_tool_invocations is True
 
 
 # ---------------- Cost-control options (Anthropic as representative) ----------------
