@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T23:35:06+00:00",
+  "generated_at": "2026-07-04T01:53:47+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -8,7 +8,7 @@
       "provider": "anthropic",
       "model": "claude-opus-4-8",
       "equity_cents": 10000,
-      "cash_cents": 9336,
+      "cash_cents": 10000,
       "initial_cents": 10000,
       "pnl_cents": 0,
       "roi_pct": 0.0,
@@ -17,40 +17,24 @@
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
+      "fees_paid_cents": 0,
       "brier": null,
-      "open_positions": [
-        {
-          "ticker": "KXMLBGAME-26JUL051400CWSCLE-CLE",
-          "title": "Chicago WS vs Cleveland Winner?",
-          "side": "yes",
-          "contracts": 4,
-          "cost_cents": 236,
-          "forecast_prob": 0.62
-        },
-        {
-          "ticker": "KXMLBGAME-26JUL042210SDLAD-LAD",
-          "title": "San Diego vs Los Angeles D Winner?",
-          "side": "yes",
-          "contracts": 4,
-          "cost_cents": 212,
-          "forecast_prob": 0.57
-        },
-        {
-          "ticker": "KXMLBGAME-26JUL051530TBHOU-HOU",
-          "title": "Tampa Bay vs Houston Winner?",
-          "side": "yes",
-          "contracts": 4,
-          "cost_cents": 216,
-          "forecast_prob": 0.58
-        }
-      ]
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "cost_cents": 0,
+        "sessions": 0
+      },
+      "open_positions": []
     },
     {
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
       "equity_cents": 10000,
-      "cash_cents": 9550,
+      "cash_cents": 10000,
       "initial_cents": 10000,
       "pnl_cents": 0,
       "roi_pct": 0.0,
@@ -59,24 +43,24 @@
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
+      "fees_paid_cents": 0,
       "brier": null,
-      "open_positions": [
-        {
-          "ticker": "KXATPMATCH-26JUL03SINBRO-SIN",
-          "title": "Will Jannik Sinner win the Sinner vs Brooksby: Round Of 32 match?",
-          "side": "yes",
-          "contracts": 5,
-          "cost_cents": 450,
-          "forecast_prob": 0.93
-        }
-      ]
+      "usage": {
+        "input_tokens": 236630,
+        "output_tokens": 1453,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 146304,
+        "cost_cents": 159,
+        "sessions": 1
+      },
+      "open_positions": []
     },
     {
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
       "equity_cents": 10000,
-      "cash_cents": 5121,
+      "cash_cents": 10000,
       "initial_cents": 10000,
       "pnl_cents": 0,
       "roi_pct": 0.0,
@@ -85,49 +69,17 @@
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
+      "fees_paid_cents": 0,
       "brier": null,
-      "open_positions": [
-        {
-          "ticker": "KXWNBAGAME-26JUL03CHILV-LV",
-          "title": "Chicago vs Las Vegas winner?",
-          "side": "yes",
-          "contracts": 13,
-          "cost_cents": 975,
-          "forecast_prob": 0.8
-        },
-        {
-          "ticker": "KXMLBGAME-26JUL042210SDLAD-LAD",
-          "title": "San Diego vs Los Angeles D Winner?",
-          "side": "yes",
-          "contracts": 18,
-          "cost_cents": 954,
-          "forecast_prob": 0.58
-        },
-        {
-          "ticker": "KXMLBGAME-26JUL051335MINNYY-NYY",
-          "title": "Minnesota vs New York Y Winner?",
-          "side": "yes",
-          "contracts": 18,
-          "cost_cents": 990,
-          "forecast_prob": 0.6
-        },
-        {
-          "ticker": "KXWCGAME-26JUL02PORCRO-POR",
-          "title": "Portugal vs Croatia Winner?",
-          "side": "yes",
-          "contracts": 25,
-          "cost_cents": 1000,
-          "forecast_prob": 0.45
-        },
-        {
-          "ticker": "KXWNBAGAME-26JUL03MINNY-NY",
-          "title": "Minnesota vs New York winner?",
-          "side": "yes",
-          "contracts": 16,
-          "cost_cents": 960,
-          "forecast_prob": 0.65
-        }
-      ]
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "cost_cents": 0,
+        "sessions": 0
+      },
+      "open_positions": []
     }
   ],
   "history": [
@@ -147,13 +99,14 @@
       "ticker": "KXWCGAME-26JUL02PORCRO-POR",
       "title": "Portugal vs Croatia Winner?",
       "side": "yes",
-      "contracts": 25,
+      "contracts": 0,
       "price_cents": 40,
-      "cost_cents": 1000,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.45,
       "reasoning": "Portugal has a more dynamic attack and deeper squad compared to an aging Croatia team in this World Cup knockout fixture. In regulation time, I estimate Portugal's win probability at 45%. Bidding at 40c represents a strong value play.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-02T23:37:38+00:00"
     },
@@ -163,13 +116,14 @@
       "ticker": "KXWNBAGAME-26JUL03MINNY-NY",
       "title": "Minnesota vs New York winner?",
       "side": "yes",
-      "contracts": 16,
+      "contracts": 0,
       "price_cents": 60,
-      "cost_cents": 960,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.65,
       "reasoning": "The New York Liberty possess one of the most talented rosters in WNBA history. Going up against a solid Minnesota Lynx squad, NY is still a clear favorite. I project a 65% chance of victory and am entering a limit order at 60c.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-02T23:37:38+00:00"
     },
@@ -179,13 +133,14 @@
       "ticker": "KXWNBAGAME-26JUL03CHILV-LV",
       "title": "Chicago vs Las Vegas winner?",
       "side": "yes",
-      "contracts": 13,
+      "contracts": 0,
       "price_cents": 75,
-      "cost_cents": 975,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.8,
       "reasoning": "The Las Vegas Aces remain a powerhouse in the WNBA with an elite roster featuring A'ja Wilson and Chelsea Gray. They are heavily favored against a rebuilding Chicago Sky team. I estimate their win probability at 80% and am placing a bid at 75c to capture value if filled.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-02T23:37:37+00:00"
     },
@@ -195,13 +150,14 @@
       "ticker": "KXMLBGAME-26JUL042210SDLAD-LAD",
       "title": "San Diego vs Los Angeles D Winner?",
       "side": "yes",
-      "contracts": 18,
+      "contracts": 0,
       "price_cents": 53,
-      "cost_cents": 954,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.58,
       "reasoning": "The Los Angeles Dodgers are consistently one of the strongest teams in MLB, especially at home. While the Padres are competitive, the Dodgers' deep lineup gives them a solid edge. I project a 58% win probability and bid at 53c for a reasonable margin of safety.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-02T23:37:37+00:00"
     },
@@ -211,13 +167,14 @@
       "ticker": "KXMLBGAME-26JUL051335MINNYY-NYY",
       "title": "Minnesota vs New York Y Winner?",
       "side": "yes",
-      "contracts": 18,
+      "contracts": 0,
       "price_cents": 55,
-      "cost_cents": 990,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.6,
       "reasoning": "The New York Yankees have an elite offense led by Aaron Judge and Juan Soto, making them formidable favorites against the Minnesota Twins. I estimate a 60% win probability for the Yankees. Bidding 55c provides a strong +EV proposition.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-02T23:37:37+00:00"
     },
@@ -227,13 +184,14 @@
       "ticker": "KXATPMATCH-26JUL03SINBRO-SIN",
       "title": "Will Jannik Sinner win the Sinner vs Brooksby: Round Of 32 match?",
       "side": "yes",
-      "contracts": 5,
+      "contracts": 0,
       "price_cents": 90,
-      "cost_cents": 450,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.93,
       "reasoning": "Sinner is an elite all-surface player and, in a best-of-five Wimbledon R32 match, should be a very large favorite over Brooksby, whose game can be awkward but lacks comparable serve/shotmaking firepower. I am shading the forecast down for limited live injury/form information and grass-court upset variance, but I still make Sinner clearly above 90%.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-02T23:36:58+00:00"
     },
@@ -243,13 +201,14 @@
       "ticker": "KXMLBGAME-26JUL042210SDLAD-LAD",
       "title": "San Diego vs Los Angeles D Winner?",
       "side": "yes",
-      "contracts": 4,
+      "contracts": 0,
       "price_cents": 53,
-      "cost_cents": 212,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.57,
       "reasoning": "The Dodgers, a perennially elite franchise, host San Diego. Home field plus roster strength puts LAD around 57% in a competitive divisional matchup. Resting a bid at 53 for edge on an empty book.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-02T23:36:21+00:00"
     },
@@ -259,13 +218,14 @@
       "ticker": "KXMLBGAME-26JUL051530TBHOU-HOU",
       "title": "Tampa Bay vs Houston Winner?",
       "side": "yes",
-      "contracts": 4,
+      "contracts": 0,
       "price_cents": 54,
-      "cost_cents": 216,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.58,
       "reasoning": "Houston, a consistent AL contender, hosts Tampa Bay. Home advantage plus a strong Astros core implies ~58%. Resting a bid at 54 below fair value on an empty book.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-02T23:36:21+00:00"
     },
@@ -275,13 +235,14 @@
       "ticker": "KXMLBGAME-26JUL051400CWSCLE-CLE",
       "title": "Chicago WS vs Cleveland Winner?",
       "side": "yes",
-      "contracts": 4,
+      "contracts": 0,
       "price_cents": 59,
-      "cost_cents": 236,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.62,
       "reasoning": "Cleveland hosts the Chicago White Sox, who have been among MLB's weakest rosters in recent seasons. A solid home contender vs a rebuilding club implies ~62% for Cleveland. Empty book, so resting a bid at 59 with a cushion below fair value.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-02T23:36:20+00:00"
     }
