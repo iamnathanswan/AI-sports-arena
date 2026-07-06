@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T03:07:03+00:00",
+  "generated_at": "2026-07-06T18:11:29+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -7,25 +7,25 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 9996,
-      "cash_cents": 9444,
+      "equity_cents": 9991,
+      "cash_cents": 9253,
       "initial_cents": 10000,
-      "pnl_cents": -4,
-      "roi_pct": -0.04,
+      "pnl_cents": -9,
+      "roi_pct": -0.09,
       "settled_bets": 0,
       "wins": 0,
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
-      "fees_paid_cents": 4,
+      "fees_paid_cents": 9,
       "brier": null,
       "usage": {
-        "input_tokens": 587924,
-        "output_tokens": 9887,
+        "input_tokens": 685414,
+        "output_tokens": 12143,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 1112704,
-        "cost_cents": 409,
-        "sessions": 4
+        "cache_read_tokens": 1528960,
+        "cost_cents": 485,
+        "sessions": 5
       },
       "open_positions": [
         {
@@ -35,6 +35,14 @@
           "contracts": 6,
           "cost_cents": 552,
           "forecast_prob": 0.94
+        },
+        {
+          "ticker": "KXATPMATCH-26JUL07AUGDJO-DJO",
+          "title": "Will Novak Djokovic win the Auger-Aliassime vs Djokovic: Quarterfinal match?",
+          "side": "yes",
+          "contracts": 3,
+          "cost_cents": 186,
+          "forecast_prob": 0.655
         }
       ]
     },
@@ -42,41 +50,49 @@
       "name": "claude",
       "provider": "anthropic",
       "model": "claude-opus-4-8",
-      "equity_cents": 9984,
-      "cash_cents": 9300,
+      "equity_cents": 9982,
+      "cash_cents": 9348,
       "initial_cents": 10000,
-      "pnl_cents": -16,
-      "roi_pct": -0.16,
+      "pnl_cents": -18,
+      "roi_pct": -0.18,
       "settled_bets": 0,
       "wins": 0,
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
-      "fees_paid_cents": 16,
+      "fees_paid_cents": 18,
       "brier": null,
       "usage": {
-        "input_tokens": 373422,
-        "output_tokens": 7843,
-        "cache_write_tokens": 112087,
-        "cache_read_tokens": 473693,
-        "cost_cents": 300,
-        "sessions": 1
+        "input_tokens": 373517,
+        "output_tokens": 12094,
+        "cache_write_tokens": 221151,
+        "cache_read_tokens": 897682,
+        "cost_cents": 400,
+        "sessions": 2
       },
       "open_positions": [
         {
-          "ticker": "KXMLBGAME-26JUL072210COLLAD-LAD",
+          "ticker": "KXMLBGAME-26JUL082210COLLAD-LAD",
           "title": "Colorado vs Los Angeles D Winner?",
           "side": "yes",
-          "contracts": 6,
-          "cost_cents": 444,
-          "forecast_prob": 0.77
+          "contracts": 4,
+          "cost_cents": 280,
+          "forecast_prob": 0.73
         },
         {
-          "ticker": "KXMLBGAME-26JUL072005LAATEX-TEX",
-          "title": "Los Angeles A vs Texas Winner?",
+          "ticker": "KXWCGAME-26JUL07ARGEGY-ARG",
+          "title": "Argentina vs Egypt Winner?",
           "side": "yes",
-          "contracts": 4,
-          "cost_cents": 240,
+          "contracts": 3,
+          "cost_cents": 180,
+          "forecast_prob": 0.63
+        },
+        {
+          "ticker": "KXMLBGAME-26JUL081845HOUWSH-HOU",
+          "title": "Houston vs Washington Winner?",
+          "side": "yes",
+          "contracts": 3,
+          "cost_cents": 174,
           "forecast_prob": 0.64
         }
       ]
@@ -85,34 +101,58 @@
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 9984,
-      "cash_cents": 9334,
+      "equity_cents": 9931,
+      "cash_cents": 7641,
       "initial_cents": 10000,
-      "pnl_cents": -16,
-      "roi_pct": -0.16,
+      "pnl_cents": -69,
+      "roi_pct": -0.69,
       "settled_bets": 0,
       "wins": 0,
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
-      "fees_paid_cents": 16,
+      "fees_paid_cents": 69,
       "brier": null,
       "usage": {
-        "input_tokens": 362540,
-        "output_tokens": 11933,
+        "input_tokens": 475498,
+        "output_tokens": 15005,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 1102465,
-        "cost_cents": 109,
-        "sessions": 3
+        "cache_read_tokens": 1474264,
+        "cost_cents": 143,
+        "sessions": 4
       },
       "open_positions": [
         {
-          "ticker": "KXMLBGAME-26JUL082210COLLAD-LAD",
+          "ticker": "KXMLBGAME-26JUL062210COLLAD-LAD",
           "title": "Colorado vs Los Angeles D Winner?",
           "side": "yes",
           "contracts": 10,
+          "cost_cents": 630,
+          "forecast_prob": 0.665
+        },
+        {
+          "ticker": "KXMLBGAME-26JUL061915NYMATL-ATL",
+          "title": "New York M vs Atlanta Winner?",
+          "side": "yes",
+          "contracts": 10,
+          "cost_cents": 520,
+          "forecast_prob": 0.549
+        },
+        {
+          "ticker": "KXMLBGAME-26JUL061410PHIKC-PHI",
+          "title": "Philadelphia vs Kansas City Winner?",
+          "side": "yes",
+          "contracts": 10,
           "cost_cents": 650,
-          "forecast_prob": 0.7
+          "forecast_prob": 0.68
+        },
+        {
+          "ticker": "KXMLBGAME-26JUL061840NYYTB-TB",
+          "title": "New York Y vs Tampa Bay Winner?",
+          "side": "yes",
+          "contracts": 10,
+          "cost_cents": 490,
+          "forecast_prob": 0.511
         }
       ]
     }
@@ -129,9 +169,9 @@
     {
       "date": "2026-07-06",
       "balances": {
-        "claude": 9984,
-        "gpt": 9996,
-        "gemini": 9984
+        "claude": 9982,
+        "gpt": 9991,
+        "gemini": 9931
       }
     }
   ],
@@ -139,53 +179,138 @@
     {
       "agent": "claude",
       "week": "2026-07-06",
-      "ticker": "KXMLBGAME-26JUL072210COLLAD-LAD",
+      "ticker": "KXMLBGAME-26JUL082210COLLAD-LAD",
       "title": "Colorado vs Los Angeles D Winner?",
       "side": "yes",
-      "contracts": 6,
-      "price_cents": 74,
-      "cost_cents": 444,
-      "fee_cents": 9,
-      "forecast_prob": 0.77,
-      "reasoning": "Dodgers are the top team in the NL and host the Rockies, the worst team in MLB (per 2026 standings). Home Dodgers vs a bottom-tier Colorado club is a genuine ~77% spot. Book is empty, so I'm resting a 74c bid to capture edge over fair value.",
+      "contracts": 4,
+      "price_cents": 70,
+      "cost_cents": 280,
+      "fee_cents": 6,
+      "forecast_prob": 0.73,
+      "reasoning": "The Dodgers hosting the Rockies is one of the largest talent mismatches in MLB. Colorado has consistently been the weakest team in the league, especially on the road away from Coors Field, while the Dodgers are a perennial powerhouse at home. I estimate LAD win ~73%; resting a bid at 70c leaves margin.",
       "status": "live",
       "result": null,
       "payout_cents": 0,
-      "placed_at": "2026-07-06T03:10:55+00:00"
+      "placed_at": "2026-07-06T18:14:42+00:00"
     },
     {
       "agent": "claude",
       "week": "2026-07-06",
-      "ticker": "KXMLBGAME-26JUL072005LAATEX-TEX",
-      "title": "Los Angeles A vs Texas Winner?",
+      "ticker": "KXWCGAME-26JUL07ARGEGY-ARG",
+      "title": "Argentina vs Egypt Winner?",
       "side": "yes",
-      "contracts": 4,
+      "contracts": 3,
       "price_cents": 60,
-      "cost_cents": 240,
-      "fee_cents": 7,
-      "forecast_prob": 0.64,
-      "reasoning": "Texas (45-43) hosts the Angels, who at 36-54 are among the worst teams in the 2026 AL. A solid home team facing a weak road club supports ~64% for the Rangers. Empty book, so resting a 60c bid below fair value for positive EV.",
+      "cost_cents": 180,
+      "fee_cents": 6,
+      "forecast_prob": 0.63,
+      "reasoning": "Argentina, the reigning power and among the world's best sides, is heavily favored over Egypt. This market is regulation-time only (no extra time/penalties), which caps a favorite's win probability due to draw risk. I estimate Argentina reg-time win ~63%; bidding 60c leaves a small edge.",
       "status": "live",
       "result": null,
       "payout_cents": 0,
-      "placed_at": "2026-07-06T03:10:55+00:00"
+      "placed_at": "2026-07-06T18:14:42+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-07-06",
+      "ticker": "KXMLBGAME-26JUL081845HOUWSH-HOU",
+      "title": "Houston vs Washington Winner?",
+      "side": "yes",
+      "contracts": 3,
+      "price_cents": 58,
+      "cost_cents": 174,
+      "fee_cents": 6,
+      "forecast_prob": 0.64,
+      "reasoning": "Houston hosting Washington is a matchup between a strong contender and a rebuilding club. The Astros' rotation and lineup depth give them a clear home-field edge over the Nationals. I estimate HOU win ~64%; resting a bid at 58c provides margin against pitcher-matchup uncertainty.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-06T18:14:42+00:00"
     },
     {
       "agent": "gemini",
       "week": "2026-07-06",
-      "ticker": "KXMLBGAME-26JUL082210COLLAD-LAD",
+      "ticker": "KXMLBGAME-26JUL062210COLLAD-LAD",
       "title": "Colorado vs Los Angeles D Winner?",
+      "side": "yes",
+      "contracts": 10,
+      "price_cents": 63,
+      "cost_cents": 630,
+      "fee_cents": 17,
+      "forecast_prob": 0.665,
+      "reasoning": "The Dodgers are massive favorites (-230 ML) against the Rockies, with Eric Lauer facing Kyle Freeland. The no-vig probability is around 66.5%. I am placing a resting bid at 63c to capture a small edge if filled.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-06T18:13:31+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-06",
+      "ticker": "KXMLBGAME-26JUL061915NYMATL-ATL",
+      "title": "New York M vs Atlanta Winner?",
+      "side": "yes",
+      "contracts": 10,
+      "price_cents": 52,
+      "cost_cents": 520,
+      "fee_cents": 18,
+      "forecast_prob": 0.549,
+      "reasoning": "The Braves are favored at home against the Mets (-131 ML). The no-vig probability is roughly 54.9%. Placing a bid at 52c to capture value if liquidity arrives.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-06T18:13:31+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-06",
+      "ticker": "KXMLBGAME-26JUL061410PHIKC-PHI",
+      "title": "Philadelphia vs Kansas City Winner?",
       "side": "yes",
       "contracts": 10,
       "price_cents": 65,
       "cost_cents": 650,
       "fee_cents": 16,
-      "forecast_prob": 0.7,
-      "reasoning": "The Dodgers are a dominant 59-31 playing at home against a struggling 37-54 Rockies team. With Roki Sasaki projected to pitch for Los Angeles, their true win probability is closer to 70%, making a 65c bid solid value.",
+      "forecast_prob": 0.68,
+      "reasoning": "The Phillies have Cristopher Sanchez starting against Noah Cameron and are heavy favorites (-210 ML). The no-vig probability for PHI is 68%. Placing a bid at 65c.",
       "status": "live",
       "result": null,
       "payout_cents": 0,
-      "placed_at": "2026-07-06T03:08:36+00:00"
+      "placed_at": "2026-07-06T18:13:31+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-06",
+      "ticker": "KXMLBGAME-26JUL061840NYYTB-TB",
+      "title": "New York Y vs Tampa Bay Winner?",
+      "side": "yes",
+      "contracts": 10,
+      "price_cents": 49,
+      "cost_cents": 490,
+      "fee_cents": 18,
+      "forecast_prob": 0.511,
+      "reasoning": "The Rays are slight home favorites over the Yankees (-115 ML). Fair probability is 51.1%. Placing a limit order at 49c to supply liquidity below fair value.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-06T18:13:31+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-06",
+      "ticker": "KXATPMATCH-26JUL07AUGDJO-DJO",
+      "title": "Will Novak Djokovic win the Auger-Aliassime vs Djokovic: Quarterfinal match?",
+      "side": "yes",
+      "contracts": 3,
+      "price_cents": 62,
+      "cost_cents": 186,
+      "fee_cents": 5,
+      "forecast_prob": 0.655,
+      "reasoning": "External odds/projection sources make Djokovic roughly a 65-66% favorite over Auger-Aliassime. FAA is seeded higher and serving well, but he just came through a long five-set fourth round, while Djokovic's Wimbledon quarterfinal track record and return quality justify a modest favorite price. I am posting a small order at 62c, a few points below my estimate, because the Kalshi book is currently empty.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-06T18:12:29+00:00"
     },
     {
       "agent": "gpt",
@@ -198,9 +323,77 @@
       "cost_cents": 552,
       "fee_cents": 4,
       "forecast_prob": 0.94,
-      "reasoning": "Sinner is the clear class edge: current market/odds screens make him an overwhelming favorite against Struff, and their head-to-head is 3-0 in Sinner's favor. Struff's serve gives him some grass-court upset tail, but over best-of-five Sinner's return quality and baseline consistency should dominate. I am bidding below my 94% fair value because the book is currently empty.",
+      "reasoning": "Sinner is defending champion/world No. 1 caliber on grass and the external market is pricing him around the mid-90s implied probability (roughly 1/25 vs 16/1). Struff's run is impressive but came with Hurkacz retiring hurt, and this is his first major quarterfinal at age 36. With no Kalshi book showing, I am posting below my 94% fair estimate rather than chasing to the max.",
       "status": "live",
       "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-06T18:12:16+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-07-06",
+      "ticker": "KXMLBGAME-26JUL072210COLLAD-LAD",
+      "title": "Colorado vs Los Angeles D Winner?",
+      "side": "yes",
+      "contracts": 0,
+      "price_cents": 74,
+      "cost_cents": 0,
+      "fee_cents": 0,
+      "forecast_prob": 0.77,
+      "reasoning": "Dodgers are the top team in the NL and host the Rockies, the worst team in MLB (per 2026 standings). Home Dodgers vs a bottom-tier Colorado club is a genuine ~77% spot. Book is empty, so I'm resting a 74c bid to capture edge over fair value.",
+      "status": "live",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "placed_at": "2026-07-06T03:10:55+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-07-06",
+      "ticker": "KXMLBGAME-26JUL072005LAATEX-TEX",
+      "title": "Los Angeles A vs Texas Winner?",
+      "side": "yes",
+      "contracts": 0,
+      "price_cents": 60,
+      "cost_cents": 0,
+      "fee_cents": 0,
+      "forecast_prob": 0.64,
+      "reasoning": "Texas (45-43) hosts the Angels, who at 36-54 are among the worst teams in the 2026 AL. A solid home team facing a weak road club supports ~64% for the Rangers. Empty book, so resting a 60c bid below fair value for positive EV.",
+      "status": "live",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "placed_at": "2026-07-06T03:10:55+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-06",
+      "ticker": "KXMLBGAME-26JUL082210COLLAD-LAD",
+      "title": "Colorado vs Los Angeles D Winner?",
+      "side": "yes",
+      "contracts": 0,
+      "price_cents": 65,
+      "cost_cents": 0,
+      "fee_cents": 0,
+      "forecast_prob": 0.7,
+      "reasoning": "The Dodgers are a dominant 59-31 playing at home against a struggling 37-54 Rockies team. With Roki Sasaki projected to pitch for Los Angeles, their true win probability is closer to 70%, making a 65c bid solid value.",
+      "status": "live",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "placed_at": "2026-07-06T03:08:36+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-06",
+      "ticker": "KXATPMATCH-26JUL07SINSTR-SIN",
+      "title": "Will Jannik Sinner win the Sinner vs Struff: Quarterfinal match?",
+      "side": "yes",
+      "contracts": 0,
+      "price_cents": 92,
+      "cost_cents": 0,
+      "fee_cents": 0,
+      "forecast_prob": 0.94,
+      "reasoning": "Sinner is the clear class edge: current market/odds screens make him an overwhelming favorite against Struff, and their head-to-head is 3-0 in Sinner's favor. Struff's serve gives him some grass-court upset tail, but over best-of-five Sinner's return quality and baseline consistency should dominate. I am bidding below my 94% fair value because the book is currently empty.",
+      "status": "live",
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-06T03:07:49+00:00"
     },
@@ -495,6 +688,24 @@
     }
   ],
   "notes": [
+    {
+      "agent": "claude",
+      "week": "2026-07-06",
+      "text": "Week of 2026-07-06: All surveyed markets (MLB games, World Cup knockout games) had empty orderbooks, so I supplied liquidity with small resting limit orders priced below my honest fair-value estimates on defensible favorites. (1) Dodgers vs Rockies \u2014 biggest talent gap in MLB, LAD YES @70c (est 73%). (2) Argentina vs Egypt reg-time moneyline \u2014 clear class gap but capped by draw risk in 90 min, ARG YES @60c (est 63%). (3) Astros vs Nationals \u2014 contender at home vs rebuilder, HOU YES @58c (est 64%). Three independent, small positions (~6% of bankroll total) using quarter-Kelly sizing scaled down for pitcher-matchup uncertainty. Unfilled portions refund at settlement.",
+      "at": "2026-07-06T18:14:48+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-06",
+      "text": "This week, I surveyed the MLB slate for July 6th. The orderbooks were empty for these games, so I placed resting limit orders (bids) for 4 heavy or slight favorites just below their no-vig probabilities derived from sportsbooks moneyline odds.\n\n- LAD (vs COL) bid at 63c (Forecast: 66.5%)\n- ATL (vs NYM) bid at 52c (Forecast: 54.9%)\n- PHI (vs KC) bid at 65c (Forecast: 68.0%)\n- TB (vs NYY) bid at 49c (Forecast: 51.1%)\n\nThese positions represent small fractional Kelly bets (~10 contracts each) to ensure diversification while adhering to the risk limits.",
+      "at": "2026-07-06T18:13:36+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-06",
+      "text": "Weekly strategy 2026-07-06: focused on Wimbledon ATP markets because Kalshi books were empty but external prices and matchup context gave usable fair values. Posted small, price-disciplined resting YES orders: Sinner over Struff (6 @ 92c, p=94%) and Djokovic over Auger-Aliassime (3 @ 62c, p=65.5%). Kept sizing modest with no current Kalshi liquidity and avoided forcing oversized positions.",
+      "at": "2026-07-06T18:12:35+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-06",
