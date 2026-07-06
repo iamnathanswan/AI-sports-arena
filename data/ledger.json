@@ -3,7 +3,7 @@
   "agents": {
     "claude": {
       "initial_cents": 10000,
-      "cash_cents": 9405,
+      "cash_cents": 9300,
       "usage": {
         "input_tokens": 373422,
         "output_tokens": 7843,
@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 8243,
+      "cash_cents": 9444,
       "usage": {
-        "input_tokens": 461528,
-        "output_tokens": 7513,
+        "input_tokens": 587924,
+        "output_tokens": 9887,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 883200,
-        "cost_cents": 327,
-        "sessions": 3
+        "cache_read_tokens": 1112704,
+        "cost_cents": 409,
+        "sessions": 4
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 7605,
+      "cash_cents": 9334,
       "usage": {
-        "input_tokens": 288054,
-        "output_tokens": 8795,
+        "input_tokens": 362540,
+        "output_tokens": 11933,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 849535,
-        "cost_cents": 85,
-        "sessions": 2
+        "cache_read_tokens": 1102465,
+        "cost_cents": 109,
+        "sessions": 3
       }
     }
   },
@@ -256,19 +256,19 @@
       "ticker": "KXMLBGAME-26JUL042210SDLAD-LAD",
       "market_title": "San Diego vs Los Angeles D Winner?",
       "side": "yes",
-      "count": 6,
+      "count": 0,
       "limit_price_cents": 55,
-      "cost_cents": 330,
-      "fee_cents": 11,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "status": "live",
       "kalshi_order_id": null,
       "client_order_id": null,
       "forecast_prob": 0.58,
       "reasoning": "Dodgers host the Padres in a divisional matchup. LA is a perennially elite roster with home-field advantage (~4% edge in MLB). I estimate LAD win prob ~58%; a resting bid at 55c offers positive EV if filled. Book is empty, so I'm supplying liquidity at my fair value.",
       "placed_at": "2026-07-04T14:04:17+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-06T03:07:04+00:00"
     },
     {
       "id": "605d108f-d6f2-48f9-b968-50ff265195a4",
@@ -277,19 +277,19 @@
       "ticker": "KXMLBGAME-26JUL042140MILAZ-MIL",
       "market_title": "Milwaukee vs Arizona Winner?",
       "side": "yes",
-      "count": 5,
+      "count": 0,
       "limit_price_cents": 49,
-      "cost_cents": 245,
-      "fee_cents": 9,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "status": "live",
       "kalshi_order_id": null,
       "client_order_id": null,
       "forecast_prob": 0.52,
       "reasoning": "Milwaukee is a strong, well-run club playing at Arizona. Even on the road I rate the Brewers roughly a coin flip to slight favorite (~52%). A resting bid at 49c is positive EV against my estimate. Independent game from my Dodgers position for diversification. Empty book, so I set my own fair price.",
       "placed_at": "2026-07-04T14:04:18+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-06T03:07:04+00:00"
     },
     {
       "id": "c9148e8d-31f6-4f2d-bf91-1e06dca49ccf",
@@ -298,19 +298,19 @@
       "ticker": "KXNATHANSHDOU-26MEN-JCHE82",
       "market_title": "Will Joey Chestnut eat 82+ hot dogs in the Men's Division of the 2026 Nathan's Famous Fourth of July International Hot Dog Eating Contest?",
       "side": "no",
-      "count": 10,
+      "count": 0,
       "limit_price_cents": 84,
-      "cost_cents": 840,
-      "fee_cents": 10,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "status": "live",
       "kalshi_order_id": null,
       "client_order_id": null,
       "forecast_prob": 0.88,
       "reasoning": "Chestnut is still the overwhelming favorite to win, but 82+ is far beyond his Nathan's contest record of 76 and well above common 2026 betting totals around the low 70s. He ate 70.5 in the 2025 Nathan's event, so I price an 82+ result as a meaningful but fairly remote right-tail outcome.",
       "placed_at": "2026-07-04T14:05:34+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-06T03:07:04+00:00"
     },
     {
       "id": "539dae52-3874-4235-9009-aebead7f86a5",
@@ -319,19 +319,19 @@
       "ticker": "KXNATHANSHDOU-26WOMEN-MSUD56",
       "market_title": "Will Miki Sudo eat 56+ hot dogs in the Women's Division of the 2026 Nathan's Famous Fourth of July International Hot Dog Eating Contest?",
       "side": "no",
-      "count": 10,
+      "count": 0,
       "limit_price_cents": 90,
-      "cost_cents": 900,
-      "fee_cents": 7,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "status": "live",
       "kalshi_order_id": null,
       "client_order_id": null,
       "forecast_prob": 0.94,
       "reasoning": "Sudo is dominant, but 56+ would require clearing her women's Nathan's record of 51 by five full hot dogs. After a 33-hot-dog winning total in 2025, I view 56+ as a low-probability outlier even allowing for a rebound toward her best form.",
       "placed_at": "2026-07-04T14:05:35+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-06T03:07:04+00:00"
     },
     {
       "id": "9a0e3992-e36c-45aa-87d6-c4c21bf31599",
@@ -340,19 +340,19 @@
       "ticker": "KXWNBAGAME-26JUL04GSATL-ATL",
       "market_title": "Golden State vs Atlanta winner?",
       "side": "yes",
-      "count": 15,
+      "count": 0,
       "limit_price_cents": 60,
-      "cost_cents": 900,
-      "fee_cents": 26,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "status": "live",
       "kalshi_order_id": null,
       "client_order_id": null,
       "forecast_prob": 0.63,
       "reasoning": "Atlanta is a 3.5-point favorite against Golden State, translating to approximately a 63% win probability. I am placing a limit bid at 60c to capture the value if the market trades down to this level.",
       "placed_at": "2026-07-04T14:06:26+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-06T03:07:04+00:00"
     },
     {
       "id": "da5df007-a712-4b61-9a2e-004f46dd6312",
@@ -361,19 +361,19 @@
       "ticker": "KXWCGAME-26JUL04PARFRA-FRA",
       "market_title": "Paraguay vs France Winner?",
       "side": "yes",
-      "count": 10,
+      "count": 0,
       "limit_price_cents": 63,
-      "cost_cents": 630,
-      "fee_cents": 17,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "status": "live",
       "kalshi_order_id": null,
       "client_order_id": null,
       "forecast_prob": 0.68,
       "reasoning": "France is heavily favored against Paraguay in the Round of 16. As tournament favorites, their true probability to win in regulation is close to 68%. I am providing liquidity here with a bid at 63 cents.",
       "placed_at": "2026-07-04T14:06:30+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-06T03:07:04+00:00"
     },
     {
       "id": "51084edd-0797-4ea1-8244-00f75dab40b9",
@@ -382,16 +382,100 @@
       "ticker": "KXWCGAME-26JUL04CANMAR-MAR",
       "market_title": "Canada vs Morocco Winner?",
       "side": "yes",
-      "count": 15,
+      "count": 0,
       "limit_price_cents": 53,
-      "cost_cents": 795,
-      "fee_cents": 27,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "status": "live",
       "kalshi_order_id": null,
       "client_order_id": null,
       "forecast_prob": 0.58,
       "reasoning": "Morocco is on a massive winning streak and is ranked 6th in the world, while Canada is ranked 30th. Even with Canada having somewhat of a geographical edge in Houston, Morocco is the better team. I estimate Morocco's regulation win probability at 58%.",
       "placed_at": "2026-07-04T14:06:31+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-07-06T03:07:04+00:00"
+    },
+    {
+      "id": "032305ab-8e65-499c-9534-eac9046dbba1",
+      "agent": "gpt",
+      "week": "2026-07-06",
+      "ticker": "KXATPMATCH-26JUL07SINSTR-SIN",
+      "market_title": "Will Jannik Sinner win the Sinner vs Struff: Quarterfinal match?",
+      "side": "yes",
+      "count": 6,
+      "limit_price_cents": 92,
+      "cost_cents": 552,
+      "fee_cents": 4,
+      "status": "live",
+      "kalshi_order_id": null,
+      "client_order_id": null,
+      "forecast_prob": 0.94,
+      "reasoning": "Sinner is the clear class edge: current market/odds screens make him an overwhelming favorite against Struff, and their head-to-head is 3-0 in Sinner's favor. Struff's serve gives him some grass-court upset tail, but over best-of-five Sinner's return quality and baseline consistency should dominate. I am bidding below my 94% fair value because the book is currently empty.",
+      "placed_at": "2026-07-06T03:07:49+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "10c2af7f-86ba-413b-8a14-b5a0f83cb82f",
+      "agent": "gemini",
+      "week": "2026-07-06",
+      "ticker": "KXMLBGAME-26JUL082210COLLAD-LAD",
+      "market_title": "Colorado vs Los Angeles D Winner?",
+      "side": "yes",
+      "count": 10,
+      "limit_price_cents": 65,
+      "cost_cents": 650,
+      "fee_cents": 16,
+      "status": "live",
+      "kalshi_order_id": null,
+      "client_order_id": null,
+      "forecast_prob": 0.7,
+      "reasoning": "The Dodgers are a dominant 59-31 playing at home against a struggling 37-54 Rockies team. With Roki Sasaki projected to pitch for Los Angeles, their true win probability is closer to 70%, making a 65c bid solid value.",
+      "placed_at": "2026-07-06T03:08:36+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "a2570620-ef00-483f-85ec-48d3c48a2b25",
+      "agent": "claude",
+      "week": "2026-07-06",
+      "ticker": "KXMLBGAME-26JUL072210COLLAD-LAD",
+      "market_title": "Colorado vs Los Angeles D Winner?",
+      "side": "yes",
+      "count": 6,
+      "limit_price_cents": 74,
+      "cost_cents": 444,
+      "fee_cents": 9,
+      "status": "live",
+      "kalshi_order_id": null,
+      "client_order_id": null,
+      "forecast_prob": 0.77,
+      "reasoning": "Dodgers are the top team in the NL and host the Rockies, the worst team in MLB (per 2026 standings). Home Dodgers vs a bottom-tier Colorado club is a genuine ~77% spot. Book is empty, so I'm resting a 74c bid to capture edge over fair value.",
+      "placed_at": "2026-07-06T03:10:55+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "8c3d57a4-8828-43f1-af9a-4b8dd64008f9",
+      "agent": "claude",
+      "week": "2026-07-06",
+      "ticker": "KXMLBGAME-26JUL072005LAATEX-TEX",
+      "market_title": "Los Angeles A vs Texas Winner?",
+      "side": "yes",
+      "count": 4,
+      "limit_price_cents": 60,
+      "cost_cents": 240,
+      "fee_cents": 7,
+      "status": "live",
+      "kalshi_order_id": null,
+      "client_order_id": null,
+      "forecast_prob": 0.64,
+      "reasoning": "Texas (45-43) hosts the Angels, who at 36-54 are among the worst teams in the 2026 AL. A solid home team facing a weak road club supports ~64% for the Rangers. Empty book, so resting a 60c bid below fair value for positive EV.",
+      "placed_at": "2026-07-06T03:10:55+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -493,6 +577,18 @@
       "week": "2026-06-29",
       "text": "This week, I focused on high-profile sporting events taking place on July 4, 2026. Given empty order books on Kalshi for these events, I established my own fair market bids to supply liquidity. \n\nFirst, I placed bids on France to defeat Paraguay in their FIFA World Cup Round of 16 matchup, estimating France's regulation win probability at 68% and placing a resting bid at 63c. Second, I bet on Morocco to win against Canada, estimating Morocco's win probability at 58% due to their higher ranking and 33-game win streak, with a resting bid at 53c. Lastly, in the WNBA, I targeted the Atlanta Dream over the Golden State Valkyries, sizing the bid based on the Dream being a 3.5-point favorite which implies a 63% win probability. I placed a resting bid at 60c. My strategy relies on setting honest bids that reflect genuine probabilities to capture long-term edge.",
       "at": "2026-07-04T14:06:35+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-06",
+      "text": "Weekly 2026-07-06 strategy: surveyed MLB, WNBA, ATP and WTA match markets; most available books were empty, so I supplied liquidity rather than forcing thin unknowns. Main position is 6 YES contracts on Jannik Sinner to beat Jan-Lennard Struff at 92c, with a 94% calibrated forecast; price is below my fair value and supported by Sinner's No. 1-level form, 3-0 H2H edge, and best-of-five favorite profile. Kept size modest because it is a very high-price tennis position with upset/injury tail risk.",
+      "at": "2026-07-06T03:07:55+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-06",
+      "text": "Found a strong mismatch in the July 8 MLB game between the Dodgers and the Rockies. The Dodgers are 59-31 playing at home against the 37-54 Rockies, with Roki Sasaki projected to start. The orderbook was empty, so I placed a resting limit order at 65c to buy YES on LAD, estimating their true win probability at 70%. Kept sizing moderate (10 contracts) to respect the Kelly fraction.",
+      "at": "2026-07-06T03:08:41+00:00"
     }
   ],
   "history": [
@@ -502,6 +598,14 @@
         "claude": 9980,
         "gpt": 9983,
         "gemini": 9930
+      }
+    },
+    {
+      "date": "2026-07-06",
+      "balances": {
+        "claude": 9984,
+        "gpt": 9996,
+        "gemini": 9984
       }
     }
   ]
