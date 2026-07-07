@@ -1,10 +1,10 @@
 {
   "week": "2026-07-06",
-  "generated_at": "2026-07-06T18:11:29+00:00",
+  "generated_at": "2026-07-07T22:27:39+00:00",
   "dry_run": false,
   "settlement_events": [
     {
-      "order": "032305ab-8e65-499c-9534-eac9046dbba1",
+      "order": "7d611059-041f-4aff-a712-0aa67c3984bd",
       "agent": "gpt",
       "ticker": "KXATPMATCH-26JUL07SINSTR-SIN",
       "action": "refund_unfilled",
@@ -12,27 +12,67 @@
       "filled": 0
     },
     {
-      "order": "10c2af7f-86ba-413b-8a14-b5a0f83cb82f",
+      "order": "5e3f3205-1992-461a-a3ed-72775c852ce0",
+      "agent": "gpt",
+      "ticker": "KXATPMATCH-26JUL07AUGDJO-DJO",
+      "action": "refund_unfilled",
+      "refund_cents": 191,
+      "filled": 0
+    },
+    {
+      "order": "dc9b399f-5781-4938-9d55-75b5ff108ec6",
       "agent": "gemini",
-      "ticker": "KXMLBGAME-26JUL082210COLLAD-LAD",
+      "ticker": "KXMLBGAME-26JUL062210COLLAD-LAD",
+      "action": "refund_unfilled",
+      "refund_cents": 647,
+      "filled": 0
+    },
+    {
+      "order": "31558c90-d07c-461c-a8a6-02b38179a230",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL061915NYMATL-ATL",
+      "action": "refund_unfilled",
+      "refund_cents": 538,
+      "filled": 0
+    },
+    {
+      "order": "4ffcf0a5-cafc-42de-b960-03cc85392d24",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL061410PHIKC-PHI",
       "action": "refund_unfilled",
       "refund_cents": 666,
       "filled": 0
     },
     {
-      "order": "a2570620-ef00-483f-85ec-48d3c48a2b25",
-      "agent": "claude",
-      "ticker": "KXMLBGAME-26JUL072210COLLAD-LAD",
+      "order": "70d621ab-c874-4f96-a1d5-8cfa9525440f",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL061840NYYTB-TB",
       "action": "refund_unfilled",
-      "refund_cents": 453,
+      "refund_cents": 508,
       "filled": 0
     },
     {
-      "order": "8c3d57a4-8828-43f1-af9a-4b8dd64008f9",
+      "order": "533472a7-2d79-452b-8e11-e11ae0e47a97",
       "agent": "claude",
-      "ticker": "KXMLBGAME-26JUL072005LAATEX-TEX",
+      "ticker": "KXMLBGAME-26JUL082210COLLAD-LAD",
       "action": "refund_unfilled",
-      "refund_cents": 247,
+      "refund_cents": 286,
+      "filled": 0
+    },
+    {
+      "order": "160303e8-cc61-43f7-9616-c35aba4799ec",
+      "agent": "claude",
+      "ticker": "KXWCGAME-26JUL07ARGEGY-ARG",
+      "action": "refund_unfilled",
+      "refund_cents": 186,
+      "filled": 0
+    },
+    {
+      "order": "65abb0fd-f618-4ad9-a270-401ece8f34fe",
+      "agent": "claude",
+      "ticker": "KXMLBGAME-26JUL081845HOUWSH-HOU",
+      "action": "refund_unfilled",
+      "refund_cents": 180,
       "filled": 0
     }
   ],
@@ -41,55 +81,54 @@
       "agent": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "turns": 8,
-      "final_text": "Weekly betting session complete.\n\n**Bankroll start:** $100.00 equity / $100.00 cash  \n**Bets placed:**\n\n1. **Jannik Sinner YES vs Jan-Lennard Struff**\n   - **Market:** `KXATPMATCH-26JUL07SINSTR-SIN`\n   - **Order:** Buy 6 YES @ 92\u00a2\n   - **Forecast:** 94%\n   - **Rationale:** External odds showed Sinner around a mid-90s implied favorite, while Struff\u2019s run included Hurkacz retiring hurt and this is Struff\u2019s first major quarterfinal. \n\n2. **Novak Djokovic YES vs Felix Auger-Aliassime**\n   - **Market:** `KXATPMATCH-26JUL07AUGDJO-DJO`\n   - **Order:** Buy 3 YES @ 62\u00a2\n   - **Forecast:** 65.5%\n   - **Rationale:** External projections put Djokovic around 65\u201366%; FAA is dangerous but just played a five-setter, while Djokovic\u2019s Wimbledon quarterfinal profile supports a modest favorite rating. \n\n**Total committed including fees:** 747\u00a2  \n**Cash remaining:** 9,253\u00a2  \n**Strategy note recorded:** small, price-disciplined resting orders in empty Kalshi books rather than chasing negative-EV prices.",
+      "turns": 7,
+      "final_text": "Weekly betting session completed.\n\n**Bet placed**\n- **Market:** Colorado vs Los Angeles D Winner \u2014 **Los Angeles D YES**\n- **Order:** 2 contracts at **70c**\n- **Forecast probability:** **72%**\n- **Stake:** 140c + 3c fee\n- **Rationale:** I made the Dodgers a modestly positive-EV favorite at home. The listed pitching matchup showed Justin Wrobleski for Los Angeles vs. Michael Lorenzen for Colorado, with substantially stronger current-season numbers for Wrobleski, and public odds/modeling had Los Angeles in roughly the low-70% win-probability range. \ue200cite\ue202turn0search1\ue202turn0search4\ue202turn0search10\ue201\n\n**Bankroll after order**\n- **Cash remaining:** 9,857c\n- **New position:** Dodgers YES, 2 contracts\n- **Strategy note recorded:** small, disciplined position due to empty orderbook and modest edge.",
       "error": null,
       "forced_bet_nudge": false,
       "usage": {
-        "input_tokens": 97490,
-        "output_tokens": 2256,
+        "input_tokens": 89396,
+        "output_tokens": 1889,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 416256
+        "cache_read_tokens": 320128
       },
-      "cost_cents": 76,
+      "cost_cents": 66,
       "forced_followup": false,
-      "bets_placed": 2
+      "bets_placed": 1
     },
     {
       "agent": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "turns": 9,
-      "final_text": "I have completed my betting session for this week. I reviewed the MLB slate for July 6th, searched for current sportsbook odds and pitching matchups, and calculated the no-vig implied probabilities. Since the orderbooks for these events were empty, I supplied liquidity by placing resting limit bids on the favorites at prices representing a 2-3 percentage point edge relative to fair value. \n\nMy bets are:\n- **LAD (vs COL):** Bought 10 YES contracts at 63c (Forecast: 66.5%)\n- **ATL (vs NYM):** Bought 10 YES contracts at 52c (Forecast: 54.9%)\n- **PHI (vs KC):** Bought 10 YES contracts at 65c (Forecast: 68.0%)\n- **TB (vs NYY):** Bought 10 YES contracts at 49c (Forecast: 51.1%)\n\nThese positions have all been successfully placed and recorded, and I am within all set for the week.",
+      "turns": 10,
+      "final_text": "I have completed my betting session for this week. I reviewed the available MLB markets and, finding empty orderbooks, placed several resting limit orders to supply liquidity at prices slightly below true market probabilities. My positions include backing the Padres, Brewers, and Rays with appropriately sized bets that target solid 4\u20136% expected edges. I have logged my reasoning and strategy for the leaderboard.\n",
       "error": null,
       "forced_bet_nudge": false,
       "usage": {
-        "input_tokens": 112958,
-        "output_tokens": 3072,
+        "input_tokens": 105244,
+        "output_tokens": 4075,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 371799
+        "cache_read_tokens": 394036
       },
       "cost_cents": 34,
       "forced_followup": false,
-      "bets_placed": 4
+      "bets_placed": 3
     },
     {
       "agent": "claude",
       "provider": "anthropic",
       "model": "claude-opus-4-8",
-      "turns": 6,
-      "final_text": "This week I surveyed the exchange, found the in-season markets (MLB games and 2026 World Cup knockout matches), and noted that every orderbook was empty \u2014 so rather than sit out, I acted as the liquidity provider.\n\n**Bets placed (three small, independent positions, ~6% of bankroll):**\n\n1. **Dodgers over Rockies** \u2014 YES @ 70c (est. 73%). The LA/Colorado talent gap is one of the widest in MLB, magnified by the Rockies' road struggles.\n2. **Argentina over Egypt (regulation time)** \u2014 YES @ 60c (est. 63%). Clear class advantage, but I priced in real draw risk since the market excludes extra time and penalties.\n3. **Astros over Nationals** \u2014 YES @ 58c (est. 64%). Contender hosting a rebuilder; I left extra margin for unknown pitching matchups.\n\nI used quarter-Kelly sizing, scaled down further for uncertainty, and diversified across two sports and three uncorrelated games. All are resting limit orders below my fair estimates \u2014 unfilled portions simply refund at settlement, which is a perfectly acceptable outcome in an empty book. Strategy note recorded.",
-      "error": null,
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'container_id is required when there are pending tool uses generated by code execution with tools.'}, 'request_id': 'req_011CcoVNrW2vfPBQrs3vrCRd'}",
       "forced_bet_nudge": false,
       "usage": {
-        "input_tokens": 95,
-        "output_tokens": 4251,
-        "cache_write_tokens": 109064,
-        "cache_read_tokens": 423989
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
       },
-      "cost_cents": 100,
-      "forced_followup": false,
-      "bets_placed": 3
+      "cost_cents": 0,
+      "bets_placed": 2
     }
   ]
 }
