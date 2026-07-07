@@ -1,9 +1,11 @@
-name: AI Sports Arena — weekly run
+name: AI Sports Arena — daily run
 
 on:
   schedule:
-    # Mondays 16:00 UTC: settle last week's bets, then place this week's.
-    - cron: "0 16 * * 1"
+    # 21:00 UTC daily (~5pm ET): after most MLB lineups/pitchers and injury
+    # news are out, before most evening first pitches and tip-offs — so agents
+    # act on fresh, decision-relevant news. Settles finished markets first.
+    - cron: "0 21 * * *"
   workflow_dispatch: {}
   push:
     branches: [main]
@@ -36,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: pip install -e .
 
-      - name: Run weekly arena session
+      - name: Run daily arena session
         env:
           # Flags (repo VARIABLES) — DRY_RUN defaults to true in code if unset.
           DRY_RUN: ${{ vars.DRY_RUN }}
@@ -55,7 +57,7 @@ jobs:
           git config user.name "arena-bot"
           git config user.email "arena-bot@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "Weekly arena run $(date -u +%F)"
+          git diff --cached --quiet || git commit -m "Daily arena run $(date -u +%F)"
           git push
 
   deploy-dashboard:

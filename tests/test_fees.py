@@ -61,10 +61,12 @@ class TestFeeInLedger:
             )
 
     def test_risk_check_rejects_when_fee_exceeds_cash(self):
-        ledger = self._ledger(cash=550)
+        # cash exactly covers the 1100c stake (which clears the $10 minimum) but
+        # not the trading fee on top.
+        ledger = self._ledger(cash=1100)
         limits = RiskLimits()
-        fee = trading_fee_cents(10, 55)
-        decision = check_order(ledger, limits, "claude", WEEK, "T1", 10, 55, fee_cents=fee)
+        fee = trading_fee_cents(20, 55)
+        decision = check_order(ledger, limits, "claude", WEEK, "T1", 20, 55, fee_cents=fee)
         assert not decision and "fee" in decision.reason
 
     def test_refund_unfilled_returns_proportional_fee(self):

@@ -1,6 +1,11 @@
-"""Weekly orchestrator: settle last week, run each agent, write results.
+"""Daily orchestrator: settle finished markets, run each agent, write results.
 
 Usage:  python -m arena.run_week
+
+Runs once a day, timed near the day's games so agents act on fresh lineup /
+injury / weather news. Settles any markets that finished since the last run,
+then lets each agent look for a news-driven mispricing (and pass if there
+isn't one).
 
 Safety: DRY_RUN defaults to true (paper trading). A live run requires
 DRY_RUN=false AND Kalshi credentials AND KILL_SWITCH unset/false.
@@ -10,7 +15,7 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, timezone
 
 from .config import load_settings
 from .kalshi.client import KalshiClient
@@ -23,15 +28,13 @@ from .tools import ToolContext
 def main() -> int:
     settings = load_settings()
     today = date.today()
-    # "week" is the Monday of the current ISO week, not today's exact date —
-    # so a scheduled Monday run and a manual re-run on, say, Wednesday of the
-    # same week share one weekly position cap (as intended), while a run in a
-    # genuinely new week gets a fresh cap.
-    week = (today - timedelta(days=today.weekday())).isoformat()
+    # One session per day. This date labels the session's bets and the daily
+    # equity snapshot; a re-run on the same day reuses it.
+    period = today.isoformat()
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
     mode = "DRY RUN (paper trading)" if settings.dry_run else f"LIVE on Kalshi {settings.kalshi_env}"
-    print(f"=== AI Sports Arena — week of {week} — {mode} ===")
+    print(f"=== AI Sports Arena — session {period} — {mode} ===")
 
     if not settings.dry_run and not (settings.kalshi_api_key_id and settings.kalshi_private_key_pem):
         print("ERROR: DRY_RUN=false but Kalshi credentials are missing. Aborting.", file=sys.stderr)
@@ -50,7 +53,7 @@ def main() -> int:
     for spec in settings.agents:
         ledger.ensure_agent(spec.name, settings.bankroll_cents)
 
-    # 1. Settle last week's positions.
+    # 1. Settle any markets that finished since the last run.
     print("\n--- Settling open positions ---")
     events = settle_open_orders(ledger, kalshi, settings)
     for e in events:
@@ -59,17 +62,17 @@ def main() -> int:
         print("  nothing to settle")
     ledger.save(ledger_path)
 
-    # 2. Run the agents, rotating run order weekly so no model always sees
+    # 2. Run the agents, rotating run order each day so no model always sees
     #    prices first.
-    system_prompt = build_system_prompt(settings, week, today)
-    rotation = today.isocalendar().week % len(settings.agents) if settings.agents else 0
+    system_prompt = build_system_prompt(settings, today)
+    rotation = today.toordinal() % len(settings.agents) if settings.agents else 0
     lineup = settings.agents[rotation:] + settings.agents[:rotation]
 
     results = []
     for spec in lineup:
         print(f"\n--- {spec.name} ({spec.provider}/{spec.model}) ---")
         ctx = ToolContext(
-            kalshi=kalshi, ledger=ledger, settings=settings, agent=spec.name, week=week
+            kalshi=kalshi, ledger=ledger, settings=settings, agent=spec.name, week=period
         )
         result = run_agent(spec, ctx, system_prompt, settings.max_turns)
         result["bets_placed"] = len(ctx.bets_placed)
@@ -77,8 +80,7 @@ def main() -> int:
         if result.get("error"):
             print(f"  ERROR: {result['error']}")
         else:
-            nudge = " (forced-bet nudge triggered)" if result.get("forced_bet_nudge") else ""
-            print(f"  turns={result['turns']} bets={result['bets_placed']}{nudge}")
+            print(f"  turns={result['turns']} bets={result['bets_placed']}")
             usage = result.get("usage") or {}
             tokens_in = usage.get("input_tokens", 0)
             tokens_out = usage.get("output_tokens", 0)
@@ -92,7 +94,7 @@ def main() -> int:
         ledger.save(ledger_path)  # crash safety: persist after each agent
 
     # 3. Snapshot + outputs.
-    ledger.snapshot(week)
+    ledger.snapshot(period)  # one equity point per day
     ledger.save(ledger_path)
 
     leaderboard = build_leaderboard(ledger, settings, generated_at=now)
@@ -100,12 +102,15 @@ def main() -> int:
         json.dumps(leaderboard, indent=2) + "\n"
     )
 
-    weekly_dir = settings.data_dir / "weekly"
-    weekly_dir.mkdir(parents=True, exist_ok=True)
-    (weekly_dir / f"{week}.json").write_text(
+    # Per-run archive, keyed by the run timestamp so same-day re-runs don't
+    # clobber each other.
+    runs_dir = settings.data_dir / "runs"
+    runs_dir.mkdir(parents=True, exist_ok=True)
+    run_stamp = now.replace(":", "").replace("+0000", "Z")
+    (runs_dir / f"{run_stamp}.json").write_text(
         json.dumps(
             {
-                "week": week,
+                "session": period,
                 "generated_at": now,
                 "dry_run": settings.dry_run,
                 "settlement_events": events,

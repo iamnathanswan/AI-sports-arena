@@ -32,6 +32,7 @@ def check_order(
     limit_price_cents: int,
     kill_switch: bool = False,
     fee_cents: int = 0,
+    forecast_prob: float | None = None,
 ) -> RiskDecision:
     if kill_switch:
         return RiskDecision(False, "KILL_SWITCH is active — all order placement is halted.")
@@ -47,6 +48,34 @@ def check_order(
         )
 
     cost = count * limit_price_cents
+
+    # Minimum stake per bet.
+    if cost < limits.min_stake_cents_per_market:
+        return RiskDecision(
+            False,
+            f"stake {cost}c is below the {limits.min_stake_cents_per_market}c minimum per bet "
+            f"(${limits.min_stake_cents_per_market / 100:.0f}) — increase the number of contracts.",
+        )
+
+    # Net-EV gate. forecast_prob is the model's stated probability that the side
+    # it is buying wins, so gross value per contract is forecast_prob*100c while
+    # the market charges limit_price_cents + fee for it. We require the edge to
+    # clear price AND fee by a margin -- this is what makes the bot pass on
+    # fairly-priced markets instead of bleeding fees on coin-flips. (The stated
+    # probability is Brier-scored after settlement, so inflating it to clear the
+    # gate is punished on the public leaderboard.)
+    if forecast_prob is not None:
+        fee_per_contract = fee_cents / count if count else 0
+        net_edge = forecast_prob * 100 - limit_price_cents - fee_per_contract
+        if net_edge < limits.min_edge_cents_per_contract:
+            return RiskDecision(
+                False,
+                f"net edge is {net_edge:.1f}c/contract (your {forecast_prob * 100:.0f}c fair value "
+                f"minus the {limit_price_cents}c price and {fee_per_contract:.1f}c fee), under the "
+                f"{limits.min_edge_cents_per_contract}c minimum — too close to fairly priced to beat "
+                "the fee. Pass, or find a bigger mispricing.",
+            )
+
     cash = ledger.cash(agent)
     # Cash must cover stake plus the trading fee. The position-size caps below
     # are measured on stake only -- the fee is an expense, not capital at risk.
@@ -58,20 +87,21 @@ def check_order(
 
     equity = ledger.equity(agent)
 
-    # Per-market cap counts what's already staked on this ticker plus the new order.
+    # Per-market maximum: what's already staked on this ticker plus the new order.
     existing_on_ticker = sum(
         o["cost_cents"] for o in ledger.open_orders(agent) if o["ticker"] == ticker
     )
-    market_cap = int(equity * limits.max_stake_pct_per_market / 100)
-    if existing_on_ticker + cost > market_cap:
+    if existing_on_ticker + cost > limits.max_stake_cents_per_market:
         return RiskDecision(
             False,
             f"stake on {ticker} would be {existing_on_ticker + cost}c, exceeding the "
-            f"per-market cap of {market_cap}c ({limits.max_stake_pct_per_market:.0f}% of equity).",
+            f"per-market cap of {limits.max_stake_cents_per_market}c "
+            f"(${limits.max_stake_cents_per_market / 100:.0f}).",
         )
 
-    # Weekly new-position cap (entering a market you already hold doesn't count).
-    if ticker not in ledger.open_tickers(agent):
+    # Weekly new-position cap (0 = unlimited). Entering a market you already hold
+    # doesn't count as a new position.
+    if limits.max_new_positions_per_week > 0 and ticker not in ledger.open_tickers(agent):
         if ledger.new_positions_in_week(agent, week) >= limits.max_new_positions_per_week:
             return RiskDecision(
                 False,

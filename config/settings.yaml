@@ -5,7 +5,7 @@
 # 10000 cents = $100. Total money at risk = bankroll_cents x number of agents.
 bankroll_cents: 10000
 
-# Max tool-use turns per agent per weekly run (hard stop on runaway loops).
+# Max tool-use turns per agent per daily session (hard stop on runaway loops).
 max_turns: 25
 
 # --- Cost controls (applied identically to every agent, so the comparison
@@ -17,20 +17,26 @@ effort: medium
 # Soft cap on native web searches per session (also a hard cap on Anthropic).
 max_searches_per_session: 5
 # Hard per-session spend ceiling in cents ($1.50). A session that hits this
-# stops early. It's a runaway backstop, not a tight leash. Now that cached
-# tokens are priced correctly (they were briefly triple-counted), real
-# per-session cost runs well under this for most sessions. 0 disables the cap.
+# stops early. It's a runaway backstop, not a tight leash. The bot now runs
+# DAILY, so budget cost accordingly (~7x a weekly cadence); dropping the
+# forced-bet rule means edge-less days end cheaply. 0 disables the cap.
 max_cost_cents_per_session: 150
 
 # Hard risk limits — enforced in code on every order, regardless of what any
-# model decides. Preset: Conservative.
+# model decides.
 risk:
-  max_stake_pct_per_market: 10     # max % of an agent's current equity on one market
-  max_new_positions_per_week: 5    # max new markets an agent can enter per weekly run
-  max_deployed_pct: 50             # max % of equity tied up in open positions at once
-  min_price_cents: 5               # refuse extreme longshots / near-certainties
+  min_stake_cents_per_market: 1000  # each bet must stake at least this ($10)
+  max_stake_cents_per_market: 2000  # at most this staked on one market ($20)
+  # Net-EV gate: a bet's stated edge must beat the price AND the fee by at least
+  # this many cents per contract. This is the "no fair-value bets" rule that
+  # stops the bot bleeding fees on coin-flips. Raise it to bet only bigger
+  # mispricings; lower it (min 1) to act on thinner edges.
+  min_edge_cents_per_contract: 3
+  max_new_positions_per_week: 0     # 0 = unlimited new markets (no weekly cap)
+  max_deployed_pct: 50              # max % of equity tied up in open positions at once
+  min_price_cents: 5                # refuse extreme longshots / near-certainties
   max_price_cents: 95
-  order_expiration_minutes: 60     # live limit orders auto-expire after this
+  order_expiration_minutes: 60      # live limit orders auto-expire after this
 
 # Which sports markets agents may see and bet on.
 sports:

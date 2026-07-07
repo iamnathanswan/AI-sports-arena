@@ -2,11 +2,15 @@
 
 **Claude vs GPT vs Gemini, betting real sports markets — same bankroll, same rules, same tools. May the best model win.**
 
-Every Monday, each AI model gets a betting session on [Kalshi](https://kalshi.com) (a CFTC-regulated prediction exchange where sports outcomes trade as binary contracts). Each agent manages its own $100 bankroll, researches the week's open markets, and places bets under identical conditions:
+Every day, each AI model gets a betting session on [Kalshi](https://kalshi.com) (a CFTC-regulated prediction exchange where sports outcomes trade as binary contracts). Each agent manages its own $100 bankroll, hunts for a **news-driven mispricing** in that day's games, and places bets under identical conditions:
 
-- **One system prompt** ([`arena/prompts/system.md`](arena/prompts/system.md)) — betting best practices: expected-value discipline, quarter-Kelly sizing, diversification, no chasing losses, honest probability forecasts.
+- **One system prompt** ([`arena/prompts/system.md`](arena/prompts/system.md)) — a news-first, edge-only strategy: find fresh, decision-relevant news (lineups, injuries, pitchers, weather) the market hasn't priced yet, bet only when the edge clears the price *and* the fee, quarter-Kelly sizing, and **pass when there's no edge** (a no-bet day is a valid outcome, not a failure).
 - **One tool set** ([`arena/tools.py`](arena/tools.py)) — browse markets, check orderbooks, place bets, record reasoning. Provider adapters translate wire formats only; behavior is identical.
-- **One risk layer** ([`arena/risk.py`](arena/risk.py)) — hard limits enforced in code, no matter what any model decides.
+- **One risk layer** ([`arena/risk.py`](arena/risk.py)) — hard limits enforced in code, including a **net-EV gate** that rejects any bet whose stated edge doesn't beat the price and fee by a margin. No matter what any model decides.
+
+### Strategy: why news, and why not speed
+
+Viral stories of AI bots making fortunes on prediction markets come from two very different tactics. One is **latency arbitrage** — reacting to the pricing engine in milliseconds — which is pure high-frequency trading; a scheduled bot cannot and should not compete there. The other is **news repricing** — estimating how breaking news moves a probability and trading before the market catches up — which is exactly what a strong reasoning model *can* do. This arena commits to the second: it runs daily near game time, leans on each model's judgment over fresh news in softer/lower-liquidity markets, and refuses fair-value bets that only feed the fee. (Reality check: most prediction-market wallets lose money and the success stories are heavily survivorship-biased — the goal here is a disciplined, positive-EV process, not a get-rich screenshot.)
 
 A public dashboard (GitHub Pages) tracks bankrolls, ROI, win rates, and forecast calibration (Brier scores), with every bet's reasoning on the record.
 
@@ -21,9 +25,10 @@ A public dashboard (GitHub Pages) tracks bankrolls, ROI, win rates, and forecast
 ## How it works
 
 ```
-GitHub Actions (Mondays 16:00 UTC)
-  1. settle    — resolve last week's markets, reconcile real fills, update per-agent P&L
-  2. compete   — each agent runs its session (order rotates weekly), placing risk-checked bets
+GitHub Actions (daily, 21:00 UTC — ~5pm ET, after lineups are out)
+  1. settle    — resolve finished markets, reconcile real fills, update per-agent P&L
+  2. compete   — each agent runs its session (order rotates daily), placing risk-checked
+                 bets only where a news-driven edge clears the net-EV gate (or passing)
   3. publish   — results committed to data/, dashboard deployed to GitHub Pages
 ```
 
@@ -36,7 +41,7 @@ All agents trade through **one** Kalshi account. A virtual ledger ([`data/ledger
 | `DRY_RUN` (repo variable) | **Defaults to `true`** — agents decide, everything is logged and paper-settled against real market results, but no real orders are sent. Set to `false` to go live. |
 | `KILL_SWITCH` (repo variable) | `true` instantly halts all order placement (settlement still runs). |
 | `KALSHI_ENV` (repo variable) | `prod` or `demo` (Kalshi's fake-money sandbox). |
-| Risk limits (code-enforced) | Max 10% of equity per market · max 5 new positions/week · max 50% of equity deployed · prices 5–95c only · can never spend more cash than allocated. |
+| Risk limits (code-enforced) | ≥3c net edge per contract after price + fee (no fair-value bets) · $10–$20 staked per market · max 50% of equity deployed · prices 5–95c only · can never spend more cash than allocated. |
 
 ## Setup — what you need to do
 
@@ -47,10 +52,10 @@ All agents trade through **one** Kalshi account. A virtual ledger ([`data/ledger
    - `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `GEMINI_API_KEY` — provider keys (an agent whose key is missing is skipped, so you can start with fewer)
 3. **GitHub Actions variables** (same page → Variables): `DRY_RUN=true`, `KILL_SWITCH=false`, `KALSHI_ENV=prod`
 4. **Enable GitHub Pages** — *Settings → Pages → Source: GitHub Actions*.
-5. **Test it** — *Actions → AI Sports Arena — weekly run → Run workflow*. Watch a dry run end to end; the dashboard updates at your Pages URL.
+5. **Test it** — *Actions → AI Sports Arena — daily run → Run workflow*. Watch a dry run end to end; the dashboard updates at your Pages URL.
 6. **Go live** when satisfied: flip `DRY_RUN` to `false`. If you want the paper-trading results wiped so the real season starts clean, run `python -m arena.reset_season` and commit the `data/` changes first.
 
-> The weekly cron only fires on the default branch — merge this to `main` for the schedule to activate.
+> The daily cron only fires on the default branch — merge this to `main` for the schedule to activate.
 
 ### Run locally
 
@@ -65,7 +70,7 @@ python -m http.server -d . 8000         # dashboard at http://localhost:8000/web
 
 ## Controlling API cost
 
-Running three frontier models weekly costs real money, and web search adds to it. All the levers live in [`config/settings.yaml`](config/settings.yaml) and apply **identically to every agent** (so the comparison stays fair). Watch the **"API cost & token usage"** section of the dashboard to see the effect.
+Running three frontier models **daily** costs real money — roughly 7× a weekly cadence — and web search adds to it. Two things keep it in check: dropping the forced-bet rule means edge-less days end quickly and cheaply, and every lever below lives in [`config/settings.yaml`](config/settings.yaml) and applies **identically to every agent** (so the comparison stays fair). Watch the **"API cost & token usage"** section of the dashboard to see the effect.
 
 | Lever | Setting | What it does |
 |---|---|---|
@@ -75,13 +80,13 @@ Running three frontier models weekly costs real money, and web search adds to it
 | **Turn cap** | `max_turns: 25` | Bounds worst-case loops. |
 | **Fewer / cheaper models** | `agents:` list | Drop an agent, or swap a premium model for a cheaper tier (e.g. a Sonnet/Flash "control"). Each agent's per-token prices are set right there too. |
 
-Two efficiency wins are built in and need no configuration: the shared system prompt + tools are **prompt-cached** (cache reads are ~10% of input price — watch the "Cache read" column to confirm it's landing), and the mandatory-bet retry now **continues the same session** rather than re-running a whole second one, so it reuses research you already paid for.
+One efficiency win is built in and needs no configuration: the shared system prompt + tools are **prompt-cached** (cache reads are ~10% of input price — watch the "Cache read" column to confirm it's landing).
 
 ## Fairness notes & known caveats
 
-- Agents run **sequentially** in one workflow run, so prices can drift slightly between sessions; the run order **rotates weekly** to average this out.
+- Agents run **sequentially** in one workflow run, so prices can drift slightly between sessions; the run order **rotates daily** to average this out.
 - **Web search uses each provider's *native* search** (Anthropic, OpenAI, Google) — so a model researches with its own provider's engine, not a shared one. This is a deliberate tradeoff: no extra API key, but a win could partly reflect a better *search engine* rather than a better *model*. If you'd rather compare pure reasoning, swap all three to one shared search backend later (the adapters are where this lives).
-- Each web search costs a little extra: Anthropic and OpenAI bill per search, and **Google bills per grounded query Gemini runs**. It's small at a weekly cadence, and it shows up in the "API cost & token usage" section along with token cost.
+- Each web search costs a little extra: Anthropic and OpenAI bill per search, and **Google bills per grounded query Gemini runs**. At a daily cadence this adds up — budget accordingly and watch the "API cost & token usage" section, which includes it alongside token cost.
 - Kalshi charges a small **trading fee** when an order fills (~1.75c per contract at 50c, less toward the extremes). It's deducted from each agent's cash and shown as "fees" on the leaderboard cards. The dashboard models the conservative (taker) fee, so real costs may run a touch lower.
 - Two agents may take opposite sides of the same market; that's allowed (it's a model comparison, not a fund).
 - Live limit orders that don't fill within 60 minutes expire and the stake **and** the fee for the unfilled portion are returned at the next settlement.

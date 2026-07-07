@@ -17,6 +17,7 @@ class FakeKalshi:
     def __init__(self):
         self.markets = {}
         self.fills = []
+        self.positions = []
         self.created_orders = []
 
     def get_market(self, ticker):
@@ -24,6 +25,13 @@ class FakeKalshi:
 
     def get_fills(self, ticker=None, limit=200):
         return [f for f in self.fills if ticker is None or f["ticker"] == ticker]
+
+    def get_positions(self, ticker=None):
+        return [
+            p
+            for p in self.positions
+            if ticker is None or p.get("ticker") == ticker or p.get("market_ticker") == ticker
+        ]
 
     def get_series_list(self, category=None):
         return [{"ticker": "KXMLBGAME", "title": "MLB game winners", "category": category}]
@@ -91,7 +99,7 @@ class TestTools:
             {
                 "ticker": "MLB-1",
                 "side": "yes",
-                "contracts": 10,
+                "contracts": 20,
                 "limit_price_cents": 55,
                 "forecast_prob": 0.62,
                 "reasoning": "Ace pitching matchup edge.",
@@ -99,9 +107,9 @@ class TestTools:
         )
         assert '"placed": true' in result and '"dry_run"' in result
         assert kalshi.created_orders == []
-        # 550c stake + Kalshi fee on 10 contracts @ 55c
-        fee = trading_fee_cents(10, 55)
-        assert ledger.cash("claude") == 10000 - 550 - fee
+        # 1100c stake + Kalshi fee on 20 contracts @ 55c
+        fee = trading_fee_cents(20, 55)
+        assert ledger.cash("claude") == 10000 - 1100 - fee
         assert f'"fee_cents": {fee}' in result
 
     def test_live_mode_places_real_order(self):
@@ -113,7 +121,7 @@ class TestTools:
             {
                 "ticker": "MLB-1",
                 "side": "yes",
-                "contracts": 10,
+                "contracts": 20,
                 "limit_price_cents": 55,
                 "forecast_prob": 0.62,
                 "reasoning": "Edge.",
@@ -153,13 +161,49 @@ class TestTools:
             {
                 "ticker": "MLB-1",
                 "side": "yes",
-                "contracts": 100,  # 5500c > 10% per-market cap
+                "contracts": 100,  # 5500c > $20 per-market cap
                 "limit_price_cents": 55,
                 "forecast_prob": 0.6,
                 "reasoning": "too big",
             },
         )
         assert '"rejected": true' in result and "per-market cap" in result
+
+    def test_below_minimum_stake_rejected(self):
+        ledger, kalshi = make_world()
+        ctx = ctx_for(ledger, kalshi, make_settings())
+        result = execute_tool(
+            ctx,
+            "place_bet",
+            {
+                "ticker": "MLB-1",
+                "side": "yes",
+                "contracts": 5,  # 275c < $10 minimum
+                "limit_price_cents": 55,
+                "forecast_prob": 0.6,
+                "reasoning": "too small",
+            },
+        )
+        assert '"rejected": true' in result and "minimum" in result
+        assert ledger.cash("claude") == 10000
+
+    def test_fair_value_bet_rejected_by_edge_gate(self):
+        ledger, kalshi = make_world()
+        ctx = ctx_for(ledger, kalshi, make_settings())
+        result = execute_tool(
+            ctx,
+            "place_bet",
+            {
+                "ticker": "MLB-1",
+                "side": "yes",
+                "contracts": 20,  # clears the $10 floor
+                "limit_price_cents": 55,
+                "forecast_prob": 0.55,  # equal to price -> no edge after fee
+                "reasoning": "no real edge here",
+            },
+        )
+        assert '"rejected": true' in result and "net edge" in result
+        assert ledger.cash("claude") == 10000
 
     def test_bankroll_and_note(self):
         ledger, kalshi = make_world()
@@ -258,6 +302,94 @@ class TestSettlement:
         settle_open_orders(ledger, kalshi, make_settings())
         assert ledger.cash("claude") == 10000
         assert order["result"] == "unfilled"
+
+    def test_position_safety_net_credits_missed_fill(self):
+        # Regression: the V2 create response returns order_id at the top level, so
+        # kalshi_order_id was briefly captured as None and fills couldn't be
+        # matched -- a filled, winning order was wrongly refunded as unfilled.
+        # Now the account position is a cross-check so the win is still credited.
+        ledger, kalshi = make_world()
+        order = ledger.record_order(
+            agent="claude",
+            week=WEEK,
+            ticker="MLB-1",
+            market_title="MLB-1",
+            side="yes",
+            count=10,
+            limit_price_cents=55,
+            status="live",
+            forecast_prob=0.7,
+            reasoning="test",
+            kalshi_order_id=None,  # order_id capture missed it
+        )
+        order["placed_at"] = (
+            datetime.now(timezone.utc) - timedelta(hours=3)
+        ).isoformat(timespec="seconds")
+        kalshi.positions = [{"ticker": "MLB-1", "position": 10}]
+        kalshi.markets["MLB-1"]["status"] = "settled"
+        kalshi.markets["MLB-1"]["result"] = "yes"
+        settle_open_orders(ledger, kalshi, make_settings())
+        assert order["result"] == "won" and order["count"] == 10
+        assert ledger.cash("claude") == 10000 - 550 + 1000
+
+    def test_fills_counted_from_fixed_point_string(self):
+        # Kalshi may report a fill count as a fixed-point string ("7.00").
+        ledger, kalshi = make_world()
+        order = ledger.record_order(
+            agent="claude",
+            week=WEEK,
+            ticker="MLB-1",
+            market_title="MLB-1",
+            side="yes",
+            count=10,
+            limit_price_cents=55,
+            status="live",
+            forecast_prob=0.7,
+            reasoning="test",
+            kalshi_order_id="kalshi-1",
+        )
+        order["placed_at"] = (
+            datetime.now(timezone.utc) - timedelta(hours=3)
+        ).isoformat(timespec="seconds")
+        kalshi.fills = [{"ticker": "MLB-1", "order_id": "kalshi-1", "count_fp": "7.00"}]
+        kalshi.markets["MLB-1"]["status"] = "settled"
+        kalshi.markets["MLB-1"]["result"] = "yes"
+        settle_open_orders(ledger, kalshi, make_settings())
+        # refunded 3*55=165, won 7 -> 700
+        assert order["result"] == "won" and order["count"] == 7
+        assert ledger.cash("claude") == 10000 - 550 + 165 + 700
+
+    def test_fill_rate_reported_over_live_orders(self):
+        ledger, kalshi = make_world()
+        # Order A: 10 ordered, 4 fill, market wins.
+        a = ledger.record_order(
+            agent="claude", week=WEEK, ticker="MLB-1", market_title="MLB-1",
+            side="yes", count=10, limit_price_cents=55, status="live",
+            forecast_prob=0.7, reasoning="t", kalshi_order_id="kalshi-1",
+        )
+        a["placed_at"] = (
+            datetime.now(timezone.utc) - timedelta(hours=3)
+        ).isoformat(timespec="seconds")
+        # Order B: 10 ordered, nothing fills (fully unfilled).
+        b = ledger.record_order(
+            agent="claude", week=WEEK, ticker="MLB-2", market_title="MLB-2",
+            side="yes", count=10, limit_price_cents=40, status="live",
+            forecast_prob=0.6, reasoning="t", kalshi_order_id="kalshi-2",
+        )
+        b["placed_at"] = a["placed_at"]
+        kalshi.markets["MLB-1"]["status"] = "settled"
+        kalshi.markets["MLB-1"]["result"] = "yes"
+        kalshi.markets["MLB-2"] = {"ticker": "MLB-2", "status": "settled", "result": "yes"}
+        kalshi.fills = [{"ticker": "MLB-1", "order_id": "kalshi-1", "count": 4}]
+        settle_open_orders(ledger, kalshi, make_settings())
+
+        from arena.config import AgentSpec
+
+        settings = make_settings()
+        settings.agents = [AgentSpec(name="claude", provider="anthropic", model="m")]
+        board = build_leaderboard(ledger, settings, generated_at="now")
+        # 4 of 20 ordered contracts filled across the two live orders.
+        assert board["agents"][0]["fill_rate"] == 0.2
 
     def test_leaderboard_metrics(self):
         ledger, kalshi = make_world()
