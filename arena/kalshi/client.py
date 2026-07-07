@@ -183,9 +183,12 @@ class KalshiClient:
     def get_balance(self) -> dict:
         return self._request("GET", "/portfolio/balance", auth_required=True)
 
-    def get_positions(self, ticker: str | None = None) -> dict:
+    def get_positions(self, ticker: str | None = None) -> list[dict]:
         params = {"ticker": ticker} if ticker else None
-        return self._request("GET", "/portfolio/positions", params=params, auth_required=True)
+        data = self._request("GET", "/portfolio/positions", params=params, auth_required=True)
+        # Kalshi returns per-market positions under "market_positions" (newer) or
+        # "positions" (older); normalize to a list.
+        return data.get("market_positions") or data.get("positions") or []
 
     def get_order(self, order_id: str) -> dict:
         return self._request("GET", f"/portfolio/orders/{order_id}", auth_required=True).get(
@@ -246,6 +249,12 @@ class KalshiClient:
         }
         if expiration_ts is not None:
             body["expiration_time"] = expiration_ts
-        return self._request(
+        resp = self._request(
             "POST", "/portfolio/events/orders", json_body=body, auth_required=True
-        ).get("order", {})
+        )
+        # V2 returns order_id / client_order_id / fill_count / remaining_count at
+        # the TOP LEVEL (unlike the retired V1, which nested them under "order").
+        # Reading .get("order") always yielded {} -> order_id None -> every live
+        # order looked unfilled at settlement and winning bets were erased.
+        # Handle both shapes defensively.
+        return resp.get("order", resp) if isinstance(resp, dict) else {}

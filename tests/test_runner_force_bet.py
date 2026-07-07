@@ -1,7 +1,7 @@
-"""run_agent wiring: it calls the adapter once, passes cost-control options,
-and surfaces the in-session mandatory-bet nudge. The nudge *mechanism* itself
-(continuing the same conversation) is exercised at the adapter level in
-test_adapters.py."""
+"""run_agent wiring: it calls the adapter exactly once and passes the
+cost-control options. The strategy is edge-only, so there is no mandatory-bet
+followup — the runner leaves followup_prompt/should_continue unset and a session
+may end with zero bets."""
 
 from arena.agents import runner
 from arena.config import AgentSpec, RiskLimits, Settings
@@ -41,10 +41,9 @@ def make_ctx():
 class RecordingAdapter:
     """Captures the options run_agent passes, and returns a canned result."""
 
-    def __init__(self, forced_followup=False, usage=None):
+    def __init__(self, usage=None):
         self.captured_options = None
         self.call_count = 0
-        self.forced_followup = forced_followup
         self.usage = usage or {
             "input_tokens": 1000, "output_tokens": 200,
             "cache_write_tokens": 0, "cache_read_tokens": 0,
@@ -53,12 +52,7 @@ class RecordingAdapter:
     def run(self, model, system_prompt, user_prompt, schemas, execute, max_turns, options=None):
         self.call_count += 1
         self.captured_options = options
-        return {
-            "turns": 3,
-            "final_text": "done",
-            "usage": self.usage,
-            "forced_followup": self.forced_followup,
-        }
+        return {"turns": 3, "final_text": "done", "usage": self.usage}
 
 
 def run_with(monkeypatch, adapter):
@@ -73,7 +67,7 @@ class TestRunnerWiring:
     def test_calls_adapter_exactly_once(self, monkeypatch):
         adapter = RecordingAdapter()
         run_with(monkeypatch, adapter)
-        assert adapter.call_count == 1  # no more second full run
+        assert adapter.call_count == 1
 
     def test_passes_cost_control_options(self, monkeypatch):
         adapter = RecordingAdapter()
@@ -84,33 +78,22 @@ class TestRunnerWiring:
         assert opts.max_searches == 5
         assert opts.budget_cents == 100
         assert callable(opts.cost_of)
-        assert callable(opts.should_continue)
-        assert opts.followup_prompt == runner.FORCE_BET_KICKOFF
 
-    def test_should_continue_reflects_bets_placed(self, monkeypatch):
+    def test_no_forced_bet_followup(self, monkeypatch):
+        # Edge-only strategy: the runner never wires a mandatory-bet nudge, so
+        # an agent that ends with zero bets is left alone.
         adapter = RecordingAdapter()
-        _, ctx = run_with(monkeypatch, adapter)
+        run_with(monkeypatch, adapter)
         opts = adapter.captured_options
-        # No bets placed -> the adapter would be told to keep going.
-        assert opts.should_continue() is True
-        ctx.bets_placed.append({"fake": "bet"})
-        assert opts.should_continue() is False
+        assert opts.followup_prompt is None
+        assert opts.should_continue is None
+        assert opts.wants_followup() is False
 
     def test_cost_of_computes_from_spec_prices(self, monkeypatch):
         adapter = RecordingAdapter()
         run_with(monkeypatch, adapter)
         # spec has no prices set in this test -> cost is 0, but callable works.
         assert adapter.captured_options.cost_of({"input_tokens": 1_000_000}) == 0
-
-    def test_surfaces_forced_followup_flag(self, monkeypatch):
-        adapter = RecordingAdapter(forced_followup=True)
-        summary, _ = run_with(monkeypatch, adapter)
-        assert summary["forced_bet_nudge"] is True
-
-    def test_no_nudge_when_adapter_did_not_follow_up(self, monkeypatch):
-        adapter = RecordingAdapter(forced_followup=False)
-        summary, _ = run_with(monkeypatch, adapter)
-        assert summary["forced_bet_nudge"] is False
 
     def test_budget_disabled_when_zero(self, monkeypatch):
         adapter = RecordingAdapter()

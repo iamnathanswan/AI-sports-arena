@@ -199,20 +199,25 @@ def get_bankroll(ctx: ToolContext, args: dict) -> dict:
         }
         for o in ctx.ledger.open_orders(ctx.agent)
     ]
-    new_positions = ctx.ledger.new_positions_in_week(ctx.agent, ctx.week)
+    limits_out: dict[str, Any] = {
+        "min_stake_per_market_cents": limits.min_stake_cents_per_market,
+        "max_stake_per_market_cents": limits.max_stake_cents_per_market,
+        "max_total_deployed_cents": int(equity * limits.max_deployed_pct / 100),
+        "currently_deployed_cents": ctx.ledger.open_cost(ctx.agent),
+        "allowed_price_range_cents": [limits.min_price_cents, limits.max_price_cents],
+    }
+    # Only surface a weekly new-position budget when one is actually configured
+    # (0 = unlimited).
+    if limits.max_new_positions_per_week > 0:
+        new_positions = ctx.ledger.new_positions_in_week(ctx.agent, ctx.week)
+        limits_out["new_positions_remaining_this_week"] = max(
+            limits.max_new_positions_per_week - new_positions, 0
+        )
     return {
         "cash_cents": ctx.ledger.cash(ctx.agent),
         "equity_cents": equity,
         "open_positions": open_orders,
-        "limits": {
-            "max_stake_per_market_cents": int(equity * limits.max_stake_pct_per_market / 100),
-            "new_positions_remaining_this_week": max(
-                limits.max_new_positions_per_week - new_positions, 0
-            ),
-            "max_total_deployed_cents": int(equity * limits.max_deployed_pct / 100),
-            "currently_deployed_cents": ctx.ledger.open_cost(ctx.agent),
-            "allowed_price_range_cents": [limits.min_price_cents, limits.max_price_cents],
-        },
+        "limits": limits_out,
     }
 
 
@@ -290,6 +295,7 @@ def place_bet(ctx: ToolContext, args: dict) -> dict:
         price,
         kill_switch=ctx.settings.kill_switch,
         fee_cents=fee,
+        forecast_prob=forecast,
     )
     if not decision:
         return {"rejected": True, "reason": decision.reason}
@@ -307,6 +313,7 @@ def place_bet(ctx: ToolContext, args: dict) -> dict:
     title = market.get("title") or ticker
     kalshi_order_id = None
     client_order_id = None
+    initial_fill_count = 0
     status = "dry_run"
 
     if not ctx.settings.dry_run:
@@ -323,6 +330,11 @@ def place_bet(ctx: ToolContext, args: dict) -> dict:
             return {"rejected": True, "reason": f"exchange rejected the order: {exc}"}
         kalshi_order_id = placed.get("order_id")
         client_order_id = placed.get("client_order_id")
+        # Contracts that filled immediately at placement (V2 returns fill_count).
+        try:
+            initial_fill_count = int(float(placed.get("fill_count") or 0))
+        except (TypeError, ValueError):
+            initial_fill_count = 0
         status = "live"
 
     order = ctx.ledger.record_order(
@@ -339,6 +351,7 @@ def place_bet(ctx: ToolContext, args: dict) -> dict:
         kalshi_order_id=kalshi_order_id,
         client_order_id=client_order_id,
         fee_cents=fee,
+        initial_fill_count=initial_fill_count,
     )
     ctx.bets_placed.append(order)
     return {

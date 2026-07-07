@@ -19,21 +19,6 @@ from .base import RunOptions
 PROMPT_PATH = Path(__file__).resolve().parent.parent / "prompts" / "system.md"
 USER_KICKOFF = "Begin your weekly betting session now."
 
-# Fairness-preserving backstop: every agent's system prompt already mandates at
-# least one bet per session. If a model would end without placing one, the
-# adapter injects this nudge and continues the SAME conversation once (reusing
-# the research it already did, rather than paying for a fresh second session).
-# Same nudge, same wording for every model.
-FORCE_BET_KICKOFF = (
-    "You are about to end this session without placing any bet, which violates "
-    "your mandate to place at least one bet every session. From the markets you "
-    "already reviewed, place your single most defensible bet now, sized "
-    "conservatively if your edge is thin — even one contract is fine. Only end "
-    "without betting if you have confirmed there are truly zero open sports "
-    "markets anywhere on the exchange right now; if so, say that plainly via "
-    "record_note."
-)
-
 REQUIRED_ENV = {
     "anthropic": "ANTHROPIC_API_KEY",
     "openai": "OPENAI_API_KEY",
@@ -41,13 +26,13 @@ REQUIRED_ENV = {
 }
 
 
-def build_system_prompt(settings: Settings, week: str, today: date) -> str:
+def build_system_prompt(settings: Settings, today: date) -> str:
     text = PROMPT_PATH.read_text()
     replacements = {
         "{{TODAY}}": today.isoformat(),
-        "{{WEEK}}": week,
-        "{{MAX_STAKE_PCT}}": f"{settings.risk.max_stake_pct_per_market:.0f}",
-        "{{MAX_POSITIONS}}": str(settings.risk.max_new_positions_per_week),
+        "{{MIN_STAKE}}": f"{settings.risk.min_stake_cents_per_market / 100:.0f}",
+        "{{MAX_STAKE}}": f"{settings.risk.max_stake_cents_per_market / 100:.0f}",
+        "{{MIN_EDGE}}": str(settings.risk.min_edge_cents_per_contract),
         "{{MAX_DEPLOYED_PCT}}": f"{settings.risk.max_deployed_pct:.0f}",
         "{{MIN_PRICE}}": str(settings.risk.min_price_cents),
         "{{MAX_PRICE}}": str(settings.risk.max_price_cents),
@@ -76,7 +61,6 @@ def run_agent(spec: AgentSpec, ctx: ToolContext, system_prompt: str, max_turns: 
         "turns": 0,
         "final_text": "",
         "error": None,
-        "forced_bet_nudge": False,
         "usage": empty_usage(),
         "cost_cents": 0,
     }
@@ -97,16 +81,15 @@ def run_agent(spec: AgentSpec, ctx: ToolContext, system_prompt: str, max_turns: 
             return summary
 
         settings = ctx.settings
+        # No mandatory-bet backstop: the strategy is edge-only, so ending a
+        # session with zero bets is a valid outcome (the model passes when
+        # nothing clears the net-EV gate). followup_prompt is intentionally
+        # unset.
         options = RunOptions(
             effort=settings.effort,
             max_searches=settings.max_searches_per_session,
             budget_cents=settings.max_cost_cents_per_session or None,
             cost_of=lambda u: compute_cost_cents(spec, u),
-            # Mandatory-bet backstop: if the model would end without betting,
-            # the adapter continues the SAME session (reusing its cached
-            # research) rather than paying for a whole fresh second run.
-            followup_prompt=FORCE_BET_KICKOFF,
-            should_continue=lambda: not ctx.bets_placed,
         )
 
         result = adapter.run(
@@ -119,7 +102,6 @@ def run_agent(spec: AgentSpec, ctx: ToolContext, system_prompt: str, max_turns: 
             options=options,
         )
         summary.update(result)
-        summary["forced_bet_nudge"] = result.get("forced_followup", False)
         summary["cost_cents"] = compute_cost_cents(spec, summary["usage"])
     except Exception as exc:
         summary["error"] = f"{type(exc).__name__}: {exc}"

@@ -22,12 +22,17 @@ def _env_flag(name: str, default: bool) -> bool:
 
 @dataclass
 class RiskLimits:
-    max_stake_pct_per_market: float = 10.0
-    max_new_positions_per_week: int = 5
+    min_stake_cents_per_market: int = 1000  # each bet must stake at least this ($10)
+    max_stake_cents_per_market: int = 2000  # at most this on one market ($20)
+    max_new_positions_per_week: int = 0  # 0 = unlimited new positions per week
     max_deployed_pct: float = 50.0
     min_price_cents: int = 5
     max_price_cents: int = 95
     order_expiration_minutes: int = 60
+    # Net-EV gate: a bet's stated edge must clear the price AND the trading fee
+    # by at least this many cents per contract, or it's rejected in code. This
+    # is what stops the bot from paying fees to place ~fair-value bets.
+    min_edge_cents_per_contract: int = 3
 
 
 @dataclass
@@ -84,12 +89,14 @@ def load_settings(settings_path: Path | None = None) -> Settings:
 
     risk_raw = raw.get("risk", {})
     risk = RiskLimits(
-        max_stake_pct_per_market=float(risk_raw.get("max_stake_pct_per_market", 10)),
-        max_new_positions_per_week=int(risk_raw.get("max_new_positions_per_week", 5)),
+        min_stake_cents_per_market=int(risk_raw.get("min_stake_cents_per_market", 1000)),
+        max_stake_cents_per_market=int(risk_raw.get("max_stake_cents_per_market", 2000)),
+        max_new_positions_per_week=int(risk_raw.get("max_new_positions_per_week", 0)),
         max_deployed_pct=float(risk_raw.get("max_deployed_pct", 50)),
         min_price_cents=int(risk_raw.get("min_price_cents", 5)),
         max_price_cents=int(risk_raw.get("max_price_cents", 95)),
         order_expiration_minutes=int(risk_raw.get("order_expiration_minutes", 60)),
+        min_edge_cents_per_contract=int(risk_raw.get("min_edge_cents_per_contract", 3)),
     )
 
     sports = raw.get("sports", {})

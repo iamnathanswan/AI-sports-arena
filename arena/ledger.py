@@ -145,6 +145,7 @@ class Ledger:
         kalshi_order_id: str | None = None,
         client_order_id: str | None = None,
         fee_cents: int = 0,
+        initial_fill_count: int = 0,
     ) -> dict:
         cost = count * limit_price_cents
         total = cost + fee_cents
@@ -160,9 +161,14 @@ class Ledger:
             "market_title": market_title,
             "side": side,
             "count": count,
+            # Contracts originally ordered. `count` is later shrunk to what
+            # actually filled on refund_unfilled, so this preserves the
+            # denominator for fill-rate tracking.
+            "ordered_count": count,
             "limit_price_cents": limit_price_cents,
             "cost_cents": cost,
             "fee_cents": fee_cents,
+            "initial_fill_count": initial_fill_count,
             "status": status,
             "kalshi_order_id": kalshi_order_id,
             "client_order_id": client_order_id,

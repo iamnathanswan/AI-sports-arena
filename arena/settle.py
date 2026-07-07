@@ -25,16 +25,61 @@ def _order_expired(order: dict, expiration_minutes: int) -> bool:
     return datetime.now(timezone.utc) > placed + timedelta(minutes=expiration_minutes)
 
 
-def _filled_count(kalshi: KalshiClient, order: dict) -> int:
-    """How many contracts of a live order actually filled, per Kalshi fills."""
-    kalshi_order_id = order.get("kalshi_order_id")
-    if not kalshi_order_id:
-        return 0
+def _to_count(value: Any) -> int:
+    """Kalshi returns fill/position counts as ints or fixed-point strings
+    ("5.00"). Parse either into a whole-contract int."""
     try:
-        fills = kalshi.get_fills(ticker=order["ticker"])
+        return int(float(value))
+    except (TypeError, ValueError):
+        return 0
+
+
+def _position_count(kalshi: KalshiClient, order: dict) -> int:
+    """How many contracts the account actually holds on this order's side of the
+    ticker, per Kalshi positions. Used as a fill cross-check: yes -> positive
+    position, no -> negative position."""
+    try:
+        positions = kalshi.get_positions(ticker=order["ticker"])
     except KalshiError:
-        return order["count"]  # can't verify — assume filled rather than refund wrongly
-    return sum(f.get("count", 0) for f in fills if f.get("order_id") == kalshi_order_id)
+        return 0
+    total = 0
+    for p in positions:
+        if p.get("ticker") == order["ticker"] or p.get("market_ticker") == order["ticker"]:
+            pos = _to_count(p.get("position") or p.get("market_position") or 0)
+            total += pos
+    # A YES position is positive, a NO position negative on Kalshi.
+    return total if order["side"] == "yes" else -total
+
+
+def _filled_count(kalshi: KalshiClient, order: dict) -> int:
+    """Contracts of a live order that actually filled. Primary source is Kalshi
+    fills matched by order_id; falls back to the fill count captured at
+    placement, then to the account position on this ticker as a safety net so a
+    filled (possibly winning) order is never silently refunded."""
+    immediate = _to_count(order.get("initial_fill_count", 0))
+    kalshi_order_id = order.get("kalshi_order_id")
+
+    matched = 0
+    if kalshi_order_id:
+        try:
+            fills = kalshi.get_fills(ticker=order["ticker"])
+        except KalshiError:
+            return order["count"]  # can't verify — assume filled rather than erase a win
+        for f in fills:
+            if f.get("order_id") == kalshi_order_id:
+                matched += _to_count(f.get("count", f.get("count_fp")))
+
+    best = max(matched, immediate)
+    if best > 0:
+        return min(best, order["count"])
+
+    # Neither fills nor the placement response show a fill. Before refunding as
+    # unfilled, cross-check the actual account position: if we hold contracts on
+    # this side, the order filled (order_id capture may have missed it).
+    held = _position_count(kalshi, order)
+    if held > 0:
+        return min(held, order["count"])
+    return 0
 
 
 def settle_open_orders(ledger: Ledger, kalshi: KalshiClient, settings: Settings) -> list[dict]:
@@ -92,7 +137,9 @@ def settle_open_orders(ledger: Ledger, kalshi: KalshiClient, settings: Settings)
                 "ticker": ticker,
                 "action": "settled",
                 "result": "won" if won else "lost",
+                "contracts": order["count"],
                 "payout_cents": payout,
+                "kalshi_order_id": order.get("kalshi_order_id"),
             }
         )
     return events
@@ -124,6 +171,22 @@ def build_leaderboard(ledger: Ledger, settings: Settings, generated_at: str) -> 
             for o in settled
             if o.get("forecast_prob") is not None
         ]
+        # Order fill rate: over live orders that have been reconciled (won / lost
+        # / fully unfilled), how many ordered contracts actually filled. Only
+        # meaningful in live mode -- paper (dry_run) orders are assumed to fill,
+        # so they're excluded and the rate is null until real orders resolve.
+        live_resolved = [
+            o
+            for o in ledger.data["orders"]
+            if o["agent"] == name
+            and o.get("status") == "live"
+            and o.get("result") in ("won", "lost", "unfilled")
+        ]
+        ordered_contracts = sum(o.get("ordered_count", o["count"]) for o in live_resolved)
+        filled_contracts = sum(
+            o["count"] if o.get("result") != "unfilled" else 0 for o in live_resolved
+        )
+        fill_rate = round(filled_contracts / ordered_contracts, 3) if ordered_contracts else None
         equity = ledger.equity(name)
         initial = ledger.initial(name)
         agents.append(
@@ -142,6 +205,7 @@ def build_leaderboard(ledger: Ledger, settings: Settings, generated_at: str) -> 
                 "staked_cents": staked,
                 "returned_cents": returned,
                 "fees_paid_cents": fees_paid,
+                "fill_rate": fill_rate,
                 "brier": round(sum(briers) / len(briers), 4) if briers else None,
                 "usage": ledger.usage_totals(name),
                 "open_positions": [
