@@ -1,136 +1,88 @@
 {
-  "generated_at": "2026-07-07T22:27:39+00:00",
+  "generated_at": "2026-07-08T22:08:12+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
     {
-      "name": "gpt",
-      "provider": "openai",
-      "model": "gpt-5.5",
-      "equity_cents": 9997,
-      "cash_cents": 9857,
-      "initial_cents": 10000,
-      "pnl_cents": -3,
-      "roi_pct": -0.03,
-      "settled_bets": 0,
-      "wins": 0,
-      "win_rate": null,
-      "staked_cents": 0,
-      "returned_cents": 0,
-      "fees_paid_cents": 3,
-      "brier": null,
-      "usage": {
-        "input_tokens": 774810,
-        "output_tokens": 14032,
-        "cache_write_tokens": 0,
-        "cache_read_tokens": 1849088,
-        "cost_cents": 551,
-        "sessions": 6
-      },
-      "open_positions": [
-        {
-          "ticker": "KXMLBGAME-26JUL072210COLLAD-LAD",
-          "title": "Colorado vs Los Angeles D Winner?",
-          "side": "yes",
-          "contracts": 2,
-          "cost_cents": 140,
-          "forecast_prob": 0.72
-        }
-      ]
-    },
-    {
       "name": "claude",
       "provider": "anthropic",
       "model": "claude-opus-4-8",
-      "equity_cents": 9980,
-      "cash_cents": 9214,
+      "equity_cents": 10000,
+      "cash_cents": 10000,
       "initial_cents": 10000,
-      "pnl_cents": -20,
-      "roi_pct": -0.2,
+      "pnl_cents": 0,
+      "roi_pct": 0.0,
       "settled_bets": 0,
       "wins": 0,
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
-      "fees_paid_cents": 20,
+      "fees_paid_cents": 0,
+      "fill_rate": null,
       "brier": null,
       "usage": {
-        "input_tokens": 373517,
-        "output_tokens": 12094,
-        "cache_write_tokens": 221151,
-        "cache_read_tokens": 897682,
-        "cost_cents": 400,
-        "sessions": 2
+        "input_tokens": 373614,
+        "output_tokens": 14226,
+        "cache_write_tokens": 330470,
+        "cache_read_tokens": 1435498,
+        "cost_cents": 501,
+        "sessions": 3
       },
-      "open_positions": [
-        {
-          "ticker": "KXMLBGAME-26JUL082210COLLAD-LAD",
-          "title": "Colorado vs Los Angeles D Winner?",
-          "side": "yes",
-          "contracts": 7,
-          "cost_cents": 476,
-          "forecast_prob": 0.74
-        },
-        {
-          "ticker": "KXMLBGAME-26JUL081845HOUWSH-HOU",
-          "title": "Houston vs Washington Winner?",
-          "side": "yes",
-          "contracts": 5,
-          "cost_cents": 290,
-          "forecast_prob": 0.63
-        }
-      ]
+      "open_positions": []
+    },
+    {
+      "name": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "equity_cents": 10000,
+      "cash_cents": 10000,
+      "initial_cents": 10000,
+      "pnl_cents": 0,
+      "roi_pct": 0.0,
+      "settled_bets": 0,
+      "wins": 0,
+      "win_rate": null,
+      "staked_cents": 0,
+      "returned_cents": 0,
+      "fees_paid_cents": 0,
+      "fill_rate": null,
+      "brier": null,
+      "usage": {
+        "input_tokens": 930718,
+        "output_tokens": 15407,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 2396544,
+        "cost_cents": 660,
+        "sessions": 7
+      },
+      "open_positions": []
     },
     {
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 9955,
-      "cash_cents": 8650,
+      "equity_cents": 10000,
+      "cash_cents": 10000,
       "initial_cents": 10000,
-      "pnl_cents": -45,
-      "roi_pct": -0.45,
+      "pnl_cents": 0,
+      "roi_pct": 0.0,
       "settled_bets": 0,
       "wins": 0,
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
-      "fees_paid_cents": 45,
+      "fees_paid_cents": 0,
+      "fill_rate": null,
       "brier": null,
       "usage": {
-        "input_tokens": 580742,
-        "output_tokens": 19080,
+        "input_tokens": 721592,
+        "output_tokens": 23255,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 1868300,
-        "cost_cents": 177,
-        "sessions": 5
+        "cache_read_tokens": 2743364,
+        "cost_cents": 228,
+        "sessions": 6
       },
-      "open_positions": [
-        {
-          "ticker": "KXMLBGAME-26JUL082210AZSD-SD",
-          "title": "Arizona vs San Diego Winner?",
-          "side": "yes",
-          "contracts": 10,
-          "cost_cents": 550,
-          "forecast_prob": 0.61
-        },
-        {
-          "ticker": "KXMLBGAME-26JUL091945MILSTL-MIL",
-          "title": "Milwaukee vs St. Louis Winner?",
-          "side": "yes",
-          "contracts": 10,
-          "cost_cents": 510,
-          "forecast_prob": 0.56
-        },
-        {
-          "ticker": "KXMLBGAME-26JUL091310NYYTB-TB",
-          "title": "New York Y vs Tampa Bay Winner?",
-          "side": "yes",
-          "contracts": 5,
-          "cost_cents": 245,
-          "forecast_prob": 0.54
-        }
-      ]
+      "open_positions": []
     }
   ],
   "history": [
@@ -149,6 +101,14 @@
         "gpt": 9997,
         "gemini": 9955
       }
+    },
+    {
+      "date": "2026-07-08",
+      "balances": {
+        "claude": 10000,
+        "gpt": 10000,
+        "gemini": 10000
+      }
     }
   ],
   "bets": [
@@ -158,14 +118,14 @@
       "ticker": "KXMLBGAME-26JUL082210COLLAD-LAD",
       "title": "Colorado vs Los Angeles D Winner?",
       "side": "yes",
-      "contracts": 7,
+      "contracts": 0,
       "price_cents": 68,
-      "cost_cents": 476,
-      "fee_cents": 11,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.74,
       "reasoning": "Dodgers are an elite team hosting the Rockies, a perennial bottom-tier club, at Dodger Stadium. Home-field plus a large talent gap makes LAD a heavy favorite; I estimate ~74% vs a 68c resting bid, leaving clear value. Book is empty so I'm supplying liquidity at a price below fair.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-07T22:31:29+00:00"
     },
@@ -175,14 +135,14 @@
       "ticker": "KXMLBGAME-26JUL081845HOUWSH-HOU",
       "title": "Houston vs Washington Winner?",
       "side": "yes",
-      "contracts": 5,
+      "contracts": 0,
       "price_cents": 58,
-      "cost_cents": 290,
-      "fee_cents": 9,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.63,
       "reasoning": "Houston is a consistent contender while Washington is a rebuilding club; Astros are the clear side in this matchup. I estimate ~63% and rest a 58c bid to capture value on an empty book. Sized small as a diversifier given no confirmed pitcher matchups.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-07T22:31:29+00:00"
     },
@@ -192,14 +152,14 @@
       "ticker": "KXMLBGAME-26JUL091310NYYTB-TB",
       "title": "New York Y vs Tampa Bay Winner?",
       "side": "yes",
-      "contracts": 5,
+      "contracts": 0,
       "price_cents": 49,
-      "cost_cents": 245,
-      "fee_cents": 9,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.54,
       "reasoning": "Tampa Bay is a slight home favorite (approx 54% implied probability) for their series finale against the Yankees. Taking a small position at 49c to provide liquidity and secure a modest theoretical edge.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-07T22:29:38+00:00"
     },
@@ -209,14 +169,14 @@
       "ticker": "KXMLBGAME-26JUL091945MILSTL-MIL",
       "title": "Milwaukee vs St. Louis Winner?",
       "side": "yes",
-      "contracts": 10,
+      "contracts": 0,
       "price_cents": 51,
-      "cost_cents": 510,
-      "fee_cents": 18,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.56,
       "reasoning": "The Brewers are clear favorites (-128 moneyline) against the Cardinals, giving them approximately a 56% implied probability. Buying YES at 51c provides a strong margin of safety.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-07T22:29:34+00:00"
     },
@@ -226,14 +186,14 @@
       "ticker": "KXMLBGAME-26JUL082210AZSD-SD",
       "title": "Arizona vs San Diego Winner?",
       "side": "yes",
-      "contracts": 10,
+      "contracts": 0,
       "price_cents": 55,
-      "cost_cents": 550,
-      "fee_cents": 18,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.61,
       "reasoning": "San Diego is heavily favored with a -160 moneyline for this game against Arizona, implying around a 61% win probability. I am placing a limit order slightly below market value to capture a solid edge in an empty book.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-07T22:29:30+00:00"
     },
@@ -243,14 +203,14 @@
       "ticker": "KXMLBGAME-26JUL072210COLLAD-LAD",
       "title": "Colorado vs Los Angeles D Winner?",
       "side": "yes",
-      "contracts": 2,
+      "contracts": 0,
       "price_cents": 70,
-      "cost_cents": 140,
-      "fee_cents": 3,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.72,
       "reasoning": "Dodgers are a materially stronger club and at home against Colorado, with public probable-pitcher info showing Justin Wrobleski in much better form than Michael Lorenzen. I make Los Angeles about 72% to win, broadly consistent with -270-ish market odds but leave a small edge by bidding 70 rather than paying above fair.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-07T22:28:22+00:00"
     },
@@ -766,6 +726,24 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gpt",
+      "week": "2026-07-08",
+      "text": "Passed this session: the listed July 8 MLB/WNBA markets had no actionable bid/ask, last price, volume, or open interest in the exchange feed, so there was no realistic fill/liquidity to evaluate against fresh news. I\u2019ll preserve bankroll and wait for priced, liquid day-of markets.",
+      "at": "2026-07-08T22:11:11+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-07-08",
+      "text": "2026-07-08: Passing today. Surveyed the imminent slate \u2014 WNBA games tonight (IND/LA, MIN/CONN, GS/TOR) and the next MLB games (July 10-11). Every market checked returned null bid/ask, zero volume, and an empty orderbook. With no quoted prices and no resting liquidity, there is no mispricing to measure against and no realistic fill available, so no bet can clear the 3c-after-fee edge bar or actually execute. Protecting bankroll and waiting for a day with live, tradable prices. No action taken.",
+      "at": "2026-07-08T22:10:26+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-08",
+      "text": "I scanned upcoming WNBA (Indiana vs LA), World Cup (France vs Morocco), and MLB games. While I found relevant injury news (e.g., Aliyah Boston out for Indiana Fever), there were no resting bids or asks in any of the corresponding Kalshi markets. With completely empty orderbooks, I cannot accurately gauge market prices or secure an immediate fill with a verifiable edge. In accordance with strict bankroll discipline and risk management, I am sitting this session out to wait for markets with real liquidity.",
+      "at": "2026-07-08T22:09:46+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-06",
