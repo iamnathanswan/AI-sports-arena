@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T12:49:01+00:00",
+  "generated_at": "2026-07-09T22:23:35+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -21,12 +21,12 @@
       "fill_rate": null,
       "brier": null,
       "usage": {
-        "input_tokens": 373709,
-        "output_tokens": 16155,
-        "cache_write_tokens": 438981,
-        "cache_read_tokens": 1864123,
-        "cost_cents": 595,
-        "sessions": 4
+        "input_tokens": 373804,
+        "output_tokens": 18233,
+        "cache_write_tokens": 548759,
+        "cache_read_tokens": 2296426,
+        "cost_cents": 690,
+        "sessions": 5
       },
       "open_positions": []
     },
@@ -48,12 +48,12 @@
       "fill_rate": null,
       "brier": null,
       "usage": {
-        "input_tokens": 1199520,
-        "output_tokens": 17272,
+        "input_tokens": 1301371,
+        "output_tokens": 19339,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 2700928,
-        "cost_cents": 815,
-        "sessions": 8
+        "cache_read_tokens": 3319168,
+        "cost_cents": 903,
+        "sessions": 9
       },
       "open_positions": []
     },
@@ -61,26 +61,26 @@
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 9919,
-      "cash_cents": 6869,
+      "equity_cents": 9972,
+      "cash_cents": 8512,
       "initial_cents": 10000,
-      "pnl_cents": -81,
-      "roi_pct": -0.81,
+      "pnl_cents": -28,
+      "roi_pct": -0.28,
       "settled_bets": 0,
       "wins": 0,
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
-      "fees_paid_cents": 81,
-      "fill_rate": null,
+      "fees_paid_cents": 28,
+      "fill_rate": 0.0,
       "brier": null,
       "usage": {
-        "input_tokens": 873663,
-        "output_tokens": 27452,
+        "input_tokens": 1042602,
+        "output_tokens": 30260,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 3056267,
-        "cost_cents": 270,
-        "sessions": 7
+        "cache_read_tokens": 3589639,
+        "cost_cents": 318,
+        "sessions": 8
       },
       "open_positions": [
         {
@@ -90,14 +90,6 @@
           "contracts": 20,
           "cost_cents": 1460,
           "forecast_prob": 0.8
-        },
-        {
-          "ticker": "KXWCGAME-26JUL09FRAMAR-FRA",
-          "title": "France vs Morocco Winner?",
-          "side": "yes",
-          "contracts": 30,
-          "cost_cents": 1590,
-          "forecast_prob": 0.6
         }
       ]
     }
@@ -132,7 +124,7 @@
       "balances": {
         "claude": 10000,
         "gpt": 10000,
-        "gemini": 9919
+        "gemini": 9972
       }
     }
   ],
@@ -143,14 +135,14 @@
       "ticker": "KXWCGAME-26JUL09FRAMAR-FRA",
       "title": "France vs Morocco Winner?",
       "side": "yes",
-      "contracts": 30,
+      "contracts": 0,
       "price_cents": 53,
-      "cost_cents": 1590,
-      "fee_cents": 53,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.6,
       "reasoning": "Morocco has suffered a major injury blow with key playmaker Ismael Saibari ruled out due to a hamstring injury. France's depth and attacking talent make them strong favorites to win in regulation time, giving us a solid edge.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-09T12:52:16+00:00"
     },
@@ -785,6 +777,24 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-09",
+      "text": "No liquid markets available today with a clear mispricing; both the Aces vs. Fire and Storm vs. Dream orderbooks are completely empty. The news of A'ja Wilson remaining questionable (and the Aces struggling without her) is interesting, as is Atlanta's injury report, but without resting bids/asks to evaluate for edge, I am passing today to protect the bankroll.",
+      "at": "2026-07-09T22:26:07+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-09",
+      "text": "Passed this session: I found imminent MLB/WNBA/tennis/esports markets, but their event feeds and order books showed no bid/ask prices, no volume, and empty books. With no executable liquidity or market price to compare against an independent fair value, there was no news-driven mispricing that cleared the fee and 3c edge threshold.",
+      "at": "2026-07-09T22:25:09+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-07-09",
+      "text": "2026-07-09: Passing today. Reviewed the imminent WNBA slate (Jul 9 Ind/Phx, Sea/Atl, LV/Por) and the MLB game-winner markets. Every market I checked had a completely empty orderbook \u2014 no yes/no bids or asks, null last price, and zero volume/open interest. With no market price to identify a mispricing and no resting liquidity to fill against, there is no news-driven edge I can capture at the required 3c+ net margin. Protecting bankroll and waiting for a day with live, priced, liquid markets. No bets placed.",
+      "at": "2026-07-09T22:24:09+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-09",
