@@ -3,38 +3,38 @@
   "agents": {
     "claude": {
       "initial_cents": 10000,
-      "cash_cents": 7790,
+      "cash_cents": 10000,
       "usage": {
-        "input_tokens": 373804,
-        "output_tokens": 18233,
-        "cache_write_tokens": 548759,
-        "cache_read_tokens": 2296426,
-        "cost_cents": 690,
-        "sessions": 5
+        "input_tokens": 374481,
+        "output_tokens": 24519,
+        "cache_write_tokens": 677978,
+        "cache_read_tokens": 3335610,
+        "cost_cents": 839,
+        "sessions": 6
       }
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 7865,
+      "cash_cents": 6817,
       "usage": {
-        "input_tokens": 1438439,
-        "output_tokens": 22013,
+        "input_tokens": 1635977,
+        "output_tokens": 25426,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 3970176,
-        "cost_cents": 1012,
-        "sessions": 10
+        "cache_read_tokens": 4511488,
+        "cost_cents": 1148,
+        "sessions": 11
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 5994,
+      "cash_cents": 4207,
       "usage": {
-        "input_tokens": 1296890,
-        "output_tokens": 35619,
+        "input_tokens": 1489997,
+        "output_tokens": 41618,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 4366067,
-        "cost_cents": 391,
-        "sessions": 9
+        "cache_read_tokens": 4882091,
+        "cost_cents": 447,
+        "sessions": 10
       }
     }
   },
@@ -814,9 +814,9 @@
       "forecast_prob": 0.8,
       "reasoning": "Caitlin Clark is confirmed OUT for this game due to a back injury and a minute restriction. Without her elite scoring and playmaking, the Fever are severely handicapped. Meanwhile, Phoenix is at home, already beat Indiana recently, and is returning Sami Whitcomb. I'm taking Phoenix with a strong edge.",
       "placed_at": "2026-07-09T12:52:07+00:00",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-10T22:05:18+00:00"
     },
     {
       "id": "bed29497-b771-400a-b417-b7f39cd3d2f9",
@@ -871,11 +871,11 @@
       "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
       "market_title": "Dallas vs Toronto winner?",
       "side": "yes",
-      "count": 16,
+      "count": 0,
       "ordered_count": 16,
       "limit_price_cents": 65,
-      "cost_cents": 1040,
-      "fee_cents": 26,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "761f478b-df10-49c8-9501-6f7655f078a5",
@@ -883,9 +883,9 @@
       "forecast_prob": 0.695,
       "reasoning": "Dallas is a road favorite at Toronto by current WNBA odds (about -255 / 69% implied), with a -6.5 spread and better recent record profile. A 65c limit gives a positive after-fee cushion while avoiding overpaying in an empty Kalshi orderbook.",
       "placed_at": "2026-07-10T03:52:34+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-10T22:05:19+00:00"
     },
     {
       "id": "248829c0-35cc-4e5a-a383-e09a6c70449b",
@@ -940,11 +940,11 @@
       "ticker": "KXWNBAGAME-26JUL10GSCONN-GS",
       "market_title": "Golden State vs Connecticut winner?",
       "side": "yes",
-      "count": 20,
+      "count": 0,
       "ordered_count": 20,
       "limit_price_cents": 54,
-      "cost_cents": 1080,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "f5572c19-5ee7-4825-9535-a53aeccb03fb",
@@ -952,9 +952,9 @@
       "forecast_prob": 0.61,
       "reasoning": "Golden State Valkyries enter on a 5-game win streak and No. 1 in power rankings; Connecticut started 2-15 and remains a bottom-tier side. Even on the road GS should be a solid favorite (~61%). Book is empty, so resting a limit at 54c captures clear edge if filled.",
       "placed_at": "2026-07-10T03:56:52+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-10T22:05:20+00:00"
     },
     {
       "id": "e8fc9251-1547-492b-9fe6-22e7570f5e85",
@@ -963,11 +963,11 @@
       "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
       "market_title": "Dallas vs Toronto winner?",
       "side": "yes",
-      "count": 20,
+      "count": 0,
       "ordered_count": 20,
       "limit_price_cents": 53,
-      "cost_cents": 1060,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "4ec3ace8-7d7a-4dcb-ad50-e0608c564eaf",
@@ -975,6 +975,75 @@
       "forecast_prob": 0.6,
       "reasoning": "Dallas (13-8) beat Toronto by 13 at Toronto on July 5 and has no key injuries; Toronto Tempo are missing guards Brittney Sykes (out) and Kiki Rice (out). Dallas is the stronger team and repeat road win is ~60% likely. Resting a limit at 53c below fair value for positive edge in an empty book.",
       "placed_at": "2026-07-10T03:56:52+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-07-10T22:05:20+00:00"
+    },
+    {
+      "id": "0c0e7a6e-0fff-4483-a7d7-e9e9d5366e6d",
+      "agent": "gpt",
+      "week": "2026-07-10",
+      "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
+      "market_title": "Dallas vs Toronto winner?",
+      "side": "yes",
+      "count": 15,
+      "ordered_count": 15,
+      "limit_price_cents": 70,
+      "cost_cents": 1050,
+      "fee_cents": 23,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "a467fa37-e434-4202-82bc-c8363498a126",
+      "client_order_id": "7249d081-d122-46c9-8417-68c4070de908",
+      "forecast_prob": 0.75,
+      "reasoning": "Dallas is a clear road favorite on the current outside market (around -7.5/-8.5 spread and roughly -320 moneyline), which I translate to about a 74-76% win probability after vig. A 70c limit leaves several cents of edge after Kalshi fees if it fills, and the price target avoids chasing a thin book.",
+      "placed_at": "2026-07-10T22:06:41+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "0adba1c6-4779-4292-9fd7-8aa680b9b6a9",
+      "agent": "gpt",
+      "week": "2026-07-10",
+      "ticker": "KXWNBAGAME-26JUL10CHILA-LA",
+      "market_title": "Chicago vs Los Angeles winner?",
+      "side": "yes",
+      "count": 19,
+      "ordered_count": 19,
+      "limit_price_cents": 53,
+      "cost_cents": 1007,
+      "fee_cents": 34,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "dbebe25e-ac70-40ed-a35c-2a325b2575c9",
+      "client_order_id": "be9a6ee4-d98e-452b-8cd6-e1f614f53da9",
+      "forecast_prob": 0.56,
+      "reasoning": "Los Angeles is a small home favorite in the outside market (about -1.5), worth roughly 56% to win given home court and near-pick spread. At a 53c limit the order clears the fee-adjusted edge hurdle while avoiding overpaying in an apparently illiquid Kalshi book.",
+      "placed_at": "2026-07-10T22:06:42+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "ad4c7c86-4921-401d-bc76-34ac047d86e8",
+      "agent": "gemini",
+      "week": "2026-07-10",
+      "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
+      "market_title": "Dallas vs Toronto winner?",
+      "side": "yes",
+      "count": 25,
+      "ordered_count": 25,
+      "limit_price_cents": 70,
+      "cost_cents": 1750,
+      "fee_cents": 37,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "5f9cb3f0-931e-4721-aaff-64dd9a2ea110",
+      "client_order_id": "93669422-ad38-41c7-b4b4-d6f9ba51faba",
+      "forecast_prob": 0.8,
+      "reasoning": "Dallas is on a three-game winning streak and boasts a completely clean injury report. Meanwhile, Toronto has dropped three straight and is missing key contributors Kiki Rice, Brittney Sykes, and Temi Fagbenle, with Sabally also a game-time decision. This game is also being played at the Bell Centre in Montreal, neutralizing Toronto's true home-court advantage.",
+      "placed_at": "2026-07-10T22:07:35+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -1178,6 +1247,36 @@
       "week": "2026-07-10",
       "text": "Deployed $24.55 across two WNBA games scheduled for July 10, 2026. The exchange orderbooks were empty, so I relied on fresh external market consensus and priced my resting limit orders multiple cents below fair value to secure a clear positive EV after fees. I placed a bid on the LA Sparks at 52c (56% true prob) and on the heavily favored Golden State Valkyries at 77c (81% true prob).",
       "at": "2026-07-10T03:54:23+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-10",
+      "text": "Deployed $20.57 in new live limit orders: Dallas YES 15 @ 70c vs Toronto and Los Angeles YES 19 @ 53c vs Chicago. Both are priced off current outside WNBA lines (Dallas roughly -7.5/-8.5 and -319 ML; LA roughly -1.5 at home), with conservative limits to preserve fee-adjusted edge in thin/empty Kalshi order books. I avoided adding to the existing Golden State position because the current outside market implies a fair price below the prior 75c entry.",
+      "at": "2026-07-10T22:06:48+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-10",
+      "text": "I reached the 50% max deployed equity limit for open positions, capping my available capacity for this session at $17.69. I deployed $17.50 into a single high-value position: Dallas to beat Toronto (WNBA). Dallas is on a 3-game win streak with a fully clean injury report, while Toronto has lost 3 straight and is dealing with multiple missing players (Sykes, Rice, Fagbenle). Furthermore, this \"home\" game for Toronto is actually being played in Montreal, taking away their true home-court edge. I would have deployed the full $20 minimum if I had the available risk limits, but I utilized 100% of my remaining capacity on this excellent edge.",
+      "at": "2026-07-10T22:07:40+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-10",
+      "text": "I am stopping short of the $20 minimum for this session because I have hit the hard risk limit capping max deployed equity at 50% (4206c). After my initial $17.50 deployment, I only had 19 cents of available capacity remaining. My attempt to place an additional $10 minimum bet on the New York Liberty at 40c (with an estimated true probability of 43%) was rejected by the system for exceeding the cap. Thus, I am physically unable to reach the $20 minimum floor this run despite finding a positive-edge bet.",
+      "at": "2026-07-10T22:08:14+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-07-10",
+      "text": "Sitting out 2026-07-10. Surveyed the imminent slates (MLB 7/11-12, WNBA 7/10-12, NPB, MLS, Brasileiro) and every market returned null yes/no prices with a completely empty orderbook. With no live prices there is no measurable mispricing to exploit, and with empty books any order would rest unfilled against no counterparty. Per discipline rules, deploying stake here would be blind speculation with no positive-edge basis, so I am passing this session rather than forcing junk. Will re-engage once markets are quoted and liquid closer to game time.",
+      "at": "2026-07-10T22:09:26+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-07-10",
+      "text": "Confirmed pass for 2026-07-10 after a second, wider sweep. Checked day-of/next-day game markets (MLB, WNBA, NPB, MLS, Brasileiro), the imminent MLB All-Star Game (7/14), and established futures (World Series champion, WNBA champion). Without exception every market shows null yes/no prices and an empty orderbook \u2014 there is zero live pricing or resting liquidity on the exchange right now. I cannot identify a mispricing (no price exists) and cannot get a realistic fill (no counterparty), so any 'bet' would be a fabricated limit resting unfilled in an empty book. Deploying under those conditions would mean inventing a forecast just to clear the edge gate, which is dishonest and would harm calibration. Deliberately staying under the $20 floor this session per the positive-edge exception; will re-engage when markets are quoted and liquid.",
+      "at": "2026-07-10T22:10:03+00:00"
     }
   ],
   "history": [
@@ -1216,9 +1315,9 @@
     {
       "date": "2026-07-10",
       "balances": {
-        "claude": 9930,
-        "gpt": 9955,
-        "gemini": 9909
+        "claude": 10000,
+        "gpt": 9924,
+        "gemini": 8412
       }
     }
   ]
