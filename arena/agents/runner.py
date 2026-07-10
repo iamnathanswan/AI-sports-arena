@@ -25,6 +25,19 @@ REQUIRED_ENV = {
     "google": "GEMINI_API_KEY",
 }
 
+# Minimum-deployment backstop: if a session would end having staked less than
+# the configured per-run floor, the adapter injects this once and continues the
+# SAME conversation (reusing the research it already paid for) so the agent tops
+# up from its best remaining opportunities. Same wording for every model.
+TOP_UP_KICKOFF = (
+    "You are about to end this run having deployed less than the ${min_deploy:.0f} "
+    "minimum for this session. From the markets you already reviewed, place your "
+    "best remaining positive-edge bets to reach at least ${min_deploy:.0f} of total "
+    "stake (each bet ${min_stake:.0f}-${max_stake:.0f} on one market). Only stop short "
+    "if you genuinely cannot find any bet you expect to win after fees; if so, say "
+    "that plainly via record_note."
+)
+
 
 def build_system_prompt(settings: Settings, today: date) -> str:
     text = PROMPT_PATH.read_text()
@@ -32,6 +45,7 @@ def build_system_prompt(settings: Settings, today: date) -> str:
         "{{TODAY}}": today.isoformat(),
         "{{MIN_STAKE}}": f"{settings.risk.min_stake_cents_per_market / 100:.0f}",
         "{{MAX_STAKE}}": f"{settings.risk.max_stake_cents_per_market / 100:.0f}",
+        "{{MIN_DEPLOY}}": f"{settings.min_deploy_cents_per_run / 100:.0f}",
         "{{MIN_EDGE}}": str(settings.risk.min_edge_cents_per_contract),
         "{{MAX_DEPLOYED_PCT}}": f"{settings.risk.max_deployed_pct:.0f}",
         "{{MIN_PRICE}}": str(settings.risk.min_price_cents),
@@ -81,15 +95,30 @@ def run_agent(spec: AgentSpec, ctx: ToolContext, system_prompt: str, max_turns: 
             return summary
 
         settings = ctx.settings
-        # No mandatory-bet backstop: the strategy is edge-only, so ending a
-        # session with zero bets is a valid outcome (the model passes when
-        # nothing clears the net-EV gate). followup_prompt is intentionally
-        # unset.
+        # Minimum-deployment backstop: if the session would end below the per-run
+        # floor, nudge the model once to top up from its best remaining
+        # opportunities. Disabled (no followup) when the floor is 0.
+        min_deploy = settings.min_deploy_cents_per_run
+        followup_prompt = None
+        should_continue = None
+        if min_deploy > 0:
+            risk = settings.risk
+            followup_prompt = TOP_UP_KICKOFF.format(
+                min_deploy=min_deploy / 100,
+                min_stake=risk.min_stake_cents_per_market / 100,
+                max_stake=risk.max_stake_cents_per_market / 100,
+            )
+            should_continue = (
+                lambda: sum(b["cost_cents"] for b in ctx.bets_placed) < min_deploy
+            )
+
         options = RunOptions(
             effort=settings.effort,
             max_searches=settings.max_searches_per_session,
             budget_cents=settings.max_cost_cents_per_session or None,
             cost_of=lambda u: compute_cost_cents(spec, u),
+            followup_prompt=followup_prompt,
+            should_continue=should_continue,
         )
 
         result = adapter.run(

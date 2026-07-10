@@ -62,6 +62,11 @@ class Settings:
     max_searches_per_session: int = 5
     max_cost_cents_per_session: int = 150  # hard per-session spend ceiling; 0 disables
 
+    # Minimum total stake each agent must deploy per run, in cents. If a session
+    # ends below this, the agent is nudged once to top up from its best remaining
+    # opportunities (so a daily run always puts real money to work). 0 disables.
+    min_deploy_cents_per_run: int = 0
+
     # Environment-derived
     dry_run: bool = True
     kill_switch: bool = False
@@ -123,6 +128,7 @@ def load_settings(settings_path: Path | None = None) -> Settings:
         effort=str(raw.get("effort", "medium")).lower(),
         max_searches_per_session=int(raw.get("max_searches_per_session", 5)),
         max_cost_cents_per_session=int(raw.get("max_cost_cents_per_session", 150)),
+        min_deploy_cents_per_run=int(raw.get("min_deploy_cents_per_run", 0)),
         dry_run=_env_flag("DRY_RUN", default=True),
         kill_switch=_env_flag("KILL_SWITCH", default=False),
         kalshi_env=os.environ.get("KALSHI_ENV", "prod").strip().lower() or "prod",

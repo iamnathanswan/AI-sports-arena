@@ -1,7 +1,6 @@
-"""run_agent wiring: it calls the adapter exactly once and passes the
-cost-control options. The strategy is edge-only, so there is no mandatory-bet
-followup — the runner leaves followup_prompt/should_continue unset and a session
-may end with zero bets."""
+"""run_agent wiring: it calls the adapter exactly once, passes the cost-control
+options, and wires the per-run minimum-deployment backstop (followup_prompt +
+should_continue) when min_deploy_cents_per_run > 0."""
 
 from arena.agents import runner
 from arena.config import AgentSpec, RiskLimits, Settings
@@ -22,6 +21,7 @@ def make_settings():
         effort="medium",
         max_searches_per_session=5,
         max_cost_cents_per_session=100,
+        min_deploy_cents_per_run=2000,
     )
 
 
@@ -79,11 +79,26 @@ class TestRunnerWiring:
         assert opts.budget_cents == 100
         assert callable(opts.cost_of)
 
-    def test_no_forced_bet_followup(self, monkeypatch):
-        # Edge-only strategy: the runner never wires a mandatory-bet nudge, so
-        # an agent that ends with zero bets is left alone.
+    def test_topup_backstop_wired_when_floor_set(self, monkeypatch):
+        # With a per-run floor configured, the runner wires the top-up nudge.
         adapter = RecordingAdapter()
-        run_with(monkeypatch, adapter)
+        _, ctx = run_with(monkeypatch, adapter)
+        opts = adapter.captured_options
+        assert opts.followup_prompt is not None
+        assert "20" in opts.followup_prompt  # $20 floor mentioned
+        # Under the floor -> keep going; at/over it -> stop.
+        assert opts.should_continue() is True
+        ctx.bets_placed.append({"cost_cents": 2000})
+        assert opts.should_continue() is False
+
+    def test_no_backstop_when_floor_zero(self, monkeypatch):
+        adapter = RecordingAdapter()
+        monkeypatch.setattr(runner, "has_api_key", lambda spec: True)
+        monkeypatch.setattr("arena.agents.anthropic_agent.run", adapter.run)
+        ctx = make_ctx()
+        ctx.settings.min_deploy_cents_per_run = 0
+        spec = AgentSpec(name="claude", provider="anthropic", model="m")
+        runner.run_agent(spec, ctx, system_prompt="SYSTEM", max_turns=10)
         opts = adapter.captured_options
         assert opts.followup_prompt is None
         assert opts.should_continue is None
