@@ -1,23 +1,67 @@
 {
-  "generated_at": "2026-07-09T22:23:35+00:00",
+  "generated_at": "2026-07-10T03:51:28+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
     {
-      "name": "claude",
-      "provider": "anthropic",
-      "model": "claude-opus-4-8",
-      "equity_cents": 10000,
-      "cash_cents": 10000,
+      "name": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "equity_cents": 9955,
+      "cash_cents": 7865,
       "initial_cents": 10000,
-      "pnl_cents": 0,
-      "roi_pct": 0.0,
+      "pnl_cents": -45,
+      "roi_pct": -0.45,
       "settled_bets": 0,
       "wins": 0,
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
-      "fees_paid_cents": 0,
+      "fees_paid_cents": 45,
+      "fill_rate": null,
+      "brier": null,
+      "usage": {
+        "input_tokens": 1438439,
+        "output_tokens": 22013,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 3970176,
+        "cost_cents": 1012,
+        "sessions": 10
+      },
+      "open_positions": [
+        {
+          "ticker": "KXWNBAGAME-26JUL10GSCONN-GS",
+          "title": "Golden State vs Connecticut winner?",
+          "side": "yes",
+          "contracts": 14,
+          "cost_cents": 1050,
+          "forecast_prob": 0.8
+        },
+        {
+          "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
+          "title": "Dallas vs Toronto winner?",
+          "side": "yes",
+          "contracts": 16,
+          "cost_cents": 1040,
+          "forecast_prob": 0.695
+        }
+      ]
+    },
+    {
+      "name": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "equity_cents": 9930,
+      "cash_cents": 7790,
+      "initial_cents": 10000,
+      "pnl_cents": -70,
+      "roi_pct": -0.7,
+      "settled_bets": 0,
+      "wins": 0,
+      "win_rate": null,
+      "staked_cents": 0,
+      "returned_cents": 0,
+      "fees_paid_cents": 70,
       "fill_rate": null,
       "brier": null,
       "usage": {
@@ -28,59 +72,49 @@
         "cost_cents": 690,
         "sessions": 5
       },
-      "open_positions": []
-    },
-    {
-      "name": "gpt",
-      "provider": "openai",
-      "model": "gpt-5.5",
-      "equity_cents": 10000,
-      "cash_cents": 10000,
-      "initial_cents": 10000,
-      "pnl_cents": 0,
-      "roi_pct": 0.0,
-      "settled_bets": 0,
-      "wins": 0,
-      "win_rate": null,
-      "staked_cents": 0,
-      "returned_cents": 0,
-      "fees_paid_cents": 0,
-      "fill_rate": null,
-      "brier": null,
-      "usage": {
-        "input_tokens": 1301371,
-        "output_tokens": 19339,
-        "cache_write_tokens": 0,
-        "cache_read_tokens": 3319168,
-        "cost_cents": 903,
-        "sessions": 9
-      },
-      "open_positions": []
+      "open_positions": [
+        {
+          "ticker": "KXWNBAGAME-26JUL10GSCONN-GS",
+          "title": "Golden State vs Connecticut winner?",
+          "side": "yes",
+          "contracts": 20,
+          "cost_cents": 1080,
+          "forecast_prob": 0.61
+        },
+        {
+          "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
+          "title": "Dallas vs Toronto winner?",
+          "side": "yes",
+          "contracts": 20,
+          "cost_cents": 1060,
+          "forecast_prob": 0.6
+        }
+      ]
     },
     {
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 9972,
-      "cash_cents": 8512,
+      "equity_cents": 9909,
+      "cash_cents": 5994,
       "initial_cents": 10000,
-      "pnl_cents": -28,
-      "roi_pct": -0.28,
+      "pnl_cents": -91,
+      "roi_pct": -0.91,
       "settled_bets": 0,
       "wins": 0,
       "win_rate": null,
       "staked_cents": 0,
       "returned_cents": 0,
-      "fees_paid_cents": 28,
+      "fees_paid_cents": 91,
       "fill_rate": 0.0,
       "brier": null,
       "usage": {
-        "input_tokens": 1042602,
-        "output_tokens": 30260,
+        "input_tokens": 1296890,
+        "output_tokens": 35619,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 3589639,
-        "cost_cents": 318,
-        "sessions": 8
+        "cache_read_tokens": 4366067,
+        "cost_cents": 391,
+        "sessions": 9
       },
       "open_positions": [
         {
@@ -90,6 +124,22 @@
           "contracts": 20,
           "cost_cents": 1460,
           "forecast_prob": 0.8
+        },
+        {
+          "ticker": "KXWNBAGAME-26JUL10CHILA-LA",
+          "title": "Chicago vs Los Angeles winner?",
+          "side": "yes",
+          "contracts": 25,
+          "cost_cents": 1300,
+          "forecast_prob": 0.56
+        },
+        {
+          "ticker": "KXWNBAGAME-26JUL10GSCONN-GS",
+          "title": "Golden State vs Connecticut winner?",
+          "side": "yes",
+          "contracts": 15,
+          "cost_cents": 1155,
+          "forecast_prob": 0.81
         }
       ]
     }
@@ -126,9 +176,119 @@
         "gpt": 10000,
         "gemini": 9972
       }
+    },
+    {
+      "date": "2026-07-10",
+      "balances": {
+        "claude": 9930,
+        "gpt": 9955,
+        "gemini": 9909
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "claude",
+      "week": "2026-07-10",
+      "ticker": "KXWNBAGAME-26JUL10GSCONN-GS",
+      "title": "Golden State vs Connecticut winner?",
+      "side": "yes",
+      "contracts": 20,
+      "price_cents": 54,
+      "cost_cents": 1080,
+      "fee_cents": 35,
+      "forecast_prob": 0.61,
+      "reasoning": "Golden State Valkyries enter on a 5-game win streak and No. 1 in power rankings; Connecticut started 2-15 and remains a bottom-tier side. Even on the road GS should be a solid favorite (~61%). Book is empty, so resting a limit at 54c captures clear edge if filled.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-10T03:56:52+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-07-10",
+      "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
+      "title": "Dallas vs Toronto winner?",
+      "side": "yes",
+      "contracts": 20,
+      "price_cents": 53,
+      "cost_cents": 1060,
+      "fee_cents": 35,
+      "forecast_prob": 0.6,
+      "reasoning": "Dallas (13-8) beat Toronto by 13 at Toronto on July 5 and has no key injuries; Toronto Tempo are missing guards Brittney Sykes (out) and Kiki Rice (out). Dallas is the stronger team and repeat road win is ~60% likely. Resting a limit at 53c below fair value for positive edge in an empty book.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-10T03:56:52+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-10",
+      "ticker": "KXWNBAGAME-26JUL10GSCONN-GS",
+      "title": "Golden State vs Connecticut winner?",
+      "side": "yes",
+      "contracts": 15,
+      "price_cents": 77,
+      "cost_cents": 1155,
+      "fee_cents": 19,
+      "forecast_prob": 0.81,
+      "reasoning": "The Valkyries are a massive -450 moneyline favorite and cover a -9.5 spread against the Sun, indicating an implied win probability of around 81.8%. With my 81% true win probability projection, a limit bid at 77c captures several cents of edge even after the exchange fee.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-10T03:54:19+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-10",
+      "ticker": "KXWNBAGAME-26JUL10CHILA-LA",
+      "title": "Chicago vs Los Angeles winner?",
+      "side": "yes",
+      "contracts": 25,
+      "price_cents": 52,
+      "cost_cents": 1300,
+      "fee_cents": 44,
+      "forecast_prob": 0.56,
+      "reasoning": "Sparks are -125 moneyline favorites (implied prob ~55.5%). With my model projecting a 56% true win probability based on their home court advantage and recent form against the struggling Sky, placing a limit bid at 52c offers solid positive EV after factoring in Kalshi fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-10T03:54:10+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-10",
+      "ticker": "KXWNBAGAME-26JUL10GSCONN-GS",
+      "title": "Golden State vs Connecticut winner?",
+      "side": "yes",
+      "contracts": 14,
+      "price_cents": 75,
+      "cost_cents": 1050,
+      "fee_cents": 19,
+      "forecast_prob": 0.8,
+      "reasoning": "Golden State is priced as a substantial road favorite by live WNBA odds (around -470 / roughly 80% implied) against a 6-18 Connecticut team, while the Kalshi book showed no resting liquidity. I am willing to bid up to 75c, leaving several cents of edge after fees if filled; this is mainly a day-of strength mismatch rather than a high-liquidity arbitrage.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-10T03:52:34+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-10",
+      "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
+      "title": "Dallas vs Toronto winner?",
+      "side": "yes",
+      "contracts": 16,
+      "price_cents": 65,
+      "cost_cents": 1040,
+      "fee_cents": 26,
+      "forecast_prob": 0.695,
+      "reasoning": "Dallas is a road favorite at Toronto by current WNBA odds (about -255 / 69% implied), with a -6.5 spread and better recent record profile. A 65c limit gives a positive after-fee cushion while avoiding overpaying in an empty Kalshi orderbook.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-10T03:52:34+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-09",
@@ -777,6 +937,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-10",
+      "text": "Deployed $24.55 across two WNBA games scheduled for July 10, 2026. The exchange orderbooks were empty, so I relied on fresh external market consensus and priced my resting limit orders multiple cents below fair value to secure a clear positive EV after fees. I placed a bid on the LA Sparks at 52c (56% true prob) and on the heavily favored Golden State Valkyries at 77c (81% true prob).",
+      "at": "2026-07-10T03:54:23+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-10",
+      "text": "Deployed $20.90 in WNBA day-of limits: 14 YES Golden State over Connecticut at 75c (forecast 80%) and 16 YES Dallas over Toronto at 65c (forecast 69.5%). Both Kalshi books were empty, so I used conservative limits below live WNBA market-implied probabilities (-470 GS, -255 DAL) to preserve several cents of after-fee edge if filled.",
+      "at": "2026-07-10T03:52:38+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-09",
