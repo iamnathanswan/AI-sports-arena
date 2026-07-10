@@ -8,6 +8,12 @@ bankroll_cents: 10000
 # Max tool-use turns per agent per daily session (hard stop on runaway loops).
 max_turns: 25
 
+# Minimum total stake each agent must deploy per daily run ($20). If a session
+# would end below this, the agent is nudged once to top up from its best
+# remaining opportunities, so every run puts real money to work. Set 0 to let
+# agents pass on a flat day instead.
+min_deploy_cents_per_run: 2000
+
 # --- Cost controls (applied identically to every agent, so the comparison
 # stays fair). See the README "Controlling API cost" section. ---
 # Reasoning effort for all models: low | medium | high. Lower = fewer thinking
@@ -28,10 +34,12 @@ risk:
   min_stake_cents_per_market: 1000  # each bet must stake at least this ($10)
   max_stake_cents_per_market: 2000  # at most this staked on one market ($20)
   # Net-EV gate: a bet's stated edge must beat the price AND the fee by at least
-  # this many cents per contract. This is the "no fair-value bets" rule that
-  # stops the bot bleeding fees on coin-flips. Raise it to bet only bigger
-  # mispricings; lower it (min 1) to act on thinner edges.
-  min_edge_cents_per_contract: 3
+  # this many cents per contract, or it's rejected. At 1 this is a "never place
+  # a bet you yourself expect to lose after fees" floor -- which keeps the $20
+  # per-run minimum satisfiable. The system prompt still asks models to *prefer*
+  # several cents of edge; raise this to hard-enforce a bigger mispricing (but
+  # then some flat days may fall short of the $20 minimum).
+  min_edge_cents_per_contract: 1
   max_new_positions_per_week: 0     # 0 = unlimited new markets (no weekly cap)
   max_deployed_pct: 50              # max % of equity tied up in open positions at once
   min_price_cents: 5                # refuse extreme longshots / near-certainties

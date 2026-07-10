@@ -4,7 +4,7 @@
 
 Every day, each AI model gets a betting session on [Kalshi](https://kalshi.com) (a CFTC-regulated prediction exchange where sports outcomes trade as binary contracts). Each agent manages its own $100 bankroll, hunts for a **news-driven mispricing** in that day's games, and places bets under identical conditions:
 
-- **One system prompt** ([`arena/prompts/system.md`](arena/prompts/system.md)) — a news-first, edge-only strategy: find fresh, decision-relevant news (lineups, injuries, pitchers, weather) the market hasn't priced yet, bet only when the edge clears the price *and* the fee, quarter-Kelly sizing, and **pass when there's no edge** (a no-bet day is a valid outcome, not a failure).
+- **One system prompt** ([`arena/prompts/system.md`](arena/prompts/system.md)) — a news-first strategy: find fresh, decision-relevant news (lineups, injuries, pitchers, weather) the market hasn't priced yet, and **deploy at least $20 per run** into the best positive-edge mispricings (quarter-Kelly sizing, highest edge funded first). Every bet must clear the price *and* the fee — it never places a bet it expects to lose.
 - **One tool set** ([`arena/tools.py`](arena/tools.py)) — browse markets, check orderbooks, place bets, record reasoning. Provider adapters translate wire formats only; behavior is identical.
 - **One risk layer** ([`arena/risk.py`](arena/risk.py)) — hard limits enforced in code, including a **net-EV gate** that rejects any bet whose stated edge doesn't beat the price and fee by a margin. No matter what any model decides.
 
@@ -41,7 +41,7 @@ All agents trade through **one** Kalshi account. A virtual ledger ([`data/ledger
 | `DRY_RUN` (repo variable) | **Defaults to `true`** — agents decide, everything is logged and paper-settled against real market results, but no real orders are sent. Set to `false` to go live. |
 | `KILL_SWITCH` (repo variable) | `true` instantly halts all order placement (settlement still runs). |
 | `KALSHI_ENV` (repo variable) | `prod` or `demo` (Kalshi's fake-money sandbox). |
-| Risk limits (code-enforced) | ≥3c net edge per contract after price + fee (no fair-value bets) · $10–$20 staked per market · max 50% of equity deployed · prices 5–95c only · can never spend more cash than allocated. |
+| Risk limits (code-enforced) | ≥$20 deployed per run · positive net edge after price + fee (no bet it expects to lose) · $10–$20 staked per market · max 50% of equity deployed · prices 5–95c only · can never spend more cash than allocated. |
 
 ## Setup — what you need to do
 
@@ -70,7 +70,7 @@ python -m http.server -d . 8000         # dashboard at http://localhost:8000/web
 
 ## Controlling API cost
 
-Running three frontier models **daily** costs real money — roughly 7× a weekly cadence — and web search adds to it. Two things keep it in check: dropping the forced-bet rule means edge-less days end quickly and cheaply, and every lever below lives in [`config/settings.yaml`](config/settings.yaml) and applies **identically to every agent** (so the comparison stays fair). Watch the **"API cost & token usage"** section of the dashboard to see the effect.
+Running three frontier models **daily** costs real money — roughly 7× a weekly cadence — and web search adds to it. Every lever below lives in [`config/settings.yaml`](config/settings.yaml) and applies **identically to every agent** (so the comparison stays fair). Watch the **"API cost & token usage"** section of the dashboard to see the effect. (Note: `min_deploy_cents_per_run` requires each agent to stake at least $20/run, so it *will* place bets daily — set it to `0` if you'd rather agents pass on flat days.)
 
 | Lever | Setting | What it does |
 |---|---|---|
