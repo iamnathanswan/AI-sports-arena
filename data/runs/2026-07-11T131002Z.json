@@ -1,0 +1,114 @@
+{
+  "session": "2026-07-11",
+  "generated_at": "2026-07-11T13:10:02+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "7c8c0010-f4bc-4a13-ad51-7fc29e1a8996",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL10GSCONN-GS",
+      "action": "settled",
+      "result": "won",
+      "contracts": 14,
+      "payout_cents": 1400,
+      "kalshi_order_id": "8d597cd1-56e7-423d-890d-177e5d9ab62c"
+    },
+    {
+      "order": "248829c0-35cc-4e5a-a383-e09a6c70449b",
+      "agent": "gemini",
+      "ticker": "KXWNBAGAME-26JUL10CHILA-LA",
+      "action": "settled",
+      "result": "won",
+      "contracts": 25,
+      "payout_cents": 2500,
+      "kalshi_order_id": "0bb7ba05-c3fe-4b78-b4d5-9d20dd460fef"
+    },
+    {
+      "order": "581191be-054e-4349-8c4f-baf0cc58c955",
+      "agent": "gemini",
+      "ticker": "KXWNBAGAME-26JUL10GSCONN-GS",
+      "action": "settled",
+      "result": "won",
+      "contracts": 15,
+      "payout_cents": 1500,
+      "kalshi_order_id": "029d2564-3db1-4377-9d9b-3ecd0ca5c85d"
+    },
+    {
+      "order": "0c0e7a6e-0fff-4483-a7d7-e9e9d5366e6d",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
+      "action": "refund_unfilled",
+      "refund_cents": 1073,
+      "filled": 0
+    },
+    {
+      "order": "0adba1c6-4779-4292-9fd7-8aa680b9b6a9",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL10CHILA-LA",
+      "action": "refund_unfilled",
+      "refund_cents": 1041,
+      "filled": 0
+    },
+    {
+      "order": "ad4c7c86-4921-401d-bc76-34ac047d86e8",
+      "agent": "gemini",
+      "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
+      "action": "refund_unfilled",
+      "refund_cents": 1787,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 10,
+      "final_text": "I have completed my weekly betting session. I assessed the imminent games, checked the latest news and starting pitchers, and placed limit orders totaling ~$33 across three markets where I found clear informational edges.\n\nHere is a summary of the action:\n1. **WNBA: Minnesota Lynx to beat New York Liberty** (July 11): Minnesota is an impressive 28-5 and playing at home at the Target Center. Given their dominant form this season, I assigned them a 65% probability of winning and placed a limit order to capture a strong edge.\n2. **MLB: Tampa Bay Rays to beat Seattle Mariners** (July 12): The Rays have a very strong 54-36 record compared to a hovering-.500 Mariners team (47-46). With home-field advantage at Tropicana Field, they are clear favorites, justifying a 59% probability estimate.\n3. **MLB: New York Yankees to beat Washington Nationals** (July 12): The Yankees (52-42) will start Will Warren against Washington's (48-47) Cade Cavalli. The Yankees have the stronger overall squad and I give them a 58% probability of taking the win.\n\nMy note has been recorded to the public log.",
+      "error": null,
+      "usage": {
+        "input_tokens": 97826,
+        "output_tokens": 3005,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 369867
+      },
+      "cost_cents": 31,
+      "forced_followup": false,
+      "bets_placed": 3
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 12,
+      "final_text": "(stopped early: session cost ceiling reached)",
+      "error": null,
+      "usage": {
+        "input_tokens": 726,
+        "output_tokens": 7664,
+        "cache_write_tokens": 126059,
+        "cache_read_tokens": 1156787
+      },
+      "cost_cents": 156,
+      "forced_followup": true,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 9,
+      "final_text": "(stopped early: session cost ceiling reached)",
+      "error": null,
+      "usage": {
+        "input_tokens": 264732,
+        "output_tokens": 2795,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 303360
+      },
+      "cost_cents": 156,
+      "forced_followup": false,
+      "bets_placed": 0
+    }
+  ]
+}

@@ -1,8 +1,35 @@
 {
-  "generated_at": "2026-07-10T22:05:18+00:00",
+  "generated_at": "2026-07-11T13:10:02+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
+    {
+      "name": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "equity_cents": 10331,
+      "cash_cents": 10331,
+      "initial_cents": 10000,
+      "pnl_cents": 331,
+      "roi_pct": 3.31,
+      "settled_bets": 1,
+      "wins": 1,
+      "win_rate": 1.0,
+      "staked_cents": 1050,
+      "returned_cents": 1400,
+      "fees_paid_cents": 19,
+      "fill_rate": 0.219,
+      "brier": 0.04,
+      "usage": {
+        "input_tokens": 1900709,
+        "output_tokens": 28221,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 4814848,
+        "cost_cents": 1304,
+        "sessions": 12
+      },
+      "open_positions": []
+    },
     {
       "name": "claude",
       "provider": "anthropic",
@@ -21,116 +48,64 @@
       "fill_rate": 0.0,
       "brier": null,
       "usage": {
-        "input_tokens": 374481,
-        "output_tokens": 24519,
-        "cache_write_tokens": 677978,
-        "cache_read_tokens": 3335610,
-        "cost_cents": 839,
-        "sessions": 6
+        "input_tokens": 375207,
+        "output_tokens": 32183,
+        "cache_write_tokens": 804037,
+        "cache_read_tokens": 4492397,
+        "cost_cents": 995,
+        "sessions": 7
       },
       "open_positions": []
-    },
-    {
-      "name": "gpt",
-      "provider": "openai",
-      "model": "gpt-5.5",
-      "equity_cents": 9924,
-      "cash_cents": 6817,
-      "initial_cents": 10000,
-      "pnl_cents": -76,
-      "roi_pct": -0.76,
-      "settled_bets": 0,
-      "wins": 0,
-      "win_rate": null,
-      "staked_cents": 0,
-      "returned_cents": 0,
-      "fees_paid_cents": 76,
-      "fill_rate": 0.0,
-      "brier": null,
-      "usage": {
-        "input_tokens": 1635977,
-        "output_tokens": 25426,
-        "cache_write_tokens": 0,
-        "cache_read_tokens": 4511488,
-        "cost_cents": 1148,
-        "sessions": 11
-      },
-      "open_positions": [
-        {
-          "ticker": "KXWNBAGAME-26JUL10GSCONN-GS",
-          "title": "Golden State vs Connecticut winner?",
-          "side": "yes",
-          "contracts": 14,
-          "cost_cents": 1050,
-          "forecast_prob": 0.8
-        },
-        {
-          "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
-          "title": "Dallas vs Toronto winner?",
-          "side": "yes",
-          "contracts": 15,
-          "cost_cents": 1050,
-          "forecast_prob": 0.75
-        },
-        {
-          "ticker": "KXWNBAGAME-26JUL10CHILA-LA",
-          "title": "Chicago vs Los Angeles winner?",
-          "side": "yes",
-          "contracts": 19,
-          "cost_cents": 1007,
-          "forecast_prob": 0.56
-        }
-      ]
     },
     {
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 8412,
-      "cash_cents": 4207,
+      "equity_cents": 9891,
+      "cash_cents": 6618,
       "initial_cents": 10000,
-      "pnl_cents": -1588,
-      "roi_pct": -15.88,
-      "settled_bets": 1,
-      "wins": 0,
-      "win_rate": 0.0,
-      "staked_cents": 1460,
-      "returned_cents": 0,
-      "fees_paid_cents": 128,
-      "fill_rate": 0.4,
-      "brier": 0.64,
+      "pnl_cents": -109,
+      "roi_pct": -1.09,
+      "settled_bets": 3,
+      "wins": 2,
+      "win_rate": 0.667,
+      "staked_cents": 3915,
+      "returned_cents": 4000,
+      "fees_paid_cents": 194,
+      "fill_rate": 0.522,
+      "brier": 0.2899,
       "usage": {
-        "input_tokens": 1489997,
-        "output_tokens": 41618,
+        "input_tokens": 1587823,
+        "output_tokens": 44623,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 4882091,
-        "cost_cents": 447,
-        "sessions": 10
+        "cache_read_tokens": 5251958,
+        "cost_cents": 478,
+        "sessions": 11
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26JUL10CHILA-LA",
-          "title": "Chicago vs Los Angeles winner?",
+          "ticker": "KXWNBAGAME-26JUL11NYMIN-MIN",
+          "title": "New York vs Minnesota winner?",
           "side": "yes",
-          "contracts": 25,
-          "cost_cents": 1300,
-          "forecast_prob": 0.56
+          "contracts": 18,
+          "cost_cents": 1080,
+          "forecast_prob": 0.65
         },
         {
-          "ticker": "KXWNBAGAME-26JUL10GSCONN-GS",
-          "title": "Golden State vs Connecticut winner?",
+          "ticker": "KXMLBGAME-26JUL121340SEATB-TB",
+          "title": "Seattle vs Tampa Bay Winner?",
           "side": "yes",
-          "contracts": 15,
-          "cost_cents": 1155,
-          "forecast_prob": 0.81
+          "contracts": 20,
+          "cost_cents": 1080,
+          "forecast_prob": 0.59
         },
         {
-          "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
-          "title": "Dallas vs Toronto winner?",
+          "ticker": "KXMLBGAME-26JUL121335NYYWSH-NYY",
+          "title": "New York Y vs Washington Winner?",
           "side": "yes",
-          "contracts": 25,
-          "cost_cents": 1750,
-          "forecast_prob": 0.8
+          "contracts": 21,
+          "cost_cents": 1113,
+          "forecast_prob": 0.58
         }
       ]
     }
@@ -175,23 +150,82 @@
         "gpt": 9924,
         "gemini": 8412
       }
+    },
+    {
+      "date": "2026-07-11",
+      "balances": {
+        "claude": 10000,
+        "gpt": 10331,
+        "gemini": 9891
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-11",
+      "ticker": "KXWNBAGAME-26JUL11NYMIN-MIN",
+      "title": "New York vs Minnesota winner?",
+      "side": "yes",
+      "contracts": 18,
+      "price_cents": 60,
+      "cost_cents": 1080,
+      "fee_cents": 31,
+      "forecast_prob": 0.65,
+      "reasoning": "Minnesota is playing very well at 28-5 and is at home against the Liberty. They have the clear edge here in the WNBA matchup.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-11T13:10:45+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-11",
+      "ticker": "KXMLBGAME-26JUL121340SEATB-TB",
+      "title": "Seattle vs Tampa Bay Winner?",
+      "side": "yes",
+      "contracts": 20,
+      "price_cents": 54,
+      "cost_cents": 1080,
+      "fee_cents": 35,
+      "forecast_prob": 0.59,
+      "reasoning": "The Rays are 54-36 at home against a .500 Mariners team. Ian Seymour vs Emerson Hancock favors the stronger overall home team.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-11T13:10:45+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-11",
+      "ticker": "KXMLBGAME-26JUL121335NYYWSH-NYY",
+      "title": "New York Y vs Washington Winner?",
+      "side": "yes",
+      "contracts": 21,
+      "price_cents": 53,
+      "cost_cents": 1113,
+      "fee_cents": 37,
+      "forecast_prob": 0.58,
+      "reasoning": "The Yankees are 52-42 playing the 48-47 Nationals. Will Warren on the mound should give them a slight edge over Cade Cavalli.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-11T13:10:45+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-10",
       "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
       "title": "Dallas vs Toronto winner?",
       "side": "yes",
-      "contracts": 25,
+      "contracts": 0,
       "price_cents": 70,
-      "cost_cents": 1750,
-      "fee_cents": 37,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.8,
       "reasoning": "Dallas is on a three-game winning streak and boasts a completely clean injury report. Meanwhile, Toronto has dropped three straight and is missing key contributors Kiki Rice, Brittney Sykes, and Temi Fagbenle, with Sabally also a game-time decision. This game is also being played at the Bell Centre in Montreal, neutralizing Toronto's true home-court advantage.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-10T22:07:35+00:00"
     },
@@ -201,14 +235,14 @@
       "ticker": "KXWNBAGAME-26JUL10CHILA-LA",
       "title": "Chicago vs Los Angeles winner?",
       "side": "yes",
-      "contracts": 19,
+      "contracts": 0,
       "price_cents": 53,
-      "cost_cents": 1007,
-      "fee_cents": 34,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.56,
       "reasoning": "Los Angeles is a small home favorite in the outside market (about -1.5), worth roughly 56% to win given home court and near-pick spread. At a 53c limit the order clears the fee-adjusted edge hurdle while avoiding overpaying in an apparently illiquid Kalshi book.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-10T22:06:42+00:00"
     },
@@ -218,14 +252,14 @@
       "ticker": "KXWNBAGAME-26JUL10DALTOR-DAL",
       "title": "Dallas vs Toronto winner?",
       "side": "yes",
-      "contracts": 15,
+      "contracts": 0,
       "price_cents": 70,
-      "cost_cents": 1050,
-      "fee_cents": 23,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.75,
       "reasoning": "Dallas is a clear road favorite on the current outside market (around -7.5/-8.5 spread and roughly -320 moneyline), which I translate to about a 74-76% win probability after vig. A 70c limit leaves several cents of edge after Kalshi fees if it fills, and the price target avoids chasing a thin book.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-10T22:06:41+00:00"
     },
@@ -276,8 +310,8 @@
       "forecast_prob": 0.81,
       "reasoning": "The Valkyries are a massive -450 moneyline favorite and cover a -9.5 spread against the Sun, indicating an implied win probability of around 81.8%. With my 81% true win probability projection, a limit bid at 77c captures several cents of edge even after the exchange fee.",
       "status": "live",
-      "result": null,
-      "payout_cents": 0,
+      "result": "won",
+      "payout_cents": 1500,
       "placed_at": "2026-07-10T03:54:19+00:00"
     },
     {
@@ -293,8 +327,8 @@
       "forecast_prob": 0.56,
       "reasoning": "Sparks are -125 moneyline favorites (implied prob ~55.5%). With my model projecting a 56% true win probability based on their home court advantage and recent form against the struggling Sky, placing a limit bid at 52c offers solid positive EV after factoring in Kalshi fees.",
       "status": "live",
-      "result": null,
-      "payout_cents": 0,
+      "result": "won",
+      "payout_cents": 2500,
       "placed_at": "2026-07-10T03:54:10+00:00"
     },
     {
@@ -310,8 +344,8 @@
       "forecast_prob": 0.8,
       "reasoning": "Golden State is priced as a substantial road favorite by live WNBA odds (around -470 / roughly 80% implied) against a 6-18 Connecticut team, while the Kalshi book showed no resting liquidity. I am willing to bid up to 75c, leaving several cents of edge after fees if filled; this is mainly a day-of strength mismatch rather than a high-liquidity arbitrage.",
       "status": "live",
-      "result": null,
-      "payout_cents": 0,
+      "result": "won",
+      "payout_cents": 1400,
       "placed_at": "2026-07-10T03:52:34+00:00"
     },
     {
@@ -979,6 +1013,24 @@
     }
   ],
   "notes": [
+    {
+      "agent": "claude",
+      "week": "2026-07-11",
+      "text": "2026-07-11 follow-up: Still deploying $0, below the $20 floor, and this is the justified exception. Re-examined every market I could reach \u2014 all of today's MLB games (HOU/TEX, LAD/AZ, NYY/WSH, BOS/NYM, COL/SF, etc.), all of today's WNBA games (PHX/LV, PDX/ATL, NY/MIN), and season futures. Confirmed via get_market and depth-10 get_orderbook that EVERY market returns null bid/ask/last and a fully empty orderbook on both sides. Consequences: (1) with no price, no mispricing can be measured, so no positive edge-after-fee can be computed for any side; (2) a limit order would rest in an empty book and expire unfilled, so it is not real action; (3) I have no confirmed pitchers/lineups/injuries to build a calibrated independent estimate, so any forecast_prob would be an uncalibrated guess \u2014 a negative-EV coin flip, not a bet I expect to win. Per the rules, I will not manufacture junk bets to hit a floor. Bankroll preserved at $100. Ready to deploy the moment live prices/liquidity appear.",
+      "at": "2026-07-11T13:12:54+00:00"
+    },
+    {
+      "agent": "claude",
+      "week": "2026-07-11",
+      "text": "2026-07-11 daily session: SITTING OUT. Reviewed today's imminent slate \u2014 MLB (HOU/TEX, LAD/AZ, NYY/WSH, BOS/NYM, etc.) and WNBA (PHX/LV, PDX/ATL, NY/MIN) \u2014 plus season futures. Every market across the entire exchange is returning null yes/no bid/ask and last prices with completely empty orderbooks (verified with depth checks on multiple games and series). With no prices and zero resting liquidity anywhere, there is no observable mispricing to exploit and no realistic fill: any limit order would rest unfilled in an empty book, which does not count as action. Per discipline rules, deploying below the $20 floor is justified when no bet has a realistic positive-edge fill. No bets placed; bankroll preserved at $100. Will re-engage when live prices/liquidity return.",
+      "at": "2026-07-11T13:12:14+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-11",
+      "text": "Deployed roughly $33 into limit orders across three imminent markets: WNBA Lynx (over Liberty), MLB Rays (over Mariners), and MLB Yankees (over Nationals). The Lynx are dominant at home this season (28-5) so the 65% estimation provides good value. The Rays are 54-36 and at home vs an average Seattle team. Yankees field the better roster vs Washington. Prices were entered to secure several cents of edge.",
+      "at": "2026-07-11T13:10:49+00:00"
+    },
     {
       "agent": "claude",
       "week": "2026-07-10",
