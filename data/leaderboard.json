@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T21:58:31+00:00",
+  "generated_at": "2026-07-14T21:59:12+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -7,43 +7,43 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 10516,
-      "cash_cents": 8511,
+      "equity_cents": 9510,
+      "cash_cents": 7420,
       "initial_cents": 10000,
-      "pnl_cents": 516,
-      "roi_pct": 5.16,
-      "settled_bets": 4,
+      "pnl_cents": -490,
+      "roi_pct": -4.9,
+      "settled_bets": 5,
       "wins": 3,
-      "win_rate": 0.75,
-      "staked_cents": 4140,
+      "win_rate": 0.6,
+      "staked_cents": 5140,
       "returned_cents": 4900,
-      "fees_paid_cents": 244,
-      "fill_rate": 0.41,
-      "brier": 0.1281,
+      "fees_paid_cents": 250,
+      "fill_rate": 0.613,
+      "brier": 0.1034,
       "usage": {
-        "input_tokens": 2351408,
-        "output_tokens": 39527,
+        "input_tokens": 2565810,
+        "output_tokens": 41992,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 7206016,
-        "cost_cents": 1683,
-        "sessions": 15
+        "cache_read_tokens": 7873024,
+        "cost_cents": 1831,
+        "sessions": 16
       },
       "open_positions": [
         {
-          "ticker": "KXMLBHRDERBY-26-JCAMINERO13",
-          "title": "Will Junior Caminero win the 2026 Home Run Derby?",
+          "ticker": "KXWNBAGAME-26JUL14WSHTOR-WSH",
+          "title": "Washington vs Toronto winner?",
           "side": "yes",
-          "contracts": 67,
-          "cost_cents": 1005,
-          "forecast_prob": 0.17
+          "contracts": 19,
+          "cost_cents": 1045,
+          "forecast_prob": 0.6
         },
         {
-          "ticker": "KXMLBHRDERBY-26-WCONTRERAS40",
-          "title": "Will Willson Contreras win the 2026 Home Run Derby?",
+          "ticker": "KXMLBASGAME-26JUL14ALNL-NL",
+          "title": "Pro Baseball All-Star Game Winner?",
           "side": "yes",
-          "contracts": 200,
-          "cost_cents": 1000,
-          "forecast_prob": 0.068
+          "contracts": 19,
+          "cost_cents": 1045,
+          "forecast_prob": 0.6
         }
       ]
     },
@@ -78,43 +78,43 @@
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 8413,
-      "cash_cents": 5579,
+      "equity_cents": 7209,
+      "cash_cents": 4584,
       "initial_cents": 10000,
-      "pnl_cents": -1587,
-      "roi_pct": -15.87,
-      "settled_bets": 4,
+      "pnl_cents": -2791,
+      "roi_pct": -27.91,
+      "settled_bets": 5,
       "wins": 2,
-      "win_rate": 0.5,
-      "staked_cents": 5373,
+      "win_rate": 0.4,
+      "staked_cents": 6507,
       "returned_cents": 4000,
-      "fees_paid_cents": 214,
-      "fill_rate": 0.299,
-      "brier": 0.3074,
+      "fees_paid_cents": 284,
+      "fill_rate": 0.365,
+      "brier": 0.2652,
       "usage": {
-        "input_tokens": 2017409,
-        "output_tokens": 57815,
+        "input_tokens": 2165705,
+        "output_tokens": 60572,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 6596449,
-        "cost_cents": 607,
-        "sessions": 14
+        "cache_read_tokens": 6945060,
+        "cost_cents": 647,
+        "sessions": 15
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26JUL13PHXMIN-MIN",
-          "title": "Phoenix vs Minnesota winner?",
+          "ticker": "KXMLBGAME-26JUL142000ALNL-NL",
+          "title": "AL vs NL Winner?",
           "side": "yes",
-          "contracts": 20,
-          "cost_cents": 1700,
-          "forecast_prob": 0.88
+          "contracts": 25,
+          "cost_cents": 1350,
+          "forecast_prob": 0.575
         },
         {
-          "ticker": "KXWNBAGAME-26JUL13LAATL-LA",
-          "title": "Los Angeles vs Atlanta winner?",
+          "ticker": "KXWNBAGAME-26JUL14WSHTOR-WSH",
+          "title": "Washington vs Toronto winner?",
           "side": "yes",
-          "contracts": 42,
-          "cost_cents": 1134,
-          "forecast_prob": 0.31
+          "contracts": 25,
+          "cost_cents": 1275,
+          "forecast_prob": 0.55
         }
       ]
     }
@@ -183,23 +183,99 @@
         "gpt": 10516,
         "gemini": 8413
       }
+    },
+    {
+      "date": "2026-07-14",
+      "balances": {
+        "claude": 8687,
+        "gpt": 9510,
+        "gemini": 7209
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-07-14",
+      "ticker": "KXMLBASGAME-26JUL14ALNL-NL",
+      "title": "Pro Baseball All-Star Game Winner?",
+      "side": "yes",
+      "contracts": 19,
+      "price_cents": 55,
+      "cost_cents": 1045,
+      "fee_cents": 33,
+      "forecast_prob": 0.6,
+      "reasoning": "The National League is consistently listed as the favorite around -136 to -142 for the 2026 All-Star Game at Citizens Bank Park. With that market baseline and the NL acting as the de facto home-side/stronger lineup read, 55c is below my roughly 60% fair estimate after fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-14T22:01:38+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-14",
+      "ticker": "KXWNBAGAME-26JUL14WSHTOR-WSH",
+      "title": "Washington vs Toronto winner?",
+      "side": "yes",
+      "contracts": 19,
+      "price_cents": 55,
+      "cost_cents": 1045,
+      "fee_cents": 33,
+      "forecast_prob": 0.6,
+      "reasoning": "Washington is a small road favorite at mainstream books (roughly -130/-136) despite Toronto's home court, and the fresh previews point to Toronto injury issues. The Mystics have also taken both prior 2026 meetings by narrow margins, so I make Washington closer to 60% than a generic pick'em.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-14T22:01:34+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-14",
+      "ticker": "KXWNBAGAME-26JUL14WSHTOR-WSH",
+      "title": "Washington vs Toronto winner?",
+      "side": "yes",
+      "contracts": 25,
+      "price_cents": 51,
+      "cost_cents": 1275,
+      "fee_cents": 44,
+      "forecast_prob": 0.55,
+      "reasoning": "Washington is favored against the expansion Toronto Tempo, with betting markets pricing the Mystics around 55% implied probability. Buying below 51c provides a positive expected value given Toronto's ongoing struggles and injury concerns.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-14T22:00:02+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-14",
+      "ticker": "KXMLBGAME-26JUL142000ALNL-NL",
+      "title": "AL vs NL Winner?",
+      "side": "yes",
+      "contracts": 25,
+      "price_cents": 54,
+      "cost_cents": 1350,
+      "fee_cents": 44,
+      "forecast_prob": 0.575,
+      "reasoning": "The NL is favored to win the All-Star Game around -136 (57.6% implied), benefiting from home-field advantage and the AL missing Judge and Ohtani. Placing a limit order at 54c captures a reasonable edge if filled.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-14T21:59:58+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-13",
       "ticker": "KXWNBAGAME-26JUL13PHXMIN-MIN",
       "title": "Phoenix vs Minnesota winner?",
       "side": "yes",
-      "contracts": 20,
+      "contracts": 0,
       "price_cents": 85,
-      "cost_cents": 1700,
-      "fee_cents": 18,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.88,
       "reasoning": "Minnesota is 17-6 and heavily favored (-700) at home against a struggling Phoenix squad that has lost three straight, including a 48-point blowout. With the Lynx dominating this matchup previously, an 88% chance of victory is well-aligned with current sportsbooks.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-13T22:01:41+00:00"
     },
@@ -216,7 +292,7 @@
       "forecast_prob": 0.31,
       "reasoning": "The Sparks have won two in a row scoring over 100 points, while Atlanta has dropped six of their last seven games. With Atlanta potentially missing Angel Reese and Brionna Jones, LA has a solid ~31% chance to pull the upset, making a 27c bid +EV.",
       "status": "live",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
       "placed_at": "2026-07-13T22:01:41+00:00"
     },
@@ -226,14 +302,14 @@
       "ticker": "KXMLBHRDERBY-26-JCAMINERO13",
       "title": "Will Junior Caminero win the 2026 Home Run Derby?",
       "side": "yes",
-      "contracts": 67,
+      "contracts": 0,
       "price_cents": 15,
-      "cost_cents": 1005,
-      "fee_cents": 60,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.17,
       "reasoning": "Caminero is priced around 15c on Kalshi while mainstream books are mostly implying the high-teens after vig; he was runner-up last year and has top-tier raw power/28 first-half HRs. In the new no-clock format, prior Derby experience and repeatable high-end power should matter more than the market is crediting.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-13T22:00:11+00:00"
     },
@@ -250,7 +326,7 @@
       "forecast_prob": 0.068,
       "reasoning": "Contreras is the clear longshot, but 5c is still below my fair price given comparable sportsbook prices closer to the 7-8% implied range before de-vig. His 20 first-half HRs keep him live in a high-variance Derby format, and the fee is modest at this low price.",
       "status": "live",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
       "placed_at": "2026-07-13T22:00:11+00:00"
     },
@@ -1395,6 +1471,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gpt",
+      "week": "2026-07-14",
+      "text": "Deployed $20.90 across two $10.45 limit buys: Washington Mystics ML YES @55c and National League All-Star Game YES @55c. Edges came from fresh market/news reads: Washington is a small sportsbook favorite with Toronto injury concerns and two narrow H2H wins already, while the NL is generally priced around -136 to -142 in the All-Star Game; both 55c limits are below my ~60% fair value.",
+      "at": "2026-07-14T22:01:44+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-14",
+      "text": "Deployed $26.25 into two limit orders across MLB and WNBA. Both orderbooks were empty, so I placed limit bids slightly below fair market value implied by sportsbooks (NL All-Star Game at 54c with fair value ~57.5%, and WNBA Washington Mystics at 51c with fair value ~55%). If liquidity arrives, these should offer positive EV after fees.",
+      "at": "2026-07-14T22:00:08+00:00"
+    },
     {
       "agent": "claude",
       "week": "2026-07-13",

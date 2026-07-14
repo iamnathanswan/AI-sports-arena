@@ -1,0 +1,95 @@
+{
+  "session": "2026-07-14",
+  "generated_at": "2026-07-14T21:59:12+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "cb811840-16cf-4e09-99a5-2d3c48674169",
+      "agent": "gpt",
+      "ticker": "KXMLBHRDERBY-26-JCAMINERO13",
+      "action": "refund_unfilled",
+      "refund_cents": 1065,
+      "filled": 0
+    },
+    {
+      "order": "43eb20f0-f4ea-4045-afc8-be0ccba3aa3e",
+      "agent": "gpt",
+      "ticker": "KXMLBHRDERBY-26-WCONTRERAS40",
+      "action": "settled",
+      "result": "lost",
+      "contracts": 200,
+      "payout_cents": 0,
+      "kalshi_order_id": "62449457-3017-468d-9383-3de60156f352"
+    },
+    {
+      "order": "53f7260a-0f6d-4b16-bf7f-ac16dbd26c89",
+      "agent": "gemini",
+      "ticker": "KXWNBAGAME-26JUL13PHXMIN-MIN",
+      "action": "refund_unfilled",
+      "refund_cents": 1718,
+      "filled": 0
+    },
+    {
+      "order": "97e15042-31b6-47f4-9d96-0e7e489555b4",
+      "agent": "gemini",
+      "ticker": "KXWNBAGAME-26JUL13LAATL-LA",
+      "action": "settled",
+      "result": "lost",
+      "contracts": 42,
+      "payout_cents": 0,
+      "kalshi_order_id": "35d63456-b3a1-4a93-9bfe-6aba46117586"
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 11,
+      "final_text": "I have completed my weekly betting session. The available orderbooks for today's games were largely empty, so following the guidelines, I placed two value-seeking limit bids grounded in current sportsbook odds. \n\n1. **MLB All-Star Game (NL vs AL)**\nThe National League is the consensus favorite across sportsbooks at around -136 (57.6% implied probability), due to home-field advantage in Philadelphia and the AL missing huge bats like Aaron Judge and Shohei Ohtani due to injury. I placed a limit order for 25 YES contracts on the National League at 54c, projecting a ~57.5% true win probability. \n\n2. **WNBA (Washington Mystics vs Toronto Tempo)**\nWashington is a moderate road favorite against the expansion Toronto Tempo, sitting around 55% implied probability (-115 to -125 moneyline) given Toronto's ongoing defensive struggles and injuries to key players like Brittney Sykes. I placed a limit order for 25 YES contracts on Washington at 51c, which leaves a few cents of edge post-fees if someone crosses the spread.\n\nIn total, I have deployed $26.25 across these two events and recorded my session strategy to public note summarizing the strategy note summarizing the session.",
+      "error": null,
+      "usage": {
+        "input_tokens": 148296,
+        "output_tokens": 2757,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 348611
+      },
+      "cost_cents": 40,
+      "forced_followup": false,
+      "bets_placed": 2
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cd2hf2JHiMxM9jEvaS6bV'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 11,
+      "final_text": "Weekly betting session complete.\n\n**Bankroll/equity after orders:** $95.10 equity, $74.20 cash  \n**Total deployed:** $20.90 across 2 markets\n\n**Bets placed**\n1. **Washington Mystics ML YES @ 55c**\n   - 19 contracts, $10.45 stake\n   - Forecast: **60%**\n   - Rationale: Washington is showing as a small sportsbook favorite, with Toronto dealing with injury issues and Washington having won the first two 2026 head-to-head meetings narrowly. \n\n2. **National League All-Star Game YES @ 55c**\n   - 19 contracts, $10.45 stake\n   - Forecast: **60%**\n   - Rationale: The National League is broadly listed around **-136 to -142** in current All-Star Game odds, implying roughly 58\u201359% before vig, so 55c gave enough room after Kalshi fees. \n\nLogged the strategy note publicly.",
+      "error": null,
+      "usage": {
+        "input_tokens": 214402,
+        "output_tokens": 2465,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 667008
+      },
+      "cost_cents": 148,
+      "forced_followup": false,
+      "bets_placed": 2
+    }
+  ]
+}
