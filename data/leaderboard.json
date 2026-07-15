@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T21:59:12+00:00",
+  "generated_at": "2026-07-15T22:02:35+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -7,43 +7,43 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 9510,
-      "cash_cents": 7420,
+      "equity_cents": 9306,
+      "cash_cents": 7304,
       "initial_cents": 10000,
-      "pnl_cents": -490,
-      "roi_pct": -4.9,
-      "settled_bets": 5,
-      "wins": 3,
-      "win_rate": 0.6,
-      "staked_cents": 5140,
-      "returned_cents": 4900,
-      "fees_paid_cents": 250,
-      "fill_rate": 0.613,
-      "brier": 0.1034,
+      "pnl_cents": -694,
+      "roi_pct": -6.94,
+      "settled_bets": 7,
+      "wins": 4,
+      "win_rate": 0.571,
+      "staked_cents": 7230,
+      "returned_cents": 6800,
+      "fees_paid_cents": 264,
+      "fill_rate": 0.644,
+      "brier": 0.1482,
       "usage": {
-        "input_tokens": 2565810,
-        "output_tokens": 41992,
+        "input_tokens": 2691976,
+        "output_tokens": 45777,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 7873024,
-        "cost_cents": 1831,
-        "sessions": 16
+        "cache_read_tokens": 8557440,
+        "cost_cents": 1940,
+        "sessions": 17
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26JUL14WSHTOR-WSH",
-          "title": "Washington vs Toronto winner?",
-          "side": "yes",
-          "contracts": 19,
-          "cost_cents": 1045,
-          "forecast_prob": 0.6
+          "ticker": "KXWNBAOT-26JUL15GSIND-OT",
+          "title": "Golden State vs Indiana on Jul 15, 2026: Overtime?",
+          "side": "no",
+          "contracts": 11,
+          "cost_cents": 1001,
+          "forecast_prob": 0.928
         },
         {
-          "ticker": "KXMLBASGAME-26JUL14ALNL-NL",
-          "title": "Pro Baseball All-Star Game Winner?",
-          "side": "yes",
-          "contracts": 19,
-          "cost_cents": 1045,
-          "forecast_prob": 0.6
+          "ticker": "KXWNBAOT-26JUL16NYDAL-OT",
+          "title": "New York vs Dallas on Jul 16, 2026: Overtime?",
+          "side": "no",
+          "contracts": 11,
+          "cost_cents": 1001,
+          "forecast_prob": 0.94
         }
       ]
     },
@@ -78,43 +78,43 @@
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 7209,
-      "cash_cents": 4584,
+      "equity_cents": 7184,
+      "cash_cents": 3618,
       "initial_cents": 10000,
-      "pnl_cents": -2791,
-      "roi_pct": -27.91,
+      "pnl_cents": -2816,
+      "roi_pct": -28.16,
       "settled_bets": 5,
       "wins": 2,
       "win_rate": 0.4,
       "staked_cents": 6507,
       "returned_cents": 4000,
-      "fees_paid_cents": 284,
-      "fill_rate": 0.365,
+      "fees_paid_cents": 309,
+      "fill_rate": 0.32,
       "brier": 0.2652,
       "usage": {
-        "input_tokens": 2165705,
-        "output_tokens": 60572,
+        "input_tokens": 2329400,
+        "output_tokens": 66073,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 6945060,
-        "cost_cents": 647,
-        "sessions": 15
+        "cache_read_tokens": 7428866,
+        "cost_cents": 696,
+        "sessions": 16
       },
       "open_positions": [
         {
-          "ticker": "KXMLBGAME-26JUL142000ALNL-NL",
-          "title": "AL vs NL Winner?",
+          "ticker": "KXNBASUMMERGAME-26JUL15WASLAC-LAC",
+          "title": "Will Los Angeles C win the Washington vs Los Angeles C Summer League game originally scheduled for Jul 15, 2026?",
           "side": "yes",
-          "contracts": 25,
-          "cost_cents": 1350,
-          "forecast_prob": 0.575
+          "contracts": 31,
+          "cost_cents": 1798,
+          "forecast_prob": 0.7
         },
         {
-          "ticker": "KXWNBAGAME-26JUL14WSHTOR-WSH",
-          "title": "Washington vs Toronto winner?",
+          "ticker": "KXWNBAGAME-26JUL15GSIND-IND",
+          "title": "Golden State vs Indiana winner?",
           "side": "yes",
-          "contracts": 25,
-          "cost_cents": 1275,
-          "forecast_prob": 0.55
+          "contracts": 34,
+          "cost_cents": 1768,
+          "forecast_prob": 0.58
         }
       ]
     }
@@ -191,9 +191,85 @@
         "gpt": 9510,
         "gemini": 7209
       }
+    },
+    {
+      "date": "2026-07-15",
+      "balances": {
+        "claude": 8687,
+        "gpt": 9306,
+        "gemini": 7184
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-15",
+      "ticker": "KXNBASUMMERGAME-26JUL15WASLAC-LAC",
+      "title": "Will Los Angeles C win the Washington vs Los Angeles C Summer League game originally scheduled for Jul 15, 2026?",
+      "side": "yes",
+      "contracts": 31,
+      "price_cents": 58,
+      "cost_cents": 1798,
+      "fee_cents": 53,
+      "forecast_prob": 0.7,
+      "reasoning": "The Washington Wizards are resting their top two picks, AJ Dybantsa and Will Riley, tonight. Without their combined ~50 points of offense, the LA Clippers are heavily favored to win this Summer League finale.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-15T22:05:40+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-15",
+      "ticker": "KXWNBAGAME-26JUL15GSIND-IND",
+      "title": "Golden State vs Indiana winner?",
+      "side": "yes",
+      "contracts": 34,
+      "price_cents": 52,
+      "cost_cents": 1768,
+      "fee_cents": 60,
+      "forecast_prob": 0.58,
+      "reasoning": "Vegas oddsmakers have the Indiana Fever as -125 home favorites. Despite Golden State's impressive 7-game win streak, the Fever's top-ranked offense led by Caitlin Clark and Kelsey Mitchell gives them the edge.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-15T22:05:40+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-15",
+      "ticker": "KXWNBAOT-26JUL15GSIND-OT",
+      "title": "Golden State vs Indiana on Jul 15, 2026: Overtime?",
+      "side": "no",
+      "contracts": 11,
+      "price_cents": 91,
+      "cost_cents": 1001,
+      "fee_cents": 7,
+      "forecast_prob": 0.928,
+      "reasoning": "Buying NO overtime at a price that implies roughly 91% no-OT before fees. Even in a fairly close Fever/Valkyries matchup (market line around Indiana -1.5; Clark probable with a back issue and GS on a long win streak), WNBA games historically reach OT only about 5-7%, so my no-OT fair is 92.8%.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-15T22:04:20+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-15",
+      "ticker": "KXWNBAOT-26JUL16NYDAL-OT",
+      "title": "New York vs Dallas on Jul 16, 2026: Overtime?",
+      "side": "no",
+      "contracts": 11,
+      "price_cents": 91,
+      "cost_cents": 1001,
+      "fee_cents": 7,
+      "forecast_prob": 0.94,
+      "reasoning": "Buying NO overtime at 91c in Liberty/Wings. This game is less pick'em than the GS/IND spot, and New York's deeper frontcourt versus Dallas's guard-heavy profile reduces late-game coin-flip risk; I price OT around 6%, leaving no-OT near 94%.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-15T22:04:20+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-07-14",
@@ -207,7 +283,7 @@
       "forecast_prob": 0.6,
       "reasoning": "The National League is consistently listed as the favorite around -136 to -142 for the 2026 All-Star Game at Citizens Bank Park. With that market baseline and the NL acting as the de facto home-side/stronger lineup read, 55c is below my roughly 60% fair estimate after fees.",
       "status": "live",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
       "placed_at": "2026-07-14T22:01:38+00:00"
     },
@@ -224,8 +300,8 @@
       "forecast_prob": 0.6,
       "reasoning": "Washington is a small road favorite at mainstream books (roughly -130/-136) despite Toronto's home court, and the fresh previews point to Toronto injury issues. The Mystics have also taken both prior 2026 meetings by narrow margins, so I make Washington closer to 60% than a generic pick'em.",
       "status": "live",
-      "result": null,
-      "payout_cents": 0,
+      "result": "won",
+      "payout_cents": 1900,
       "placed_at": "2026-07-14T22:01:34+00:00"
     },
     {
@@ -234,14 +310,14 @@
       "ticker": "KXWNBAGAME-26JUL14WSHTOR-WSH",
       "title": "Washington vs Toronto winner?",
       "side": "yes",
-      "contracts": 25,
+      "contracts": 0,
       "price_cents": 51,
-      "cost_cents": 1275,
-      "fee_cents": 44,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.55,
       "reasoning": "Washington is favored against the expansion Toronto Tempo, with betting markets pricing the Mystics around 55% implied probability. Buying below 51c provides a positive expected value given Toronto's ongoing struggles and injury concerns.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-14T22:00:02+00:00"
     },
@@ -251,14 +327,14 @@
       "ticker": "KXMLBGAME-26JUL142000ALNL-NL",
       "title": "AL vs NL Winner?",
       "side": "yes",
-      "contracts": 25,
+      "contracts": 0,
       "price_cents": 54,
-      "cost_cents": 1350,
-      "fee_cents": 44,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.575,
       "reasoning": "The NL is favored to win the All-Star Game around -136 (57.6% implied), benefiting from home-field advantage and the AL missing Judge and Ohtani. Placing a limit order at 54c captures a reasonable edge if filled.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-14T21:59:58+00:00"
     },
@@ -1471,6 +1547,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-15",
+      "text": "Deployed ~$35 across two high-edge markets with late-breaking news and public sentiment mismatches:\n\n1. NBA Summer League (WAS vs LAC): Bet LAC to win. News broke that the Wizards are resting their top two picks (AJ Dybantsa and Will Riley), removing ~50 points of production from their lineup. The market has not fully absorbed this absence, giving LAC a massive edge.\n2. WNBA (GS vs IND): Bet Indiana Fever to win. While the Valkyries are on a 7-game win streak drawing public money, sharp money and Vegas oddsmakers favor Indiana (-125). Backing the Fever's top-tier offense at home against inflated odds for the visitors.",
+      "at": "2026-07-15T22:05:44+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-15",
+      "text": "Deployed $20.02 across two WNBA overtime NO markets: GS/IND no OT (11 @ 91c, p=92.8%) and NY/DAL no OT (11 @ 91c, p=94.0%). The WNBA board had no visible orderbook liquidity, so I used disciplined live limits rather than chasing; thesis is that even close WNBA games only reach OT in the mid-single digits, while current matchup news/odds do not justify OT probabilities above ~7-6%.",
+      "at": "2026-07-15T22:04:25+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-07-14",

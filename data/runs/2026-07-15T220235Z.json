@@ -1,0 +1,95 @@
+{
+  "session": "2026-07-15",
+  "generated_at": "2026-07-15T22:02:35+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "c9ca526c-5b0f-4c96-ba60-d5f2f50221e8",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL142000ALNL-NL",
+      "action": "refund_unfilled",
+      "refund_cents": 1394,
+      "filled": 0
+    },
+    {
+      "order": "3cc15d13-3324-4ac9-8adb-669e3b1eaa1b",
+      "agent": "gemini",
+      "ticker": "KXWNBAGAME-26JUL14WSHTOR-WSH",
+      "action": "refund_unfilled",
+      "refund_cents": 1319,
+      "filled": 0
+    },
+    {
+      "order": "ca7410fb-61d7-4881-a1a5-2395d82925ee",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL14WSHTOR-WSH",
+      "action": "settled",
+      "result": "won",
+      "contracts": 19,
+      "payout_cents": 1900,
+      "kalshi_order_id": "1067bc28-f43d-4208-b558-42be21f8a059"
+    },
+    {
+      "order": "9cb9d33d-1cf3-4d58-a1d3-afcd42b580f6",
+      "agent": "gpt",
+      "ticker": "KXMLBASGAME-26JUL14ALNL-NL",
+      "action": "settled",
+      "result": "lost",
+      "contracts": 19,
+      "payout_cents": 0,
+      "kalshi_order_id": "d37dcc7f-8e4e-4040-89ba-6eaba5156815"
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cd4beZ9hzRMwJxi5fdHir'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 11,
+      "final_text": "Weekly betting session started and completed.\n\n**Bankroll before bets:** $93.20 cash / $93.20 equity  \n**Deployed:** $20.02 stake across 2 WNBA markets\n\n**Bets placed**\n1. **Golden State vs Indiana \u2014 NO overtime**\n   - 11 contracts @ 91\u00a2\n   - Stake: $10.01\n   - Forecast: **92.8% no OT**\n   - Rationale: Market line appears close, but even close WNBA games generally need an unusually specific late-game path to reach overtime. Clark is reportedly probable with a back issue, and Golden State is in strong form, but that affects win probability more than OT probability. \ue200cite\ue202turn0search3\ue202turn0search5\ue202turn1reddit13\ue201\n\n2. **New York vs Dallas \u2014 NO overtime**\n   - 11 contracts @ 91\u00a2\n   - Stake: $10.01\n   - Forecast: **94.0% no OT**\n   - Rationale: I make this less coin-flippy than GS/IND given New York\u2019s roster depth and Dallas\u2019s guard-heavy profile, so I price OT closer to ~6%. \ue200cite\ue202turn1search0\ue202turn1search15\ue201\n\n**Session note:** The WNBA markets showed no visible orderbook liquidity, so I used disciplined limit orders rather than chasing. Total deployment met the $20 floor.",
+      "error": null,
+      "usage": {
+        "input_tokens": 126166,
+        "output_tokens": 3785,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 684416
+      },
+      "cost_cents": 109,
+      "forced_followup": false,
+      "bets_placed": 2
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 11,
+      "final_text": "I have successfully completed my weekly betting session. \n\n**Summary of action:**\nI focused on tonight's slate for the NBA Summer League and the WNBA, identifying two strong edges where late news and public sentiment provided a clear advantage. I deployed a total of $35.66 to maximize value within my 50% equity cap limit.\n\n1. **NBA Summer League (WAS vs LAC):** Placed 31 contracts on the LA Clippers to win. News broke that the Wizards are resting their top two picks (AJ Dybantsa and Will Riley), stripping away nearly 50 points of production. The market prices do not adequately reflect a Washington team without its stars, giving LAC a massive edge.\n2. **WNBA (GS vs IND):** Placed 34 contracts on the Indiana Fever. The Golden State Valkyries' 7-game win streak has drawn a lot of public attention, but Vegas oddsmakers correctly favor the Fever (-125) at home. Given Indiana's top-ranked offense with Caitlin Clark and Kelsey Mitchell, getting Indiana in the low 50s is a high-value play against inflated visiting inflation hype. \n\nBoth orders have been entered as resting limit orders at my honest fair value and my session note has been successfully recorded to the public log.",
+      "error": null,
+      "usage": {
+        "input_tokens": 163695,
+        "output_tokens": 5501,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 483806
+      },
+      "cost_cents": 49,
+      "forced_followup": false,
+      "bets_placed": 2
+    }
+  ]
+}
