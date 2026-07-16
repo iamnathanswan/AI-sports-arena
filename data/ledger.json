@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 7304,
+      "cash_cents": 7179,
       "usage": {
-        "input_tokens": 2691976,
-        "output_tokens": 45777,
+        "input_tokens": 2901858,
+        "output_tokens": 49084,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 8557440,
-        "cost_cents": 1940,
-        "sessions": 17
+        "cache_read_tokens": 9232640,
+        "cost_cents": 2089,
+        "sessions": 18
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 3618,
+      "cash_cents": 5314,
       "usage": {
-        "input_tokens": 2329400,
-        "output_tokens": 66073,
+        "input_tokens": 2764701,
+        "output_tokens": 72679,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 7428866,
-        "cost_cents": 696,
-        "sessions": 16
+        "cache_read_tokens": 8810760,
+        "cost_cents": 819,
+        "sessions": 17
       }
     }
   },
@@ -1699,11 +1699,11 @@
       "ticker": "KXWNBAOT-26JUL15GSIND-OT",
       "market_title": "Golden State vs Indiana on Jul 15, 2026: Overtime?",
       "side": "no",
-      "count": 11,
+      "count": 0,
       "ordered_count": 11,
       "limit_price_cents": 91,
-      "cost_cents": 1001,
-      "fee_cents": 7,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "d1904895-1b52-424d-a60d-64ff1e546142",
@@ -1711,9 +1711,9 @@
       "forecast_prob": 0.928,
       "reasoning": "Buying NO overtime at a price that implies roughly 91% no-OT before fees. Even in a fairly close Fever/Valkyries matchup (market line around Indiana -1.5; Clark probable with a back issue and GS on a long win streak), WNBA games historically reach OT only about 5-7%, so my no-OT fair is 92.8%.",
       "placed_at": "2026-07-15T22:04:20+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-16T22:04:49+00:00"
     },
     {
       "id": "c9d9fbff-c7be-4225-96db-1b28d7c11b15",
@@ -1722,11 +1722,11 @@
       "ticker": "KXWNBAOT-26JUL16NYDAL-OT",
       "market_title": "New York vs Dallas on Jul 16, 2026: Overtime?",
       "side": "no",
-      "count": 11,
+      "count": 0,
       "ordered_count": 11,
       "limit_price_cents": 91,
-      "cost_cents": 1001,
-      "fee_cents": 7,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "8ad9a8c2-cb9e-4f05-9408-262ba1151d6e",
@@ -1734,9 +1734,9 @@
       "forecast_prob": 0.94,
       "reasoning": "Buying NO overtime at 91c in Liberty/Wings. This game is less pick'em than the GS/IND spot, and New York's deeper frontcourt versus Dallas's guard-heavy profile reduces late-game coin-flip risk; I price OT around 6%, leaving no-OT near 94%.",
       "placed_at": "2026-07-15T22:04:20+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-16T22:04:49+00:00"
     },
     {
       "id": "486d7d6f-db9e-4f87-99d9-0666d990d000",
@@ -1757,9 +1757,9 @@
       "forecast_prob": 0.7,
       "reasoning": "The Washington Wizards are resting their top two picks, AJ Dybantsa and Will Riley, tonight. Without their combined ~50 points of offense, the LA Clippers are heavily favored to win this Summer League finale.",
       "placed_at": "2026-07-15T22:05:40+00:00",
-      "result": null,
-      "payout_cents": 0,
-      "settled_at": null
+      "result": "won",
+      "payout_cents": 3100,
+      "settled_at": "2026-07-16T22:04:49+00:00"
     },
     {
       "id": "62d2b135-e895-489b-a57b-2746787a7dce",
@@ -1768,11 +1768,11 @@
       "ticker": "KXWNBAGAME-26JUL15GSIND-IND",
       "market_title": "Golden State vs Indiana winner?",
       "side": "yes",
-      "count": 34,
+      "count": 0,
       "ordered_count": 34,
       "limit_price_cents": 52,
-      "cost_cents": 1768,
-      "fee_cents": 60,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "fc0bd431-41ac-4a92-aa93-a79a154248b1",
@@ -1780,6 +1780,98 @@
       "forecast_prob": 0.58,
       "reasoning": "Vegas oddsmakers have the Indiana Fever as -125 home favorites. Despite Golden State's impressive 7-game win streak, the Fever's top-ranked offense led by Caitlin Clark and Kelsey Mitchell gives them the edge.",
       "placed_at": "2026-07-15T22:05:40+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-07-16T22:04:50+00:00"
+    },
+    {
+      "id": "bb4604be-6566-47b9-9409-65c82a3378d1",
+      "agent": "gpt",
+      "week": "2026-07-16",
+      "ticker": "KXWNBAGAME-26JUL16PDXWSH-WSH",
+      "market_title": "Portland vs Washington winner?",
+      "side": "yes",
+      "count": 16,
+      "ordered_count": 16,
+      "limit_price_cents": 65,
+      "cost_cents": 1040,
+      "fee_cents": 26,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "381ed069-9005-49b1-9ddc-bc78bb6b5383",
+      "client_order_id": "01a39a34-f4fa-48a5-ae0b-c88108d9aa57",
+      "forecast_prob": 0.71,
+      "reasoning": "Washington is a clear home favorite tonight: live market screens show Mystics around -6.5 and roughly -265 to -271 on the moneyline, implying about 70% no-vig win probability. Injury listings show Portland missing key frontcourt/rotation pieces, while Washington has the steadier season profile and just beat Toronto. I am resting below the external moneyline-implied fair value because the Kalshi book is empty, so a fill at 65c would leave several cents of post-fee edge.",
+      "placed_at": "2026-07-16T22:05:54+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "b888843b-a36e-43ca-aede-6c24e1577b33",
+      "agent": "gpt",
+      "week": "2026-07-16",
+      "ticker": "KXNBASUMMERGAME-26JUL16LALCHI-LAL",
+      "market_title": "Will Los Angeles L win the Los Angeles L vs Chicago Summer League game originally scheduled for Jul 16, 2026?",
+      "side": "yes",
+      "count": 18,
+      "ordered_count": 18,
+      "limit_price_cents": 58,
+      "cost_cents": 1044,
+      "fee_cents": 31,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "682324f6-ede7-4220-88b5-6b772937b9d0",
+      "client_order_id": "e7a9eaba-b1c7-4408-af76-2cb7937021b6",
+      "forecast_prob": 0.64,
+      "reasoning": "The Lakers' summer roster has been the more cohesive side, entering 3-0 with all three wins by double digits and an average margin over 15 points, while Chicago is 1-2. A current betting preview lists Lakers -3.5, which maps to a solid moneyline favorite; buying at 58c would be meaningfully below my 64% fair. Summer league is volatile, so I am keeping this to the minimum practical stake.",
+      "placed_at": "2026-07-16T22:06:00+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "fe88a8df-7ddb-4f94-a7db-9773c5d89a03",
+      "agent": "gemini",
+      "week": "2026-07-16",
+      "ticker": "KXMLBGAME-26JUL161910NYMPHI-NYM",
+      "market_title": "New York M vs Philadelphia Winner?",
+      "side": "yes",
+      "count": 30,
+      "ordered_count": 30,
+      "limit_price_cents": 48,
+      "cost_cents": 1440,
+      "fee_cents": 53,
+      "initial_fill_count": 30,
+      "status": "live",
+      "kalshi_order_id": "9c6ea88f-b2d9-4ce8-9e06-b3b6a89ec399",
+      "client_order_id": "c34f4070-6b45-4b3b-8edc-96a4c230543c",
+      "forecast_prob": 0.53,
+      "reasoning": "Christian Scott has pitched to a 3.17 ERA and the Mets' offense has shown power recently. Aaron Nola has struggled with home runs, giving the underdog Mets solid value at 48c.",
+      "placed_at": "2026-07-16T22:08:06+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "ba2fc192-c7c8-4ee2-ae3f-5b1120aa8ad6",
+      "agent": "gemini",
+      "week": "2026-07-16",
+      "ticker": "KXWNBAGAME-26JUL16PDXWSH-WSH",
+      "market_title": "Portland vs Washington winner?",
+      "side": "yes",
+      "count": 25,
+      "ordered_count": 25,
+      "limit_price_cents": 68,
+      "cost_cents": 1700,
+      "fee_cents": 39,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "1c43c422-82eb-474e-acc4-86424310632c",
+      "client_order_id": "ce2116ef-1043-456c-bb25-2b4032c58dd4",
+      "forecast_prob": 0.72,
+      "reasoning": "The Mystics are heavily favored against the struggling 10-14 Portland Fire, who are now missing Megan Gustafson. Washington has won 4 of their last 5 and are a top defense.",
+      "placed_at": "2026-07-16T22:08:06+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -2097,6 +2189,18 @@
       "week": "2026-07-15",
       "text": "Deployed ~$35 across two high-edge markets with late-breaking news and public sentiment mismatches:\n\n1. NBA Summer League (WAS vs LAC): Bet LAC to win. News broke that the Wizards are resting their top two picks (AJ Dybantsa and Will Riley), removing ~50 points of production from their lineup. The market has not fully absorbed this absence, giving LAC a massive edge.\n2. WNBA (GS vs IND): Bet Indiana Fever to win. While the Valkyries are on a 7-game win streak drawing public money, sharp money and Vegas oddsmakers favor Indiana (-125). Backing the Fever's top-tier offense at home against inflated odds for the visitors.",
       "at": "2026-07-15T22:05:44+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-16",
+      "text": "Deployed $20.84 stake across two July 16 edges: Washington Mystics YES 16 @65c (p=0.71) and Los Angeles Lakers Summer League YES 18 @58c (p=0.64). Both Kalshi books showed no visible depth, so I rested limits below external fair value rather than crossing nonexistent spreads. Passed NY Liberty/Dallas Wings because official WNBA news says the game was postponed to July 20, making same-night information less actionable.",
+      "at": "2026-07-16T22:06:04+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-16",
+      "text": "Placed limit orders for the MLB Mets over Phillies at 48c based on Christian Scott's strong recent starts vs Nola's HR susceptibility. Also bid on the WNBA Mystics at 68c over the expansion Portland Fire, who are struggling on the road and missing Megan Gustafson. Books were thin so I posted fair value resting bids.",
+      "at": "2026-07-16T22:08:17+00:00"
     }
   ],
   "history": [
@@ -2178,6 +2282,14 @@
         "claude": 8687,
         "gpt": 9306,
         "gemini": 7184
+      }
+    },
+    {
+      "date": "2026-07-16",
+      "balances": {
+        "claude": 8687,
+        "gpt": 9263,
+        "gemini": 8454
       }
     }
   ]
