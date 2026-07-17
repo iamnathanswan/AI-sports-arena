@@ -1,0 +1,95 @@
+{
+  "session": "2026-07-17",
+  "generated_at": "2026-07-17T21:55:16+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "bb4604be-6566-47b9-9409-65c82a3378d1",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL16PDXWSH-WSH",
+      "action": "refund_unfilled",
+      "refund_cents": 1066,
+      "filled": 0
+    },
+    {
+      "order": "b888843b-a36e-43ca-aede-6c24e1577b33",
+      "agent": "gpt",
+      "ticker": "KXNBASUMMERGAME-26JUL16LALCHI-LAL",
+      "action": "refund_unfilled",
+      "refund_cents": 1075,
+      "filled": 0
+    },
+    {
+      "order": "fe88a8df-7ddb-4f94-a7db-9773c5d89a03",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL161910NYMPHI-NYM",
+      "action": "settled",
+      "result": "won",
+      "contracts": 30,
+      "payout_cents": 3000,
+      "kalshi_order_id": "9c6ea88f-b2d9-4ce8-9e06-b3b6a89ec399"
+    },
+    {
+      "order": "ba2fc192-c7c8-4ee2-ae3f-5b1120aa8ad6",
+      "agent": "gemini",
+      "ticker": "KXWNBAGAME-26JUL16PDXWSH-WSH",
+      "action": "settled",
+      "result": "lost",
+      "contracts": 25,
+      "payout_cents": 0,
+      "kalshi_order_id": "1c43c422-82eb-474e-acc4-86424310632c"
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 12,
+      "final_text": "I have completed today's betting session. \n\n**Summary of Activity:**\n- **Bankroll Check:** I started with an available bankroll of $83.14. My goal was to deploy at least $20 across the best news-driven mispricings I could find.\n- **Market Sourcing:** I scanned the available sports series and focused on tonight's MLB action (July 17, 2026), marking the start of the second half of the season following the All-Star break. Since order books in this environment are thin right now, I leaned on fresh pitching news and current moneyline evaluations to place limit orders at true fair value, allowing me to capture positive edge if they get filled.\n- **Positions Taken:** \n  1. **Cleveland Guardians (vs. Pirates):** Placed a bid for 25 YES contracts at 51c ($12.75 deployed). The Guardians are at home and starting Gavin Williams (3.81 ERA, 10.6 K/9), who heavily outclasses Jared Jones (4.38 ERA). I forecast their win probability at 55%.\n  2. **Toronto Blue Jays (vs. White Sox):** Placed a bid for 25 YES contracts at 53c ($13.25 deployed). Spencer Miles has been strong (2.85 ERA) and matches up well against Anthony Kay (4.23 ERA). True win probability leans ~57% toward the favored Blue Jays. \n  3. **New York Yankees (vs. Dodgers):** Placed a bid for 25 YES contracts at 52c ($13.00 deployed). Gerrit Cole takes the mound against a struggling Roki Sasaki (3-5, 5.33 ERA). With home advantage, I forecast the Yankees' win probability at 56%. \n\n**Result:** I successfully deployed $39.00 in total across three well-researched, uncorrelated events, satisfying the floor and adhering to fractional Kelly sizing while capturing 2-4 cents of positive expected value per contract. A public log note has been recorded documenting logic recorded my weekly summary has been recorded.",
+      "error": null,
+      "usage": {
+        "input_tokens": 218230,
+        "output_tokens": 4639,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 578239
+      },
+      "cost_cents": 61,
+      "forced_followup": false,
+      "bets_placed": 3
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cd8No6vNotgEAsrQaoxqe'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 9,
+      "final_text": "Weekly session started and bets placed.\n\n**Bankroll before session:** $93.20 cash / $93.20 equity  \n**Total deployed:** $30.63 in limit-order stake, before fees\n\n### Bets placed\n\n1. **Charlotte Hornets Summer League ML**\n   - Market: Sacramento vs Charlotte\n   - Bought: **YES Charlotte**\n   - Size: **18 contracts @ 56c**\n   - Stake: **$10.08**\n   - Forecast: **63%**\n   - Rationale: Sacramento reportedly rested multiple key Summer League players, including Darius Acuff Jr., while Charlotte still projects to have more usable roster depth. \ue200cite\ue202turn2view0\ue201\n\n2. **Indiana Fever ML**\n   - Market: Seattle vs Indiana\n   - Bought: **YES Indiana**\n   - Size: **14 contracts @ 75c**\n   - Stake: **$10.50**\n   - Forecast: **80%**\n   - Rationale: Indiana is a strong home favorite against a struggling Seattle team; the live market showed Indiana around **79% implied win probability**, and I bid slightly below my fair price. \ue200cite\ue202turn1view2\ue201\n\n3. **Phoenix Mercury ML**\n   - Market: Connecticut vs Phoenix\n   - Bought: **YES Phoenix**\n   - Size: **15 contracts @ 67c**\n   - Stake: **$10.05**\n   - Forecast: **70%**\n   - Rationale: Phoenix has the better creator/spacing profile, while Connecticut\u2019s offensive limitations and injury context make Phoenix worth a bid below fair. \ue200cite\ue202turn3view3\ue201\n\nI also recorded a public session note summarizing the strategy and edge.",
+      "error": null,
+      "usage": {
+        "input_tokens": 183274,
+        "output_tokens": 3079,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 641024
+      },
+      "cost_cents": 133,
+      "forced_followup": false,
+      "bets_placed": 3
+    }
+  ]
+}

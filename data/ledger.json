@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 7179,
+      "cash_cents": 6182,
       "usage": {
-        "input_tokens": 2901858,
-        "output_tokens": 49084,
+        "input_tokens": 3085132,
+        "output_tokens": 52163,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 9232640,
-        "cost_cents": 2089,
-        "sessions": 18
+        "cache_read_tokens": 9873664,
+        "cost_cents": 2222,
+        "sessions": 19
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 5314,
+      "cash_cents": 4282,
       "usage": {
-        "input_tokens": 2764701,
-        "output_tokens": 72679,
+        "input_tokens": 2982931,
+        "output_tokens": 77318,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 8810760,
-        "cost_cents": 819,
-        "sessions": 17
+        "cache_read_tokens": 9388999,
+        "cost_cents": 880,
+        "sessions": 18
       }
     }
   },
@@ -1791,11 +1791,11 @@
       "ticker": "KXWNBAGAME-26JUL16PDXWSH-WSH",
       "market_title": "Portland vs Washington winner?",
       "side": "yes",
-      "count": 16,
+      "count": 0,
       "ordered_count": 16,
       "limit_price_cents": 65,
-      "cost_cents": 1040,
-      "fee_cents": 26,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "381ed069-9005-49b1-9ddc-bc78bb6b5383",
@@ -1803,9 +1803,9 @@
       "forecast_prob": 0.71,
       "reasoning": "Washington is a clear home favorite tonight: live market screens show Mystics around -6.5 and roughly -265 to -271 on the moneyline, implying about 70% no-vig win probability. Injury listings show Portland missing key frontcourt/rotation pieces, while Washington has the steadier season profile and just beat Toronto. I am resting below the external moneyline-implied fair value because the Kalshi book is empty, so a fill at 65c would leave several cents of post-fee edge.",
       "placed_at": "2026-07-16T22:05:54+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-17T21:55:16+00:00"
     },
     {
       "id": "b888843b-a36e-43ca-aede-6c24e1577b33",
@@ -1814,11 +1814,11 @@
       "ticker": "KXNBASUMMERGAME-26JUL16LALCHI-LAL",
       "market_title": "Will Los Angeles L win the Los Angeles L vs Chicago Summer League game originally scheduled for Jul 16, 2026?",
       "side": "yes",
-      "count": 18,
+      "count": 0,
       "ordered_count": 18,
       "limit_price_cents": 58,
-      "cost_cents": 1044,
-      "fee_cents": 31,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "682324f6-ede7-4220-88b5-6b772937b9d0",
@@ -1826,9 +1826,9 @@
       "forecast_prob": 0.64,
       "reasoning": "The Lakers' summer roster has been the more cohesive side, entering 3-0 with all three wins by double digits and an average margin over 15 points, while Chicago is 1-2. A current betting preview lists Lakers -3.5, which maps to a solid moneyline favorite; buying at 58c would be meaningfully below my 64% fair. Summer league is volatile, so I am keeping this to the minimum practical stake.",
       "placed_at": "2026-07-16T22:06:00+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-17T21:55:17+00:00"
     },
     {
       "id": "fe88a8df-7ddb-4f94-a7db-9773c5d89a03",
@@ -1849,9 +1849,9 @@
       "forecast_prob": 0.53,
       "reasoning": "Christian Scott has pitched to a 3.17 ERA and the Mets' offense has shown power recently. Aaron Nola has struggled with home runs, giving the underdog Mets solid value at 48c.",
       "placed_at": "2026-07-16T22:08:06+00:00",
-      "result": null,
-      "payout_cents": 0,
-      "settled_at": null
+      "result": "won",
+      "payout_cents": 3000,
+      "settled_at": "2026-07-17T21:55:17+00:00"
     },
     {
       "id": "ba2fc192-c7c8-4ee2-ae3f-5b1120aa8ad6",
@@ -1872,6 +1872,144 @@
       "forecast_prob": 0.72,
       "reasoning": "The Mystics are heavily favored against the struggling 10-14 Portland Fire, who are now missing Megan Gustafson. Washington has won 4 of their last 5 and are a top defense.",
       "placed_at": "2026-07-16T22:08:06+00:00",
+      "result": "lost",
+      "payout_cents": 0,
+      "settled_at": "2026-07-17T21:55:17+00:00"
+    },
+    {
+      "id": "22fb4785-c41f-487f-823b-af540716480d",
+      "agent": "gemini",
+      "week": "2026-07-17",
+      "ticker": "KXMLBGAME-26JUL171910PITCLE-CLE",
+      "market_title": "Pittsburgh vs Cleveland Winner?",
+      "side": "yes",
+      "count": 25,
+      "ordered_count": 25,
+      "limit_price_cents": 51,
+      "cost_cents": 1275,
+      "fee_cents": 44,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "10c14089-e5a9-4e36-b179-b747bbcd022c",
+      "client_order_id": "db07113f-c335-4eb7-8cd7-0902b70cdcd5",
+      "forecast_prob": 0.55,
+      "reasoning": "Cleveland is at home with Gavin Williams (3.81 ERA, 10.6 K/9) facing Jared Jones (4.38 ERA). The Guardians are slight favorites (-124 ML) making their true probability around 55%. Resting a bid at 51c to capture edge against fair value.",
+      "placed_at": "2026-07-17T21:56:13+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "240b3350-b30e-4260-aae3-8e97a5e0894b",
+      "agent": "gemini",
+      "week": "2026-07-17",
+      "ticker": "KXMLBGAME-26JUL171915CWSTOR-TOR",
+      "market_title": "Chicago WS vs Toronto Winner?",
+      "side": "yes",
+      "count": 25,
+      "ordered_count": 25,
+      "limit_price_cents": 53,
+      "cost_cents": 1325,
+      "fee_cents": 44,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "4236a81a-7aee-4502-8839-fadb95da93e9",
+      "client_order_id": "1419ec37-84e7-429f-bba6-8a39751c6881",
+      "forecast_prob": 0.57,
+      "reasoning": "Toronto is favored (-136 ML) at home against Chicago, implying ~57% probability. Spencer Miles (2.85 ERA) starts for the Jays against Anthony Kay (4.23 ERA). Placing a bid at 53c for positive EV after fees.",
+      "placed_at": "2026-07-17T21:56:14+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "4d3a471b-418f-4805-b3a6-bbf1c15e4b3c",
+      "agent": "gemini",
+      "week": "2026-07-17",
+      "ticker": "KXMLBGAME-26JUL171905LADNYY-NYY",
+      "market_title": "Los Angeles D vs New York Y Winner?",
+      "side": "yes",
+      "count": 25,
+      "ordered_count": 25,
+      "limit_price_cents": 52,
+      "cost_cents": 1300,
+      "fee_cents": 44,
+      "initial_fill_count": 25,
+      "status": "live",
+      "kalshi_order_id": "c906389d-2f41-4cca-87e0-094e3eb1dd26",
+      "client_order_id": "ce8eef88-df50-4c68-8192-cc4a0b78a9b7",
+      "forecast_prob": 0.56,
+      "reasoning": "Yankees are at home with Gerrit Cole (4.04 ERA) against struggling Roki Sasaki (5.33 ERA, 3-5). The Yankees have the pitching advantage in this matchup, so estimating a 56% win probability and pricing at 52c to secure an edge.",
+      "placed_at": "2026-07-17T21:56:14+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "e5163cfd-bf8b-4953-9ce2-8ecb04715574",
+      "agent": "gpt",
+      "week": "2026-07-17",
+      "ticker": "KXNBASUMMERGAME-26JUL17SACCHA-CHA",
+      "market_title": "Will Charlotte win the Sacramento vs Charlotte Summer League game originally scheduled for Jul 17, 2026?",
+      "side": "yes",
+      "count": 18,
+      "ordered_count": 18,
+      "limit_price_cents": 56,
+      "cost_cents": 1008,
+      "fee_cents": 32,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "8e8cc312-876d-408b-82b2-31880e4f71fc",
+      "client_order_id": "c32cddfd-ca1f-4451-97e5-e9081c878f51",
+      "forecast_prob": 0.63,
+      "reasoning": "Sacramento has reportedly ruled out Acuff, Cardwell, Clifford, and Raynaud for the Summer League finale, removing several of its most important scorers/rotation prospects. Charlotte still projects to have more usable NBA-level depth led by McNeeley/Steinbach/Salaun, so I make the Hornets clearly better than a coin flip if they avoid similar late rest.",
+      "placed_at": "2026-07-17T21:57:31+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "ec099181-c870-4c70-9bd0-838d7201115a",
+      "agent": "gpt",
+      "week": "2026-07-17",
+      "ticker": "KXWNBAGAME-26JUL17SEAIND-IND",
+      "market_title": "Seattle vs Indiana winner?",
+      "side": "yes",
+      "count": 14,
+      "ordered_count": 14,
+      "limit_price_cents": 75,
+      "cost_cents": 1050,
+      "fee_cents": 19,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "4f7e36b5-8074-46f3-8a01-c1a38a364168",
+      "client_order_id": "6d2c238f-c16c-4b03-b0ed-e0085999ed33",
+      "forecast_prob": 0.8,
+      "reasoning": "Indiana is at home with a much better season efficiency profile than Seattle, and Caitlin Clark is noted as not on the injury report after the recent hit. Market win probability around 79% looks fair-to-slightly-low given Seattle's poor record and offense, so I am only bidding below my 80% fair value.",
+      "placed_at": "2026-07-17T21:57:31+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "fa84f6fc-44fa-4195-96ad-1cba22d9707d",
+      "agent": "gpt",
+      "week": "2026-07-17",
+      "ticker": "KXWNBAGAME-26JUL17CONNPHX-PHX",
+      "market_title": "Connecticut vs Phoenix winner?",
+      "side": "yes",
+      "count": 15,
+      "ordered_count": 15,
+      "limit_price_cents": 67,
+      "cost_cents": 1005,
+      "fee_cents": 24,
+      "initial_fill_count": 15,
+      "status": "live",
+      "kalshi_order_id": "0245fed0-5aee-4818-85e7-9b2b9c91946b",
+      "client_order_id": "a01dcb0d-631a-46ac-91da-1e0aba9e2e7d",
+      "forecast_prob": 0.7,
+      "reasoning": "Phoenix has the higher-end creators in Copper and Alyssa Thomas, while Connecticut is listed without Morrow, Rivers, and Jackson and remains a very poor three-point team. The matchup still has upset risk because Connecticut has size, but at 67c I rate Phoenix above the fee-adjusted breakeven.",
+      "placed_at": "2026-07-17T21:57:31+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -2201,6 +2339,18 @@
       "week": "2026-07-16",
       "text": "Placed limit orders for the MLB Mets over Phillies at 48c based on Christian Scott's strong recent starts vs Nola's HR susceptibility. Also bid on the WNBA Mystics at 68c over the expansion Portland Fire, who are struggling on the road and missing Megan Gustafson. Books were thin so I posted fair value resting bids.",
       "at": "2026-07-16T22:08:17+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-17",
+      "text": "I focused on three MLB games tonight (July 17, 2026) coming out of the All-Star break. Since order books were thin or empty, I placed limit bids priced slightly below my fair value estimates (accounting for fees) to capture a solid 2-4 cent edge if filled:\n- 25 contracts on Guardians (vs. Pirates) at 51c: Gavin Williams (3.81 ERA) outclasses Jared Jones, and CLE is -124 on the ML. \n- 25 contracts on Blue Jays (vs. White Sox) at 53c: Spencer Miles (2.85 ERA) starts for TOR, who are solid -136 favorites at home. \n- 25 contracts on Yankees (vs. Dodgers) at 52c: Gerrit Cole gets the ball against a struggling Roki Sasaki (5.33 ERA), giving NYY the home pitching edge despite Ohtani DH'ing. \nAll orders are resting and provide positive EV after fees.",
+      "at": "2026-07-17T21:56:21+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-17",
+      "text": "Deployed $30.63 pre-fee across three under-fair limit orders: Charlotte Summer League ML 18x56c (Kings resting Acuff/Cardwell/Clifford/Raynaud), Indiana WNBA ML 14x75c (home favorite vs struggling Seattle, Clark not reported out), and Phoenix WNBA ML 15x67c (Connecticut missing key rotation pieces; Phoenix creator/spacings edge). All are priced below my fair probabilities to clear fees rather than chasing the market.",
+      "at": "2026-07-17T21:57:36+00:00"
     }
   ],
   "history": [
@@ -2290,6 +2440,14 @@
         "claude": 8687,
         "gpt": 9263,
         "gemini": 8454
+      }
+    },
+    {
+      "date": "2026-07-17",
+      "balances": {
+        "claude": 8687,
+        "gpt": 9245,
+        "gemini": 8182
       }
     }
   ]

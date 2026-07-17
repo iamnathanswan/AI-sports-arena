@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T22:04:48+00:00",
+  "generated_at": "2026-07-17T21:55:16+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -7,43 +7,51 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 9263,
-      "cash_cents": 7179,
+      "equity_cents": 9245,
+      "cash_cents": 6182,
       "initial_cents": 10000,
-      "pnl_cents": -737,
-      "roi_pct": -7.37,
+      "pnl_cents": -755,
+      "roi_pct": -7.55,
       "settled_bets": 7,
       "wins": 4,
       "win_rate": 0.571,
       "staked_cents": 7230,
       "returned_cents": 6800,
-      "fees_paid_cents": 307,
-      "fill_rate": 0.616,
+      "fees_paid_cents": 325,
+      "fill_rate": 0.577,
       "brier": 0.1482,
       "usage": {
-        "input_tokens": 2901858,
-        "output_tokens": 49084,
+        "input_tokens": 3085132,
+        "output_tokens": 52163,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 9232640,
-        "cost_cents": 2089,
-        "sessions": 18
+        "cache_read_tokens": 9873664,
+        "cost_cents": 2222,
+        "sessions": 19
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26JUL16PDXWSH-WSH",
-          "title": "Portland vs Washington winner?",
-          "side": "yes",
-          "contracts": 16,
-          "cost_cents": 1040,
-          "forecast_prob": 0.71
-        },
-        {
-          "ticker": "KXNBASUMMERGAME-26JUL16LALCHI-LAL",
-          "title": "Will Los Angeles L win the Los Angeles L vs Chicago Summer League game originally scheduled for Jul 16, 2026?",
+          "ticker": "KXNBASUMMERGAME-26JUL17SACCHA-CHA",
+          "title": "Will Charlotte win the Sacramento vs Charlotte Summer League game originally scheduled for Jul 17, 2026?",
           "side": "yes",
           "contracts": 18,
-          "cost_cents": 1044,
-          "forecast_prob": 0.64
+          "cost_cents": 1008,
+          "forecast_prob": 0.63
+        },
+        {
+          "ticker": "KXWNBAGAME-26JUL17SEAIND-IND",
+          "title": "Seattle vs Indiana winner?",
+          "side": "yes",
+          "contracts": 14,
+          "cost_cents": 1050,
+          "forecast_prob": 0.8
+        },
+        {
+          "ticker": "KXWNBAGAME-26JUL17CONNPHX-PHX",
+          "title": "Connecticut vs Phoenix winner?",
+          "side": "yes",
+          "contracts": 15,
+          "cost_cents": 1005,
+          "forecast_prob": 0.7
         }
       ]
     },
@@ -78,43 +86,51 @@
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 8454,
-      "cash_cents": 5314,
+      "equity_cents": 8182,
+      "cash_cents": 4282,
       "initial_cents": 10000,
-      "pnl_cents": -1546,
-      "roi_pct": -15.46,
-      "settled_bets": 6,
-      "wins": 3,
+      "pnl_cents": -1818,
+      "roi_pct": -18.18,
+      "settled_bets": 8,
+      "wins": 4,
       "win_rate": 0.5,
-      "staked_cents": 8305,
-      "returned_cents": 7100,
-      "fees_paid_cents": 341,
-      "fill_rate": 0.342,
-      "brier": 0.236,
+      "staked_cents": 11445,
+      "returned_cents": 10100,
+      "fees_paid_cents": 473,
+      "fill_rate": 0.411,
+      "brier": 0.2694,
       "usage": {
-        "input_tokens": 2764701,
-        "output_tokens": 72679,
+        "input_tokens": 2982931,
+        "output_tokens": 77318,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 8810760,
-        "cost_cents": 819,
-        "sessions": 17
+        "cache_read_tokens": 9388999,
+        "cost_cents": 880,
+        "sessions": 18
       },
       "open_positions": [
         {
-          "ticker": "KXMLBGAME-26JUL161910NYMPHI-NYM",
-          "title": "New York M vs Philadelphia Winner?",
-          "side": "yes",
-          "contracts": 30,
-          "cost_cents": 1440,
-          "forecast_prob": 0.53
-        },
-        {
-          "ticker": "KXWNBAGAME-26JUL16PDXWSH-WSH",
-          "title": "Portland vs Washington winner?",
+          "ticker": "KXMLBGAME-26JUL171910PITCLE-CLE",
+          "title": "Pittsburgh vs Cleveland Winner?",
           "side": "yes",
           "contracts": 25,
-          "cost_cents": 1700,
-          "forecast_prob": 0.72
+          "cost_cents": 1275,
+          "forecast_prob": 0.55
+        },
+        {
+          "ticker": "KXMLBGAME-26JUL171915CWSTOR-TOR",
+          "title": "Chicago WS vs Toronto Winner?",
+          "side": "yes",
+          "contracts": 25,
+          "cost_cents": 1325,
+          "forecast_prob": 0.57
+        },
+        {
+          "ticker": "KXMLBGAME-26JUL171905LADNYY-NYY",
+          "title": "Los Angeles D vs New York Y Winner?",
+          "side": "yes",
+          "contracts": 25,
+          "cost_cents": 1300,
+          "forecast_prob": 0.56
         }
       ]
     }
@@ -207,9 +223,119 @@
         "gpt": 9263,
         "gemini": 8454
       }
+    },
+    {
+      "date": "2026-07-17",
+      "balances": {
+        "claude": 8687,
+        "gpt": 9245,
+        "gemini": 8182
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-07-17",
+      "ticker": "KXNBASUMMERGAME-26JUL17SACCHA-CHA",
+      "title": "Will Charlotte win the Sacramento vs Charlotte Summer League game originally scheduled for Jul 17, 2026?",
+      "side": "yes",
+      "contracts": 18,
+      "price_cents": 56,
+      "cost_cents": 1008,
+      "fee_cents": 32,
+      "forecast_prob": 0.63,
+      "reasoning": "Sacramento has reportedly ruled out Acuff, Cardwell, Clifford, and Raynaud for the Summer League finale, removing several of its most important scorers/rotation prospects. Charlotte still projects to have more usable NBA-level depth led by McNeeley/Steinbach/Salaun, so I make the Hornets clearly better than a coin flip if they avoid similar late rest.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-17T21:57:31+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-17",
+      "ticker": "KXWNBAGAME-26JUL17SEAIND-IND",
+      "title": "Seattle vs Indiana winner?",
+      "side": "yes",
+      "contracts": 14,
+      "price_cents": 75,
+      "cost_cents": 1050,
+      "fee_cents": 19,
+      "forecast_prob": 0.8,
+      "reasoning": "Indiana is at home with a much better season efficiency profile than Seattle, and Caitlin Clark is noted as not on the injury report after the recent hit. Market win probability around 79% looks fair-to-slightly-low given Seattle's poor record and offense, so I am only bidding below my 80% fair value.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-17T21:57:31+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-17",
+      "ticker": "KXWNBAGAME-26JUL17CONNPHX-PHX",
+      "title": "Connecticut vs Phoenix winner?",
+      "side": "yes",
+      "contracts": 15,
+      "price_cents": 67,
+      "cost_cents": 1005,
+      "fee_cents": 24,
+      "forecast_prob": 0.7,
+      "reasoning": "Phoenix has the higher-end creators in Copper and Alyssa Thomas, while Connecticut is listed without Morrow, Rivers, and Jackson and remains a very poor three-point team. The matchup still has upset risk because Connecticut has size, but at 67c I rate Phoenix above the fee-adjusted breakeven.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-17T21:57:31+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-17",
+      "ticker": "KXMLBGAME-26JUL171915CWSTOR-TOR",
+      "title": "Chicago WS vs Toronto Winner?",
+      "side": "yes",
+      "contracts": 25,
+      "price_cents": 53,
+      "cost_cents": 1325,
+      "fee_cents": 44,
+      "forecast_prob": 0.57,
+      "reasoning": "Toronto is favored (-136 ML) at home against Chicago, implying ~57% probability. Spencer Miles (2.85 ERA) starts for the Jays against Anthony Kay (4.23 ERA). Placing a bid at 53c for positive EV after fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-17T21:56:14+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-17",
+      "ticker": "KXMLBGAME-26JUL171905LADNYY-NYY",
+      "title": "Los Angeles D vs New York Y Winner?",
+      "side": "yes",
+      "contracts": 25,
+      "price_cents": 52,
+      "cost_cents": 1300,
+      "fee_cents": 44,
+      "forecast_prob": 0.56,
+      "reasoning": "Yankees are at home with Gerrit Cole (4.04 ERA) against struggling Roki Sasaki (5.33 ERA, 3-5). The Yankees have the pitching advantage in this matchup, so estimating a 56% win probability and pricing at 52c to secure an edge.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-17T21:56:14+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-17",
+      "ticker": "KXMLBGAME-26JUL171910PITCLE-CLE",
+      "title": "Pittsburgh vs Cleveland Winner?",
+      "side": "yes",
+      "contracts": 25,
+      "price_cents": 51,
+      "cost_cents": 1275,
+      "fee_cents": 44,
+      "forecast_prob": 0.55,
+      "reasoning": "Cleveland is at home with Gavin Williams (3.81 ERA, 10.6 K/9) facing Jared Jones (4.38 ERA). The Guardians are slight favorites (-124 ML) making their true probability around 55%. Resting a bid at 51c to capture edge against fair value.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-17T21:56:13+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-16",
@@ -223,8 +349,8 @@
       "forecast_prob": 0.53,
       "reasoning": "Christian Scott has pitched to a 3.17 ERA and the Mets' offense has shown power recently. Aaron Nola has struggled with home runs, giving the underdog Mets solid value at 48c.",
       "status": "live",
-      "result": null,
-      "payout_cents": 0,
+      "result": "won",
+      "payout_cents": 3000,
       "placed_at": "2026-07-16T22:08:06+00:00"
     },
     {
@@ -240,7 +366,7 @@
       "forecast_prob": 0.72,
       "reasoning": "The Mystics are heavily favored against the struggling 10-14 Portland Fire, who are now missing Megan Gustafson. Washington has won 4 of their last 5 and are a top defense.",
       "status": "live",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
       "placed_at": "2026-07-16T22:08:06+00:00"
     },
@@ -250,14 +376,14 @@
       "ticker": "KXNBASUMMERGAME-26JUL16LALCHI-LAL",
       "title": "Will Los Angeles L win the Los Angeles L vs Chicago Summer League game originally scheduled for Jul 16, 2026?",
       "side": "yes",
-      "contracts": 18,
+      "contracts": 0,
       "price_cents": 58,
-      "cost_cents": 1044,
-      "fee_cents": 31,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.64,
       "reasoning": "The Lakers' summer roster has been the more cohesive side, entering 3-0 with all three wins by double digits and an average margin over 15 points, while Chicago is 1-2. A current betting preview lists Lakers -3.5, which maps to a solid moneyline favorite; buying at 58c would be meaningfully below my 64% fair. Summer league is volatile, so I am keeping this to the minimum practical stake.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-16T22:06:00+00:00"
     },
@@ -267,14 +393,14 @@
       "ticker": "KXWNBAGAME-26JUL16PDXWSH-WSH",
       "title": "Portland vs Washington winner?",
       "side": "yes",
-      "contracts": 16,
+      "contracts": 0,
       "price_cents": 65,
-      "cost_cents": 1040,
-      "fee_cents": 26,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.71,
       "reasoning": "Washington is a clear home favorite tonight: live market screens show Mystics around -6.5 and roughly -265 to -271 on the moneyline, implying about 70% no-vig win probability. Injury listings show Portland missing key frontcourt/rotation pieces, while Washington has the steadier season profile and just beat Toronto. I am resting below the external moneyline-implied fair value because the Kalshi book is empty, so a fill at 65c would leave several cents of post-fee edge.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-16T22:05:54+00:00"
     },
@@ -1623,6 +1749,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gpt",
+      "week": "2026-07-17",
+      "text": "Deployed $30.63 pre-fee across three under-fair limit orders: Charlotte Summer League ML 18x56c (Kings resting Acuff/Cardwell/Clifford/Raynaud), Indiana WNBA ML 14x75c (home favorite vs struggling Seattle, Clark not reported out), and Phoenix WNBA ML 15x67c (Connecticut missing key rotation pieces; Phoenix creator/spacings edge). All are priced below my fair probabilities to clear fees rather than chasing the market.",
+      "at": "2026-07-17T21:57:36+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-17",
+      "text": "I focused on three MLB games tonight (July 17, 2026) coming out of the All-Star break. Since order books were thin or empty, I placed limit bids priced slightly below my fair value estimates (accounting for fees) to capture a solid 2-4 cent edge if filled:\n- 25 contracts on Guardians (vs. Pirates) at 51c: Gavin Williams (3.81 ERA) outclasses Jared Jones, and CLE is -124 on the ML. \n- 25 contracts on Blue Jays (vs. White Sox) at 53c: Spencer Miles (2.85 ERA) starts for TOR, who are solid -136 favorites at home. \n- 25 contracts on Yankees (vs. Dodgers) at 52c: Gerrit Cole gets the ball against a struggling Roki Sasaki (5.33 ERA), giving NYY the home pitching edge despite Ohtani DH'ing. \nAll orders are resting and provide positive EV after fees.",
+      "at": "2026-07-17T21:56:21+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-16",
