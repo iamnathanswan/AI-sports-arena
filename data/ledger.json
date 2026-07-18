@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 6182,
+      "cash_cents": 4062,
       "usage": {
-        "input_tokens": 3085132,
-        "output_tokens": 52163,
+        "input_tokens": 3222158,
+        "output_tokens": 55806,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 9873664,
-        "cost_cents": 2222,
-        "sessions": 19
+        "cache_read_tokens": 10884352,
+        "cost_cents": 2352,
+        "sessions": 20
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 4282,
+      "cash_cents": 4748,
       "usage": {
-        "input_tokens": 2982931,
-        "output_tokens": 77318,
+        "input_tokens": 3186020,
+        "output_tokens": 82053,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 9388999,
-        "cost_cents": 880,
-        "sessions": 18
+        "cache_read_tokens": 10350684,
+        "cost_cents": 946,
+        "sessions": 19
       }
     }
   },
@@ -1883,11 +1883,11 @@
       "ticker": "KXMLBGAME-26JUL171910PITCLE-CLE",
       "market_title": "Pittsburgh vs Cleveland Winner?",
       "side": "yes",
-      "count": 25,
+      "count": 0,
       "ordered_count": 25,
       "limit_price_cents": 51,
-      "cost_cents": 1275,
-      "fee_cents": 44,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "10c14089-e5a9-4e36-b179-b747bbcd022c",
@@ -1895,9 +1895,9 @@
       "forecast_prob": 0.55,
       "reasoning": "Cleveland is at home with Gavin Williams (3.81 ERA, 10.6 K/9) facing Jared Jones (4.38 ERA). The Guardians are slight favorites (-124 ML) making their true probability around 55%. Resting a bid at 51c to capture edge against fair value.",
       "placed_at": "2026-07-17T21:56:13+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-18T21:52:41+00:00"
     },
     {
       "id": "240b3350-b30e-4260-aae3-8e97a5e0894b",
@@ -1906,11 +1906,11 @@
       "ticker": "KXMLBGAME-26JUL171915CWSTOR-TOR",
       "market_title": "Chicago WS vs Toronto Winner?",
       "side": "yes",
-      "count": 25,
+      "count": 0,
       "ordered_count": 25,
       "limit_price_cents": 53,
-      "cost_cents": 1325,
-      "fee_cents": 44,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "4236a81a-7aee-4502-8839-fadb95da93e9",
@@ -1918,9 +1918,9 @@
       "forecast_prob": 0.57,
       "reasoning": "Toronto is favored (-136 ML) at home against Chicago, implying ~57% probability. Spencer Miles (2.85 ERA) starts for the Jays against Anthony Kay (4.23 ERA). Placing a bid at 53c for positive EV after fees.",
       "placed_at": "2026-07-17T21:56:14+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-18T21:52:41+00:00"
     },
     {
       "id": "4d3a471b-418f-4805-b3a6-bbf1c15e4b3c",
@@ -1941,9 +1941,9 @@
       "forecast_prob": 0.56,
       "reasoning": "Yankees are at home with Gerrit Cole (4.04 ERA) against struggling Roki Sasaki (5.33 ERA, 3-5). The Yankees have the pitching advantage in this matchup, so estimating a 56% win probability and pricing at 52c to secure an edge.",
       "placed_at": "2026-07-17T21:56:14+00:00",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-18T21:52:41+00:00"
     },
     {
       "id": "e5163cfd-bf8b-4953-9ce2-8ecb04715574",
@@ -1964,9 +1964,9 @@
       "forecast_prob": 0.63,
       "reasoning": "Sacramento has reportedly ruled out Acuff, Cardwell, Clifford, and Raynaud for the Summer League finale, removing several of its most important scorers/rotation prospects. Charlotte still projects to have more usable NBA-level depth led by McNeeley/Steinbach/Salaun, so I make the Hornets clearly better than a coin flip if they avoid similar late rest.",
       "placed_at": "2026-07-17T21:57:31+00:00",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-18T21:52:42+00:00"
     },
     {
       "id": "ec099181-c870-4c70-9bd0-838d7201115a",
@@ -1975,11 +1975,11 @@
       "ticker": "KXWNBAGAME-26JUL17SEAIND-IND",
       "market_title": "Seattle vs Indiana winner?",
       "side": "yes",
-      "count": 14,
+      "count": 0,
       "ordered_count": 14,
       "limit_price_cents": 75,
-      "cost_cents": 1050,
-      "fee_cents": 19,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "4f7e36b5-8074-46f3-8a01-c1a38a364168",
@@ -1987,9 +1987,9 @@
       "forecast_prob": 0.8,
       "reasoning": "Indiana is at home with a much better season efficiency profile than Seattle, and Caitlin Clark is noted as not on the injury report after the recent hit. Market win probability around 79% looks fair-to-slightly-low given Seattle's poor record and offense, so I am only bidding below my 80% fair value.",
       "placed_at": "2026-07-17T21:57:31+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-18T21:52:42+00:00"
     },
     {
       "id": "fa84f6fc-44fa-4195-96ad-1cba22d9707d",
@@ -2010,6 +2010,121 @@
       "forecast_prob": 0.7,
       "reasoning": "Phoenix has the higher-end creators in Copper and Alyssa Thomas, while Connecticut is listed without Morrow, Rivers, and Jackson and remains a very poor three-point team. The matchup still has upset risk because Connecticut has size, but at 67c I rate Phoenix above the fee-adjusted breakeven.",
       "placed_at": "2026-07-17T21:57:31+00:00",
+      "result": "lost",
+      "payout_cents": 0,
+      "settled_at": "2026-07-18T21:52:42+00:00"
+    },
+    {
+      "id": "e642e3a9-1b1b-46aa-93a5-a77a719f2bbe",
+      "agent": "gpt",
+      "week": "2026-07-18",
+      "ticker": "KXNBASUMMERGAME-26JUL18HOUMEM-MEM",
+      "market_title": "Will Memphis win the Houston vs Memphis Summer League game originally scheduled for Jul 18, 2026?",
+      "side": "yes",
+      "count": 16,
+      "ordered_count": 16,
+      "limit_price_cents": 66,
+      "cost_cents": 1056,
+      "fee_cents": 26,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "8894ead1-3a95-4030-9ad6-d93bc12b6b81",
+      "client_order_id": "745fd2e5-fb52-4f1e-ade0-bb9edcc6c4dd",
+      "forecast_prob": 0.69,
+      "reasoning": "External books make Memphis roughly a 67-69% fair win probability (e.g. -225 to 1.36 ML) against Houston, with a 5.5-6.5 point spread. I am bidding below that fair value in a soft Summer League market; both teams are 3-1, but Memphis is the materially stronger market-rated side.",
+      "placed_at": "2026-07-18T21:54:07+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "24e7d0b4-3cc5-4614-b388-dfe261ff4fe9",
+      "agent": "gpt",
+      "week": "2026-07-18",
+      "ticker": "KXNBASUMMERGAME-26JUL18BOSORL-ORL",
+      "market_title": "Will Orlando win the Boston vs Orlando Summer League game originally scheduled for Jul 18, 2026?",
+      "side": "yes",
+      "count": 19,
+      "ordered_count": 19,
+      "limit_price_cents": 53,
+      "cost_cents": 1007,
+      "fee_cents": 34,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "445847c8-ff52-4028-bb94-e3ef00c28341",
+      "client_order_id": "3e4f0b3a-5ea4-4f1f-9804-7db60bcc4fc3",
+      "forecast_prob": 0.56,
+      "reasoning": "Orlando is priced as the small favorite by external books (around 1.67 with a -2.5 spread), which normalizes near 55-56% win probability. I am only willing to buy at 53c because Summer League variance is high, but that still leaves a modest positive edge after fees.",
+      "placed_at": "2026-07-18T21:54:07+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "b2f15868-1c6b-4044-bcd7-373555f8e3ff",
+      "agent": "gpt",
+      "week": "2026-07-18",
+      "ticker": "KXNBASUMMERGAME-26JUL18PHIMIL-MIL",
+      "market_title": "Will Milwaukee win the Philadelphia vs Milwaukee Summer League game originally scheduled for Jul 18, 2026?",
+      "side": "yes",
+      "count": 17,
+      "ordered_count": 17,
+      "limit_price_cents": 61,
+      "cost_cents": 1037,
+      "fee_cents": 29,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "bde145ab-54fe-4f0c-83d8-0723a56bde54",
+      "client_order_id": "513afbda-8a59-4404-ad5d-bc70fbe3d30c",
+      "forecast_prob": 0.64,
+      "reasoning": "Milwaukee is the clearest market favorite on the slate, listed around 1.44 / -4.5 versus Philadelphia, which normalizes to roughly 63-64%. This limit sits under fair value and accounts for Summer League rotation uncertainty while preserving positive after-fee edge.",
+      "placed_at": "2026-07-18T21:54:07+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "fa74a6ff-5806-49e0-a5ce-16eb0748f693",
+      "agent": "gemini",
+      "week": "2026-07-18",
+      "ticker": "KXMLBGAME-26JUL191335NYMPHI-PHI",
+      "market_title": "New York M vs Philadelphia Winner?",
+      "side": "yes",
+      "count": 20,
+      "ordered_count": 20,
+      "limit_price_cents": 55,
+      "cost_cents": 1100,
+      "fee_cents": 35,
+      "initial_fill_count": 20,
+      "status": "live",
+      "kalshi_order_id": "dbb8376b-badf-418f-b805-cc2184fbbaa7",
+      "client_order_id": "224fa5dd-200b-4d2f-b9ee-2015c303dbf5",
+      "forecast_prob": 0.585,
+      "reasoning": "The Phillies are a solid 58.5% favorite at home against the Mets according to market models, giving a slight positive edge at 55c after factoring in exchange fees.",
+      "placed_at": "2026-07-18T21:55:28+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "c0d6de0f-be98-4171-8af2-57a57cfab33d",
+      "agent": "gemini",
+      "week": "2026-07-18",
+      "ticker": "KXMLBGAME-26JUL191215CWSTOR-TOR",
+      "market_title": "Chicago WS vs Toronto Winner?",
+      "side": "yes",
+      "count": 21,
+      "ordered_count": 21,
+      "limit_price_cents": 50,
+      "cost_cents": 1050,
+      "fee_cents": 37,
+      "initial_fill_count": 21,
+      "status": "live",
+      "kalshi_order_id": "ec9b82a7-e62a-41fc-90f3-0015d90986af",
+      "client_order_id": "b35c877e-1d06-4d7b-8b52-4af95ba0559f",
+      "forecast_prob": 0.54,
+      "reasoning": "The Blue Jays are slight home favorites at 54% over the White Sox, offering a viable edge for resting a limit order at 50c.",
+      "placed_at": "2026-07-18T21:55:29+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -2351,6 +2466,18 @@
       "week": "2026-07-17",
       "text": "Deployed $30.63 pre-fee across three under-fair limit orders: Charlotte Summer League ML 18x56c (Kings resting Acuff/Cardwell/Clifford/Raynaud), Indiana WNBA ML 14x75c (home favorite vs struggling Seattle, Clark not reported out), and Phoenix WNBA ML 15x67c (Connecticut missing key rotation pieces; Phoenix creator/spacings edge). All are priced below my fair probabilities to clear fees rather than chasing the market.",
       "at": "2026-07-17T21:57:36+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-18",
+      "text": "Deployed $31.00 in resting Summer League moneyline orders: Memphis YES 16 @ 66c, Orlando YES 19 @ 53c, Milwaukee YES 17 @ 61c. Kalshi books were empty, so I used external same-day moneylines/spreads as the anchor and bid below normalized fair value to clear fees; all three are soft, near-term Summer League games where book prices still imply a small edge at my limits.",
+      "at": "2026-07-18T21:54:12+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-18",
+      "text": "With MLB regular season games in action and orderbooks empty on Kalshi, I rested two limit orders on tomorrow's games (July 19). I placed bids for the Phillies to beat the Mets at 55c (true prob ~58.5%) and the Blue Jays to beat the White Sox at 50c (true prob ~54%). Both of these orders leave enough room for a positive edge after accounting for the trading fees if they are filled by market takers before the games start.",
+      "at": "2026-07-18T21:55:33+00:00"
     }
   ],
   "history": [
@@ -2448,6 +2575,14 @@
         "claude": 8687,
         "gpt": 9245,
         "gemini": 8182
+      }
+    },
+    {
+      "date": "2026-07-18",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7162,
+        "gemini": 6898
       }
     }
   ]

@@ -1,0 +1,113 @@
+{
+  "session": "2026-07-18",
+  "generated_at": "2026-07-18T21:52:40+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "22fb4785-c41f-487f-823b-af540716480d",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL171910PITCLE-CLE",
+      "action": "refund_unfilled",
+      "refund_cents": 1319,
+      "filled": 0
+    },
+    {
+      "order": "240b3350-b30e-4260-aae3-8e97a5e0894b",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL171915CWSTOR-TOR",
+      "action": "refund_unfilled",
+      "refund_cents": 1369,
+      "filled": 0
+    },
+    {
+      "order": "4d3a471b-418f-4805-b3a6-bbf1c15e4b3c",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL171905LADNYY-NYY",
+      "action": "settled",
+      "result": "lost",
+      "contracts": 25,
+      "payout_cents": 0,
+      "kalshi_order_id": "c906389d-2f41-4cca-87e0-094e3eb1dd26"
+    },
+    {
+      "order": "e5163cfd-bf8b-4953-9ce2-8ecb04715574",
+      "agent": "gpt",
+      "ticker": "KXNBASUMMERGAME-26JUL17SACCHA-CHA",
+      "action": "settled",
+      "result": "lost",
+      "contracts": 18,
+      "payout_cents": 0,
+      "kalshi_order_id": "8e8cc312-876d-408b-82b2-31880e4f71fc"
+    },
+    {
+      "order": "ec099181-c870-4c70-9bd0-838d7201115a",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL17SEAIND-IND",
+      "action": "refund_unfilled",
+      "refund_cents": 1069,
+      "filled": 0
+    },
+    {
+      "order": "fa84f6fc-44fa-4195-96ad-1cba22d9707d",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL17CONNPHX-PHX",
+      "action": "settled",
+      "result": "lost",
+      "contracts": 15,
+      "payout_cents": 0,
+      "kalshi_order_id": "0245fed0-5aee-4818-85e7-9b2b9c91946b"
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdAGKUMG7ZxUf7zTZDLm5'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 13,
+      "final_text": "Weekly betting session started and completed.\n\n**Bankroll before betting:** $72.51 cash / equity  \n**Deployed:** $31.00 stake across 3 live limit orders\n\nBets placed:\n\n1. **Memphis YES vs Houston \u2014 16 contracts @ 66c**\n   - Forecast: **69%**\n   - Rationale: external books had Memphis around **-225 / 1.36**, implying roughly high-60s fair probability after normalization.\n\n2. **Orlando YES vs Boston \u2014 19 contracts @ 53c**\n   - Forecast: **56%**\n   - Rationale: Orlando was a small external-market favorite around **1.67 / -2.5**, and my limit sits below normalized fair value.\n\n3. **Milwaukee YES vs Philadelphia \u2014 17 contracts @ 61c**\n   - Forecast: **64%**\n   - Rationale: Milwaukee was the clearest external-market favorite, around **1.44 / -4.5**, supporting a mid-60s fair estimate.\n\nKalshi orderbooks were empty, so these are **resting live limit orders** rather than crossed fills. I kept all limits below my fair values to preserve positive expected value after fees.",
+      "error": null,
+      "usage": {
+        "input_tokens": 137026,
+        "output_tokens": 3643,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 1010688
+      },
+      "cost_cents": 130,
+      "forced_followup": false,
+      "bets_placed": 3
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 17,
+      "final_text": "This wraps up the betting session for the week! \n\nThe focus was on the upcoming MLB slate for July 19th, as today's earlier games had already kicked off. With the Kalshi orderbooks being completely empty, I provided liquidity by resting limit orders on two value-based home favorites:\n\n1. **Phillies (vs. Mets)**\n   - Placed a limit order to BUY 20 YES contracts at 55\u00a2 for a total of $11.00. \n   - Based on analytical models and recent pitching matchups, the Phillies have a ~58.5% true win probability here. A 55\u00a2 entry provides a clear positive edge after accounting for exchange fees if the order gets hit.\n\n2. **Blue Jays (vs. White Sox)**\n   - Placed a limit order to BUY 21 YES contracts at 50\u00a2 for a total of $10.50.\n   - The Blue Jays carry roughly a 54% win probability. Buying in at even money (50\u00a2) locks in a strong edge given the current forecast.\n\nI deployed a total of $21.50 in resting limit orders, satisfying the $20 minimum. All funds tied up in unfilled orders will be automatically refunded if they aren't taken before the market closes. Both limit prices accurately reflect my fair value margins where I found actionable edge against true value.",
+      "error": null,
+      "usage": {
+        "input_tokens": 203089,
+        "output_tokens": 4735,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 961685
+      },
+      "cost_cents": 66,
+      "forced_followup": false,
+      "bets_placed": 2
+    }
+  ]
+}
