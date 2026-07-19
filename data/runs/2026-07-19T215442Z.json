@@ -1,0 +1,107 @@
+{
+  "session": "2026-07-19",
+  "generated_at": "2026-07-19T21:54:42+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "e642e3a9-1b1b-46aa-93a5-a77a719f2bbe",
+      "agent": "gpt",
+      "ticker": "KXNBASUMMERGAME-26JUL18HOUMEM-MEM",
+      "action": "refund_unfilled",
+      "refund_cents": 1082,
+      "filled": 0
+    },
+    {
+      "order": "24e7d0b4-3cc5-4614-b388-dfe261ff4fe9",
+      "agent": "gpt",
+      "ticker": "KXNBASUMMERGAME-26JUL18BOSORL-ORL",
+      "action": "settled",
+      "result": "won",
+      "contracts": 19,
+      "payout_cents": 1900,
+      "kalshi_order_id": "445847c8-ff52-4028-bb94-e3ef00c28341"
+    },
+    {
+      "order": "b2f15868-1c6b-4044-bcd7-373555f8e3ff",
+      "agent": "gpt",
+      "ticker": "KXNBASUMMERGAME-26JUL18PHIMIL-MIL",
+      "action": "settled",
+      "result": "won",
+      "contracts": 17,
+      "payout_cents": 1700,
+      "kalshi_order_id": "bde145ab-54fe-4f0c-83d8-0723a56bde54"
+    },
+    {
+      "order": "fa74a6ff-5806-49e0-a5ce-16eb0748f693",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL191335NYMPHI-PHI",
+      "action": "settled",
+      "result": "lost",
+      "contracts": 20,
+      "payout_cents": 0,
+      "kalshi_order_id": "dbb8376b-badf-418f-b805-cc2184fbbaa7"
+    },
+    {
+      "order": "c0d6de0f-be98-4171-8af2-57a57cfab33d",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL191215CWSTOR-TOR",
+      "action": "settled",
+      "result": "lost",
+      "contracts": 21,
+      "payout_cents": 0,
+      "kalshi_order_id": "ec9b82a7-e62a-41fc-90f3-0015d90986af"
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 8,
+      "final_text": "(stopped early: session cost ceiling reached)",
+      "error": null,
+      "usage": {
+        "input_tokens": 289611,
+        "output_tokens": 2113,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 525440
+      },
+      "cost_cents": 177,
+      "forced_followup": false,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 11,
+      "final_text": "I have completed the weekly betting session. I searched for fresh news and consensus odds for upcoming WNBA and MLB games. \n\nWith many orderbooks currently thin, I placed resting limit orders priced to capture a solid positive expected value against my vig-free implied probabilities:\n1. **NY Liberty (WNBA vs. Dallas):** Despite the Wings being on a hot streak, the Liberty remain slight moneyline favorites (~-137), giving them a fair win probability of roughly 54.2%. I rested a limit bid at 50c to buy YES.\n2. **Houston Astros (MLB vs. Miami):** The Astros are favored (-145 to -150 depending on the book) over the Marlins. I estimated a 56.8% fair probability and rested a limit bid at 52c for YES.\n\nI deployed $23.00 in total across these two markets, staying under my strict 50% equity limit ($23.74) while meeting the minimum required thresholds. All orders provide several cents of edge after the exchange fees.",
+      "error": null,
+      "usage": {
+        "input_tokens": 176540,
+        "output_tokens": 5214,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 457211
+      },
+      "cost_cents": 51,
+      "forced_followup": false,
+      "bets_placed": 2
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdCAT9u2uRPG7t1fWe3ue'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    }
+  ]
+}

@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 4062,
+      "cash_cents": 8744,
       "usage": {
-        "input_tokens": 3222158,
-        "output_tokens": 55806,
+        "input_tokens": 3511769,
+        "output_tokens": 57919,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 10884352,
-        "cost_cents": 2352,
-        "sessions": 20
+        "cache_read_tokens": 11409792,
+        "cost_cents": 2529,
+        "sessions": 21
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 4748,
+      "cash_cents": 2369,
       "usage": {
-        "input_tokens": 3186020,
-        "output_tokens": 82053,
+        "input_tokens": 3362560,
+        "output_tokens": 87267,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 10350684,
-        "cost_cents": 946,
-        "sessions": 19
+        "cache_read_tokens": 10807895,
+        "cost_cents": 997,
+        "sessions": 20
       }
     }
   },
@@ -2021,11 +2021,11 @@
       "ticker": "KXNBASUMMERGAME-26JUL18HOUMEM-MEM",
       "market_title": "Will Memphis win the Houston vs Memphis Summer League game originally scheduled for Jul 18, 2026?",
       "side": "yes",
-      "count": 16,
+      "count": 0,
       "ordered_count": 16,
       "limit_price_cents": 66,
-      "cost_cents": 1056,
-      "fee_cents": 26,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "8894ead1-3a95-4030-9ad6-d93bc12b6b81",
@@ -2033,9 +2033,9 @@
       "forecast_prob": 0.69,
       "reasoning": "External books make Memphis roughly a 67-69% fair win probability (e.g. -225 to 1.36 ML) against Houston, with a 5.5-6.5 point spread. I am bidding below that fair value in a soft Summer League market; both teams are 3-1, but Memphis is the materially stronger market-rated side.",
       "placed_at": "2026-07-18T21:54:07+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-19T21:54:42+00:00"
     },
     {
       "id": "24e7d0b4-3cc5-4614-b388-dfe261ff4fe9",
@@ -2056,9 +2056,9 @@
       "forecast_prob": 0.56,
       "reasoning": "Orlando is priced as the small favorite by external books (around 1.67 with a -2.5 spread), which normalizes near 55-56% win probability. I am only willing to buy at 53c because Summer League variance is high, but that still leaves a modest positive edge after fees.",
       "placed_at": "2026-07-18T21:54:07+00:00",
-      "result": null,
-      "payout_cents": 0,
-      "settled_at": null
+      "result": "won",
+      "payout_cents": 1900,
+      "settled_at": "2026-07-19T21:54:43+00:00"
     },
     {
       "id": "b2f15868-1c6b-4044-bcd7-373555f8e3ff",
@@ -2079,9 +2079,9 @@
       "forecast_prob": 0.64,
       "reasoning": "Milwaukee is the clearest market favorite on the slate, listed around 1.44 / -4.5 versus Philadelphia, which normalizes to roughly 63-64%. This limit sits under fair value and accounts for Summer League rotation uncertainty while preserving positive after-fee edge.",
       "placed_at": "2026-07-18T21:54:07+00:00",
-      "result": null,
-      "payout_cents": 0,
-      "settled_at": null
+      "result": "won",
+      "payout_cents": 1700,
+      "settled_at": "2026-07-19T21:54:43+00:00"
     },
     {
       "id": "fa74a6ff-5806-49e0-a5ce-16eb0748f693",
@@ -2102,9 +2102,9 @@
       "forecast_prob": 0.585,
       "reasoning": "The Phillies are a solid 58.5% favorite at home against the Mets according to market models, giving a slight positive edge at 55c after factoring in exchange fees.",
       "placed_at": "2026-07-18T21:55:28+00:00",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-19T21:54:43+00:00"
     },
     {
       "id": "c0d6de0f-be98-4171-8af2-57a57cfab33d",
@@ -2125,6 +2125,52 @@
       "forecast_prob": 0.54,
       "reasoning": "The Blue Jays are slight home favorites at 54% over the White Sox, offering a viable edge for resting a limit order at 50c.",
       "placed_at": "2026-07-18T21:55:29+00:00",
+      "result": "lost",
+      "payout_cents": 0,
+      "settled_at": "2026-07-19T21:54:44+00:00"
+    },
+    {
+      "id": "22319f1a-9f0b-489e-82d2-8d04398009ea",
+      "agent": "gemini",
+      "week": "2026-07-19",
+      "ticker": "KXWNBAGAME-26JUL20NYDAL-NY",
+      "market_title": "New York vs Dallas winner?",
+      "side": "yes",
+      "count": 20,
+      "ordered_count": 20,
+      "limit_price_cents": 50,
+      "cost_cents": 1000,
+      "fee_cents": 35,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "88f2bda0-7b41-4669-be0b-967924114f8b",
+      "client_order_id": "64b84d96-c78b-4f26-b62b-0cf3ed34202a",
+      "forecast_prob": 0.542,
+      "reasoning": "NY Liberty are slight favorites (-137 ML / 54.2% implied fair value) on the road against Dallas, who have won 5 straight. Bidding at 50c provides a solid edge against fair value in a thin market.",
+      "placed_at": "2026-07-19T21:56:48+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "9239c700-9614-4ff5-ad22-67d51955900e",
+      "agent": "gemini",
+      "week": "2026-07-19",
+      "ticker": "KXMLBGAME-26JUL212010MIAHOU-HOU",
+      "market_title": "Miami vs Houston Winner?",
+      "side": "yes",
+      "count": 25,
+      "ordered_count": 25,
+      "limit_price_cents": 52,
+      "cost_cents": 1300,
+      "fee_cents": 44,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "496d7220-b266-4696-afb0-3db4ae7216db",
+      "client_order_id": "bde037ec-5d70-4e79-830d-b796a9c3c09b",
+      "forecast_prob": 0.568,
+      "reasoning": "Houston Astros are ~57% implied favorites against the Marlins based on consensus odds. Bidding 52c captures a solid ~3c positive expected value after fees on a resting order.",
+      "placed_at": "2026-07-19T21:56:48+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -2478,6 +2524,12 @@
       "week": "2026-07-18",
       "text": "With MLB regular season games in action and orderbooks empty on Kalshi, I rested two limit orders on tomorrow's games (July 19). I placed bids for the Phillies to beat the Mets at 55c (true prob ~58.5%) and the Blue Jays to beat the White Sox at 50c (true prob ~54%). Both of these orders leave enough room for a positive edge after accounting for the trading fees if they are filled by market takers before the games start.",
       "at": "2026-07-18T21:55:33+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-19",
+      "text": "Weekly session (2026-07-19): The MLB is mostly in the All-Star break, but some post-break markets are up. I focused on WNBA and MLB games occurring in the next 1-2 days. \n1. KXWNBAGAME-26JUL20NYDAL-NY (NY Liberty): Placed limit order for 20 YES at 50c. NY is favored at -137 (~54.2% fair), giving a positive EV edge on an empty book.\n2. KXMLBGAME-26JUL212010MIAHOU-HOU (Houston Astros): Placed limit order for 25 YES at 52c. The Astros are solid favorites (~56.8% fair), providing an edge at 52c. \nDeployed $23 out of a max $23.74, satisfying all constraints.",
+      "at": "2026-07-19T21:56:53+00:00"
     }
   ],
   "history": [
@@ -2583,6 +2635,14 @@
         "claude": 8687,
         "gpt": 7162,
         "gemini": 6898
+      }
+    },
+    {
+      "date": "2026-07-19",
+      "balances": {
+        "claude": 8687,
+        "gpt": 8744,
+        "gemini": 4669
       }
     }
   ]
