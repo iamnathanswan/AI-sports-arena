@@ -1,35 +1,8 @@
 {
-  "generated_at": "2026-07-19T21:54:42+00:00",
+  "generated_at": "2026-07-20T22:01:10+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
-    {
-      "name": "gpt",
-      "provider": "openai",
-      "model": "gpt-5.5",
-      "equity_cents": 8744,
-      "cash_cents": 8744,
-      "initial_cents": 10000,
-      "pnl_cents": -1256,
-      "roi_pct": -12.56,
-      "settled_bets": 11,
-      "wins": 6,
-      "win_rate": 0.545,
-      "staked_cents": 11287,
-      "returned_cents": 10400,
-      "fees_paid_cents": 369,
-      "fill_rate": 0.596,
-      "brier": 0.2043,
-      "usage": {
-        "input_tokens": 3511769,
-        "output_tokens": 57919,
-        "cache_write_tokens": 0,
-        "cache_read_tokens": 11409792,
-        "cost_cents": 2529,
-        "sessions": 21
-      },
-      "open_positions": []
-    },
     {
       "name": "claude",
       "provider": "anthropic",
@@ -58,46 +31,98 @@
       "open_positions": []
     },
     {
+      "name": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "equity_cents": 8685,
+      "cash_cents": 5491,
+      "initial_cents": 10000,
+      "pnl_cents": -1315,
+      "roi_pct": -13.15,
+      "settled_bets": 11,
+      "wins": 6,
+      "win_rate": 0.545,
+      "staked_cents": 11287,
+      "returned_cents": 10400,
+      "fees_paid_cents": 428,
+      "fill_rate": 0.596,
+      "brier": 0.2043,
+      "usage": {
+        "input_tokens": 3862557,
+        "output_tokens": 61060,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 12329216,
+        "cost_cents": 2760,
+        "sessions": 22
+      },
+      "open_positions": [
+        {
+          "ticker": "KXWNBAGAME-26JUL20LVTOR-LV",
+          "title": "Las Vegas vs Toronto winner?",
+          "side": "yes",
+          "contracts": 14,
+          "cost_cents": 1050,
+          "forecast_prob": 0.81
+        },
+        {
+          "ticker": "KXWNBAGAME-26JUL20WSHGS-GS",
+          "title": "Washington vs Golden State winner?",
+          "side": "yes",
+          "contracts": 15,
+          "cost_cents": 1080,
+          "forecast_prob": 0.79
+        },
+        {
+          "ticker": "KXWNBAGAME-26JUL20MINSEA-MIN",
+          "title": "Minnesota vs Seattle winner?",
+          "side": "yes",
+          "contracts": 14,
+          "cost_cents": 1064,
+          "forecast_prob": 0.82
+        }
+      ]
+    },
+    {
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 4669,
-      "cash_cents": 2369,
+      "equity_cents": 4716,
+      "cash_cents": 2476,
       "initial_cents": 10000,
-      "pnl_cents": -5331,
-      "roi_pct": -53.31,
+      "pnl_cents": -5284,
+      "roi_pct": -52.84,
       "settled_bets": 11,
       "wins": 4,
       "win_rate": 0.364,
       "staked_cents": 14895,
       "returned_cents": 10100,
-      "fees_paid_cents": 536,
-      "fill_rate": 0.44,
+      "fees_paid_cents": 489,
+      "fill_rate": 0.411,
       "brier": 0.282,
       "usage": {
-        "input_tokens": 3362560,
-        "output_tokens": 87267,
+        "input_tokens": 3567695,
+        "output_tokens": 91426,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 10807895,
-        "cost_cents": 997,
-        "sessions": 20
+        "cache_read_tokens": 11665816,
+        "cost_cents": 1060,
+        "sessions": 21
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26JUL20NYDAL-NY",
-          "title": "New York vs Dallas winner?",
+          "ticker": "KXWNBAGAME-26JUL20MINSEA-MIN",
+          "title": "Minnesota vs Seattle winner?",
           "side": "yes",
-          "contracts": 20,
-          "cost_cents": 1000,
-          "forecast_prob": 0.542
+          "contracts": 14,
+          "cost_cents": 1120,
+          "forecast_prob": 0.83
         },
         {
-          "ticker": "KXMLBGAME-26JUL212010MIAHOU-HOU",
-          "title": "Miami vs Houston Winner?",
+          "ticker": "KXWNBAGAME-26JUL20LVTOR-LV",
+          "title": "Las Vegas vs Toronto winner?",
           "side": "yes",
-          "contracts": 25,
-          "cost_cents": 1300,
-          "forecast_prob": 0.568
+          "contracts": 14,
+          "cost_cents": 1120,
+          "forecast_prob": 0.84
         }
       ]
     }
@@ -214,23 +239,116 @@
         "gpt": 8744,
         "gemini": 4669
       }
+    },
+    {
+      "date": "2026-07-20",
+      "balances": {
+        "claude": 8687,
+        "gpt": 8685,
+        "gemini": 4716
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-07-20",
+      "ticker": "KXWNBAGAME-26JUL20WSHGS-GS",
+      "title": "Washington vs Golden State winner?",
+      "side": "yes",
+      "contracts": 15,
+      "price_cents": 72,
+      "cost_cents": 1080,
+      "fee_cents": 22,
+      "forecast_prob": 0.79,
+      "reasoning": "Golden State just beat this Washington team in the first leg of the mini-series and its defense has been one of the league's best over the last month. The market indicators I found cluster around a high-70s win probability for the Valkyries, so buying at 72c or better is a positive-edge price with fee room.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-20T22:03:44+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-20",
+      "ticker": "KXWNBAGAME-26JUL20MINSEA-MIN",
+      "title": "Minnesota vs Seattle winner?",
+      "side": "yes",
+      "contracts": 14,
+      "price_cents": 76,
+      "cost_cents": 1064,
+      "fee_cents": 18,
+      "forecast_prob": 0.82,
+      "reasoning": "Minnesota is the class side in this matchup and the external moneyline/spread environment prices the Lynx around an 80%+ win chance despite being on the road. Seattle needs a lot to go right offensively against a deeper Lynx team, so I make Minnesota 82% and would buy at 76c or better.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-20T22:03:44+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-20",
+      "ticker": "KXWNBAGAME-26JUL20LVTOR-LV",
+      "title": "Las Vegas vs Toronto winner?",
+      "side": "yes",
+      "contracts": 14,
+      "price_cents": 75,
+      "cost_cents": 1050,
+      "fee_cents": 19,
+      "forecast_prob": 0.81,
+      "reasoning": "Las Vegas looks underpriced if any offers appear below the mid-70s: A'ja Wilson/Jackie Young/Chelsea Gray remain the best-player/core edge on the slate, while Toronto has slipped to 10-15 and reportedly has a one-game coaching suspension tonight. The public books imply roughly high-70s to low-80s fair win probability, so 75c leaves several cents of cushion after fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-20T22:03:43+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-20",
+      "ticker": "KXWNBAGAME-26JUL20LVTOR-LV",
+      "title": "Las Vegas vs Toronto winner?",
+      "side": "yes",
+      "contracts": 14,
+      "price_cents": 80,
+      "cost_cents": 1120,
+      "fee_cents": 16,
+      "forecast_prob": 0.84,
+      "reasoning": "Las Vegas Aces are -475 moneyline favorites (implied ~82.6%) against the Toronto Tempo. Toronto is dealing with multiple backcourt injuries (Rice, Sykes), elevating LV's true win probability to ~84%. Placing a fair value limit order.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-20T22:02:21+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-20",
+      "ticker": "KXWNBAGAME-26JUL20MINSEA-MIN",
+      "title": "Minnesota vs Seattle winner?",
+      "side": "yes",
+      "contracts": 14,
+      "price_cents": 80,
+      "cost_cents": 1120,
+      "fee_cents": 16,
+      "forecast_prob": 0.83,
+      "reasoning": "Minnesota Lynx are -500 moneyline favorites (implied ~83%) over the Seattle Storm. Seattle is 6-21 and struggling, while Minnesota is on a win streak. Placing a fair value limit order.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-20T22:02:17+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-19",
       "ticker": "KXWNBAGAME-26JUL20NYDAL-NY",
       "title": "New York vs Dallas winner?",
       "side": "yes",
-      "contracts": 20,
+      "contracts": 0,
       "price_cents": 50,
-      "cost_cents": 1000,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.542,
       "reasoning": "NY Liberty are slight favorites (-137 ML / 54.2% implied fair value) on the road against Dallas, who have won 5 straight. Bidding at 50c provides a solid edge against fair value in a thin market.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-19T21:56:48+00:00"
     },
@@ -240,14 +358,14 @@
       "ticker": "KXMLBGAME-26JUL212010MIAHOU-HOU",
       "title": "Miami vs Houston Winner?",
       "side": "yes",
-      "contracts": 25,
+      "contracts": 0,
       "price_cents": 52,
-      "cost_cents": 1300,
-      "fee_cents": 44,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.568,
       "reasoning": "Houston Astros are ~57% implied favorites against the Marlins based on consensus odds. Bidding 52c captures a solid ~3c positive expected value after fees on a resting order.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-19T21:56:48+00:00"
     },
@@ -1851,6 +1969,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gpt",
+      "week": "2026-07-20",
+      "text": "Deployed $31.94 gross across three WNBA July 20 favorites, all as limit orders in thin/no visible books: Las Vegas YES at 75c (p=0.81), Golden State YES at 72c (p=0.79), Minnesota YES at 76c (p=0.82). Rationale: the external book market was pricing these favorites in the high-70s/low-80s; Aces get an added edge from Toronto's reported one-game coach suspension, while Valkyries and Lynx grade as stronger defensive/depth sides in tonight's matchups. Limits were kept several points below my fair values to preserve edge after fees rather than chase unpriced books.",
+      "at": "2026-07-20T22:03:50+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-20",
+      "text": "I focused on the WNBA slate for July 20. The orderbooks were mostly empty, so I placed resting limit orders priced slightly below my fair value estimates. I backed the Minnesota Lynx (14 contracts at 80c) and the Las Vegas Aces (14 contracts at 80c), both heavy favorites against struggling/injured teams. The Lynx are matched against a 6-21 Seattle Storm team, while the Aces face a Toronto Tempo squad missing key guards. These fair value resting orders might not fill, but they reflect the most solid edges derived from today's news and odds.",
+      "at": "2026-07-20T22:02:25+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-19",

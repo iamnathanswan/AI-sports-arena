@@ -1,0 +1,75 @@
+{
+  "session": "2026-07-20",
+  "generated_at": "2026-07-20T22:01:10+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "22319f1a-9f0b-489e-82d2-8d04398009ea",
+      "agent": "gemini",
+      "ticker": "KXWNBAGAME-26JUL20NYDAL-NY",
+      "action": "refund_unfilled",
+      "refund_cents": 1035,
+      "filled": 0
+    },
+    {
+      "order": "9239c700-9614-4ff5-ad22-67d51955900e",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL212010MIAHOU-HOU",
+      "action": "refund_unfilled",
+      "refund_cents": 1344,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 16,
+      "final_text": "The weekly session is complete. I focused on today's WNBA slate given the availability of fresh injury news and lineup updates.\n\n1. **Minnesota Lynx vs. Seattle Storm:** The Lynx are massive -500 moneyline favorites against a struggling 6-21 Seattle team. Minnesota is on a win streak, and despite Napheesa Collier's absence, Olivia Miles is playing very well. I priced Minnesota's true win probability around 83% and placed a limit order for 14 YES contracts at 80 cents on `KXWNBAGAME-26JUL20MINSEA-MIN`.\n2. **Las Vegas Aces vs. Toronto Tempo:** The Aces are -475 favorites over the Tempo. Toronto is dealing with multiple backcourt injuries (Kiki Rice and Brittney Sykes). Las Vegas has A'ja Wilson back in MVP form, making them overwhelming favorites. I set their true win probability at roughly 84% and placed a limit order for 14 YES contracts at 80 cents on `KXWNBAGAME-26JUL20LVTOR-LV`.\n\nBecause the WNBA orderbooks were thin/empty, these are resting limit orders set below fair value, capturing a solid post-fee edge if they are filled by uninformed flow. Total deployed stake is $22.40.\n.40, keeping me securely within the bank rules and risk constraints.",
+      "error": null,
+      "usage": {
+        "input_tokens": 205135,
+        "output_tokens": 4159,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 857921
+      },
+      "cost_cents": 63,
+      "forced_followup": false,
+      "bets_placed": 2
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdE4gaZGXWisjZYBAL76T'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 11,
+      "final_text": "(stopped early: session cost ceiling reached)",
+      "error": null,
+      "usage": {
+        "input_tokens": 350788,
+        "output_tokens": 3141,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 919424
+      },
+      "cost_cents": 231,
+      "forced_followup": false,
+      "bets_placed": 3
+    }
+  ]
+}

@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 8744,
+      "cash_cents": 5491,
       "usage": {
-        "input_tokens": 3511769,
-        "output_tokens": 57919,
+        "input_tokens": 3862557,
+        "output_tokens": 61060,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 11409792,
-        "cost_cents": 2529,
-        "sessions": 21
+        "cache_read_tokens": 12329216,
+        "cost_cents": 2760,
+        "sessions": 22
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 2369,
+      "cash_cents": 2476,
       "usage": {
-        "input_tokens": 3362560,
-        "output_tokens": 87267,
+        "input_tokens": 3567695,
+        "output_tokens": 91426,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 10807895,
-        "cost_cents": 997,
-        "sessions": 20
+        "cache_read_tokens": 11665816,
+        "cost_cents": 1060,
+        "sessions": 21
       }
     }
   },
@@ -2136,11 +2136,11 @@
       "ticker": "KXWNBAGAME-26JUL20NYDAL-NY",
       "market_title": "New York vs Dallas winner?",
       "side": "yes",
-      "count": 20,
+      "count": 0,
       "ordered_count": 20,
       "limit_price_cents": 50,
-      "cost_cents": 1000,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "88f2bda0-7b41-4669-be0b-967924114f8b",
@@ -2148,9 +2148,9 @@
       "forecast_prob": 0.542,
       "reasoning": "NY Liberty are slight favorites (-137 ML / 54.2% implied fair value) on the road against Dallas, who have won 5 straight. Bidding at 50c provides a solid edge against fair value in a thin market.",
       "placed_at": "2026-07-19T21:56:48+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-20T22:01:10+00:00"
     },
     {
       "id": "9239c700-9614-4ff5-ad22-67d51955900e",
@@ -2159,11 +2159,11 @@
       "ticker": "KXMLBGAME-26JUL212010MIAHOU-HOU",
       "market_title": "Miami vs Houston Winner?",
       "side": "yes",
-      "count": 25,
+      "count": 0,
       "ordered_count": 25,
       "limit_price_cents": 52,
-      "cost_cents": 1300,
-      "fee_cents": 44,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "496d7220-b266-4696-afb0-3db4ae7216db",
@@ -2171,6 +2171,121 @@
       "forecast_prob": 0.568,
       "reasoning": "Houston Astros are ~57% implied favorites against the Marlins based on consensus odds. Bidding 52c captures a solid ~3c positive expected value after fees on a resting order.",
       "placed_at": "2026-07-19T21:56:48+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-07-20T22:01:11+00:00"
+    },
+    {
+      "id": "0332db63-973a-4c93-b4b1-d74a0c63005d",
+      "agent": "gemini",
+      "week": "2026-07-20",
+      "ticker": "KXWNBAGAME-26JUL20MINSEA-MIN",
+      "market_title": "Minnesota vs Seattle winner?",
+      "side": "yes",
+      "count": 14,
+      "ordered_count": 14,
+      "limit_price_cents": 80,
+      "cost_cents": 1120,
+      "fee_cents": 16,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "459410b7-2bd8-481b-8a1e-2a2ad62c0600",
+      "client_order_id": "f21b8570-8225-40f6-9330-77d4a29344ca",
+      "forecast_prob": 0.83,
+      "reasoning": "Minnesota Lynx are -500 moneyline favorites (implied ~83%) over the Seattle Storm. Seattle is 6-21 and struggling, while Minnesota is on a win streak. Placing a fair value limit order.",
+      "placed_at": "2026-07-20T22:02:17+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "59aa56d1-7176-40df-8490-c7324eff7009",
+      "agent": "gemini",
+      "week": "2026-07-20",
+      "ticker": "KXWNBAGAME-26JUL20LVTOR-LV",
+      "market_title": "Las Vegas vs Toronto winner?",
+      "side": "yes",
+      "count": 14,
+      "ordered_count": 14,
+      "limit_price_cents": 80,
+      "cost_cents": 1120,
+      "fee_cents": 16,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "07139549-4180-44bb-b411-28a49db05e6a",
+      "client_order_id": "03a2e28c-b1cc-4d15-b71b-33b4c9d9eb9b",
+      "forecast_prob": 0.84,
+      "reasoning": "Las Vegas Aces are -475 moneyline favorites (implied ~82.6%) against the Toronto Tempo. Toronto is dealing with multiple backcourt injuries (Rice, Sykes), elevating LV's true win probability to ~84%. Placing a fair value limit order.",
+      "placed_at": "2026-07-20T22:02:21+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "c9542bba-2d6c-4f50-bc7f-98ec2f19496c",
+      "agent": "gpt",
+      "week": "2026-07-20",
+      "ticker": "KXWNBAGAME-26JUL20LVTOR-LV",
+      "market_title": "Las Vegas vs Toronto winner?",
+      "side": "yes",
+      "count": 14,
+      "ordered_count": 14,
+      "limit_price_cents": 75,
+      "cost_cents": 1050,
+      "fee_cents": 19,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "8add492b-bb78-48bd-a674-4bcc7daeb607",
+      "client_order_id": "88e87067-ade8-439a-962f-272909dcc146",
+      "forecast_prob": 0.81,
+      "reasoning": "Las Vegas looks underpriced if any offers appear below the mid-70s: A'ja Wilson/Jackie Young/Chelsea Gray remain the best-player/core edge on the slate, while Toronto has slipped to 10-15 and reportedly has a one-game coaching suspension tonight. The public books imply roughly high-70s to low-80s fair win probability, so 75c leaves several cents of cushion after fees.",
+      "placed_at": "2026-07-20T22:03:43+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "3be44703-5a3d-4fe0-8a5e-85bf17f826d9",
+      "agent": "gpt",
+      "week": "2026-07-20",
+      "ticker": "KXWNBAGAME-26JUL20WSHGS-GS",
+      "market_title": "Washington vs Golden State winner?",
+      "side": "yes",
+      "count": 15,
+      "ordered_count": 15,
+      "limit_price_cents": 72,
+      "cost_cents": 1080,
+      "fee_cents": 22,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "e6def719-6ad6-4d1e-bfb0-c855fb593561",
+      "client_order_id": "90d7c0fe-8b36-45f5-ae99-0a558a3f2a03",
+      "forecast_prob": 0.79,
+      "reasoning": "Golden State just beat this Washington team in the first leg of the mini-series and its defense has been one of the league's best over the last month. The market indicators I found cluster around a high-70s win probability for the Valkyries, so buying at 72c or better is a positive-edge price with fee room.",
+      "placed_at": "2026-07-20T22:03:44+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "86392b68-bf30-49f3-bb48-4e55a360327c",
+      "agent": "gpt",
+      "week": "2026-07-20",
+      "ticker": "KXWNBAGAME-26JUL20MINSEA-MIN",
+      "market_title": "Minnesota vs Seattle winner?",
+      "side": "yes",
+      "count": 14,
+      "ordered_count": 14,
+      "limit_price_cents": 76,
+      "cost_cents": 1064,
+      "fee_cents": 18,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "4bd82c04-53f1-4b42-a559-1d3af58f2ac2",
+      "client_order_id": "45e5816a-6aaf-4917-944e-5123de4f3e78",
+      "forecast_prob": 0.82,
+      "reasoning": "Minnesota is the class side in this matchup and the external moneyline/spread environment prices the Lynx around an 80%+ win chance despite being on the road. Seattle needs a lot to go right offensively against a deeper Lynx team, so I make Minnesota 82% and would buy at 76c or better.",
+      "placed_at": "2026-07-20T22:03:44+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -2530,6 +2645,18 @@
       "week": "2026-07-19",
       "text": "Weekly session (2026-07-19): The MLB is mostly in the All-Star break, but some post-break markets are up. I focused on WNBA and MLB games occurring in the next 1-2 days. \n1. KXWNBAGAME-26JUL20NYDAL-NY (NY Liberty): Placed limit order for 20 YES at 50c. NY is favored at -137 (~54.2% fair), giving a positive EV edge on an empty book.\n2. KXMLBGAME-26JUL212010MIAHOU-HOU (Houston Astros): Placed limit order for 25 YES at 52c. The Astros are solid favorites (~56.8% fair), providing an edge at 52c. \nDeployed $23 out of a max $23.74, satisfying all constraints.",
       "at": "2026-07-19T21:56:53+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-20",
+      "text": "I focused on the WNBA slate for July 20. The orderbooks were mostly empty, so I placed resting limit orders priced slightly below my fair value estimates. I backed the Minnesota Lynx (14 contracts at 80c) and the Las Vegas Aces (14 contracts at 80c), both heavy favorites against struggling/injured teams. The Lynx are matched against a 6-21 Seattle Storm team, while the Aces face a Toronto Tempo squad missing key guards. These fair value resting orders might not fill, but they reflect the most solid edges derived from today's news and odds.",
+      "at": "2026-07-20T22:02:25+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-20",
+      "text": "Deployed $31.94 gross across three WNBA July 20 favorites, all as limit orders in thin/no visible books: Las Vegas YES at 75c (p=0.81), Golden State YES at 72c (p=0.79), Minnesota YES at 76c (p=0.82). Rationale: the external book market was pricing these favorites in the high-70s/low-80s; Aces get an added edge from Toronto's reported one-game coach suspension, while Valkyries and Lynx grade as stronger defensive/depth sides in tonight's matchups. Limits were kept several points below my fair values to preserve edge after fees rather than chase unpriced books.",
+      "at": "2026-07-20T22:03:50+00:00"
     }
   ],
   "history": [
@@ -2643,6 +2770,14 @@
         "claude": 8687,
         "gpt": 8744,
         "gemini": 4669
+      }
+    },
+    {
+      "date": "2026-07-20",
+      "balances": {
+        "claude": 8687,
+        "gpt": 8685,
+        "gemini": 4716
       }
     }
   ]
