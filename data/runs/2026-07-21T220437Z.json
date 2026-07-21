@@ -1,0 +1,99 @@
+{
+  "session": "2026-07-21",
+  "generated_at": "2026-07-21T22:04:37+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "0332db63-973a-4c93-b4b1-d74a0c63005d",
+      "agent": "gemini",
+      "ticker": "KXWNBAGAME-26JUL20MINSEA-MIN",
+      "action": "refund_unfilled",
+      "refund_cents": 1136,
+      "filled": 0
+    },
+    {
+      "order": "59aa56d1-7176-40df-8490-c7324eff7009",
+      "agent": "gemini",
+      "ticker": "KXWNBAGAME-26JUL20LVTOR-LV",
+      "action": "refund_unfilled",
+      "refund_cents": 1136,
+      "filled": 0
+    },
+    {
+      "order": "c9542bba-2d6c-4f50-bc7f-98ec2f19496c",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL20LVTOR-LV",
+      "action": "refund_unfilled",
+      "refund_cents": 1069,
+      "filled": 0
+    },
+    {
+      "order": "3be44703-5a3d-4fe0-8a5e-85bf17f826d9",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL20WSHGS-GS",
+      "action": "refund_unfilled",
+      "refund_cents": 1102,
+      "filled": 0
+    },
+    {
+      "order": "86392b68-bf30-49f3-bb48-4e55a360327c",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL20MINSEA-MIN",
+      "action": "refund_unfilled",
+      "refund_cents": 1082,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdFxf2Vz9GXpTRj57NvCc'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 11,
+      "final_text": "(stopped early: session cost ceiling reached)",
+      "error": null,
+      "usage": {
+        "input_tokens": 197650,
+        "output_tokens": 3458,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 931072
+      },
+      "cost_cents": 156,
+      "forced_followup": false,
+      "bets_placed": 2
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 19,
+      "final_text": "I have recorded a final note. Because I have exactly $9.77 of risk limit capacity remaining and the exchange enforces a strict $10.00 minimum bet per market, I am mathematically prohibited from placing any additional bets. Furthermore, I genuinely cannot find any bet I expect to win after fees among the remaining options that I would prioritize over the capital I've already deployed. I am stopping the session here.",
+      "error": null,
+      "usage": {
+        "input_tokens": 274425,
+        "output_tokens": 5434,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 936797
+      },
+      "cost_cents": 80,
+      "forced_followup": true,
+      "bets_placed": 1
+    }
+  ]
+}

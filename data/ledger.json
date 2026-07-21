@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 5491,
+      "cash_cents": 6596,
       "usage": {
-        "input_tokens": 3862557,
-        "output_tokens": 61060,
+        "input_tokens": 4060207,
+        "output_tokens": 64518,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 12329216,
-        "cost_cents": 2760,
-        "sessions": 22
+        "cache_read_tokens": 13260288,
+        "cost_cents": 2916,
+        "sessions": 23
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 2476,
+      "cash_cents": 3329,
       "usage": {
-        "input_tokens": 3567695,
-        "output_tokens": 91426,
+        "input_tokens": 3842120,
+        "output_tokens": 96860,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 11665816,
-        "cost_cents": 1060,
-        "sessions": 21
+        "cache_read_tokens": 12602613,
+        "cost_cents": 1140,
+        "sessions": 22
       }
     }
   },
@@ -2182,11 +2182,11 @@
       "ticker": "KXWNBAGAME-26JUL20MINSEA-MIN",
       "market_title": "Minnesota vs Seattle winner?",
       "side": "yes",
-      "count": 14,
+      "count": 0,
       "ordered_count": 14,
       "limit_price_cents": 80,
-      "cost_cents": 1120,
-      "fee_cents": 16,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "459410b7-2bd8-481b-8a1e-2a2ad62c0600",
@@ -2194,9 +2194,9 @@
       "forecast_prob": 0.83,
       "reasoning": "Minnesota Lynx are -500 moneyline favorites (implied ~83%) over the Seattle Storm. Seattle is 6-21 and struggling, while Minnesota is on a win streak. Placing a fair value limit order.",
       "placed_at": "2026-07-20T22:02:17+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-21T22:04:37+00:00"
     },
     {
       "id": "59aa56d1-7176-40df-8490-c7324eff7009",
@@ -2205,11 +2205,11 @@
       "ticker": "KXWNBAGAME-26JUL20LVTOR-LV",
       "market_title": "Las Vegas vs Toronto winner?",
       "side": "yes",
-      "count": 14,
+      "count": 0,
       "ordered_count": 14,
       "limit_price_cents": 80,
-      "cost_cents": 1120,
-      "fee_cents": 16,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "07139549-4180-44bb-b411-28a49db05e6a",
@@ -2217,9 +2217,9 @@
       "forecast_prob": 0.84,
       "reasoning": "Las Vegas Aces are -475 moneyline favorites (implied ~82.6%) against the Toronto Tempo. Toronto is dealing with multiple backcourt injuries (Rice, Sykes), elevating LV's true win probability to ~84%. Placing a fair value limit order.",
       "placed_at": "2026-07-20T22:02:21+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-21T22:04:38+00:00"
     },
     {
       "id": "c9542bba-2d6c-4f50-bc7f-98ec2f19496c",
@@ -2228,11 +2228,11 @@
       "ticker": "KXWNBAGAME-26JUL20LVTOR-LV",
       "market_title": "Las Vegas vs Toronto winner?",
       "side": "yes",
-      "count": 14,
+      "count": 0,
       "ordered_count": 14,
       "limit_price_cents": 75,
-      "cost_cents": 1050,
-      "fee_cents": 19,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "8add492b-bb78-48bd-a674-4bcc7daeb607",
@@ -2240,9 +2240,9 @@
       "forecast_prob": 0.81,
       "reasoning": "Las Vegas looks underpriced if any offers appear below the mid-70s: A'ja Wilson/Jackie Young/Chelsea Gray remain the best-player/core edge on the slate, while Toronto has slipped to 10-15 and reportedly has a one-game coaching suspension tonight. The public books imply roughly high-70s to low-80s fair win probability, so 75c leaves several cents of cushion after fees.",
       "placed_at": "2026-07-20T22:03:43+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-21T22:04:38+00:00"
     },
     {
       "id": "3be44703-5a3d-4fe0-8a5e-85bf17f826d9",
@@ -2251,11 +2251,11 @@
       "ticker": "KXWNBAGAME-26JUL20WSHGS-GS",
       "market_title": "Washington vs Golden State winner?",
       "side": "yes",
-      "count": 15,
+      "count": 0,
       "ordered_count": 15,
       "limit_price_cents": 72,
-      "cost_cents": 1080,
-      "fee_cents": 22,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "e6def719-6ad6-4d1e-bfb0-c855fb593561",
@@ -2263,9 +2263,9 @@
       "forecast_prob": 0.79,
       "reasoning": "Golden State just beat this Washington team in the first leg of the mini-series and its defense has been one of the league's best over the last month. The market indicators I found cluster around a high-70s win probability for the Valkyries, so buying at 72c or better is a positive-edge price with fee room.",
       "placed_at": "2026-07-20T22:03:44+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-21T22:04:39+00:00"
     },
     {
       "id": "86392b68-bf30-49f3-bb48-4e55a360327c",
@@ -2274,11 +2274,11 @@
       "ticker": "KXWNBAGAME-26JUL20MINSEA-MIN",
       "market_title": "Minnesota vs Seattle winner?",
       "side": "yes",
-      "count": 14,
+      "count": 0,
       "ordered_count": 14,
       "limit_price_cents": 76,
-      "cost_cents": 1064,
-      "fee_cents": 18,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "4bd82c04-53f1-4b42-a559-1d3af58f2ac2",
@@ -2286,6 +2286,75 @@
       "forecast_prob": 0.82,
       "reasoning": "Minnesota is the class side in this matchup and the external moneyline/spread environment prices the Lynx around an 80%+ win chance despite being on the road. Seattle needs a lot to go right offensively against a deeper Lynx team, so I make Minnesota 82% and would buy at 76c or better.",
       "placed_at": "2026-07-20T22:03:44+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-07-21T22:04:39+00:00"
+    },
+    {
+      "id": "3a62aa97-2249-4886-ab38-26a1e722f037",
+      "agent": "gpt",
+      "week": "2026-07-21",
+      "ticker": "KXMLBGAME-26JUL212140CINSEA-CIN",
+      "market_title": "Cincinnati vs Seattle Winner?",
+      "side": "yes",
+      "count": 22,
+      "ordered_count": 22,
+      "limit_price_cents": 47,
+      "cost_cents": 1034,
+      "fee_cents": 39,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "f6fb773e-9664-461c-8c55-37318d04a885",
+      "client_order_id": "a58322b5-63da-419d-8778-2f2fc4931d1c",
+      "forecast_prob": 0.515,
+      "reasoning": "Cincinnati is near pick'em on outside moneylines but has the better starter matchup: Chase Burns is listed 11-1/SP23 versus Luis Castillo 3-8/SP67, and the Reds lineup is confirmed while Seattle remains projected. I make the road Reds a small favorite on starting-pitcher edge despite park/road disadvantage, so I only want them at 47c or better.",
+      "placed_at": "2026-07-21T22:06:16+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "a797a483-e82f-405b-95e3-0b007bf9ebf3",
+      "agent": "gpt",
+      "week": "2026-07-21",
+      "ticker": "KXMLBGAME-26JUL212010MIAHOU-MIA",
+      "market_title": "Miami vs Houston Winner?",
+      "side": "yes",
+      "count": 23,
+      "ordered_count": 23,
+      "limit_price_cents": 45,
+      "cost_cents": 1035,
+      "fee_cents": 40,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "452d2874-75f5-4d2c-8160-8d7e1a7f3434",
+      "client_order_id": "534b8edd-3dd9-43f9-9f03-f0a6dadb7e4f",
+      "forecast_prob": 0.49,
+      "reasoning": "The market consensus has Houston favored, but Miami has the better season record and the starting-pitching gap looks underpriced: Tyler Phillips is listed at 3.48 ERA while Tatsuya Imai is around 6.06. Houston home field keeps this below coin-flip for me, but Miami is positive EV at 45c.",
+      "placed_at": "2026-07-21T22:06:20+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "d61ead9d-433f-42f2-a6e1-b663474e827b",
+      "agent": "gemini",
+      "week": "2026-07-21",
+      "ticker": "KXMLBGAME-26JUL222010DETCHC-CHC",
+      "market_title": "Detroit vs Chicago C Winner?",
+      "side": "yes",
+      "count": 25,
+      "ordered_count": 25,
+      "limit_price_cents": 55,
+      "cost_cents": 1375,
+      "fee_cents": 44,
+      "initial_fill_count": 25,
+      "status": "live",
+      "kalshi_order_id": "b07797e8-ad2c-426f-a3cc-b2448098e8de",
+      "client_order_id": "3b6ad0f6-5dbc-4359-8bda-a262eec74f0d",
+      "forecast_prob": 0.62,
+      "reasoning": "Tarik Skubal was just ruled out with an injury, severely weakening the Tigers' pitching advantage. The Chicago Cubs should now be favored in this matchup.",
+      "placed_at": "2026-07-21T22:07:31+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -2657,6 +2726,18 @@
       "week": "2026-07-20",
       "text": "Deployed $31.94 gross across three WNBA July 20 favorites, all as limit orders in thin/no visible books: Las Vegas YES at 75c (p=0.81), Golden State YES at 72c (p=0.79), Minnesota YES at 76c (p=0.82). Rationale: the external book market was pricing these favorites in the high-70s/low-80s; Aces get an added edge from Toronto's reported one-game coach suspension, while Valkyries and Lynx grade as stronger defensive/depth sides in tonight's matchups. Limits were kept several points below my fair values to preserve edge after fees rather than chase unpriced books.",
       "at": "2026-07-20T22:03:50+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-21",
+      "text": "Placed $13.75 on Chicago Cubs (CHC) to beat Detroit (DET) at 55c limit, driven by the fresh news that Tigers ace Tarik Skubal has been ruled out with an injury. I intended to place a second bet on the Connecticut Sun (over Indiana Fever, who are dealing with injuries to Sophie Cunningham and Aliyah Boston), but my equity is $47.04 (max deployable $23.52). After my $13.75 bet, I had $9.77 of capacity remaining, which is strictly below the $10.00 minimum bet size. Thus, I am blocked by risk limits from reaching the $20 deployment floor this week.",
+      "at": "2026-07-21T22:07:45+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-21",
+      "text": "I genuinely cannot find any bet I expect to win after fees with my remaining capital. Furthermore, my remaining risk limit capacity is $9.77, which is below the $10 minimum per market, making it mathematically impossible to place another bet this week.",
+      "at": "2026-07-21T22:07:58+00:00"
     }
   ],
   "history": [
@@ -2778,6 +2859,14 @@
         "claude": 8687,
         "gpt": 8685,
         "gemini": 4716
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "balances": {
+        "claude": 8687,
+        "gpt": 8665,
+        "gemini": 4704
       }
     }
   ]
