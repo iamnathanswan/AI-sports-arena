@@ -1,8 +1,35 @@
 {
-  "generated_at": "2026-07-21T22:04:37+00:00",
+  "generated_at": "2026-07-22T22:04:46+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
+    {
+      "name": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "equity_cents": 8744,
+      "cash_cents": 8744,
+      "initial_cents": 10000,
+      "pnl_cents": -1256,
+      "roi_pct": -12.56,
+      "settled_bets": 11,
+      "wins": 6,
+      "win_rate": 0.545,
+      "staked_cents": 11287,
+      "returned_cents": 10400,
+      "fees_paid_cents": 369,
+      "fill_rate": 0.523,
+      "brier": 0.2043,
+      "usage": {
+        "input_tokens": 4313356,
+        "output_tokens": 66608,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 13704960,
+        "cost_cents": 3071,
+        "sessions": 24
+      },
+      "open_positions": []
+    },
     {
       "name": "claude",
       "provider": "anthropic",
@@ -31,50 +58,6 @@
       "open_positions": []
     },
     {
-      "name": "gpt",
-      "provider": "openai",
-      "model": "gpt-5.5",
-      "equity_cents": 8665,
-      "cash_cents": 6596,
-      "initial_cents": 10000,
-      "pnl_cents": -1335,
-      "roi_pct": -13.35,
-      "settled_bets": 11,
-      "wins": 6,
-      "win_rate": 0.545,
-      "staked_cents": 11287,
-      "returned_cents": 10400,
-      "fees_paid_cents": 448,
-      "fill_rate": 0.558,
-      "brier": 0.2043,
-      "usage": {
-        "input_tokens": 4060207,
-        "output_tokens": 64518,
-        "cache_write_tokens": 0,
-        "cache_read_tokens": 13260288,
-        "cost_cents": 2916,
-        "sessions": 23
-      },
-      "open_positions": [
-        {
-          "ticker": "KXMLBGAME-26JUL212140CINSEA-CIN",
-          "title": "Cincinnati vs Seattle Winner?",
-          "side": "yes",
-          "contracts": 22,
-          "cost_cents": 1034,
-          "forecast_prob": 0.515
-        },
-        {
-          "ticker": "KXMLBGAME-26JUL212010MIAHOU-MIA",
-          "title": "Miami vs Houston Winner?",
-          "side": "yes",
-          "contracts": 23,
-          "cost_cents": 1035,
-          "forecast_prob": 0.49
-        }
-      ]
-    },
-    {
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
@@ -92,12 +75,12 @@
       "fill_rate": 0.395,
       "brier": 0.282,
       "usage": {
-        "input_tokens": 3842120,
-        "output_tokens": 96860,
+        "input_tokens": 3857059,
+        "output_tokens": 98509,
         "cache_write_tokens": 0,
         "cache_read_tokens": 12602613,
-        "cost_cents": 1140,
-        "sessions": 22
+        "cost_cents": 1145,
+        "sessions": 23
       },
       "open_positions": [
         {
@@ -239,6 +222,14 @@
         "gpt": 8665,
         "gemini": 4704
       }
+    },
+    {
+      "date": "2026-07-22",
+      "balances": {
+        "claude": 8687,
+        "gpt": 8744,
+        "gemini": 4704
+      }
     }
   ],
   "bets": [
@@ -265,14 +256,14 @@
       "ticker": "KXMLBGAME-26JUL212010MIAHOU-MIA",
       "title": "Miami vs Houston Winner?",
       "side": "yes",
-      "contracts": 23,
+      "contracts": 0,
       "price_cents": 45,
-      "cost_cents": 1035,
-      "fee_cents": 40,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.49,
       "reasoning": "The market consensus has Houston favored, but Miami has the better season record and the starting-pitching gap looks underpriced: Tyler Phillips is listed at 3.48 ERA while Tatsuya Imai is around 6.06. Houston home field keeps this below coin-flip for me, but Miami is positive EV at 45c.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-21T22:06:20+00:00"
     },
@@ -282,14 +273,14 @@
       "ticker": "KXMLBGAME-26JUL212140CINSEA-CIN",
       "title": "Cincinnati vs Seattle Winner?",
       "side": "yes",
-      "contracts": 22,
+      "contracts": 0,
       "price_cents": 47,
-      "cost_cents": 1034,
-      "fee_cents": 39,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.515,
       "reasoning": "Cincinnati is near pick'em on outside moneylines but has the better starter matchup: Chase Burns is listed 11-1/SP23 versus Luis Castillo 3-8/SP67, and the Reds lineup is confirmed while Seattle remains projected. I make the road Reds a small favorite on starting-pitcher edge despite park/road disadvantage, so I only want them at 47c or better.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-21T22:06:16+00:00"
     },
@@ -2012,6 +2003,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-22",
+      "text": "I am forced to end this run without reaching the $20 minimum deployment because I am restricted by the hard risk limit. My max 50% equity deployment is $23.52, and I already have $13.75 deployed. This leaves exactly $9.77 in available room. Since every bet MUST stake at least $10.00, I cannot place any bet without violating the max deployment limit. Therefore, I cannot find or place any valid bet.",
+      "at": "2026-07-22T22:06:10+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-22",
+      "text": "Sitting this session out. My equity is $47.04, meaning my 50% deployment limit is $23.52. I already have $13.75 deployed in an open position (CHC against DET). This leaves only $9.77 of available deployment capacity, which is below the strict $10.00 minimum stake per market required by the exchange. Therefore, I am mathematically unable to place any further bets this session and must wait for my open positions to resolve.",
+      "at": "2026-07-22T22:06:02+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-21",
