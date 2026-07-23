@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T22:04:46+00:00",
+  "generated_at": "2026-07-23T22:05:17+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -7,28 +7,37 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 8744,
-      "cash_cents": 8744,
+      "equity_cents": 8718,
+      "cash_cents": 7678,
       "initial_cents": 10000,
-      "pnl_cents": -1256,
-      "roi_pct": -12.56,
+      "pnl_cents": -1282,
+      "roi_pct": -12.82,
       "settled_bets": 11,
       "wins": 6,
       "win_rate": 0.545,
       "staked_cents": 11287,
       "returned_cents": 10400,
-      "fees_paid_cents": 369,
+      "fees_paid_cents": 395,
       "fill_rate": 0.523,
       "brier": 0.2043,
       "usage": {
-        "input_tokens": 4313356,
-        "output_tokens": 66608,
+        "input_tokens": 4535342,
+        "output_tokens": 69888,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 13704960,
-        "cost_cents": 3071,
-        "sessions": 24
+        "cache_read_tokens": 14355328,
+        "cost_cents": 3224,
+        "sessions": 25
       },
-      "open_positions": []
+      "open_positions": [
+        {
+          "ticker": "KXCFLGAME-26JUL23EDMSSK-SSK",
+          "title": "Will Saskatchewan Roughriders win the Edmonton Elks vs Saskatchewan Roughriders football game?",
+          "side": "yes",
+          "contracts": 16,
+          "cost_cents": 1040,
+          "forecast_prob": 0.69
+        }
+      ]
     },
     {
       "name": "claude",
@@ -61,35 +70,35 @@
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 4704,
-      "cash_cents": 3329,
+      "equity_cents": 3289,
+      "cash_cents": 1664,
       "initial_cents": 10000,
-      "pnl_cents": -5296,
-      "roi_pct": -52.96,
-      "settled_bets": 11,
+      "pnl_cents": -6711,
+      "roi_pct": -67.11,
+      "settled_bets": 12,
       "wins": 4,
-      "win_rate": 0.364,
-      "staked_cents": 14895,
+      "win_rate": 0.333,
+      "staked_cents": 16270,
       "returned_cents": 10100,
-      "fees_paid_cents": 501,
-      "fill_rate": 0.395,
-      "brier": 0.282,
+      "fees_paid_cents": 541,
+      "fill_rate": 0.415,
+      "brier": 0.2906,
       "usage": {
-        "input_tokens": 3857059,
-        "output_tokens": 98509,
+        "input_tokens": 4139511,
+        "output_tokens": 104462,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 12602613,
-        "cost_cents": 1145,
-        "sessions": 23
+        "cache_read_tokens": 13489473,
+        "cost_cents": 1226,
+        "sessions": 24
       },
       "open_positions": [
         {
-          "ticker": "KXMLBGAME-26JUL222010DETCHC-CHC",
-          "title": "Detroit vs Chicago C Winner?",
+          "ticker": "KXMLBGAME-26JUL231840KCDET-DET",
+          "title": "Kansas City vs Detroit Winner?",
           "side": "yes",
           "contracts": 25,
-          "cost_cents": 1375,
-          "forecast_prob": 0.62
+          "cost_cents": 1625,
+          "forecast_prob": 0.69
         }
       ]
     }
@@ -230,9 +239,51 @@
         "gpt": 8744,
         "gemini": 4704
       }
+    },
+    {
+      "date": "2026-07-23",
+      "balances": {
+        "claude": 8687,
+        "gpt": 8718,
+        "gemini": 3289
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-07-23",
+      "ticker": "KXCFLGAME-26JUL23EDMSSK-SSK",
+      "title": "Will Saskatchewan Roughriders win the Edmonton Elks vs Saskatchewan Roughriders football game?",
+      "side": "yes",
+      "contracts": 16,
+      "price_cents": 65,
+      "cost_cents": 1040,
+      "fee_cents": 26,
+      "forecast_prob": 0.69,
+      "reasoning": "Saskatchewan is at home off a bye and is priced around 65% on Kalshi despite books showing roughly -220 moneyline / -4.5. Edmonton's 5-1 record looks schedule-inflated, while the Roughriders' pass defense and rested Trevor Harris offense create a real edge versus a fair price closer to 69%.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-23T22:08:43+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-23",
+      "ticker": "KXMLBGAME-26JUL231840KCDET-DET",
+      "title": "Kansas City vs Detroit Winner?",
+      "side": "yes",
+      "contracts": 25,
+      "price_cents": 65,
+      "cost_cents": 1625,
+      "fee_cents": 40,
+      "forecast_prob": 0.69,
+      "reasoning": "The Detroit Tigers are heavily favored (-224 moneyline) against the Kansas City Royals today with rookie standout Troy Melton on the mound holding a 1.80 ERA. My fair value estimate for Detroit is around 69% given their pitching advantage and home field context. I'm placing a limit order at 65c to capture a solid edge after fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-23T22:06:32+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-21",
@@ -246,7 +297,7 @@
       "forecast_prob": 0.62,
       "reasoning": "Tarik Skubal was just ruled out with an injury, severely weakening the Tigers' pitching advantage. The Chicago Cubs should now be favored in this matchup.",
       "status": "live",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
       "placed_at": "2026-07-21T22:07:31+00:00"
     },
@@ -2003,6 +2054,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-23",
+      "text": "I am ending the session having deployed $16.25 on KXMLBGAME-26JUL231840KCDET-DET. I am physically unable to reach the $20 minimum stake because my total equity is $33.29, and the hard risk limit caps my total deployed capital at 50% of equity ($16.44). I have used up $16.25 of that limit and only have 19 cents of limit room remaining, which is below the $10 minimum bet size.",
+      "at": "2026-07-23T22:07:02+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-23",
+      "text": "I placed a $16.25 limit order (plus 40c fee) on Detroit to beat Kansas City in today's MLB matchup. The market is unpriced (empty orderbook), so I set my limit bid at 65c against my 69% forecast for a +2.4c edge. I could not deploy the full $20 minimum floor because I am capped by the strict risk limit of 50% of my total equity (max deployed = 1664 cents). I deployed 1665 cents (including fees), reaching my absolute cap for the week.",
+      "at": "2026-07-23T22:06:38+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-22",
