@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 7678,
+      "cash_cents": 5484,
       "usage": {
-        "input_tokens": 4535342,
-        "output_tokens": 69888,
+        "input_tokens": 4803756,
+        "output_tokens": 72955,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 14355328,
-        "cost_cents": 3224,
-        "sessions": 25
+        "cache_read_tokens": 14817280,
+        "cost_cents": 3391,
+        "sessions": 26
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 1664,
+      "cash_cents": 2094,
       "usage": {
-        "input_tokens": 4139511,
-        "output_tokens": 104462,
+        "input_tokens": 4276693,
+        "output_tokens": 109745,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 13489473,
-        "cost_cents": 1226,
-        "sessions": 24
+        "cache_read_tokens": 14350554,
+        "cost_cents": 1277,
+        "sessions": 25
       }
     }
   },
@@ -2378,9 +2378,9 @@
       "forecast_prob": 0.69,
       "reasoning": "The Detroit Tigers are heavily favored (-224 moneyline) against the Kansas City Royals today with rookie standout Troy Melton on the mound holding a 1.80 ERA. My fair value estimate for Detroit is around 69% given their pitching advantage and home field context. I'm placing a limit order at 65c to capture a solid edge after fees.",
       "placed_at": "2026-07-23T22:06:32+00:00",
-      "result": null,
-      "payout_cents": 0,
-      "settled_at": null
+      "result": "won",
+      "payout_cents": 2500,
+      "settled_at": "2026-07-24T22:05:48+00:00"
     },
     {
       "id": "fabf20c9-beef-46e8-862b-f6044e31e490",
@@ -2401,6 +2401,98 @@
       "forecast_prob": 0.69,
       "reasoning": "Saskatchewan is at home off a bye and is priced around 65% on Kalshi despite books showing roughly -220 moneyline / -4.5. Edmonton's 5-1 record looks schedule-inflated, while the Roughriders' pass defense and rested Trevor Harris offense create a real edge versus a fair price closer to 69%.",
       "placed_at": "2026-07-23T22:08:43+00:00",
+      "result": "lost",
+      "payout_cents": 0,
+      "settled_at": "2026-07-24T22:05:48+00:00"
+    },
+    {
+      "id": "825adb71-2774-421a-b697-613e8af451f9",
+      "agent": "gpt",
+      "week": "2026-07-24",
+      "ticker": "KXMLBGAME-26JUL241910SDMIA-MIA",
+      "market_title": "San Diego vs Miami Winner?",
+      "side": "yes",
+      "count": 18,
+      "ordered_count": 18,
+      "limit_price_cents": 60,
+      "cost_cents": 1080,
+      "fee_cents": 31,
+      "initial_fill_count": 18,
+      "status": "live",
+      "kalshi_order_id": "f99dd856-1b11-4720-ae30-a4ab7168f60e",
+      "client_order_id": "82763b9d-bae8-438f-b256-71f9ce4358c5",
+      "forecast_prob": 0.66,
+      "reasoning": "Miami is priced as only a modest favorite at books despite numberFire giving the Marlins about a 66% win probability. The matchup is at loanDepot with German Marquez vs Ryan Gusto, and the external line around -138 implies closer to 58%, so I am only willing to buy below fair at 60c.",
+      "placed_at": "2026-07-24T22:07:04+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "2be3f006-46e5-4739-9acf-f48c13e8432c",
+      "agent": "gpt",
+      "week": "2026-07-24",
+      "ticker": "KXMLBGAME-26JUL242215LAASF-SF",
+      "market_title": "Los Angeles A vs San Francisco Winner?",
+      "side": "yes",
+      "count": 17,
+      "ordered_count": 17,
+      "limit_price_cents": 62,
+      "cost_cents": 1054,
+      "fee_cents": 29,
+      "initial_fill_count": 17,
+      "status": "live",
+      "kalshi_order_id": "e965cf96-6937-4460-98c3-f7f51837b792",
+      "client_order_id": "7fba9fba-d9d4-423b-9fb6-9d308df115e5",
+      "forecast_prob": 0.66,
+      "reasoning": "San Francisco has the clearer starting-pitcher edge with Logan Webb listed against Grayson Rodriguez, and numberFire projects the Giants at about 65.8% to win. That is above both the -164 book-implied range and my 62c limit after fees, so I am taking the Giants only at a discounted price.",
+      "placed_at": "2026-07-24T22:07:09+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "68771c1a-e8f8-48d9-82b8-26ca8cfd7482",
+      "agent": "gemini",
+      "week": "2026-07-24",
+      "ticker": "KXMLBGAME-26JUL242215LAASF-SF",
+      "market_title": "Los Angeles A vs San Francisco Winner?",
+      "side": "yes",
+      "count": 20,
+      "ordered_count": 20,
+      "limit_price_cents": 50,
+      "cost_cents": 1000,
+      "fee_cents": 35,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "f0c88bb8-0470-4ce0-b1a1-d4e2b198fd04",
+      "client_order_id": "33d710b0-fb73-4cae-b854-4cd70c8ae929",
+      "forecast_prob": 0.62,
+      "reasoning": "The Giants are heavily favored (-182 in some books) against the Angels, with Logan Webb on the mound. The market implies roughly a 62% win probability. I am placing a limit order at 50c to capture a large edge if filled.",
+      "placed_at": "2026-07-24T22:08:33+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "6786083a-532f-46f9-9a37-e580c21b1595",
+      "agent": "gemini",
+      "week": "2026-07-24",
+      "ticker": "KXMLBGAME-26JUL241940HOUCWS-CWS",
+      "market_title": "Houston vs Chicago WS Winner?",
+      "side": "yes",
+      "count": 20,
+      "ordered_count": 20,
+      "limit_price_cents": 50,
+      "cost_cents": 1000,
+      "fee_cents": 35,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "e1026c54-4250-428c-959a-09ca9ceb800a",
+      "client_order_id": "4e86cfd0-7cba-4f3f-83bb-4e2d37f72fff",
+      "forecast_prob": 0.55,
+      "reasoning": "The White Sox are favorites at home (-135) with Davis Martin pitching against the Astros. The vig-free probability is ~55%, making a 50c limit order a +EV play to provide liquidity.",
+      "placed_at": "2026-07-24T22:08:33+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -2808,6 +2900,12 @@
       "week": "2026-07-23",
       "text": "I am ending the session having deployed $16.25 on KXMLBGAME-26JUL231840KCDET-DET. I am physically unable to reach the $20 minimum stake because my total equity is $33.29, and the hard risk limit caps my total deployed capital at 50% of equity ($16.44). I have used up $16.25 of that limit and only have 19 cents of limit room remaining, which is below the $10 minimum bet size.",
       "at": "2026-07-23T22:07:02+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-24",
+      "text": "Deployed $20 across two MLB games for July 24, 2026. The order books were thin, so I rested limit orders to buy at 50c for both the SF Giants (62% fair value vs Angels) and the Chicago White Sox (55% fair value vs Astros). Both teams are currently market favorites in today's games according to sportsbooks. By resting orders below true probability, I lock in a solid positive edge after fees if matched.",
+      "at": "2026-07-24T22:08:39+00:00"
     }
   ],
   "history": [
@@ -2953,6 +3051,14 @@
         "claude": 8687,
         "gpt": 8718,
         "gemini": 3289
+      }
+    },
+    {
+      "date": "2026-07-24",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7618,
+        "gemini": 4094
       }
     }
   ]

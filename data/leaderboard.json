@@ -1,44 +1,8 @@
 {
-  "generated_at": "2026-07-23T22:05:17+00:00",
+  "generated_at": "2026-07-24T22:05:48+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
-    {
-      "name": "gpt",
-      "provider": "openai",
-      "model": "gpt-5.5",
-      "equity_cents": 8718,
-      "cash_cents": 7678,
-      "initial_cents": 10000,
-      "pnl_cents": -1282,
-      "roi_pct": -12.82,
-      "settled_bets": 11,
-      "wins": 6,
-      "win_rate": 0.545,
-      "staked_cents": 11287,
-      "returned_cents": 10400,
-      "fees_paid_cents": 395,
-      "fill_rate": 0.523,
-      "brier": 0.2043,
-      "usage": {
-        "input_tokens": 4535342,
-        "output_tokens": 69888,
-        "cache_write_tokens": 0,
-        "cache_read_tokens": 14355328,
-        "cost_cents": 3224,
-        "sessions": 25
-      },
-      "open_positions": [
-        {
-          "ticker": "KXCFLGAME-26JUL23EDMSSK-SSK",
-          "title": "Will Saskatchewan Roughriders win the Edmonton Elks vs Saskatchewan Roughriders football game?",
-          "side": "yes",
-          "contracts": 16,
-          "cost_cents": 1040,
-          "forecast_prob": 0.69
-        }
-      ]
-    },
     {
       "name": "claude",
       "provider": "anthropic",
@@ -67,38 +31,90 @@
       "open_positions": []
     },
     {
-      "name": "gemini",
-      "provider": "google",
-      "model": "gemini-3.1-pro-preview",
-      "equity_cents": 3289,
-      "cash_cents": 1664,
+      "name": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "equity_cents": 7618,
+      "cash_cents": 5484,
       "initial_cents": 10000,
-      "pnl_cents": -6711,
-      "roi_pct": -67.11,
+      "pnl_cents": -2382,
+      "roi_pct": -23.82,
       "settled_bets": 12,
-      "wins": 4,
-      "win_rate": 0.333,
-      "staked_cents": 16270,
-      "returned_cents": 10100,
-      "fees_paid_cents": 541,
-      "fill_rate": 0.415,
-      "brier": 0.2906,
+      "wins": 6,
+      "win_rate": 0.5,
+      "staked_cents": 12327,
+      "returned_cents": 10400,
+      "fees_paid_cents": 455,
+      "fill_rate": 0.534,
+      "brier": 0.2269,
       "usage": {
-        "input_tokens": 4139511,
-        "output_tokens": 104462,
+        "input_tokens": 4803756,
+        "output_tokens": 72955,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 13489473,
-        "cost_cents": 1226,
-        "sessions": 24
+        "cache_read_tokens": 14817280,
+        "cost_cents": 3391,
+        "sessions": 26
       },
       "open_positions": [
         {
-          "ticker": "KXMLBGAME-26JUL231840KCDET-DET",
-          "title": "Kansas City vs Detroit Winner?",
+          "ticker": "KXMLBGAME-26JUL241910SDMIA-MIA",
+          "title": "San Diego vs Miami Winner?",
           "side": "yes",
-          "contracts": 25,
-          "cost_cents": 1625,
-          "forecast_prob": 0.69
+          "contracts": 18,
+          "cost_cents": 1080,
+          "forecast_prob": 0.66
+        },
+        {
+          "ticker": "KXMLBGAME-26JUL242215LAASF-SF",
+          "title": "Los Angeles A vs San Francisco Winner?",
+          "side": "yes",
+          "contracts": 17,
+          "cost_cents": 1054,
+          "forecast_prob": 0.66
+        }
+      ]
+    },
+    {
+      "name": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "equity_cents": 4094,
+      "cash_cents": 2094,
+      "initial_cents": 10000,
+      "pnl_cents": -5906,
+      "roi_pct": -59.06,
+      "settled_bets": 13,
+      "wins": 5,
+      "win_rate": 0.385,
+      "staked_cents": 17895,
+      "returned_cents": 12600,
+      "fees_paid_cents": 611,
+      "fill_rate": 0.434,
+      "brier": 0.2756,
+      "usage": {
+        "input_tokens": 4276693,
+        "output_tokens": 109745,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 14350554,
+        "cost_cents": 1277,
+        "sessions": 25
+      },
+      "open_positions": [
+        {
+          "ticker": "KXMLBGAME-26JUL242215LAASF-SF",
+          "title": "Los Angeles A vs San Francisco Winner?",
+          "side": "yes",
+          "contracts": 20,
+          "cost_cents": 1000,
+          "forecast_prob": 0.62
+        },
+        {
+          "ticker": "KXMLBGAME-26JUL241940HOUCWS-CWS",
+          "title": "Houston vs Chicago WS Winner?",
+          "side": "yes",
+          "contracts": 20,
+          "cost_cents": 1000,
+          "forecast_prob": 0.55
         }
       ]
     }
@@ -247,9 +263,85 @@
         "gpt": 8718,
         "gemini": 3289
       }
+    },
+    {
+      "date": "2026-07-24",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7618,
+        "gemini": 4094
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-24",
+      "ticker": "KXMLBGAME-26JUL242215LAASF-SF",
+      "title": "Los Angeles A vs San Francisco Winner?",
+      "side": "yes",
+      "contracts": 20,
+      "price_cents": 50,
+      "cost_cents": 1000,
+      "fee_cents": 35,
+      "forecast_prob": 0.62,
+      "reasoning": "The Giants are heavily favored (-182 in some books) against the Angels, with Logan Webb on the mound. The market implies roughly a 62% win probability. I am placing a limit order at 50c to capture a large edge if filled.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-24T22:08:33+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-24",
+      "ticker": "KXMLBGAME-26JUL241940HOUCWS-CWS",
+      "title": "Houston vs Chicago WS Winner?",
+      "side": "yes",
+      "contracts": 20,
+      "price_cents": 50,
+      "cost_cents": 1000,
+      "fee_cents": 35,
+      "forecast_prob": 0.55,
+      "reasoning": "The White Sox are favorites at home (-135) with Davis Martin pitching against the Astros. The vig-free probability is ~55%, making a 50c limit order a +EV play to provide liquidity.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-24T22:08:33+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-24",
+      "ticker": "KXMLBGAME-26JUL242215LAASF-SF",
+      "title": "Los Angeles A vs San Francisco Winner?",
+      "side": "yes",
+      "contracts": 17,
+      "price_cents": 62,
+      "cost_cents": 1054,
+      "fee_cents": 29,
+      "forecast_prob": 0.66,
+      "reasoning": "San Francisco has the clearer starting-pitcher edge with Logan Webb listed against Grayson Rodriguez, and numberFire projects the Giants at about 65.8% to win. That is above both the -164 book-implied range and my 62c limit after fees, so I am taking the Giants only at a discounted price.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-24T22:07:09+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-24",
+      "ticker": "KXMLBGAME-26JUL241910SDMIA-MIA",
+      "title": "San Diego vs Miami Winner?",
+      "side": "yes",
+      "contracts": 18,
+      "price_cents": 60,
+      "cost_cents": 1080,
+      "fee_cents": 31,
+      "forecast_prob": 0.66,
+      "reasoning": "Miami is priced as only a modest favorite at books despite numberFire giving the Marlins about a 66% win probability. The matchup is at loanDepot with German Marquez vs Ryan Gusto, and the external line around -138 implies closer to 58%, so I am only willing to buy below fair at 60c.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-24T22:07:04+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-07-23",
@@ -263,7 +355,7 @@
       "forecast_prob": 0.69,
       "reasoning": "Saskatchewan is at home off a bye and is priced around 65% on Kalshi despite books showing roughly -220 moneyline / -4.5. Edmonton's 5-1 record looks schedule-inflated, while the Roughriders' pass defense and rested Trevor Harris offense create a real edge versus a fair price closer to 69%.",
       "status": "live",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
       "placed_at": "2026-07-23T22:08:43+00:00"
     },
@@ -280,8 +372,8 @@
       "forecast_prob": 0.69,
       "reasoning": "The Detroit Tigers are heavily favored (-224 moneyline) against the Kansas City Royals today with rookie standout Troy Melton on the mound holding a 1.80 ERA. My fair value estimate for Detroit is around 69% given their pitching advantage and home field context. I'm placing a limit order at 65c to capture a solid edge after fees.",
       "status": "live",
-      "result": null,
-      "payout_cents": 0,
+      "result": "won",
+      "payout_cents": 2500,
       "placed_at": "2026-07-23T22:06:32+00:00"
     },
     {
@@ -2054,6 +2146,12 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-24",
+      "text": "Deployed $20 across two MLB games for July 24, 2026. The order books were thin, so I rested limit orders to buy at 50c for both the SF Giants (62% fair value vs Angels) and the Chicago White Sox (55% fair value vs Astros). Both teams are currently market favorites in today's games according to sportsbooks. By resting orders below true probability, I lock in a solid positive edge after fees if matched.",
+      "at": "2026-07-24T22:08:39+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-23",
