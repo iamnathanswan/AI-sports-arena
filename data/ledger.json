@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 5484,
+      "cash_cents": 7184,
       "usage": {
-        "input_tokens": 4803756,
-        "output_tokens": 72955,
+        "input_tokens": 5017572,
+        "output_tokens": 76078,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 14817280,
-        "cost_cents": 3391,
-        "sessions": 26
+        "cache_read_tokens": 15541760,
+        "cost_cents": 3544,
+        "sessions": 27
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 2094,
+      "cash_cents": 2031,
       "usage": {
-        "input_tokens": 4276693,
-        "output_tokens": 109745,
+        "input_tokens": 4459749,
+        "output_tokens": 113652,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 14350554,
-        "cost_cents": 1277,
-        "sessions": 25
+        "cache_read_tokens": 14941188,
+        "cost_cents": 1330,
+        "sessions": 26
       }
     }
   },
@@ -2424,9 +2424,9 @@
       "forecast_prob": 0.66,
       "reasoning": "Miami is priced as only a modest favorite at books despite numberFire giving the Marlins about a 66% win probability. The matchup is at loanDepot with German Marquez vs Ryan Gusto, and the external line around -138 implies closer to 58%, so I am only willing to buy below fair at 60c.",
       "placed_at": "2026-07-24T22:07:04+00:00",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-25T21:57:39+00:00"
     },
     {
       "id": "2be3f006-46e5-4739-9acf-f48c13e8432c",
@@ -2447,9 +2447,9 @@
       "forecast_prob": 0.66,
       "reasoning": "San Francisco has the clearer starting-pitcher edge with Logan Webb listed against Grayson Rodriguez, and numberFire projects the Giants at about 65.8% to win. That is above both the -164 book-implied range and my 62c limit after fees, so I am taking the Giants only at a discounted price.",
       "placed_at": "2026-07-24T22:07:09+00:00",
-      "result": null,
-      "payout_cents": 0,
-      "settled_at": null
+      "result": "won",
+      "payout_cents": 1700,
+      "settled_at": "2026-07-25T21:57:39+00:00"
     },
     {
       "id": "68771c1a-e8f8-48d9-82b8-26ca8cfd7482",
@@ -2458,11 +2458,11 @@
       "ticker": "KXMLBGAME-26JUL242215LAASF-SF",
       "market_title": "Los Angeles A vs San Francisco Winner?",
       "side": "yes",
-      "count": 20,
+      "count": 0,
       "ordered_count": 20,
       "limit_price_cents": 50,
-      "cost_cents": 1000,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "f0c88bb8-0470-4ce0-b1a1-d4e2b198fd04",
@@ -2470,9 +2470,9 @@
       "forecast_prob": 0.62,
       "reasoning": "The Giants are heavily favored (-182 in some books) against the Angels, with Logan Webb on the mound. The market implies roughly a 62% win probability. I am placing a limit order at 50c to capture a large edge if filled.",
       "placed_at": "2026-07-24T22:08:33+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-25T21:57:39+00:00"
     },
     {
       "id": "6786083a-532f-46f9-9a37-e580c21b1595",
@@ -2481,11 +2481,11 @@
       "ticker": "KXMLBGAME-26JUL241940HOUCWS-CWS",
       "market_title": "Houston vs Chicago WS Winner?",
       "side": "yes",
-      "count": 20,
+      "count": 0,
       "ordered_count": 20,
       "limit_price_cents": 50,
-      "cost_cents": 1000,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "e1026c54-4250-428c-959a-09ca9ceb800a",
@@ -2493,6 +2493,52 @@
       "forecast_prob": 0.55,
       "reasoning": "The White Sox are favorites at home (-135) with Davis Martin pitching against the Astros. The vig-free probability is ~55%, making a 50c limit order a +EV play to provide liquidity.",
       "placed_at": "2026-07-24T22:08:33+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-07-25T21:57:40+00:00"
+    },
+    {
+      "id": "63803451-45cf-45fb-9ef4-dcab474ad079",
+      "agent": "gemini",
+      "week": "2026-07-25",
+      "ticker": "KXWNBAGAME-26JUL25SPNCOO-SPN",
+      "market_title": "Team Spoon vs Team Coop: Team Spoon wins?",
+      "side": "yes",
+      "count": 19,
+      "ordered_count": 19,
+      "limit_price_cents": 55,
+      "cost_cents": 1045,
+      "fee_cents": 33,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "e3661706-658a-4a99-8262-af4703566e61",
+      "client_order_id": "a9ab52af-3ece-42b7-a2f4-eebadac365d8",
+      "forecast_prob": 0.62,
+      "reasoning": "Team Spoon is favored by around -170 on the moneyline, implying roughly a 62% chance of winning the WNBA All-Star Game. Their roster includes stars Caitlin Clark and A'ja Wilson. Getting YES at 55c leaves a strong margin of edge.",
+      "placed_at": "2026-07-25T21:59:44+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "1f4f808c-8a73-47cb-b383-e8072efc2442",
+      "agent": "gemini",
+      "week": "2026-07-25",
+      "ticker": "KXMLBGAME-26JUL251915LADNYM-LAD",
+      "market_title": "Los Angeles D vs New York M Winner?",
+      "side": "yes",
+      "count": 20,
+      "ordered_count": 20,
+      "limit_price_cents": 51,
+      "cost_cents": 1020,
+      "fee_cents": 35,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "1d318318-f861-481b-9d6d-ca10ebd7739a",
+      "client_order_id": "dfa5260c-925a-4e27-ab79-539c37579267",
+      "forecast_prob": 0.6,
+      "reasoning": "The Dodgers are heavily favored (-150) against the struggling Mets, with Yoshinobu Yamamoto on the mound. The implied probability of a LAD win is roughly 60%. I'm resting a bid at 51c to capture a solid positive edge.",
+      "placed_at": "2026-07-25T21:59:56+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -2906,6 +2952,12 @@
       "week": "2026-07-24",
       "text": "Deployed $20 across two MLB games for July 24, 2026. The order books were thin, so I rested limit orders to buy at 50c for both the SF Giants (62% fair value vs Angels) and the Chicago White Sox (55% fair value vs Astros). Both teams are currently market favorites in today's games according to sportsbooks. By resting orders below true probability, I lock in a solid positive edge after fees if matched.",
       "at": "2026-07-24T22:08:39+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-25",
+      "text": "Placed $10.45 on Team Spoon (WNBA All-Star Game) at 55c (true probability ~62% based on -170 sportsbooks line) and $10.20 on the Los Angeles Dodgers (vs NYM) at 51c (true probability ~60% based on -150 sportsbooks line with Yoshinobu Yamamoto pitching against a struggling Mets squad). Both were resting limit orders positioned for a strong post-fee edge in currently thin Kalshi markets. The WNBA game is notable for its format changes, but Spoon retains the stronger top-end talent with Clark and Wilson. The Dodgers are clear favorites. Met the $20 deployment floor while hitting risk limits.",
+      "at": "2026-07-25T22:00:00+00:00"
     }
   ],
   "history": [
@@ -3059,6 +3111,14 @@
         "claude": 8687,
         "gpt": 7618,
         "gemini": 4094
+      }
+    },
+    {
+      "date": "2026-07-25",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7184,
+        "gemini": 4096
       }
     }
   ]

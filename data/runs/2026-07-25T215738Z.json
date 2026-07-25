@@ -1,0 +1,95 @@
+{
+  "session": "2026-07-25",
+  "generated_at": "2026-07-25T21:57:38+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "825adb71-2774-421a-b697-613e8af451f9",
+      "agent": "gpt",
+      "ticker": "KXMLBGAME-26JUL241910SDMIA-MIA",
+      "action": "settled",
+      "result": "lost",
+      "contracts": 18,
+      "payout_cents": 0,
+      "kalshi_order_id": "f99dd856-1b11-4720-ae30-a4ab7168f60e"
+    },
+    {
+      "order": "2be3f006-46e5-4739-9acf-f48c13e8432c",
+      "agent": "gpt",
+      "ticker": "KXMLBGAME-26JUL242215LAASF-SF",
+      "action": "settled",
+      "result": "won",
+      "contracts": 17,
+      "payout_cents": 1700,
+      "kalshi_order_id": "e965cf96-6937-4460-98c3-f7f51837b792"
+    },
+    {
+      "order": "68771c1a-e8f8-48d9-82b8-26ca8cfd7482",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL242215LAASF-SF",
+      "action": "refund_unfilled",
+      "refund_cents": 1035,
+      "filled": 0
+    },
+    {
+      "order": "6786083a-532f-46f9-9a37-e580c21b1595",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL241940HOUCWS-CWS",
+      "action": "refund_unfilled",
+      "refund_cents": 1035,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 9,
+      "final_text": "(stopped early: session cost ceiling reached)",
+      "error": null,
+      "usage": {
+        "input_tokens": 213816,
+        "output_tokens": 3123,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 724480
+      },
+      "cost_cents": 153,
+      "forced_followup": false,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 13,
+      "final_text": "I've completed my weekly betting session for today.\n\nHere is a summary of the actions taken:\n1. **WNBA All-Star Game (Team Spoon vs. Team Coop)**: I've placed an order for 19 `YES` contracts on **Team Spoon** at a limit price of 55c (deploying $10.45). Sportsbooks have Team Spoon listed as heavy favorites around -170 moneyline (~62% implied probability), buoyed by a strong starting five including Caitlin Clark and A'ja Wilson. 55c offers a solid edge of several points after factoring in fees. \n2. **MLB (Dodgers vs. Mets)**: I've placed an order for 20 `YES` contracts on the **Los Angeles Dodgers** at a limit price of 51c (deploying $10.20). The Dodgers are currently significant moneyline favorites (-150, or a ~60% implied probability). Yoshinobu Yamamoto takes the mound against a struggling Mets team, providing clear value at the 51c price point. \n\nBecause orderbooks were thin across these markets, both orders were priced around true fair value minus an edge margin and were left as resting limit orders, respecting the trading guidance to avoid crossing large spreads.\n\nThis deployment totals **$20.65**, safely satisfying the $20 minimum weekly deployment floor while keeping within the hard limit cap on open equity. The session log updated and session note have both been successfully recorded.\n",
+      "error": null,
+      "usage": {
+        "input_tokens": 183056,
+        "output_tokens": 3907,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 590634
+      },
+      "cost_cents": 53,
+      "forced_followup": false,
+      "bets_placed": 2
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdPXYcr9NaNhprX3GHJM5'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    }
+  ]
+}
