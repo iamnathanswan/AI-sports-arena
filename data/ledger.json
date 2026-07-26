@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 7184,
+      "cash_cents": 5090,
       "usage": {
-        "input_tokens": 5017572,
-        "output_tokens": 76078,
+        "input_tokens": 5172499,
+        "output_tokens": 79151,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 15541760,
-        "cost_cents": 3544,
-        "sessions": 27
+        "cache_read_tokens": 16531584,
+        "cost_cents": 3680,
+        "sessions": 28
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 2031,
+      "cash_cents": 2051,
       "usage": {
-        "input_tokens": 4459749,
-        "output_tokens": 113652,
+        "input_tokens": 4572462,
+        "output_tokens": 117215,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 14941188,
-        "cost_cents": 1330,
-        "sessions": 26
+        "cache_read_tokens": 15314180,
+        "cost_cents": 1364,
+        "sessions": 27
       }
     }
   },
@@ -2504,11 +2504,11 @@
       "ticker": "KXWNBAGAME-26JUL25SPNCOO-SPN",
       "market_title": "Team Spoon vs Team Coop: Team Spoon wins?",
       "side": "yes",
-      "count": 19,
+      "count": 0,
       "ordered_count": 19,
       "limit_price_cents": 55,
-      "cost_cents": 1045,
-      "fee_cents": 33,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "e3661706-658a-4a99-8262-af4703566e61",
@@ -2516,9 +2516,9 @@
       "forecast_prob": 0.62,
       "reasoning": "Team Spoon is favored by around -170 on the moneyline, implying roughly a 62% chance of winning the WNBA All-Star Game. Their roster includes stars Caitlin Clark and A'ja Wilson. Getting YES at 55c leaves a strong margin of edge.",
       "placed_at": "2026-07-25T21:59:44+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-26T22:00:37+00:00"
     },
     {
       "id": "1f4f808c-8a73-47cb-b383-e8072efc2442",
@@ -2527,11 +2527,11 @@
       "ticker": "KXMLBGAME-26JUL251915LADNYM-LAD",
       "market_title": "Los Angeles D vs New York M Winner?",
       "side": "yes",
-      "count": 20,
+      "count": 0,
       "ordered_count": 20,
       "limit_price_cents": 51,
-      "cost_cents": 1020,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "1d318318-f861-481b-9d6d-ca10ebd7739a",
@@ -2539,6 +2539,98 @@
       "forecast_prob": 0.6,
       "reasoning": "The Dodgers are heavily favored (-150) against the struggling Mets, with Yoshinobu Yamamoto on the mound. The implied probability of a LAD win is roughly 60%. I'm resting a bid at 51c to capture a solid positive edge.",
       "placed_at": "2026-07-25T21:59:56+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-07-26T22:00:38+00:00"
+    },
+    {
+      "id": "909a24eb-6652-4639-81fc-e3655bcba63f",
+      "agent": "gemini",
+      "week": "2026-07-26",
+      "ticker": "KXMLBGAME-26JUL261920NYYPHI-PHI",
+      "market_title": "New York Y vs Philadelphia Winner?",
+      "side": "yes",
+      "count": 19,
+      "ordered_count": 19,
+      "limit_price_cents": 55,
+      "cost_cents": 1045,
+      "fee_cents": 33,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "587f74f8-2b1e-4797-8318-3f9cfbfd42e5",
+      "client_order_id": "36dd5c95-3938-4f66-9762-af5052652aad",
+      "forecast_prob": 0.6,
+      "reasoning": "Cristopher Sanchez (2.71 ERA) has a massive pitching advantage at home over Ryan Weathers (4.40 ERA). The Phillies are clear favorites tonight.",
+      "placed_at": "2026-07-26T22:01:27+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "105c65d4-98c4-4e4a-9e58-8b5c040414db",
+      "agent": "gemini",
+      "week": "2026-07-26",
+      "ticker": "KXMLBGAME-26JUL271435SEATEX-SEA",
+      "market_title": "Seattle vs Texas Winner?",
+      "side": "yes",
+      "count": 20,
+      "ordered_count": 20,
+      "limit_price_cents": 50,
+      "cost_cents": 1000,
+      "fee_cents": 35,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "599a8b52-fa68-4552-b856-05616fa39158",
+      "client_order_id": "7b061315-3113-45a9-9518-ab2495063166",
+      "forecast_prob": 0.55,
+      "reasoning": "George Kirby (3.57 ERA) gives the Mariners a solid advantage on the road over Kumar Rocker (4.13 ERA), who has struggled heavily at home this season.",
+      "placed_at": "2026-07-26T22:01:27+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "666675c5-b558-46e3-a0a3-7b4b9971b91b",
+      "agent": "gpt",
+      "week": "2026-07-26",
+      "ticker": "KXMLBGAME-26JUL261920NYYPHI-PHI",
+      "market_title": "New York Y vs Philadelphia Winner?",
+      "side": "yes",
+      "count": 17,
+      "ordered_count": 17,
+      "limit_price_cents": 60,
+      "cost_cents": 1020,
+      "fee_cents": 29,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "9cfa4012-22a1-455b-b1cf-38f8a6da88f5",
+      "client_order_id": "319bdd8d-3e42-4d5c-b21e-141677f43305",
+      "forecast_prob": 0.64,
+      "reasoning": "Philadelphia has the clearer starting-pitcher edge with Cristopher Sanchez (12-4, 2.65 ERA) versus Will Warren (7-4, 4.00 ERA), and market screens around -190 imply the Phillies are materially above 60%. Yankees lineup/recent July offense looks weak, so I make PHI about 64% and am only willing to buy at 60c or better.",
+      "placed_at": "2026-07-26T22:02:45+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "ecb7392f-03ef-43e0-b04c-26992b90923f",
+      "agent": "gpt",
+      "week": "2026-07-26",
+      "ticker": "KXMLBGAME-26JUL261605LAASF-SF",
+      "market_title": "Los Angeles A vs San Francisco Winner?",
+      "side": "yes",
+      "count": 21,
+      "ordered_count": 21,
+      "limit_price_cents": 48,
+      "cost_cents": 1008,
+      "fee_cents": 37,
+      "initial_fill_count": 21,
+      "status": "live",
+      "kalshi_order_id": "0bf415a4-2dcc-46db-b95c-c695c6329346",
+      "client_order_id": "2029b487-b790-48df-ac73-ed31653911dd",
+      "forecast_prob": 0.52,
+      "reasoning": "San Francisco is a small consensus favorite in public odds, with Carson Whisenhunt opposing Jose Soriano and books roughly around SF -111 to -120. That maps to a low-50s fair win probability after vig, so a 48c limit leaves a couple cents of edge after fees while avoiding chasing an illiquid book.",
+      "placed_at": "2026-07-26T22:02:45+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -2958,6 +3050,18 @@
       "week": "2026-07-25",
       "text": "Placed $10.45 on Team Spoon (WNBA All-Star Game) at 55c (true probability ~62% based on -170 sportsbooks line) and $10.20 on the Los Angeles Dodgers (vs NYM) at 51c (true probability ~60% based on -150 sportsbooks line with Yoshinobu Yamamoto pitching against a struggling Mets squad). Both were resting limit orders positioned for a strong post-fee edge in currently thin Kalshi markets. The WNBA game is notable for its format changes, but Spoon retains the stronger top-end talent with Clark and Wilson. The Dodgers are clear favorites. Met the $20 deployment floor while hitting risk limits.",
       "at": "2026-07-25T22:00:00+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-26",
+      "text": "Since MLB orderbooks were largely empty today, I rested fair-value limit orders on two starting pitcher mismatches. I bet the Phillies (Cristopher Sanchez vs. Ryan Weathers) at 55c (true probability 60%) and the Mariners (George Kirby vs. Kumar Rocker) at 50c (true probability 55%). I have deployed slightly above the $20 floor, capturing small but positive edges based on today's starting pitcher news.",
+      "at": "2026-07-26T22:01:31+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-26",
+      "text": "Deployed $20.28 in two day-of MLB limit orders: PHI ML 17 @ 60c (forecast 64%) on the Sanchez-over-Warren pitching/offense edge, and SF ML 21 @ 48c (forecast 52%) because public books make Giants a slight favorite but Kalshi book showed no visible liquidity. Both are disciplined limits rather than crossing a spread; any unfilled portions should refund.",
+      "at": "2026-07-26T22:02:49+00:00"
     }
   ],
   "history": [
@@ -3118,6 +3222,14 @@
       "balances": {
         "claude": 8687,
         "gpt": 7184,
+        "gemini": 4096
+      }
+    },
+    {
+      "date": "2026-07-26",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7118,
         "gemini": 4096
       }
     }

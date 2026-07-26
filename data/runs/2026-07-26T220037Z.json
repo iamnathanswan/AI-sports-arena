@@ -1,0 +1,75 @@
+{
+  "session": "2026-07-26",
+  "generated_at": "2026-07-26T22:00:37+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "63803451-45cf-45fb-9ef4-dcab474ad079",
+      "agent": "gemini",
+      "ticker": "KXWNBAGAME-26JUL25SPNCOO-SPN",
+      "action": "refund_unfilled",
+      "refund_cents": 1078,
+      "filled": 0
+    },
+    {
+      "order": "1f4f808c-8a73-47cb-b383-e8072efc2442",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL251915LADNYM-LAD",
+      "action": "refund_unfilled",
+      "refund_cents": 1055,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 8,
+      "final_text": "I have completed my betting session for this run.\n\nI surveyed the available sports series and found empty orderbooks across the imminent MLB matchups. Since I must deploy a $20 floor, I evaluated pitching mismatches for games occurring today and tomorrow based on the most up-to-date starting pitcher news. \n\n1. **Phillies vs. Yankees (July 26)**: The Phillies start Cristopher Sanchez (12-4, 2.71 ERA), holding a distinct edge over the Yankees' Ryan Weathers (4.40 ERA) who is struggling. I placed a $10 limit order for Phillies YES at 55c (assessed true probability: 60%).\n2. **Mariners vs. Rangers (July 27)**: The Mariners start George Kirby (3.57 ERA) on the road against Kumar Rocker (4.13 ERA), who has pitched poorly at home. I placed a $10 limit order for Mariners YES at 50c (assessed true probability: 55%).\n\nThis deployed $20.45 in total, meeting the requirements while taking calculated positions on fresh news that rest at fair value in the empty markets.",
+      "error": null,
+      "usage": {
+        "input_tokens": 112713,
+        "output_tokens": 3563,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 372992
+      },
+      "cost_cents": 34,
+      "forced_followup": false,
+      "bets_placed": 2
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdRRU6wFhwhs6AYoChgbo'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 12,
+      "final_text": "Weekly session started and completed.\n\n**Bankroll at start:** $71.84 cash / $71.84 equity, no open positions.  \n**Deployed:** $20.28 total stake across 2 MLB markets.\n\n### Bets placed\n\n1. **Philadelphia Phillies YES vs Yankees**\n   - **Market:** `KXMLBGAME-26JUL261920NYYPHI-PHI`\n   - **Order:** Buy 17 YES @ 60c\n   - **Stake:** $10.20\n   - **Forecast:** 64%\n   - **Rationale:** Philadelphia has a strong starter edge with Cristopher S\u00e1nchez vs. Will Warren; public odds screens had Phillies around the -190 range, implying materially above 60% before/after vig adjustment. \ue200cite\ue202turn1search1\ue202turn1search7\ue202turn1search8\ue201\n\n2. **San Francisco Giants YES vs Angels**\n   - **Market:** `KXMLBGAME-26JUL261605LAASF-SF`\n   - **Order:** Buy 21 YES @ 48c\n   - **Stake:** $10.08\n   - **Forecast:** 52%\n   - **Rationale:** Public books showed San Francisco as a small favorite, with Carson Whisenhunt vs. Jos\u00e9 Soriano; at a 48c limit, the edge clears fees without overpaying in an illiquid book. \ue200cite\ue202turn0search4\ue202turn1search4\ue202turn1search5\ue201\n\nBoth orderbooks appeared empty, so these are disciplined resting limit orders rather than crossed-market bets. A public note was recorded summarizing the strategy.",
+      "error": null,
+      "usage": {
+        "input_tokens": 154927,
+        "output_tokens": 3073,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 989824
+      },
+      "cost_cents": 136,
+      "forced_followup": false,
+      "bets_placed": 2
+    }
+  ]
+}
