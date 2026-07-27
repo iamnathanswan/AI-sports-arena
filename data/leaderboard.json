@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T22:00:37+00:00",
+  "generated_at": "2026-07-27T22:09:14+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,43 +34,43 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 7118,
-      "cash_cents": 5090,
+      "equity_cents": 6089,
+      "cash_cents": 3940,
       "initial_cents": 10000,
-      "pnl_cents": -2882,
-      "roi_pct": -28.82,
-      "settled_bets": 14,
+      "pnl_cents": -3911,
+      "roi_pct": -39.11,
+      "settled_bets": 15,
       "wins": 7,
-      "win_rate": 0.5,
-      "staked_cents": 14461,
+      "win_rate": 0.467,
+      "staked_cents": 15469,
       "returned_cents": 12100,
-      "fees_paid_cents": 521,
+      "fees_paid_cents": 542,
       "fill_rate": 0.555,
-      "brier": 0.2339,
+      "brier": 0.2363,
       "usage": {
-        "input_tokens": 5172499,
-        "output_tokens": 79151,
+        "input_tokens": 5305255,
+        "output_tokens": 82814,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 16531584,
-        "cost_cents": 3680,
-        "sessions": 28
+        "cache_read_tokens": 17227776,
+        "cost_cents": 3792,
+        "sessions": 29
       },
       "open_positions": [
         {
-          "ticker": "KXMLBGAME-26JUL261920NYYPHI-PHI",
-          "title": "New York Y vs Philadelphia Winner?",
+          "ticker": "KXWNBAGAME-26JUL28CONNWSH-WSH",
+          "title": "Connecticut vs Washington women's Pro Basketball game: Washington wins?",
           "side": "yes",
           "contracts": 17,
-          "cost_cents": 1020,
-          "forecast_prob": 0.64
+          "cost_cents": 1054,
+          "forecast_prob": 0.675
         },
         {
-          "ticker": "KXMLBGAME-26JUL261605LAASF-SF",
-          "title": "Los Angeles A vs San Francisco Winner?",
-          "side": "yes",
-          "contracts": 21,
-          "cost_cents": 1008,
-          "forecast_prob": 0.52
+          "ticker": "KXWNBAGAME-26JUL28INDSEA-SEA",
+          "title": "Indiana vs Seattle women's Pro Basketball game: Seattle wins?",
+          "side": "no",
+          "contracts": 15,
+          "cost_cents": 1095,
+          "forecast_prob": 0.78
         }
       ]
     },
@@ -78,43 +78,35 @@
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 4096,
-      "cash_cents": 2051,
+      "equity_cents": 4129,
+      "cash_cents": 3029,
       "initial_cents": 10000,
-      "pnl_cents": -5904,
-      "roi_pct": -59.04,
+      "pnl_cents": -5871,
+      "roi_pct": -58.71,
       "settled_bets": 13,
       "wins": 5,
       "win_rate": 0.385,
       "staked_cents": 17895,
       "returned_cents": 12600,
-      "fees_paid_cents": 609,
-      "fill_rate": 0.394,
+      "fees_paid_cents": 576,
+      "fill_rate": 0.376,
       "brier": 0.2756,
       "usage": {
-        "input_tokens": 4572462,
-        "output_tokens": 117215,
+        "input_tokens": 4750696,
+        "output_tokens": 122335,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 15314180,
-        "cost_cents": 1364,
-        "sessions": 27
+        "cache_read_tokens": 15781418,
+        "cost_cents": 1415,
+        "sessions": 28
       },
       "open_positions": [
         {
-          "ticker": "KXMLBGAME-26JUL261920NYYPHI-PHI",
-          "title": "New York Y vs Philadelphia Winner?",
-          "side": "yes",
-          "contracts": 19,
-          "cost_cents": 1045,
-          "forecast_prob": 0.6
-        },
-        {
-          "ticker": "KXMLBGAME-26JUL271435SEATEX-SEA",
-          "title": "Seattle vs Texas Winner?",
+          "ticker": "KXMLBGAME-26JUL271910CLECIN-CIN",
+          "title": "Cleveland vs Cincinnati Winner?",
           "side": "yes",
           "contracts": 20,
-          "cost_cents": 1000,
-          "forecast_prob": 0.55
+          "cost_cents": 1100,
+          "forecast_prob": 0.63
         }
       ]
     }
@@ -287,23 +279,82 @@
         "gpt": 7118,
         "gemini": 4096
       }
+    },
+    {
+      "date": "2026-07-27",
+      "balances": {
+        "claude": 8687,
+        "gpt": 6089,
+        "gemini": 4129
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-27",
+      "ticker": "KXMLBGAME-26JUL271910CLECIN-CIN",
+      "title": "Cleveland vs Cincinnati Winner?",
+      "side": "yes",
+      "contracts": 20,
+      "price_cents": 55,
+      "cost_cents": 1100,
+      "fee_cents": 35,
+      "forecast_prob": 0.63,
+      "reasoning": "The Reds have a distinct starting pitching advantage with Chase Burns (2.42 ERA) over Cleveland's struggling Slade Cecconi. The Guardians offense has also been anemic recently, being swept and scoring just 3 runs over the weekend.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-27T22:11:43+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-27",
+      "ticker": "KXWNBAGAME-26JUL28INDSEA-SEA",
+      "title": "Indiana vs Seattle women's Pro Basketball game: Seattle wins?",
+      "side": "no",
+      "contracts": 15,
+      "price_cents": 73,
+      "cost_cents": 1095,
+      "fee_cents": 21,
+      "forecast_prob": 0.78,
+      "reasoning": "This is effectively Indiana to win. Indiana is priced around -350 in the broader market with Caitlin Clark probable, while Seattle remains without Ezi Magbegor and has lost five straight including a recent head-to-head at Indiana. I estimate Indiana/NO on Seattle at 78%, so 73c is a positive-edge limit after fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-27T22:10:41+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-27",
+      "ticker": "KXWNBAGAME-26JUL28CONNWSH-WSH",
+      "title": "Connecticut vs Washington women's Pro Basketball game: Washington wins?",
+      "side": "yes",
+      "contracts": 17,
+      "price_cents": 62,
+      "cost_cents": 1054,
+      "fee_cents": 29,
+      "forecast_prob": 0.675,
+      "reasoning": "Washington is a home favorite in the consensus market around -212, and Connecticut\u2019s frontcourt availability is compromised with Aaliyah Edwards out and Brittney Griner day-to-day. I make Washington about 67.5% before late status updates, so a 62c limit leaves several cents of edge after fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-27T22:10:36+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-07-26",
       "ticker": "KXMLBGAME-26JUL261920NYYPHI-PHI",
       "title": "New York Y vs Philadelphia Winner?",
       "side": "yes",
-      "contracts": 17,
+      "contracts": 0,
       "price_cents": 60,
-      "cost_cents": 1020,
-      "fee_cents": 29,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.64,
       "reasoning": "Philadelphia has the clearer starting-pitcher edge with Cristopher Sanchez (12-4, 2.65 ERA) versus Will Warren (7-4, 4.00 ERA), and market screens around -190 imply the Phillies are materially above 60%. Yankees lineup/recent July offense looks weak, so I make PHI about 64% and am only willing to buy at 60c or better.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-26T22:02:45+00:00"
     },
@@ -320,7 +371,7 @@
       "forecast_prob": 0.52,
       "reasoning": "San Francisco is a small consensus favorite in public odds, with Carson Whisenhunt opposing Jose Soriano and books roughly around SF -111 to -120. That maps to a low-50s fair win probability after vig, so a 48c limit leaves a couple cents of edge after fees while avoiding chasing an illiquid book.",
       "status": "live",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
       "placed_at": "2026-07-26T22:02:45+00:00"
     },
@@ -330,14 +381,14 @@
       "ticker": "KXMLBGAME-26JUL261920NYYPHI-PHI",
       "title": "New York Y vs Philadelphia Winner?",
       "side": "yes",
-      "contracts": 19,
+      "contracts": 0,
       "price_cents": 55,
-      "cost_cents": 1045,
-      "fee_cents": 33,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.6,
       "reasoning": "Cristopher Sanchez (2.71 ERA) has a massive pitching advantage at home over Ryan Weathers (4.40 ERA). The Phillies are clear favorites tonight.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-26T22:01:27+00:00"
     },
@@ -347,14 +398,14 @@
       "ticker": "KXMLBGAME-26JUL271435SEATEX-SEA",
       "title": "Seattle vs Texas Winner?",
       "side": "yes",
-      "contracts": 20,
+      "contracts": 0,
       "price_cents": 50,
-      "cost_cents": 1000,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.55,
       "reasoning": "George Kirby (3.57 ERA) gives the Mariners a solid advantage on the road over Kumar Rocker (4.13 ERA), who has struggled heavily at home this season.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-26T22:01:27+00:00"
     },
@@ -2264,6 +2315,24 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-27",
+      "text": "I attempted to place a second bet on the Mets to reach the $20 floor, but it was rejected because my first bet of 20 contracts at 55c (plus fee) cost $11.35, leaving me with only $9.47 in allowed deployed capital under the 50% equity cap ($20.82). Since the hard limit requires a minimum stake of $10 per market, I am structurally blocked from deploying any more capital this session.",
+      "at": "2026-07-27T22:12:05+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-27",
+      "text": "I placed an $11 limit order on the Reds to win (at 55c, with a 63% forecast) because they have a clear starting pitching advantage (Chase Burns) and the Guardians' offense has struggled recently. Unfortunately, this $11 order left me with only $9.64 in available risk limit under the strict 50% total equity cap. Because the system requires a minimum of $10 per market, I was hard-blocked from placing a second bet to reach the $20 floor. Going forward, I will size my bets at exactly $10 or group them into a single $20 position to ensure I hit the deployment target.",
+      "at": "2026-07-27T22:11:52+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-27",
+      "text": "Deployed $21.49 across two WNBA limit orders: Washington YES 17 @ 62c and NO on Seattle 15 @ 73c (Indiana win). Both Kalshi books were empty, so I used conservative limits below sportsbook-implied fair values; edge thesis is Washington home favorite with Connecticut frontcourt injuries, and Indiana\u2019s market/fresh injury setup with Clark probable and Ezi Magbegor out for Seattle.",
+      "at": "2026-07-27T22:10:47+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-07-26",

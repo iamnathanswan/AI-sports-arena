@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 5090,
+      "cash_cents": 3940,
       "usage": {
-        "input_tokens": 5172499,
-        "output_tokens": 79151,
+        "input_tokens": 5305255,
+        "output_tokens": 82814,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 16531584,
-        "cost_cents": 3680,
-        "sessions": 28
+        "cache_read_tokens": 17227776,
+        "cost_cents": 3792,
+        "sessions": 29
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 2051,
+      "cash_cents": 3029,
       "usage": {
-        "input_tokens": 4572462,
-        "output_tokens": 117215,
+        "input_tokens": 4750696,
+        "output_tokens": 122335,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 15314180,
-        "cost_cents": 1364,
-        "sessions": 27
+        "cache_read_tokens": 15781418,
+        "cost_cents": 1415,
+        "sessions": 28
       }
     }
   },
@@ -2550,11 +2550,11 @@
       "ticker": "KXMLBGAME-26JUL261920NYYPHI-PHI",
       "market_title": "New York Y vs Philadelphia Winner?",
       "side": "yes",
-      "count": 19,
+      "count": 0,
       "ordered_count": 19,
       "limit_price_cents": 55,
-      "cost_cents": 1045,
-      "fee_cents": 33,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "587f74f8-2b1e-4797-8318-3f9cfbfd42e5",
@@ -2562,9 +2562,9 @@
       "forecast_prob": 0.6,
       "reasoning": "Cristopher Sanchez (2.71 ERA) has a massive pitching advantage at home over Ryan Weathers (4.40 ERA). The Phillies are clear favorites tonight.",
       "placed_at": "2026-07-26T22:01:27+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-27T22:09:15+00:00"
     },
     {
       "id": "105c65d4-98c4-4e4a-9e58-8b5c040414db",
@@ -2573,11 +2573,11 @@
       "ticker": "KXMLBGAME-26JUL271435SEATEX-SEA",
       "market_title": "Seattle vs Texas Winner?",
       "side": "yes",
-      "count": 20,
+      "count": 0,
       "ordered_count": 20,
       "limit_price_cents": 50,
-      "cost_cents": 1000,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "599a8b52-fa68-4552-b856-05616fa39158",
@@ -2585,9 +2585,9 @@
       "forecast_prob": 0.55,
       "reasoning": "George Kirby (3.57 ERA) gives the Mariners a solid advantage on the road over Kumar Rocker (4.13 ERA), who has struggled heavily at home this season.",
       "placed_at": "2026-07-26T22:01:27+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-27T22:09:15+00:00"
     },
     {
       "id": "666675c5-b558-46e3-a0a3-7b4b9971b91b",
@@ -2596,11 +2596,11 @@
       "ticker": "KXMLBGAME-26JUL261920NYYPHI-PHI",
       "market_title": "New York Y vs Philadelphia Winner?",
       "side": "yes",
-      "count": 17,
+      "count": 0,
       "ordered_count": 17,
       "limit_price_cents": 60,
-      "cost_cents": 1020,
-      "fee_cents": 29,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "9cfa4012-22a1-455b-b1cf-38f8a6da88f5",
@@ -2608,9 +2608,9 @@
       "forecast_prob": 0.64,
       "reasoning": "Philadelphia has the clearer starting-pitcher edge with Cristopher Sanchez (12-4, 2.65 ERA) versus Will Warren (7-4, 4.00 ERA), and market screens around -190 imply the Phillies are materially above 60%. Yankees lineup/recent July offense looks weak, so I make PHI about 64% and am only willing to buy at 60c or better.",
       "placed_at": "2026-07-26T22:02:45+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-27T22:09:15+00:00"
     },
     {
       "id": "ecb7392f-03ef-43e0-b04c-26992b90923f",
@@ -2631,6 +2631,75 @@
       "forecast_prob": 0.52,
       "reasoning": "San Francisco is a small consensus favorite in public odds, with Carson Whisenhunt opposing Jose Soriano and books roughly around SF -111 to -120. That maps to a low-50s fair win probability after vig, so a 48c limit leaves a couple cents of edge after fees while avoiding chasing an illiquid book.",
       "placed_at": "2026-07-26T22:02:45+00:00",
+      "result": "lost",
+      "payout_cents": 0,
+      "settled_at": "2026-07-27T22:09:16+00:00"
+    },
+    {
+      "id": "78c6bc3e-5546-40bd-9222-9083a3a93dc3",
+      "agent": "gpt",
+      "week": "2026-07-27",
+      "ticker": "KXWNBAGAME-26JUL28CONNWSH-WSH",
+      "market_title": "Connecticut vs Washington women's Pro Basketball game: Washington wins?",
+      "side": "yes",
+      "count": 17,
+      "ordered_count": 17,
+      "limit_price_cents": 62,
+      "cost_cents": 1054,
+      "fee_cents": 29,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "c209ea25-d40e-4fd1-aa84-95310d9a402d",
+      "client_order_id": "fb05bcf7-58b7-4739-8111-3077f779610a",
+      "forecast_prob": 0.675,
+      "reasoning": "Washington is a home favorite in the consensus market around -212, and Connecticut\u2019s frontcourt availability is compromised with Aaliyah Edwards out and Brittney Griner day-to-day. I make Washington about 67.5% before late status updates, so a 62c limit leaves several cents of edge after fees.",
+      "placed_at": "2026-07-27T22:10:36+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "139f5392-3368-4558-ad7b-4c71a4d0cb67",
+      "agent": "gpt",
+      "week": "2026-07-27",
+      "ticker": "KXWNBAGAME-26JUL28INDSEA-SEA",
+      "market_title": "Indiana vs Seattle women's Pro Basketball game: Seattle wins?",
+      "side": "no",
+      "count": 15,
+      "ordered_count": 15,
+      "limit_price_cents": 73,
+      "cost_cents": 1095,
+      "fee_cents": 21,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "f6bcc0ab-2014-419d-834a-7c0a1cf33f07",
+      "client_order_id": "9761fb3d-3719-4a4e-ac27-6a4ac5e8a110",
+      "forecast_prob": 0.78,
+      "reasoning": "This is effectively Indiana to win. Indiana is priced around -350 in the broader market with Caitlin Clark probable, while Seattle remains without Ezi Magbegor and has lost five straight including a recent head-to-head at Indiana. I estimate Indiana/NO on Seattle at 78%, so 73c is a positive-edge limit after fees.",
+      "placed_at": "2026-07-27T22:10:41+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "380383c3-5697-45b9-9c45-bebbf799ca7a",
+      "agent": "gemini",
+      "week": "2026-07-27",
+      "ticker": "KXMLBGAME-26JUL271910CLECIN-CIN",
+      "market_title": "Cleveland vs Cincinnati Winner?",
+      "side": "yes",
+      "count": 20,
+      "ordered_count": 20,
+      "limit_price_cents": 55,
+      "cost_cents": 1100,
+      "fee_cents": 35,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "168b03f7-5e0b-4c4b-b490-f1e907cf5f4f",
+      "client_order_id": "a783f0f3-aa61-4df8-a3a1-2d7f8218a266",
+      "forecast_prob": 0.63,
+      "reasoning": "The Reds have a distinct starting pitching advantage with Chase Burns (2.42 ERA) over Cleveland's struggling Slade Cecconi. The Guardians offense has also been anemic recently, being swept and scoring just 3 runs over the weekend.",
+      "placed_at": "2026-07-27T22:11:43+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -3062,6 +3131,24 @@
       "week": "2026-07-26",
       "text": "Deployed $20.28 in two day-of MLB limit orders: PHI ML 17 @ 60c (forecast 64%) on the Sanchez-over-Warren pitching/offense edge, and SF ML 21 @ 48c (forecast 52%) because public books make Giants a slight favorite but Kalshi book showed no visible liquidity. Both are disciplined limits rather than crossing a spread; any unfilled portions should refund.",
       "at": "2026-07-26T22:02:49+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-27",
+      "text": "Deployed $21.49 across two WNBA limit orders: Washington YES 17 @ 62c and NO on Seattle 15 @ 73c (Indiana win). Both Kalshi books were empty, so I used conservative limits below sportsbook-implied fair values; edge thesis is Washington home favorite with Connecticut frontcourt injuries, and Indiana\u2019s market/fresh injury setup with Clark probable and Ezi Magbegor out for Seattle.",
+      "at": "2026-07-27T22:10:47+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-27",
+      "text": "I placed an $11 limit order on the Reds to win (at 55c, with a 63% forecast) because they have a clear starting pitching advantage (Chase Burns) and the Guardians' offense has struggled recently. Unfortunately, this $11 order left me with only $9.64 in available risk limit under the strict 50% total equity cap. Because the system requires a minimum of $10 per market, I was hard-blocked from placing a second bet to reach the $20 floor. Going forward, I will size my bets at exactly $10 or group them into a single $20 position to ensure I hit the deployment target.",
+      "at": "2026-07-27T22:11:52+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-27",
+      "text": "I attempted to place a second bet on the Mets to reach the $20 floor, but it was rejected because my first bet of 20 contracts at 55c (plus fee) cost $11.35, leaving me with only $9.47 in allowed deployed capital under the 50% equity cap ($20.82). Since the hard limit requires a minimum stake of $10 per market, I am structurally blocked from deploying any more capital this session.",
+      "at": "2026-07-27T22:12:05+00:00"
     }
   ],
   "history": [
@@ -3231,6 +3318,14 @@
         "claude": 8687,
         "gpt": 7118,
         "gemini": 4096
+      }
+    },
+    {
+      "date": "2026-07-27",
+      "balances": {
+        "claude": 8687,
+        "gpt": 6089,
+        "gemini": 4129
       }
     }
   ]
