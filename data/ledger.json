@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 3940,
+      "cash_cents": 5061,
       "usage": {
-        "input_tokens": 5305255,
-        "output_tokens": 82814,
+        "input_tokens": 5656216,
+        "output_tokens": 86465,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 17227776,
-        "cost_cents": 3792,
-        "sessions": 29
+        "cache_read_tokens": 17721984,
+        "cost_cents": 4003,
+        "sessions": 30
       }
     },
     "gemini": {
       "initial_cents": 10000,
-      "cash_cents": 3029,
+      "cash_cents": 3062,
       "usage": {
-        "input_tokens": 4750696,
-        "output_tokens": 122335,
+        "input_tokens": 5015779,
+        "output_tokens": 128841,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 15781418,
-        "cost_cents": 1415,
-        "sessions": 28
+        "cache_read_tokens": 16365437,
+        "cost_cents": 1488,
+        "sessions": 29
       }
     }
   },
@@ -2642,11 +2642,11 @@
       "ticker": "KXWNBAGAME-26JUL28CONNWSH-WSH",
       "market_title": "Connecticut vs Washington women's Pro Basketball game: Washington wins?",
       "side": "yes",
-      "count": 17,
+      "count": 0,
       "ordered_count": 17,
       "limit_price_cents": 62,
-      "cost_cents": 1054,
-      "fee_cents": 29,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "c209ea25-d40e-4fd1-aa84-95310d9a402d",
@@ -2654,9 +2654,9 @@
       "forecast_prob": 0.675,
       "reasoning": "Washington is a home favorite in the consensus market around -212, and Connecticut\u2019s frontcourt availability is compromised with Aaliyah Edwards out and Brittney Griner day-to-day. I make Washington about 67.5% before late status updates, so a 62c limit leaves several cents of edge after fees.",
       "placed_at": "2026-07-27T22:10:36+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-28T22:05:24+00:00"
     },
     {
       "id": "139f5392-3368-4558-ad7b-4c71a4d0cb67",
@@ -2665,11 +2665,11 @@
       "ticker": "KXWNBAGAME-26JUL28INDSEA-SEA",
       "market_title": "Indiana vs Seattle women's Pro Basketball game: Seattle wins?",
       "side": "no",
-      "count": 15,
+      "count": 0,
       "ordered_count": 15,
       "limit_price_cents": 73,
-      "cost_cents": 1095,
-      "fee_cents": 21,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "f6bcc0ab-2014-419d-834a-7c0a1cf33f07",
@@ -2677,9 +2677,9 @@
       "forecast_prob": 0.78,
       "reasoning": "This is effectively Indiana to win. Indiana is priced around -350 in the broader market with Caitlin Clark probable, while Seattle remains without Ezi Magbegor and has lost five straight including a recent head-to-head at Indiana. I estimate Indiana/NO on Seattle at 78%, so 73c is a positive-edge limit after fees.",
       "placed_at": "2026-07-27T22:10:41+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-28T22:05:24+00:00"
     },
     {
       "id": "380383c3-5697-45b9-9c45-bebbf799ca7a",
@@ -2688,11 +2688,11 @@
       "ticker": "KXMLBGAME-26JUL271910CLECIN-CIN",
       "market_title": "Cleveland vs Cincinnati Winner?",
       "side": "yes",
-      "count": 20,
+      "count": 0,
       "ordered_count": 20,
       "limit_price_cents": 55,
-      "cost_cents": 1100,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "168b03f7-5e0b-4c4b-b490-f1e907cf5f4f",
@@ -2700,6 +2700,52 @@
       "forecast_prob": 0.63,
       "reasoning": "The Reds have a distinct starting pitching advantage with Chase Burns (2.42 ERA) over Cleveland's struggling Slade Cecconi. The Guardians offense has also been anemic recently, being swept and scoring just 3 runs over the weekend.",
       "placed_at": "2026-07-27T22:11:43+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-07-28T22:05:24+00:00"
+    },
+    {
+      "id": "20d4dae5-19c7-4916-9dc1-6bc22609ffab",
+      "agent": "gpt",
+      "week": "2026-07-28",
+      "ticker": "KXWNBASPREAD-26JUL28TORMIN-MIN13",
+      "market_title": "Minnesota wins the game by over 12.5 points?",
+      "side": "no",
+      "count": 19,
+      "ordered_count": 19,
+      "limit_price_cents": 55,
+      "cost_cents": 1045,
+      "fee_cents": 33,
+      "initial_fill_count": 19,
+      "status": "live",
+      "kalshi_order_id": "c2212e0b-39a9-4262-bdbd-30d1a8088c95",
+      "client_order_id": "8881ba03-91d6-47d5-8639-354e9396c5b1",
+      "forecast_prob": 0.62,
+      "reasoning": "Buying NO on Minnesota >12.5: the public market/odds have Minnesota priced as a very large favorite, but the matchup model I checked makes the game far closer (about MIN by 4) despite Toronto injuries. Toronto is missing key guards, so I am not taking the full model number, but at 55c I still make the NO side around 62% with meaningful cushion after fees.",
+      "placed_at": "2026-07-28T22:06:58+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "11572cb9-7d9b-4426-ac06-336957103e90",
+      "agent": "gemini",
+      "week": "2026-07-28",
+      "ticker": "KXWNBAGAME-26JUL28INDSEA-IND",
+      "market_title": "Indiana vs Seattle women's Pro Basketball game: Indiana wins?",
+      "side": "yes",
+      "count": 15,
+      "ordered_count": 15,
+      "limit_price_cents": 72,
+      "cost_cents": 1080,
+      "fee_cents": 22,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "2cbe416e-8005-446f-b011-6f244c15e64d",
+      "client_order_id": "2a949ef3-2aef-4a75-804e-d914056dec69",
+      "forecast_prob": 0.77,
+      "reasoning": "The Indiana Fever are heavy -8.5 point favorites against the struggling Seattle Storm. Market moneyline translates to roughly a 77% implied probability, providing a solid edge at 72c.",
+      "placed_at": "2026-07-28T22:07:56+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -3149,6 +3195,18 @@
       "week": "2026-07-27",
       "text": "I attempted to place a second bet on the Mets to reach the $20 floor, but it was rejected because my first bet of 20 contracts at 55c (plus fee) cost $11.35, leaving me with only $9.47 in allowed deployed capital under the 50% equity cap ($20.82). Since the hard limit requires a minimum stake of $10 per market, I am structurally blocked from deploying any more capital this session.",
       "at": "2026-07-27T22:12:05+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-28",
+      "text": "Deployed $10.80 on the Indiana Fever to win at 72c (implied probability 77% per moneyline). I intended to deploy another $10+ on the New York Liberty, but the trading fee from my first bet reduced my equity to $41.42, which lowered my 50% max-deployment cap to $20.71. Having deployed $10.80, I only had $9.91 of deployment space left, which is below the strict $10.00 minimum stake per market. Therefore, I am physically blocked by the risk limits from placing a second bet to reach the $20 floor this week.",
+      "at": "2026-07-28T22:08:14+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-28",
+      "text": "I genuinely cannot find any bet I expect to win after fees that fits within my remaining risk limits. I attempted to place additional bets, but my remaining deployment capacity under the 50% equity cap is $9.91, which is below the minimum $10.00 stake per market enforced by the exchange. I am hard-blocked by the risk limits from reaching the $20 total deployment floor for this session.",
+      "at": "2026-07-28T22:08:36+00:00"
     }
   ],
   "history": [
@@ -3326,6 +3384,14 @@
         "claude": 8687,
         "gpt": 6089,
         "gemini": 4129
+      }
+    },
+    {
+      "date": "2026-07-28",
+      "balances": {
+        "claude": 8687,
+        "gpt": 6106,
+        "gemini": 4142
       }
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T22:09:14+00:00",
+  "generated_at": "2026-07-28T22:05:23+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,43 +34,35 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 6089,
-      "cash_cents": 3940,
+      "equity_cents": 6106,
+      "cash_cents": 5061,
       "initial_cents": 10000,
-      "pnl_cents": -3911,
-      "roi_pct": -39.11,
+      "pnl_cents": -3894,
+      "roi_pct": -38.94,
       "settled_bets": 15,
       "wins": 7,
       "win_rate": 0.467,
       "staked_cents": 15469,
       "returned_cents": 12100,
-      "fees_paid_cents": 542,
-      "fill_rate": 0.555,
+      "fees_paid_cents": 525,
+      "fill_rate": 0.534,
       "brier": 0.2363,
       "usage": {
-        "input_tokens": 5305255,
-        "output_tokens": 82814,
+        "input_tokens": 5656216,
+        "output_tokens": 86465,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 17227776,
-        "cost_cents": 3792,
-        "sessions": 29
+        "cache_read_tokens": 17721984,
+        "cost_cents": 4003,
+        "sessions": 30
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26JUL28CONNWSH-WSH",
-          "title": "Connecticut vs Washington women's Pro Basketball game: Washington wins?",
-          "side": "yes",
-          "contracts": 17,
-          "cost_cents": 1054,
-          "forecast_prob": 0.675
-        },
-        {
-          "ticker": "KXWNBAGAME-26JUL28INDSEA-SEA",
-          "title": "Indiana vs Seattle women's Pro Basketball game: Seattle wins?",
+          "ticker": "KXWNBASPREAD-26JUL28TORMIN-MIN13",
+          "title": "Minnesota wins the game by over 12.5 points?",
           "side": "no",
-          "contracts": 15,
-          "cost_cents": 1095,
-          "forecast_prob": 0.78
+          "contracts": 19,
+          "cost_cents": 1045,
+          "forecast_prob": 0.62
         }
       ]
     },
@@ -78,35 +70,35 @@
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 4129,
-      "cash_cents": 3029,
+      "equity_cents": 4142,
+      "cash_cents": 3062,
       "initial_cents": 10000,
-      "pnl_cents": -5871,
-      "roi_pct": -58.71,
+      "pnl_cents": -5858,
+      "roi_pct": -58.58,
       "settled_bets": 13,
       "wins": 5,
       "win_rate": 0.385,
       "staked_cents": 17895,
       "returned_cents": 12600,
-      "fees_paid_cents": 576,
-      "fill_rate": 0.376,
+      "fees_paid_cents": 563,
+      "fill_rate": 0.368,
       "brier": 0.2756,
       "usage": {
-        "input_tokens": 4750696,
-        "output_tokens": 122335,
+        "input_tokens": 5015779,
+        "output_tokens": 128841,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 15781418,
-        "cost_cents": 1415,
-        "sessions": 28
+        "cache_read_tokens": 16365437,
+        "cost_cents": 1488,
+        "sessions": 29
       },
       "open_positions": [
         {
-          "ticker": "KXMLBGAME-26JUL271910CLECIN-CIN",
-          "title": "Cleveland vs Cincinnati Winner?",
+          "ticker": "KXWNBAGAME-26JUL28INDSEA-IND",
+          "title": "Indiana vs Seattle women's Pro Basketball game: Indiana wins?",
           "side": "yes",
-          "contracts": 20,
-          "cost_cents": 1100,
-          "forecast_prob": 0.63
+          "contracts": 15,
+          "cost_cents": 1080,
+          "forecast_prob": 0.77
         }
       ]
     }
@@ -287,23 +279,65 @@
         "gpt": 6089,
         "gemini": 4129
       }
+    },
+    {
+      "date": "2026-07-28",
+      "balances": {
+        "claude": 8687,
+        "gpt": 6106,
+        "gemini": 4142
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-28",
+      "ticker": "KXWNBAGAME-26JUL28INDSEA-IND",
+      "title": "Indiana vs Seattle women's Pro Basketball game: Indiana wins?",
+      "side": "yes",
+      "contracts": 15,
+      "price_cents": 72,
+      "cost_cents": 1080,
+      "fee_cents": 22,
+      "forecast_prob": 0.77,
+      "reasoning": "The Indiana Fever are heavy -8.5 point favorites against the struggling Seattle Storm. Market moneyline translates to roughly a 77% implied probability, providing a solid edge at 72c.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-28T22:07:56+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-28",
+      "ticker": "KXWNBASPREAD-26JUL28TORMIN-MIN13",
+      "title": "Minnesota wins the game by over 12.5 points?",
+      "side": "no",
+      "contracts": 19,
+      "price_cents": 55,
+      "cost_cents": 1045,
+      "fee_cents": 33,
+      "forecast_prob": 0.62,
+      "reasoning": "Buying NO on Minnesota >12.5: the public market/odds have Minnesota priced as a very large favorite, but the matchup model I checked makes the game far closer (about MIN by 4) despite Toronto injuries. Toronto is missing key guards, so I am not taking the full model number, but at 55c I still make the NO side around 62% with meaningful cushion after fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-28T22:06:58+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-27",
       "ticker": "KXMLBGAME-26JUL271910CLECIN-CIN",
       "title": "Cleveland vs Cincinnati Winner?",
       "side": "yes",
-      "contracts": 20,
+      "contracts": 0,
       "price_cents": 55,
-      "cost_cents": 1100,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.63,
       "reasoning": "The Reds have a distinct starting pitching advantage with Chase Burns (2.42 ERA) over Cleveland's struggling Slade Cecconi. The Guardians offense has also been anemic recently, being swept and scoring just 3 runs over the weekend.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-27T22:11:43+00:00"
     },
@@ -313,14 +347,14 @@
       "ticker": "KXWNBAGAME-26JUL28INDSEA-SEA",
       "title": "Indiana vs Seattle women's Pro Basketball game: Seattle wins?",
       "side": "no",
-      "contracts": 15,
+      "contracts": 0,
       "price_cents": 73,
-      "cost_cents": 1095,
-      "fee_cents": 21,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.78,
       "reasoning": "This is effectively Indiana to win. Indiana is priced around -350 in the broader market with Caitlin Clark probable, while Seattle remains without Ezi Magbegor and has lost five straight including a recent head-to-head at Indiana. I estimate Indiana/NO on Seattle at 78%, so 73c is a positive-edge limit after fees.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-27T22:10:41+00:00"
     },
@@ -330,14 +364,14 @@
       "ticker": "KXWNBAGAME-26JUL28CONNWSH-WSH",
       "title": "Connecticut vs Washington women's Pro Basketball game: Washington wins?",
       "side": "yes",
-      "contracts": 17,
+      "contracts": 0,
       "price_cents": 62,
-      "cost_cents": 1054,
-      "fee_cents": 29,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.675,
       "reasoning": "Washington is a home favorite in the consensus market around -212, and Connecticut\u2019s frontcourt availability is compromised with Aaliyah Edwards out and Brittney Griner day-to-day. I make Washington about 67.5% before late status updates, so a 62c limit leaves several cents of edge after fees.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-27T22:10:36+00:00"
     },
@@ -2315,6 +2349,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-28",
+      "text": "I genuinely cannot find any bet I expect to win after fees that fits within my remaining risk limits. I attempted to place additional bets, but my remaining deployment capacity under the 50% equity cap is $9.91, which is below the minimum $10.00 stake per market enforced by the exchange. I am hard-blocked by the risk limits from reaching the $20 total deployment floor for this session.",
+      "at": "2026-07-28T22:08:36+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-28",
+      "text": "Deployed $10.80 on the Indiana Fever to win at 72c (implied probability 77% per moneyline). I intended to deploy another $10+ on the New York Liberty, but the trading fee from my first bet reduced my equity to $41.42, which lowered my 50% max-deployment cap to $20.71. Having deployed $10.80, I only had $9.91 of deployment space left, which is below the strict $10.00 minimum stake per market. Therefore, I am physically blocked by the risk limits from placing a second bet to reach the $20 floor this week.",
+      "at": "2026-07-28T22:08:14+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-27",

@@ -1,0 +1,83 @@
+{
+  "session": "2026-07-28",
+  "generated_at": "2026-07-28T22:05:23+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "78c6bc3e-5546-40bd-9222-9083a3a93dc3",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL28CONNWSH-WSH",
+      "action": "refund_unfilled",
+      "refund_cents": 1083,
+      "filled": 0
+    },
+    {
+      "order": "139f5392-3368-4558-ad7b-4c71a4d0cb67",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL28INDSEA-SEA",
+      "action": "refund_unfilled",
+      "refund_cents": 1116,
+      "filled": 0
+    },
+    {
+      "order": "380383c3-5697-45b9-9c45-bebbf799ca7a",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL271910CLECIN-CIN",
+      "action": "refund_unfilled",
+      "refund_cents": 1135,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 9,
+      "final_text": "(stopped early: session cost ceiling reached)",
+      "error": null,
+      "usage": {
+        "input_tokens": 350961,
+        "output_tokens": 3651,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 494208
+      },
+      "cost_cents": 211,
+      "forced_followup": false,
+      "bets_placed": 1
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 13,
+      "final_text": "I have recorded a final note explaining the situation. Because my remaining deployment capacity under the strict 50% equity cap is $9.91\u2014which is below the exchange's minimum bet size of $10.00\u2014every additional order is automatically rejected by the risk engine. I am physically blocked from reaching the $20 floor on this run, so I must end the session short of the target.",
+      "error": null,
+      "usage": {
+        "input_tokens": 265083,
+        "output_tokens": 6506,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 584019
+      },
+      "cost_cents": 73,
+      "forced_followup": true,
+      "bets_placed": 1
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdVDd7Q9v1cjSBb4uZ9VP'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    }
+  ]
+}
