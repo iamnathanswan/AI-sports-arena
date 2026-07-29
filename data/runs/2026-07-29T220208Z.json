@@ -1,0 +1,77 @@
+{
+  "session": "2026-07-29",
+  "generated_at": "2026-07-29T22:02:08+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "20d4dae5-19c7-4916-9dc1-6bc22609ffab",
+      "agent": "gpt",
+      "ticker": "KXWNBASPREAD-26JUL28TORMIN-MIN13",
+      "action": "settled",
+      "result": "won",
+      "contracts": 19,
+      "payout_cents": 1900,
+      "kalshi_order_id": "c2212e0b-39a9-4262-bdbd-30d1a8088c95"
+    },
+    {
+      "order": "11572cb9-7d9b-4426-ac06-336957103e90",
+      "agent": "gemini",
+      "ticker": "KXWNBAGAME-26JUL28INDSEA-IND",
+      "action": "refund_unfilled",
+      "refund_cents": 1102,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 13,
+      "final_text": "I have recorded a note explaining the situation. \n\nMy current deployed capital is $14.93. The hard risk limits cap my total deployed capital at $20.82 (50% of my equity). This leaves me with exactly $5.89 of available room before hitting the cap. Because the system enforces a strict $10.00 minimum stake per bet, any additional bet I attempt to place is rejected for either being too small (under $10) or too large (pushing my total deployed over $20.82). \n\nIt is mathematically impossible for me to place another bet to reach the $20 target without violating the exchange's hard risk limits, so I must end the session.",
+      "error": null,
+      "usage": {
+        "input_tokens": 251715,
+        "output_tokens": 5440,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 539118
+      },
+      "cost_cents": 68,
+      "forced_followup": true,
+      "bets_placed": 1
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdX73p51QtUzT2cqJTAYE'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 12,
+      "final_text": "(stopped early: session cost ceiling reached)",
+      "error": null,
+      "usage": {
+        "input_tokens": 175040,
+        "output_tokens": 3343,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 1114240
+      },
+      "cost_cents": 153,
+      "forced_followup": false,
+      "bets_placed": 2
+    }
+  ]
+}

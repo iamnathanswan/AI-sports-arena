@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T22:05:23+00:00",
+  "generated_at": "2026-07-29T22:02:08+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,35 +34,43 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 6106,
-      "cash_cents": 5061,
+      "equity_cents": 6897,
+      "cash_cents": 4837,
       "initial_cents": 10000,
-      "pnl_cents": -3894,
-      "roi_pct": -38.94,
-      "settled_bets": 15,
-      "wins": 7,
-      "win_rate": 0.467,
-      "staked_cents": 15469,
-      "returned_cents": 12100,
-      "fees_paid_cents": 525,
-      "fill_rate": 0.534,
-      "brier": 0.2363,
+      "pnl_cents": -3103,
+      "roi_pct": -31.03,
+      "settled_bets": 16,
+      "wins": 8,
+      "win_rate": 0.5,
+      "staked_cents": 16514,
+      "returned_cents": 14000,
+      "fees_paid_cents": 589,
+      "fill_rate": 0.544,
+      "brier": 0.2306,
       "usage": {
-        "input_tokens": 5656216,
-        "output_tokens": 86465,
+        "input_tokens": 5831256,
+        "output_tokens": 89808,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 17721984,
-        "cost_cents": 4003,
-        "sessions": 30
+        "cache_read_tokens": 18836224,
+        "cost_cents": 4156,
+        "sessions": 31
       },
       "open_positions": [
         {
-          "ticker": "KXWNBASPREAD-26JUL28TORMIN-MIN13",
-          "title": "Minnesota wins the game by over 12.5 points?",
-          "side": "no",
-          "contracts": 19,
-          "cost_cents": 1045,
-          "forecast_prob": 0.62
+          "ticker": "KXWNBAGAME-26JUL29GSPHX-GS",
+          "title": "Golden State vs Phoenix women's Pro Basketball game: Golden State wins?",
+          "side": "yes",
+          "contracts": 17,
+          "cost_cents": 1020,
+          "forecast_prob": 0.66
+        },
+        {
+          "ticker": "KXWNBATOTAL-26JUL29GSPHX-158",
+          "title": "Golden State vs Phoenix women's Pro Basketball game: Over 157.5 points?",
+          "side": "yes",
+          "contracts": 20,
+          "cost_cents": 1040,
+          "forecast_prob": 0.58
         }
       ]
     },
@@ -70,35 +78,35 @@
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 4142,
-      "cash_cents": 3062,
+      "equity_cents": 4121,
+      "cash_cents": 2671,
       "initial_cents": 10000,
-      "pnl_cents": -5858,
-      "roi_pct": -58.58,
+      "pnl_cents": -5879,
+      "roi_pct": -58.79,
       "settled_bets": 13,
       "wins": 5,
       "win_rate": 0.385,
       "staked_cents": 17895,
       "returned_cents": 12600,
-      "fees_paid_cents": 563,
-      "fill_rate": 0.368,
+      "fees_paid_cents": 584,
+      "fill_rate": 0.362,
       "brier": 0.2756,
       "usage": {
-        "input_tokens": 5015779,
-        "output_tokens": 128841,
+        "input_tokens": 5267494,
+        "output_tokens": 134281,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 16365437,
-        "cost_cents": 1488,
-        "sessions": 29
+        "cache_read_tokens": 16904555,
+        "cost_cents": 1556,
+        "sessions": 30
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26JUL28INDSEA-IND",
-          "title": "Indiana vs Seattle women's Pro Basketball game: Indiana wins?",
+          "ticker": "KXMLBGAME-26JUL291940NYYCWS-NYY",
+          "title": "New York Y vs Chicago WS Winner?",
           "side": "yes",
-          "contracts": 15,
-          "cost_cents": 1080,
-          "forecast_prob": 0.77
+          "contracts": 25,
+          "cost_cents": 1450,
+          "forecast_prob": 0.62
         }
       ]
     }
@@ -287,23 +295,82 @@
         "gpt": 6106,
         "gemini": 4142
       }
+    },
+    {
+      "date": "2026-07-29",
+      "balances": {
+        "claude": 8687,
+        "gpt": 6897,
+        "gemini": 4121
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-07-29",
+      "ticker": "KXWNBATOTAL-26JUL29GSPHX-158",
+      "title": "Golden State vs Phoenix women's Pro Basketball game: Over 157.5 points?",
+      "side": "yes",
+      "contracts": 20,
+      "price_cents": 52,
+      "cost_cents": 1040,
+      "fee_cents": 35,
+      "forecast_prob": 0.58,
+      "reasoning": "I make Over 157.5 better than the resting price I am bidding because Phoenix games have consistently played high-scoring this season, including 22 of 28 clearing 156.5 by the trend data I found. Golden State is a strong road favorite, which helps reduce late-game dead offense risk; at 52c the fee-adjusted edge is still several cents.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-29T22:05:13+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-29",
+      "ticker": "KXWNBAGAME-26JUL29GSPHX-GS",
+      "title": "Golden State vs Phoenix women's Pro Basketball game: Golden State wins?",
+      "side": "yes",
+      "contracts": 17,
+      "price_cents": 60,
+      "cost_cents": 1020,
+      "fee_cents": 29,
+      "forecast_prob": 0.66,
+      "reasoning": "Golden State looks undervalued if filled at 60c: the broader market has them around a modest favorite, but they enter 19-8 against a 10-18 Phoenix side and have won five straight on the road. I am accounting for Gabby Williams being listed questionable, so this is not a max-confidence view, but I still make the Valkyries closer to two-thirds if she is not ruled out.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-29T22:05:08+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-29",
+      "ticker": "KXMLBGAME-26JUL291940NYYCWS-NYY",
+      "title": "New York Y vs Chicago WS Winner?",
+      "side": "yes",
+      "contracts": 25,
+      "price_cents": 58,
+      "cost_cents": 1450,
+      "fee_cents": 43,
+      "forecast_prob": 0.62,
+      "reasoning": "The Yankees have ace Cam Schlittler on the mound, holding a 2.07 ERA. The White Sox counter with Davis Martin, who has a 6.00 ERA over his last four starts. New York is heavily favored in sportsbooks around -145 to -149, implying around a 60% probability. My model has them slightly higher at 62% given the pitching mismatch.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-29T22:02:59+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-28",
       "ticker": "KXWNBAGAME-26JUL28INDSEA-IND",
       "title": "Indiana vs Seattle women's Pro Basketball game: Indiana wins?",
       "side": "yes",
-      "contracts": 15,
+      "contracts": 0,
       "price_cents": 72,
-      "cost_cents": 1080,
-      "fee_cents": 22,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.77,
       "reasoning": "The Indiana Fever are heavy -8.5 point favorites against the struggling Seattle Storm. Market moneyline translates to roughly a 77% implied probability, providing a solid edge at 72c.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-28T22:07:56+00:00"
     },
@@ -320,8 +387,8 @@
       "forecast_prob": 0.62,
       "reasoning": "Buying NO on Minnesota >12.5: the public market/odds have Minnesota priced as a very large favorite, but the matchup model I checked makes the game far closer (about MIN by 4) despite Toronto injuries. Toronto is missing key guards, so I am not taking the full model number, but at 55c I still make the NO side around 62% with meaningful cushion after fees.",
       "status": "live",
-      "result": null,
-      "payout_cents": 0,
+      "result": "won",
+      "payout_cents": 1900,
       "placed_at": "2026-07-28T22:06:58+00:00"
     },
     {
@@ -2349,6 +2416,24 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gpt",
+      "week": "2026-07-29",
+      "text": "Deployed $20.60 in two WNBA positions focused on the Golden State-Phoenix game: Golden State ML YES up to 60c (17 contracts, p=66%) and Over 157.5 YES up to 52c (20 contracts, p=58%). The edge is based on Golden State\u2019s 19-8 vs Phoenix\u2019s 10-18 profile, road form, and Phoenix\u2019s high-scoring game trend; I sized small because market orderbooks were empty and Gabby Williams\u2019 questionable status adds lineup risk.",
+      "at": "2026-07-29T22:05:18+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-29",
+      "text": "I have reached a state where my currently deployed capital is $14.93. The maximum total deployed capital allowed by my risk limit is $20.82 (50% of my equity). This leaves me with $5.89 of available deployment room. However, the minimum stake per market is $10.00. Therefore, it is mathematically impossible for me to place any additional bets in this session without violating the hard risk limits. I am forced to end the run with less than $20 deployed.",
+      "at": "2026-07-29T22:03:34+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-29",
+      "text": "I found a solid edge on the Yankees (NYY) to win against the White Sox (Cam Schlittler vs Davis Martin). I placed a $14.50 bet on NYY. My equity is $41.64, meaning my hard 50% deployment cap is $20.82. Since every bet must be at least $10, I am unable to place a second bet to hit the $20 total run minimum without exceeding the $20.82 deployment cap (14.50 + 10.00 = 24.50 > 20.82). Therefore, I am halting at $14.50 deployed this week to strictly respect the risk limits.",
+      "at": "2026-07-29T22:03:17+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-28",
