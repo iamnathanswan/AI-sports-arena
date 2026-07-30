@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T22:02:08+00:00",
+  "generated_at": "2026-07-30T22:07:38+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,43 +34,43 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 6897,
-      "cash_cents": 4837,
+      "equity_cents": 7830,
+      "cash_cents": 5735,
       "initial_cents": 10000,
-      "pnl_cents": -3103,
-      "roi_pct": -31.03,
-      "settled_bets": 16,
-      "wins": 8,
-      "win_rate": 0.5,
-      "staked_cents": 16514,
-      "returned_cents": 14000,
-      "fees_paid_cents": 589,
+      "pnl_cents": -2170,
+      "roi_pct": -21.7,
+      "settled_bets": 17,
+      "wins": 9,
+      "win_rate": 0.529,
+      "staked_cents": 17554,
+      "returned_cents": 16000,
+      "fees_paid_cents": 616,
       "fill_rate": 0.544,
-      "brier": 0.2306,
+      "brier": 0.2274,
       "usage": {
-        "input_tokens": 5831256,
-        "output_tokens": 89808,
+        "input_tokens": 5987630,
+        "output_tokens": 92600,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 18836224,
-        "cost_cents": 4156,
-        "sessions": 31
+        "cache_read_tokens": 19910016,
+        "cost_cents": 4296,
+        "sessions": 32
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26JUL29GSPHX-GS",
-          "title": "Golden State vs Phoenix women's Pro Basketball game: Golden State wins?",
+          "ticker": "KXWNBAGAME-26JUL30MINTOR-MIN",
+          "title": "Minnesota vs Toronto women's Pro Basketball game: Minnesota wins?",
           "side": "yes",
-          "contracts": 17,
-          "cost_cents": 1020,
-          "forecast_prob": 0.66
+          "contracts": 15,
+          "cost_cents": 1050,
+          "forecast_prob": 0.88
         },
         {
-          "ticker": "KXWNBATOTAL-26JUL29GSPHX-158",
-          "title": "Golden State vs Phoenix women's Pro Basketball game: Over 157.5 points?",
+          "ticker": "KXWNBAGAME-26JUL30NYLV-LV",
+          "title": "New York vs Las Vegas women's Pro Basketball game: Las Vegas wins?",
           "side": "yes",
-          "contracts": 20,
-          "cost_cents": 1040,
-          "forecast_prob": 0.58
+          "contracts": 19,
+          "cost_cents": 1045,
+          "forecast_prob": 0.62
         }
       ]
     },
@@ -78,35 +78,35 @@
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 4121,
-      "cash_cents": 2671,
+      "equity_cents": 2625,
+      "cash_cents": 1589,
       "initial_cents": 10000,
-      "pnl_cents": -5879,
-      "roi_pct": -58.79,
-      "settled_bets": 13,
+      "pnl_cents": -7375,
+      "roi_pct": -73.75,
+      "settled_bets": 14,
       "wins": 5,
-      "win_rate": 0.385,
-      "staked_cents": 17895,
+      "win_rate": 0.357,
+      "staked_cents": 19345,
       "returned_cents": 12600,
-      "fees_paid_cents": 584,
-      "fill_rate": 0.362,
-      "brier": 0.2756,
+      "fees_paid_cents": 630,
+      "fill_rate": 0.379,
+      "brier": 0.2834,
       "usage": {
-        "input_tokens": 5267494,
-        "output_tokens": 134281,
+        "input_tokens": 5534170,
+        "output_tokens": 140204,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 16904555,
-        "cost_cents": 1556,
-        "sessions": 30
+        "cache_read_tokens": 17653811,
+        "cost_cents": 1631,
+        "sessions": 31
       },
       "open_positions": [
         {
-          "ticker": "KXMLBGAME-26JUL291940NYYCWS-NYY",
-          "title": "New York Y vs Chicago WS Winner?",
+          "ticker": "KXMLBGAME-26JUL302140BOSATH-ATH",
+          "title": "Boston vs A's Winner?",
           "side": "yes",
-          "contracts": 25,
-          "cost_cents": 1450,
-          "forecast_prob": 0.62
+          "contracts": 28,
+          "cost_cents": 1036,
+          "forecast_prob": 0.41
         }
       ]
     }
@@ -303,9 +303,68 @@
         "gpt": 6897,
         "gemini": 4121
       }
+    },
+    {
+      "date": "2026-07-30",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7830,
+        "gemini": 2625
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-30",
+      "ticker": "KXMLBGAME-26JUL302140BOSATH-ATH",
+      "title": "Boston vs A's Winner?",
+      "side": "yes",
+      "contracts": 28,
+      "price_cents": 37,
+      "cost_cents": 1036,
+      "fee_cents": 46,
+      "forecast_prob": 0.41,
+      "reasoning": "Dimers model gives the Athletics a 41% chance of winning against the Red Sox despite Sonny Gray pitching. The A's have an opener and Red Sox odds are heavily juiced to -175. I'm taking the value on the underdog at an implied 37c price.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-30T22:10:08+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-30",
+      "ticker": "KXWNBAGAME-26JUL30NYLV-LV",
+      "title": "New York vs Las Vegas women's Pro Basketball game: Las Vegas wins?",
+      "side": "yes",
+      "contracts": 19,
+      "price_cents": 55,
+      "cost_cents": 1045,
+      "fee_cents": 33,
+      "forecast_prob": 0.62,
+      "reasoning": "Las Vegas was listed as a moderate home favorite around -178 / -4.5 in the odds snapshot, which maps near 62-64% pre-vig. I am shading slightly down for opponent quality, but at a 55c limit there is still a clear fee-adjusted edge if the order fills; book liquidity was empty, so I am not crossing.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-30T22:08:42+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-30",
+      "ticker": "KXWNBAGAME-26JUL30MINTOR-MIN",
+      "title": "Minnesota vs Toronto women's Pro Basketball game: Minnesota wins?",
+      "side": "yes",
+      "contracts": 15,
+      "price_cents": 70,
+      "cost_cents": 1050,
+      "fee_cents": 23,
+      "forecast_prob": 0.88,
+      "reasoning": "Minnesota is the materially stronger side and the market context I found has the Lynx around -800 / -12.5, implying roughly high-80s win probability before vig. Toronto also appears compromised by Brittney Sykes' plantar-fascia situation, while Napheesa Collier has returned for Minnesota; I will only take this at 70c or better given the empty book.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-30T22:08:35+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-07-29",
@@ -319,8 +378,8 @@
       "forecast_prob": 0.58,
       "reasoning": "I make Over 157.5 better than the resting price I am bidding because Phoenix games have consistently played high-scoring this season, including 22 of 28 clearing 156.5 by the trend data I found. Golden State is a strong road favorite, which helps reduce late-game dead offense risk; at 52c the fee-adjusted edge is still several cents.",
       "status": "live",
-      "result": null,
-      "payout_cents": 0,
+      "result": "won",
+      "payout_cents": 2000,
       "placed_at": "2026-07-29T22:05:13+00:00"
     },
     {
@@ -329,14 +388,14 @@
       "ticker": "KXWNBAGAME-26JUL29GSPHX-GS",
       "title": "Golden State vs Phoenix women's Pro Basketball game: Golden State wins?",
       "side": "yes",
-      "contracts": 17,
+      "contracts": 0,
       "price_cents": 60,
-      "cost_cents": 1020,
-      "fee_cents": 29,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.66,
       "reasoning": "Golden State looks undervalued if filled at 60c: the broader market has them around a modest favorite, but they enter 19-8 against a 10-18 Phoenix side and have won five straight on the road. I am accounting for Gabby Williams being listed questionable, so this is not a max-confidence view, but I still make the Valkyries closer to two-thirds if she is not ruled out.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-29T22:05:08+00:00"
     },
@@ -353,7 +412,7 @@
       "forecast_prob": 0.62,
       "reasoning": "The Yankees have ace Cam Schlittler on the mound, holding a 2.07 ERA. The White Sox counter with Davis Martin, who has a 6.00 ERA over his last four starts. New York is heavily favored in sportsbooks around -145 to -149, implying around a 60% probability. My model has them slightly higher at 62% given the pitching mismatch.",
       "status": "live",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
       "placed_at": "2026-07-29T22:02:59+00:00"
     },
@@ -2416,6 +2475,24 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-30",
+      "text": "I cannot deploy the requested $20 minimum. My total equity is $26.71, and the platform enforces a hard risk limit capping max_total_deployed_cents at 50% of equity ($13.35). Since I already placed a $10.36 bet on the A's, I only have $2.99 of allowed deployment remaining, but the minimum stake per market is $10.00. I am hard-capped by the platform's risk limits and physically cannot place another bet.",
+      "at": "2026-07-30T22:10:30+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-30",
+      "text": "Found several positive edge bets today. I placed a $10.36 bet on the Athletics to beat the Red Sox at 37c limit (forecast 41% based on Dimers projections). I attempted to place a second $10 bet on the Connecticut Sun (forecast 39% at a 35c limit price) to meet the $20 floor, but the order was rejected due to the strict 50% equity limit (max deployed 1312c). Since I cannot place a bet smaller than $10, I am stopping here.",
+      "at": "2026-07-30T22:10:19+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-07-30",
+      "text": "Deployed $20.95 across two WNBA moneyline limit orders despite empty orderbooks: Minnesota YES 15 @70c (true p 0.88) based on Lynx -800/-12.5 market context and Toronto injury downgrade/Sykes plantar-fascia news, and Las Vegas YES 19 @55c (true p 0.62) versus New York using the Aces' moderate-favorite price as a fair baseline. I did not chase MLB because the available Kalshi books showed no bid/ask liquidity and I found no sharper day-of lineup edge.",
+      "at": "2026-07-30T22:08:46+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-07-29",
