@@ -1,0 +1,85 @@
+{
+  "session": "2026-07-31",
+  "generated_at": "2026-07-31T22:06:56+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "0653bf2d-9bee-49f9-8a33-74278e11ef69",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL30MINTOR-MIN",
+      "action": "refund_unfilled",
+      "refund_cents": 1073,
+      "filled": 0
+    },
+    {
+      "order": "4da647db-1695-4b3c-9064-0ca9c8675044",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26JUL30NYLV-LV",
+      "action": "refund_unfilled",
+      "refund_cents": 1078,
+      "filled": 0
+    },
+    {
+      "order": "1b9ef3be-8709-4292-a5fc-238789c7625b",
+      "agent": "gemini",
+      "ticker": "KXMLBGAME-26JUL302140BOSATH-ATH",
+      "action": "settled",
+      "result": "lost",
+      "contracts": 28,
+      "payout_cents": 0,
+      "kalshi_order_id": "67482011-4cba-4cff-8e3b-b27793cc6d01"
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 8,
+      "final_text": "(stopped early: session cost ceiling reached)",
+      "error": null,
+      "usage": {
+        "input_tokens": 337676,
+        "output_tokens": 2573,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 271232
+      },
+      "cost_cents": 190,
+      "forced_followup": false,
+      "bets_placed": 1
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 5,
+      "final_text": "I cannot deploy the $20 minimum or even a single bet because the hard limits on my bankroll make it mathematically impossible. \n\nMy current equity is $15.89. The hard limit restricts my total deployed capital to a maximum of 50% of my equity, which is $7.94. However, the minimum stake required per market is $10.00. I am blocked from placing any valid orders since the minimum stake for a single bet exceeds my total allowed deployed limit. I have recorded a note to this effect.",
+      "error": null,
+      "usage": {
+        "input_tokens": 14316,
+        "output_tokens": 1176,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 4,
+      "forced_followup": true,
+      "bets_placed": 0
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cdau2L5rEuNnu71GfDJVD'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    }
+  ]
+}

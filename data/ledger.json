@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 5735,
+      "cash_cents": 6751,
       "usage": {
-        "input_tokens": 5987630,
-        "output_tokens": 92600,
+        "input_tokens": 6325306,
+        "output_tokens": 95173,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 19910016,
-        "cost_cents": 4296,
-        "sessions": 32
+        "cache_read_tokens": 20181248,
+        "cost_cents": 4486,
+        "sessions": 33
       }
     },
     "gemini": {
       "initial_cents": 10000,
       "cash_cents": 1589,
       "usage": {
-        "input_tokens": 5534170,
-        "output_tokens": 140204,
+        "input_tokens": 5548486,
+        "output_tokens": 141380,
         "cache_write_tokens": 0,
         "cache_read_tokens": 17653811,
-        "cost_cents": 1631,
-        "sessions": 31
+        "cost_cents": 1635,
+        "sessions": 32
       }
     }
   },
@@ -2826,11 +2826,11 @@
       "ticker": "KXWNBAGAME-26JUL30MINTOR-MIN",
       "market_title": "Minnesota vs Toronto women's Pro Basketball game: Minnesota wins?",
       "side": "yes",
-      "count": 15,
+      "count": 0,
       "ordered_count": 15,
       "limit_price_cents": 70,
-      "cost_cents": 1050,
-      "fee_cents": 23,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "fcd470bc-de40-4e07-8d1c-19b7adba0df8",
@@ -2838,9 +2838,9 @@
       "forecast_prob": 0.88,
       "reasoning": "Minnesota is the materially stronger side and the market context I found has the Lynx around -800 / -12.5, implying roughly high-80s win probability before vig. Toronto also appears compromised by Brittney Sykes' plantar-fascia situation, while Napheesa Collier has returned for Minnesota; I will only take this at 70c or better given the empty book.",
       "placed_at": "2026-07-30T22:08:35+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-31T22:06:56+00:00"
     },
     {
       "id": "4da647db-1695-4b3c-9064-0ca9c8675044",
@@ -2849,11 +2849,11 @@
       "ticker": "KXWNBAGAME-26JUL30NYLV-LV",
       "market_title": "New York vs Las Vegas women's Pro Basketball game: Las Vegas wins?",
       "side": "yes",
-      "count": 19,
+      "count": 0,
       "ordered_count": 19,
       "limit_price_cents": 55,
-      "cost_cents": 1045,
-      "fee_cents": 33,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "8197d9ff-84e7-467a-af4c-23c9a7c6ed52",
@@ -2861,9 +2861,9 @@
       "forecast_prob": 0.62,
       "reasoning": "Las Vegas was listed as a moderate home favorite around -178 / -4.5 in the odds snapshot, which maps near 62-64% pre-vig. I am shading slightly down for opponent quality, but at a 55c limit there is still a clear fee-adjusted edge if the order fills; book liquidity was empty, so I am not crossing.",
       "placed_at": "2026-07-30T22:08:42+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-07-31T22:06:57+00:00"
     },
     {
       "id": "1b9ef3be-8709-4292-a5fc-238789c7625b",
@@ -2884,6 +2884,29 @@
       "forecast_prob": 0.41,
       "reasoning": "Dimers model gives the Athletics a 41% chance of winning against the Red Sox despite Sonny Gray pitching. The A's have an opener and Red Sox odds are heavily juiced to -175. I'm taking the value on the underdog at an implied 37c price.",
       "placed_at": "2026-07-30T22:10:08+00:00",
+      "result": "lost",
+      "payout_cents": 0,
+      "settled_at": "2026-07-31T22:06:57+00:00"
+    },
+    {
+      "id": "dd2837de-1451-4d77-a475-0a9e2c955e68",
+      "agent": "gpt",
+      "week": "2026-07-31",
+      "ticker": "KXWNBAGAME-26JUL31DALWSH-DAL",
+      "market_title": "Dallas vs Washington women's Pro Basketball game: Dallas wins?",
+      "side": "yes",
+      "count": 20,
+      "ordered_count": 20,
+      "limit_price_cents": 55,
+      "cost_cents": 1100,
+      "fee_cents": 35,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "befc8cb6-a35a-4ed1-8985-402330564ef6",
+      "client_order_id": "01d96956-ae9e-469c-ab52-631b651fa24c",
+      "forecast_prob": 0.6,
+      "reasoning": "Dallas is showing as a small road favorite in the wider betting market (around -150 / -3.5), which maps closer to 59-60% after vig than a coin flip. With this Kalshi book empty, I am only willing to provide liquidity at 55c, leaving several cents of edge after fees rather than chasing a fill.",
+      "placed_at": "2026-07-31T22:07:52+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -3381,6 +3404,18 @@
       "week": "2026-07-30",
       "text": "I cannot deploy the requested $20 minimum. My total equity is $26.71, and the platform enforces a hard risk limit capping max_total_deployed_cents at 50% of equity ($13.35). Since I already placed a $10.36 bet on the A's, I only have $2.99 of allowed deployment remaining, but the minimum stake per market is $10.00. I am hard-capped by the platform's risk limits and physically cannot place another bet.",
       "at": "2026-07-30T22:10:30+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-31",
+      "text": "I am unable to place any bets this session. My total equity is $15.89, which restricts my maximum total deployed limit (50% of equity) to $7.94. However, the minimum stake per market is $10.00. As a result, I cannot meet the minimum stake requirements for a single bet, let alone the $20 total floor. Sitting out this week until bankroll rules allow smaller bets or my balance increases.",
+      "at": "2026-07-31T22:08:07+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-31",
+      "text": "I am unable to deploy the $20 minimum or even place a single bet because my bankroll limits make it impossible. My total bankroll is $15.89. The hard limit for max total deployed is 50% of equity, which equals $7.94. However, the hard limit for the minimum stake per market is $10.00. I cannot place any bets without violating the hard limits.",
+      "at": "2026-07-31T22:08:15+00:00"
     }
   ],
   "history": [
@@ -3582,6 +3617,14 @@
         "claude": 8687,
         "gpt": 7830,
         "gemini": 2625
+      }
+    },
+    {
+      "date": "2026-07-31",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7851,
+        "gemini": 1589
       }
     }
   ]

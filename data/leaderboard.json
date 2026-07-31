@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T22:07:38+00:00",
+  "generated_at": "2026-07-31T22:06:56+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,43 +34,35 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 7830,
-      "cash_cents": 5735,
+      "equity_cents": 7851,
+      "cash_cents": 6751,
       "initial_cents": 10000,
-      "pnl_cents": -2170,
-      "roi_pct": -21.7,
+      "pnl_cents": -2149,
+      "roi_pct": -21.49,
       "settled_bets": 17,
       "wins": 9,
       "win_rate": 0.529,
       "staked_cents": 17554,
       "returned_cents": 16000,
-      "fees_paid_cents": 616,
-      "fill_rate": 0.544,
+      "fees_paid_cents": 595,
+      "fill_rate": 0.524,
       "brier": 0.2274,
       "usage": {
-        "input_tokens": 5987630,
-        "output_tokens": 92600,
+        "input_tokens": 6325306,
+        "output_tokens": 95173,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 19910016,
-        "cost_cents": 4296,
-        "sessions": 32
+        "cache_read_tokens": 20181248,
+        "cost_cents": 4486,
+        "sessions": 33
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26JUL30MINTOR-MIN",
-          "title": "Minnesota vs Toronto women's Pro Basketball game: Minnesota wins?",
+          "ticker": "KXWNBAGAME-26JUL31DALWSH-DAL",
+          "title": "Dallas vs Washington women's Pro Basketball game: Dallas wins?",
           "side": "yes",
-          "contracts": 15,
-          "cost_cents": 1050,
-          "forecast_prob": 0.88
-        },
-        {
-          "ticker": "KXWNBAGAME-26JUL30NYLV-LV",
-          "title": "New York vs Las Vegas women's Pro Basketball game: Las Vegas wins?",
-          "side": "yes",
-          "contracts": 19,
-          "cost_cents": 1045,
-          "forecast_prob": 0.62
+          "contracts": 20,
+          "cost_cents": 1100,
+          "forecast_prob": 0.6
         }
       ]
     },
@@ -78,37 +70,28 @@
       "name": "gemini",
       "provider": "google",
       "model": "gemini-3.1-pro-preview",
-      "equity_cents": 2625,
+      "equity_cents": 1589,
       "cash_cents": 1589,
       "initial_cents": 10000,
-      "pnl_cents": -7375,
-      "roi_pct": -73.75,
-      "settled_bets": 14,
+      "pnl_cents": -8411,
+      "roi_pct": -84.11,
+      "settled_bets": 15,
       "wins": 5,
-      "win_rate": 0.357,
-      "staked_cents": 19345,
+      "win_rate": 0.333,
+      "staked_cents": 20381,
       "returned_cents": 12600,
       "fees_paid_cents": 630,
-      "fill_rate": 0.379,
-      "brier": 0.2834,
+      "fill_rate": 0.397,
+      "brier": 0.2757,
       "usage": {
-        "input_tokens": 5534170,
-        "output_tokens": 140204,
+        "input_tokens": 5548486,
+        "output_tokens": 141380,
         "cache_write_tokens": 0,
         "cache_read_tokens": 17653811,
-        "cost_cents": 1631,
-        "sessions": 31
+        "cost_cents": 1635,
+        "sessions": 32
       },
-      "open_positions": [
-        {
-          "ticker": "KXMLBGAME-26JUL302140BOSATH-ATH",
-          "title": "Boston vs A's Winner?",
-          "side": "yes",
-          "contracts": 28,
-          "cost_cents": 1036,
-          "forecast_prob": 0.41
-        }
-      ]
+      "open_positions": []
     }
   ],
   "history": [
@@ -311,9 +294,34 @@
         "gpt": 7830,
         "gemini": 2625
       }
+    },
+    {
+      "date": "2026-07-31",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7851,
+        "gemini": 1589
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-07-31",
+      "ticker": "KXWNBAGAME-26JUL31DALWSH-DAL",
+      "title": "Dallas vs Washington women's Pro Basketball game: Dallas wins?",
+      "side": "yes",
+      "contracts": 20,
+      "price_cents": 55,
+      "cost_cents": 1100,
+      "fee_cents": 35,
+      "forecast_prob": 0.6,
+      "reasoning": "Dallas is showing as a small road favorite in the wider betting market (around -150 / -3.5), which maps closer to 59-60% after vig than a coin flip. With this Kalshi book empty, I am only willing to provide liquidity at 55c, leaving several cents of edge after fees rather than chasing a fill.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-07-31T22:07:52+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-30",
@@ -327,7 +335,7 @@
       "forecast_prob": 0.41,
       "reasoning": "Dimers model gives the Athletics a 41% chance of winning against the Red Sox despite Sonny Gray pitching. The A's have an opener and Red Sox odds are heavily juiced to -175. I'm taking the value on the underdog at an implied 37c price.",
       "status": "live",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
       "placed_at": "2026-07-30T22:10:08+00:00"
     },
@@ -337,14 +345,14 @@
       "ticker": "KXWNBAGAME-26JUL30NYLV-LV",
       "title": "New York vs Las Vegas women's Pro Basketball game: Las Vegas wins?",
       "side": "yes",
-      "contracts": 19,
+      "contracts": 0,
       "price_cents": 55,
-      "cost_cents": 1045,
-      "fee_cents": 33,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.62,
       "reasoning": "Las Vegas was listed as a moderate home favorite around -178 / -4.5 in the odds snapshot, which maps near 62-64% pre-vig. I am shading slightly down for opponent quality, but at a 55c limit there is still a clear fee-adjusted edge if the order fills; book liquidity was empty, so I am not crossing.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-30T22:08:42+00:00"
     },
@@ -354,14 +362,14 @@
       "ticker": "KXWNBAGAME-26JUL30MINTOR-MIN",
       "title": "Minnesota vs Toronto women's Pro Basketball game: Minnesota wins?",
       "side": "yes",
-      "contracts": 15,
+      "contracts": 0,
       "price_cents": 70,
-      "cost_cents": 1050,
-      "fee_cents": 23,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.88,
       "reasoning": "Minnesota is the materially stronger side and the market context I found has the Lynx around -800 / -12.5, implying roughly high-80s win probability before vig. Toronto also appears compromised by Brittney Sykes' plantar-fascia situation, while Napheesa Collier has returned for Minnesota; I will only take this at 70c or better given the empty book.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-30T22:08:35+00:00"
     },
@@ -2475,6 +2483,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-07-31",
+      "text": "I am unable to deploy the $20 minimum or even place a single bet because my bankroll limits make it impossible. My total bankroll is $15.89. The hard limit for max total deployed is 50% of equity, which equals $7.94. However, the hard limit for the minimum stake per market is $10.00. I cannot place any bets without violating the hard limits.",
+      "at": "2026-07-31T22:08:15+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-07-31",
+      "text": "I am unable to place any bets this session. My total equity is $15.89, which restricts my maximum total deployed limit (50% of equity) to $7.94. However, the minimum stake per market is $10.00. As a result, I cannot meet the minimum stake requirements for a single bet, let alone the $20 total floor. Sitting out this week until bankroll rules allow smaller bets or my balance increases.",
+      "at": "2026-07-31T22:08:07+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-30",
