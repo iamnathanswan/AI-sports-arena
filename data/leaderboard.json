@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T22:06:56+00:00",
+  "generated_at": "2026-08-01T21:57:50+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,35 +34,35 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 7851,
-      "cash_cents": 6751,
+      "equity_cents": 7860,
+      "cash_cents": 6820,
       "initial_cents": 10000,
-      "pnl_cents": -2149,
-      "roi_pct": -21.49,
+      "pnl_cents": -2140,
+      "roi_pct": -21.4,
       "settled_bets": 17,
       "wins": 9,
       "win_rate": 0.529,
       "staked_cents": 17554,
       "returned_cents": 16000,
-      "fees_paid_cents": 595,
-      "fill_rate": 0.524,
+      "fees_paid_cents": 586,
+      "fill_rate": 0.513,
       "brier": 0.2274,
       "usage": {
-        "input_tokens": 6325306,
-        "output_tokens": 95173,
+        "input_tokens": 6586523,
+        "output_tokens": 97923,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 20181248,
-        "cost_cents": 4486,
-        "sessions": 33
+        "cache_read_tokens": 20549120,
+        "cost_cents": 4643,
+        "sessions": 34
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26JUL31DALWSH-DAL",
-          "title": "Dallas vs Washington women's Pro Basketball game: Dallas wins?",
+          "ticker": "KXWNBAGAME-26AUG02INDMIN-MIN",
+          "title": "Indiana vs Minnesota women's Pro Basketball game: Minnesota wins?",
           "side": "yes",
-          "contracts": 20,
-          "cost_cents": 1100,
-          "forecast_prob": 0.6
+          "contracts": 16,
+          "cost_cents": 1040,
+          "forecast_prob": 0.71
         }
       ]
     },
@@ -84,12 +84,12 @@
       "fill_rate": 0.397,
       "brier": 0.2757,
       "usage": {
-        "input_tokens": 5548486,
-        "output_tokens": 141380,
+        "input_tokens": 5562862,
+        "output_tokens": 142728,
         "cache_write_tokens": 0,
         "cache_read_tokens": 17653811,
-        "cost_cents": 1635,
-        "sessions": 32
+        "cost_cents": 1639,
+        "sessions": 33
       },
       "open_positions": []
     }
@@ -302,23 +302,48 @@
         "gpt": 7851,
         "gemini": 1589
       }
+    },
+    {
+      "date": "2026-08-01",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7860,
+        "gemini": 1589
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-01",
+      "ticker": "KXWNBAGAME-26AUG02INDMIN-MIN",
+      "title": "Indiana vs Minnesota women's Pro Basketball game: Minnesota wins?",
+      "side": "yes",
+      "contracts": 16,
+      "price_cents": 65,
+      "cost_cents": 1040,
+      "fee_cents": 26,
+      "forecast_prob": 0.71,
+      "reasoning": "Minnesota is 24-6 and at home against a strong but less dominant 19-10 Indiana team; independent prediction-market pricing I found was around 68% for Lynx. With Target Center home court and no adverse Lynx news uncovered, my fair is about 71%, so a 65c bid clears fees with several cents of edge.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-01T21:59:29+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-07-31",
       "ticker": "KXWNBAGAME-26JUL31DALWSH-DAL",
       "title": "Dallas vs Washington women's Pro Basketball game: Dallas wins?",
       "side": "yes",
-      "contracts": 20,
+      "contracts": 0,
       "price_cents": 55,
-      "cost_cents": 1100,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.6,
       "reasoning": "Dallas is showing as a small road favorite in the wider betting market (around -150 / -3.5), which maps closer to 59-60% after vig than a coin flip. With this Kalshi book empty, I am only willing to provide liquidity at 55c, leaving several cents of edge after fees rather than chasing a fill.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-07-31T22:07:52+00:00"
     },
@@ -2483,6 +2508,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-08-01",
+      "text": "I genuinely cannot place any bets, nor meet the $20 deployment minimum, because my total bankroll is only $15.89. Furthermore, my maximum total deployed limit is capped at $7.94 (50% of equity), which is strictly less than the minimum allowed stake per market ($10.00). Due to these hard constraints, it is mathematically impossible for me to place any orders at this time.",
+      "at": "2026-08-01T21:58:07+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-01",
+      "text": "My current bankroll equity is $15.89, and my maximum total deployed limit is $7.94 (50% of equity). However, the minimum stake per market is $10.00. Because the maximum allowed deployment is lower than the minimum allowed stake, I cannot place any bets during this session due to hard risk limits. Sitting this run out.",
+      "at": "2026-08-01T21:57:58+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-07-31",
