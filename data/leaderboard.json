@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T21:57:50+00:00",
+  "generated_at": "2026-08-02T21:57:52+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,35 +34,43 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 7860,
-      "cash_cents": 6820,
+      "equity_cents": 7837,
+      "cash_cents": 5747,
       "initial_cents": 10000,
-      "pnl_cents": -2140,
-      "roi_pct": -21.4,
+      "pnl_cents": -2163,
+      "roi_pct": -21.63,
       "settled_bets": 17,
       "wins": 9,
       "win_rate": 0.529,
       "staked_cents": 17554,
       "returned_cents": 16000,
-      "fees_paid_cents": 586,
-      "fill_rate": 0.513,
+      "fees_paid_cents": 609,
+      "fill_rate": 0.505,
       "brier": 0.2274,
       "usage": {
-        "input_tokens": 6586523,
-        "output_tokens": 97923,
+        "input_tokens": 6722135,
+        "output_tokens": 100777,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 20549120,
-        "cost_cents": 4643,
-        "sessions": 34
+        "cache_read_tokens": 21244288,
+        "cost_cents": 4754,
+        "sessions": 35
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26AUG02INDMIN-MIN",
-          "title": "Indiana vs Minnesota women's Pro Basketball game: Minnesota wins?",
+          "ticker": "KXWNBAGAME-26AUG02TORGS-GS",
+          "title": "Toronto vs Golden State women's Pro Basketball game: Golden State wins?",
           "side": "yes",
           "contracts": 16,
           "cost_cents": 1040,
-          "forecast_prob": 0.71
+          "forecast_prob": 0.76
+        },
+        {
+          "ticker": "KXWNBAGAME-26AUG02CONNDAL-DAL",
+          "title": "Connecticut vs Dallas women's Pro Basketball game: Dallas wins?",
+          "side": "yes",
+          "contracts": 15,
+          "cost_cents": 1050,
+          "forecast_prob": 0.82
         }
       ]
     },
@@ -84,12 +92,12 @@
       "fill_rate": 0.397,
       "brier": 0.2757,
       "usage": {
-        "input_tokens": 5562862,
-        "output_tokens": 142728,
+        "input_tokens": 5640399,
+        "output_tokens": 143710,
         "cache_write_tokens": 0,
         "cache_read_tokens": 17653811,
-        "cost_cents": 1639,
-        "sessions": 33
+        "cost_cents": 1656,
+        "sessions": 34
       },
       "open_positions": []
     }
@@ -310,23 +318,65 @@
         "gpt": 7860,
         "gemini": 1589
       }
+    },
+    {
+      "date": "2026-08-02",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7837,
+        "gemini": 1589
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-02",
+      "ticker": "KXWNBAGAME-26AUG02TORGS-GS",
+      "title": "Toronto vs Golden State women's Pro Basketball game: Golden State wins?",
+      "side": "yes",
+      "contracts": 16,
+      "price_cents": 65,
+      "cost_cents": 1040,
+      "fee_cents": 26,
+      "forecast_prob": 0.76,
+      "reasoning": "Golden State is 19-9 and at home against a 10-18 Toronto team, with a prior head-to-head win in Toronto and no opposing news I found that offsets the standings/home-court gap. I make GS around 76% on a neutral/rest-normal read, so I will only buy if available at 65c or better given the empty book.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-02T21:58:55+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-02",
+      "ticker": "KXWNBAGAME-26AUG02CONNDAL-DAL",
+      "title": "Connecticut vs Dallas women's Pro Basketball game: Dallas wins?",
+      "side": "yes",
+      "contracts": 15,
+      "price_cents": 70,
+      "cost_cents": 1050,
+      "fee_cents": 23,
+      "forecast_prob": 0.82,
+      "reasoning": "Dallas is 18-11 and hosting a Connecticut team at 7-22, a very large quality gap on the current table. With no late injury downgrade found for Dallas, my fair price is about 82%, so a 70c-or-better maker bid leaves room after fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-02T21:58:55+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-08-01",
       "ticker": "KXWNBAGAME-26AUG02INDMIN-MIN",
       "title": "Indiana vs Minnesota women's Pro Basketball game: Minnesota wins?",
       "side": "yes",
-      "contracts": 16,
+      "contracts": 0,
       "price_cents": 65,
-      "cost_cents": 1040,
-      "fee_cents": 26,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.71,
       "reasoning": "Minnesota is 24-6 and at home against a strong but less dominant 19-10 Indiana team; independent prediction-market pricing I found was around 68% for Lynx. With Target Center home court and no adverse Lynx news uncovered, my fair is about 71%, so a 65c bid clears fees with several cents of edge.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-01T21:59:29+00:00"
     },
@@ -2508,6 +2558,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-08-02",
+      "text": "Sitting out this session because max total deployed limit ($7.94) is lower than the minimum stake per market ($10.00), preventing any valid bets from being placed.",
+      "at": "2026-08-02T21:59:11+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-02",
+      "text": "Deployed $20.90 in WNBA maker bids: Golden State YES vs Toronto at 65c (16 contracts, 76% fair) and Dallas YES vs Connecticut at 70c (15 contracts, 82% fair). Both books were empty, so I avoided crossing wide/nonexistent liquidity and only posted prices with several cents of modeled edge; thesis is current standings/home-court gap with no late adverse injury news found.",
+      "at": "2026-08-02T21:58:59+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-08-01",

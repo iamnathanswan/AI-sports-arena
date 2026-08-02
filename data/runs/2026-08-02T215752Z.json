@@ -1,0 +1,67 @@
+{
+  "session": "2026-08-02",
+  "generated_at": "2026-08-02T21:57:52+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "816ad09d-fdb8-4303-895f-100ae1a18110",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26AUG02INDMIN-MIN",
+      "action": "refund_unfilled",
+      "refund_cents": 1066,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cdefr3KWeW1jhhKMwGemp'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 10,
+      "final_text": "Weekly betting session started and completed.\n\n**Bankroll before bets:** $78.86 cash / $78.86 equity  \n**Open positions before session:** none  \n**Total deployed:** **$20.90** across 2 WNBA markets\n\n### Bets placed\n\n1. **Golden State Valkyries YES vs Toronto Tempo**\n   - **Market:** `KXWNBAGAME-26AUG02TORGS-GS`\n   - **Contracts:** 16\n   - **Limit:** 65c\n   - **Stake:** $10.40\n   - **Forecast:** 76%\n   - **Rationale:** Golden State\u2019s stronger record and home court make them materially better than the listed price I was willing to post. I found no late adverse injury news that would offset the gap.\n\n2. **Dallas Wings YES vs Connecticut Sun**\n   - **Market:** `KXWNBAGAME-26AUG02CONNDAL-DAL`\n   - **Contracts:** 15\n   - **Limit:** 70c\n   - **Stake:** $10.50\n   - **Forecast:** 82%\n   - **Rationale:** Dallas has a large quality and home-court edge over Connecticut on the current table. With no late Dallas downgrade found, I priced Dallas meaningfully above 70c.\n\n**Note:** Both order books were empty, so I used maker-style limit orders rather than chasing nonexistent liquidity.",
+      "error": null,
+      "usage": {
+        "input_tokens": 135612,
+        "output_tokens": 2854,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 695168
+      },
+      "cost_cents": 111,
+      "forced_followup": false,
+      "bets_placed": 2
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 5,
+      "final_text": "I have confirmed that because my current equity constraint limits my maximum additional deployment to $7.94\u2014which is below the hard $10.00 minimum stake per market\u2014no valid bets can be placed. I have therefore recorded a note for passing on the session and will end the run now.",
+      "error": null,
+      "usage": {
+        "input_tokens": 77537,
+        "output_tokens": 982,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 17,
+      "forced_followup": true,
+      "bets_placed": 0
+    }
+  ]
+}
