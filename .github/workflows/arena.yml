@@ -1,9 +1,7 @@
 name: AI Sports Arena — weekly run
 
 on:
-  schedule:
-    # Mondays 16:00 UTC: settle last week's bets, then place this week's.
-    - cron: "0 16 * * 1"
+  # Weekly auto-run disabled — the arena only runs when triggered manually.
   workflow_dispatch: {}
   push:
     branches: [main]
