@@ -1,0 +1,74 @@
+{
+  "session": "2026-08-03",
+  "generated_at": "2026-08-03T22:10:07+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "52203bfe-808b-4d20-a512-0bca34f02119",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26AUG02TORGS-GS",
+      "action": "refund_unfilled",
+      "refund_cents": 1066,
+      "filled": 0
+    },
+    {
+      "order": "823cd428-e735-4659-99d7-cb841e7825d7",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26AUG02CONNDAL-DAL",
+      "action": "refund_unfilled",
+      "refund_cents": 1073,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 9,
+      "final_text": "Weekly session started and bets placed.\n\n**Bankroll before bets:** $78.86 cash/equity, no open positions.  \n**Total deployed:** $30.28 stake across 3 WNBA markets.\n\n### Bets placed\n\n1. **Las Vegas Aces YES vs Atlanta Dream**\n   - **24 contracts @ 42c**\n   - **Stake:** $10.08\n   - **Forecast:** 47.0%\n   - Rationale: Current WNBA betting board had Las Vegas around **+115** and Atlanta around **-117**, with the spread tightened near **Aces +1.5**, suggesting a near pick\u2019em and possible move toward Las Vegas. \ue200cite\ue202turn3view0\ue201\n\n2. **Phoenix Mercury YES vs Chicago Sky**\n   - **22 contracts @ 46c**\n   - **Stake:** $10.12\n   - **Forecast:** 50.5%\n   - Rationale: Phoenix/Chicago was priced essentially as a coin flip, with Phoenix **-108** and Chicago **-105** on the moneyline. At 46c, Phoenix had enough cushion after fees. \ue200cite\ue202turn3view0\ue201\n\n3. **New York Liberty YES vs Seattle Storm**\n   - **14 contracts @ 72c**\n   - **Stake:** $10.08\n   - **Forecast:** 76.5%\n   - Rationale: New York was a heavy home favorite, listed around **-370** with Seattle **+290** and Liberty **-8.5**. My fair was mid-70s, so 72c cleared fee-adjusted edge. \ue200cite\ue202turn3view0\ue201\n\n**Note:** Kalshi orderbooks appeared empty on the checked markets, so I used disciplined below-fair limit prices instead of crossing nonexistent/unknown liquidity. Unfilled portions may refund at settlement.",
+      "error": null,
+      "usage": {
+        "input_tokens": 156530,
+        "output_tokens": 3262,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 576000
+      },
+      "cost_cents": 117,
+      "forced_followup": false,
+      "bets_placed": 3
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 0,
+      "final_text": "",
+      "error": "ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdganLSif8Tk6X51mgZ5F'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    }
+  ]
+}
