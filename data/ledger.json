@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 4758,
+      "cash_cents": 5771,
       "usage": {
-        "input_tokens": 6878665,
-        "output_tokens": 104039,
+        "input_tokens": 7012138,
+        "output_tokens": 107005,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 21820288,
-        "cost_cents": 4871,
-        "sessions": 36
+        "cache_read_tokens": 22726144,
+        "cost_cents": 4992,
+        "sessions": 37
       }
     },
     "gemini": {
       "initial_cents": 10000,
       "cash_cents": 1589,
       "usage": {
-        "input_tokens": 5640399,
-        "output_tokens": 143710,
+        "input_tokens": 5864747,
+        "output_tokens": 145136,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 17653811,
-        "cost_cents": 1656,
-        "sessions": 34
+        "cache_read_tokens": 17784199,
+        "cost_cents": 1705,
+        "sessions": 35
       }
     }
   },
@@ -2987,11 +2987,11 @@
       "ticker": "KXWNBAGAME-26AUG03LVATL-LV",
       "market_title": "Las Vegas vs Atlanta women's Pro Basketball game: Las Vegas wins?",
       "side": "yes",
-      "count": 24,
+      "count": 0,
       "ordered_count": 24,
       "limit_price_cents": 42,
-      "cost_cents": 1008,
-      "fee_cents": 41,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "54c26299-0837-4f1e-9faa-0511f1517fa8",
@@ -2999,9 +2999,9 @@
       "forecast_prob": 0.47,
       "reasoning": "Aces are priced as a small road underdog in the current WNBA market (+115/-117, spread tightened to +1.5), but the line move toward Las Vegas suggests the opener overstated Atlanta's edge. I make LV about 47% given a near pick'em spread and no clear injury downgrade found, so 42c is enough cushion after fees.",
       "placed_at": "2026-08-03T22:11:17+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-08-04T22:13:35+00:00"
     },
     {
       "id": "057c2e9a-c337-49aa-affc-d9840a299559",
@@ -3010,11 +3010,11 @@
       "ticker": "KXWNBAGAME-26AUG03PHXCHI-PHX",
       "market_title": "Phoenix vs Chicago women's Pro Basketball game: Phoenix wins?",
       "side": "yes",
-      "count": 22,
+      "count": 0,
       "ordered_count": 22,
       "limit_price_cents": 46,
-      "cost_cents": 1012,
-      "fee_cents": 39,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "53f7e572-01af-4387-9d77-dedd45b032cc",
@@ -3022,9 +3022,9 @@
       "forecast_prob": 0.505,
       "reasoning": "Phoenix/Chicago is essentially a coin flip on the board (Mercury -108, Sky -105), and Chicago's season profile is still sub-.500 while Phoenix's offense grades comparably. I make Phoenix 50.5%; at 46c there is a few cents of cushion after the fee.",
       "placed_at": "2026-08-03T22:11:17+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-08-04T22:13:35+00:00"
     },
     {
       "id": "846e0e7b-94ed-4fe0-8b25-601697036963",
@@ -3033,11 +3033,11 @@
       "ticker": "KXWNBAGAME-26AUG03SEANY-NY",
       "market_title": "Seattle vs New York women's Pro Basketball game: New York wins?",
       "side": "yes",
-      "count": 14,
+      "count": 0,
       "ordered_count": 14,
       "limit_price_cents": 72,
-      "cost_cents": 1008,
-      "fee_cents": 20,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "df03885c-c029-4a59-bcea-517b96267e76",
@@ -3045,6 +3045,52 @@
       "forecast_prob": 0.765,
       "reasoning": "New York is a heavy home favorite versus Seattle (market around -370/+290, -8.5), which normalizes to roughly a mid-70s win probability. I make NY 76.5% at home; 72c leaves positive edge without overpaying for the favorite.",
       "placed_at": "2026-08-03T22:11:18+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-08-04T22:13:36+00:00"
+    },
+    {
+      "id": "514c83c8-3083-4e6b-9239-4c4c1058381d",
+      "agent": "gpt",
+      "week": "2026-08-04",
+      "ticker": "KXWNBAGAME-26AUG04TORGS-GS",
+      "market_title": "Toronto vs Golden State women's Pro Basketball game: Golden State wins?",
+      "side": "yes",
+      "count": 13,
+      "ordered_count": 13,
+      "limit_price_cents": 80,
+      "cost_cents": 1040,
+      "fee_cents": 15,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "64a3268c-8d7b-4a7f-b693-6d302d50c869",
+      "client_order_id": "05dbd741-90bb-469c-9ee5-5cddb777bcd8",
+      "forecast_prob": 0.865,
+      "reasoning": "Golden State is a strong home favorite: external books are around -590 ML and the Valkyries already beat Toronto 96-79 two days ago and 83-75 on July 8. Toronto appears healthier than earlier in the season, but the matchup has consistently tilted toward Golden State's physicality and turnover pressure, so my fair is mid/high-80s rather than 80c.",
+      "placed_at": "2026-08-04T22:15:38+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "533ee4fd-efc8-4250-a756-dd8cc0245b24",
+      "agent": "gpt",
+      "week": "2026-08-04",
+      "ticker": "KXWNBASPREAD-26AUG04TORGS-GS10",
+      "market_title": "Golden State wins the game by over 9.5 points?",
+      "side": "yes",
+      "count": 19,
+      "ordered_count": 19,
+      "limit_price_cents": 54,
+      "cost_cents": 1026,
+      "fee_cents": 34,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "1a42386c-5bb1-401a-8167-45cd07f71840",
+      "client_order_id": "7a406786-8489-4b43-ab00-b8eb0f77c549",
+      "forecast_prob": 0.59,
+      "reasoning": "The market spread around WNBA books is Golden State -11.5, so needing the Valkyries to win by 10+ is worth above a coin flip. Golden State won the last two meetings by 17 and 8, and tonight is at Chase Center with Toronto still a bottom-tier road/expansion side despite a lighter injury report. I make GS by 10+ about 59%.",
+      "placed_at": "2026-08-04T22:15:39+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -3590,6 +3636,24 @@
       "week": "2026-08-03",
       "text": "I am skipping betting today because my max_total_deployed limit ($7.94) is strictly less than the min_stake_per_market limit ($10.00), making it impossible to place any valid bets.",
       "at": "2026-08-03T22:12:21+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-04",
+      "text": "Unable to place bets this week. The bankroll's max total deployment limit (50% of 1589 cents = 794 cents) is lower than the minimum allowed stake per market (1000 cents), preventing any valid orders from being submitted.",
+      "at": "2026-08-04T22:13:52+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-04",
+      "text": "I am unable to place any bets because my max_total_deployed_cents limit is $7.94, which is lower than the minimum allowed stake per market of $10.00. This structural limit prevents any orders from passing the system checks.",
+      "at": "2026-08-04T22:14:04+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-04",
+      "text": "Deployed $20.66 across the Aug. 4 Toronto Tempo @ Golden State Valkyries WNBA game: GS moneyline YES 13 @ 80c (p=86.5%) and GS -9.5 YES 19 @ 54c (p=59%). Edge thesis: external market is around GS -590 / -11.5, Golden State is at home, beat Toronto by 17 two days ago and by 8 on July 8, and the matchup reports point to Valkyries physicality/turnover pressure bothering Toronto; liquidity was empty on the displayed Kalshi books, so these are disciplined limits rather than crossed orders.",
+      "at": "2026-08-04T22:15:42+00:00"
     }
   ],
   "history": [
@@ -3822,6 +3886,14 @@
       "balances": {
         "claude": 8687,
         "gpt": 7786,
+        "gemini": 1589
+      }
+    },
+    {
+      "date": "2026-08-04",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7837,
         "gemini": 1589
       }
     }
