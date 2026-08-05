@@ -1,0 +1,75 @@
+{
+  "session": "2026-08-05",
+  "generated_at": "2026-08-05T22:13:18+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "514c83c8-3083-4e6b-9239-4c4c1058381d",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26AUG04TORGS-GS",
+      "action": "refund_unfilled",
+      "refund_cents": 1055,
+      "filled": 0
+    },
+    {
+      "order": "533ee4fd-efc8-4250-a756-dd8cc0245b24",
+      "agent": "gpt",
+      "ticker": "KXWNBASPREAD-26AUG04TORGS-GS10",
+      "action": "refund_unfilled",
+      "refund_cents": 1060,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdkNT7CaEzw2pFqQxY9QJ'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 12,
+      "final_text": "Weekly betting session started and completed.\n\n**Bankroll before session:** $78.86 cash / $78.86 equity  \n**Open positions before session:** none  \n**Total deployed:** **$30.92** across three WNBA limit orders\n\nBets placed:\n\n1. **Phoenix YES vs Atlanta**\n   - 34 contracts @ 30c\n   - Stake: $10.20\n   - Forecast: 35%\n   - Rationale: plus-money underdog only at a discounted price; Kelsey Plum active chatter gives Phoenix enough upside to justify 30c.\n\n2. **Dallas YES vs Washington**\n   - 20 contracts @ 52c\n   - Stake: $10.40\n   - Forecast: 57%\n   - Rationale: Dallas has the better record/team profile, and I make them above the low-50s despite being on the road.\n\n3. **Los Angeles YES vs Chicago**\n   - 24 contracts @ 43c\n   - Stake: $10.32\n   - Forecast: 47%\n   - Rationale: Chicago gets home-court respect, but Los Angeles\u2019 better record makes the Sparks closer to a live coin-flip than a low-40s dog.\n\nOrderbooks were empty, so these are patient positive-edge limits rather than forced market crosses.",
+      "error": null,
+      "usage": {
+        "input_tokens": 152623,
+        "output_tokens": 3263,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 1120384
+      },
+      "cost_cents": 142,
+      "forced_followup": false,
+      "bets_placed": 3
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 10,
+      "final_text": "I have noted this and finished my process for this week.",
+      "error": null,
+      "usage": {
+        "input_tokens": 231536,
+        "output_tokens": 2079,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 334117
+      },
+      "cost_cents": 55,
+      "forced_followup": true,
+      "bets_placed": 0
+    }
+  ]
+}

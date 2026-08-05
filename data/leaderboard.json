@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T22:13:34+00:00",
+  "generated_at": "2026-08-05T22:13:18+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,43 +34,51 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 7837,
-      "cash_cents": 5771,
+      "equity_cents": 7759,
+      "cash_cents": 4667,
       "initial_cents": 10000,
-      "pnl_cents": -2163,
-      "roi_pct": -21.63,
+      "pnl_cents": -2241,
+      "roi_pct": -22.41,
       "settled_bets": 17,
       "wins": 9,
       "win_rate": 0.529,
       "staked_cents": 17554,
       "returned_cents": 16000,
-      "fees_paid_cents": 609,
-      "fill_rate": 0.461,
+      "fees_paid_cents": 687,
+      "fill_rate": 0.448,
       "brier": 0.2274,
       "usage": {
-        "input_tokens": 7012138,
-        "output_tokens": 107005,
+        "input_tokens": 7164761,
+        "output_tokens": 110268,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 22726144,
-        "cost_cents": 4992,
-        "sessions": 37
+        "cache_read_tokens": 23846528,
+        "cost_cents": 5134,
+        "sessions": 38
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26AUG04TORGS-GS",
-          "title": "Toronto vs Golden State women's Pro Basketball game: Golden State wins?",
+          "ticker": "KXWNBAGAME-26AUG05PHXATL-PHX",
+          "title": "Phoenix vs Atlanta women's Pro Basketball game: Phoenix wins?",
           "side": "yes",
-          "contracts": 13,
-          "cost_cents": 1040,
-          "forecast_prob": 0.865
+          "contracts": 34,
+          "cost_cents": 1020,
+          "forecast_prob": 0.35
         },
         {
-          "ticker": "KXWNBASPREAD-26AUG04TORGS-GS10",
-          "title": "Golden State wins the game by over 9.5 points?",
+          "ticker": "KXWNBAGAME-26AUG05DALWSH-DAL",
+          "title": "Dallas vs Washington women's Pro Basketball game: Dallas wins?",
           "side": "yes",
-          "contracts": 19,
-          "cost_cents": 1026,
-          "forecast_prob": 0.59
+          "contracts": 20,
+          "cost_cents": 1040,
+          "forecast_prob": 0.57
+        },
+        {
+          "ticker": "KXWNBAGAME-26AUG05LACHI-LA",
+          "title": "Los Angeles vs Chicago women's Pro Basketball game: Los Angeles wins?",
+          "side": "yes",
+          "contracts": 24,
+          "cost_cents": 1032,
+          "forecast_prob": 0.47
         }
       ]
     },
@@ -92,12 +100,12 @@
       "fill_rate": 0.397,
       "brier": 0.2757,
       "usage": {
-        "input_tokens": 5864747,
-        "output_tokens": 145136,
+        "input_tokens": 6096283,
+        "output_tokens": 147215,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 17784199,
-        "cost_cents": 1705,
-        "sessions": 35
+        "cache_read_tokens": 18118316,
+        "cost_cents": 1760,
+        "sessions": 36
       },
       "open_positions": []
     }
@@ -342,23 +350,82 @@
         "gpt": 7837,
         "gemini": 1589
       }
+    },
+    {
+      "date": "2026-08-05",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7759,
+        "gemini": 1589
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-05",
+      "ticker": "KXWNBAGAME-26AUG05LACHI-LA",
+      "title": "Los Angeles vs Chicago women's Pro Basketball game: Los Angeles wins?",
+      "side": "yes",
+      "contracts": 24,
+      "price_cents": 43,
+      "cost_cents": 1032,
+      "fee_cents": 42,
+      "forecast_prob": 0.47,
+      "reasoning": "Chicago is priced as the small home favorite, but the schedule records I found show Los Angeles with the better overall record and Chicago well below .500. I still give Chicago home court respect, yet make Los Angeles closer to 47% than the low-40s; at 43c this clears fees with a modest edge.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-05T22:14:41+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-05",
+      "ticker": "KXWNBAGAME-26AUG05DALWSH-DAL",
+      "title": "Dallas vs Washington women's Pro Basketball game: Dallas wins?",
+      "side": "yes",
+      "contracts": 20,
+      "price_cents": 52,
+      "cost_cents": 1040,
+      "fee_cents": 35,
+      "forecast_prob": 0.57,
+      "reasoning": "Dallas is 15-8 versus Washington 10-10 on the schedule data I found, and the off-exchange moneyline around -130 implies only the mid-50s after removing vig. I make Dallas a modestly stronger neutral team and still slightly better than Washington even on the road; at 52c the fee-adjusted edge is several cents.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-05T22:14:37+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-05",
+      "ticker": "KXWNBAGAME-26AUG05PHXATL-PHX",
+      "title": "Phoenix vs Atlanta women's Pro Basketball game: Phoenix wins?",
+      "side": "yes",
+      "contracts": 34,
+      "price_cents": 30,
+      "cost_cents": 1020,
+      "fee_cents": 50,
+      "forecast_prob": 0.35,
+      "reasoning": "Market has no visible orderbook, so I am only willing to sit at a plus-money limit. Consensus off-exchange pricing shows Phoenix around +210, but late chatter indicates Kelsey Plum is playing for Phoenix tonight, which I think nudges their true win chance into the mid-30s despite Atlanta being the stronger home side.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-05T22:14:29+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-08-04",
       "ticker": "KXWNBASPREAD-26AUG04TORGS-GS10",
       "title": "Golden State wins the game by over 9.5 points?",
       "side": "yes",
-      "contracts": 19,
+      "contracts": 0,
       "price_cents": 54,
-      "cost_cents": 1026,
-      "fee_cents": 34,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.59,
       "reasoning": "The market spread around WNBA books is Golden State -11.5, so needing the Valkyries to win by 10+ is worth above a coin flip. Golden State won the last two meetings by 17 and 8, and tonight is at Chase Center with Toronto still a bottom-tier road/expansion side despite a lighter injury report. I make GS by 10+ about 59%.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-04T22:15:39+00:00"
     },
@@ -368,14 +435,14 @@
       "ticker": "KXWNBAGAME-26AUG04TORGS-GS",
       "title": "Toronto vs Golden State women's Pro Basketball game: Golden State wins?",
       "side": "yes",
-      "contracts": 13,
+      "contracts": 0,
       "price_cents": 80,
-      "cost_cents": 1040,
-      "fee_cents": 15,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.865,
       "reasoning": "Golden State is a strong home favorite: external books are around -590 ML and the Valkyries already beat Toronto 96-79 two days ago and 83-75 on July 8. Toronto appears healthier than earlier in the season, but the matchup has consistently tilted toward Golden State's physicality and turnover pressure, so my fair is mid/high-80s rather than 80c.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-04T22:15:38+00:00"
     },
@@ -2659,6 +2726,30 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-08-05",
+      "text": "Cannot deploy the minimum $20 stake, or any stake at all, because max_total_deployed_cents ($7.94) is strictly less than min_stake_per_market_cents ($10.00). Any bet size I attempt is invalid.",
+      "at": "2026-08-05T22:15:34+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-05",
+      "text": "Cannot deploy the minimum $20 stake, or any stake at all, because max_total_deployed_cents ($7.94) is strictly less than min_stake_per_market_cents ($10.00). Any bet size I attempt is invalid.",
+      "at": "2026-08-05T22:15:30+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-05",
+      "text": "I cannot deploy any capital this week. My current equity is $15.89, which limits my maximum total deployed capital to $7.94 (50% of equity). However, the minimum stake per market is $10.00. Because my maximum allowed deployment is strictly less than the minimum stake size required to place a bet, any bet I attempt to place will be rejected by the system's hard risk limits. I am sitting this week out until my bankroll limits resolve.",
+      "at": "2026-08-05T22:15:06+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-05",
+      "text": "Session deployed $30.92 across three WNBA moneyline limits, focusing on the softer August 5 slate: Phoenix YES 34 @30c (true 35%, Kelsey Plum active chatter vs +210 market), Dallas YES 20 @52c (true 57%, better record/team strength than Washington with off-exchange line around -130), and Los Angeles YES 24 @43c (true 47%, Sparks' better record offsets Chicago home court). Orderbooks were empty, so I avoided crossing nonexistent/wide liquidity and posted patient positive-edge limits rather than forcing MLB markets with no visible price.",
+      "at": "2026-08-05T22:14:45+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-08-04",
