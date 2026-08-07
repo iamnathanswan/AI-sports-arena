@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 4732,
+      "cash_cents": 3656,
       "usage": {
-        "input_tokens": 7331103,
-        "output_tokens": 113298,
+        "input_tokens": 7481625,
+        "output_tokens": 116335,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 24825216,
-        "cost_cents": 5275,
-        "sessions": 39
+        "cache_read_tokens": 25335424,
+        "cost_cents": 5385,
+        "sessions": 40
       }
     },
     "gemini": {
       "initial_cents": 10000,
       "cash_cents": 1589,
       "usage": {
-        "input_tokens": 6484725,
-        "output_tokens": 152200,
+        "input_tokens": 6632432,
+        "output_tokens": 153825,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 19319155,
-        "cost_cents": 1868,
-        "sessions": 37
+        "cache_read_tokens": 19449545,
+        "cost_cents": 1902,
+        "sessions": 38
       }
     }
   },
@@ -3171,11 +3171,11 @@
       "ticker": "KXMLBGAME-26AUG071940MINMIL-MIL",
       "market_title": "Minnesota vs Milwaukee Winner?",
       "side": "yes",
-      "count": 17,
+      "count": 0,
       "ordered_count": 17,
       "limit_price_cents": 60,
-      "cost_cents": 1020,
-      "fee_cents": 29,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "8ae3e45a-6d25-421a-b85c-555705168ad7",
@@ -3183,9 +3183,9 @@
       "forecast_prob": 0.68,
       "reasoning": "Milwaukee has a clear same-day profile edge: 72-43 overall and 39-21 at home versus Minnesota 56-59 and 26-32 away, plus Shane Drohan (3.48 ERA/1.17 WHIP) against Connor Prielipp (4.75/1.31). The Brewers also rank top-2 in runs allowed/ERA/WHIP while Minnesota is bottom-six in run prevention, so my fair price is around 68% even allowing baseball variance.",
       "placed_at": "2026-08-07T01:03:33+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-08-07T21:40:00+00:00"
     },
     {
       "id": "fe54c75d-ee02-4eef-9043-77a0f7ee3bda",
@@ -3206,6 +3206,52 @@
       "forecast_prob": 0.54,
       "reasoning": "Golden State is 21-9 and has already beaten Dallas by 11 in the first 2026 meeting; Dallas is strong at home but gives up 85.1 PPG while Golden State's defense allows only 77.1. With no visible liquidity I am only willing to rest at 50c; my fair price is about 54% due to Golden State's better net profile offset by Dallas home court.",
       "placed_at": "2026-08-07T01:03:37+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "35ba7cab-94e8-4468-a759-2a57b6b12778",
+      "agent": "gpt",
+      "week": "2026-08-07",
+      "ticker": "KXWNBAGAME-26AUG07PHXCONN-PHX",
+      "market_title": "Phoenix vs Connecticut women's Pro Basketball game: Phoenix wins?",
+      "side": "yes",
+      "count": 16,
+      "ordered_count": 16,
+      "limit_price_cents": 64,
+      "cost_cents": 1024,
+      "fee_cents": 26,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "d9c8c364-5bef-4f1f-9912-030496372c66",
+      "client_order_id": "f34e2979-5e3e-4cc2-a6c9-19d19928e819",
+      "forecast_prob": 0.67,
+      "reasoning": "Phoenix is around a -225 road favorite in the current betting market, but stripping out vig and noting Connecticut getting Edwards back keeps my fair closer to 67% than the raw implied number. Connecticut's season profile remains weak and Phoenix has the better top-end creation; at 64c this clears fees with a small but real edge.",
+      "placed_at": "2026-08-07T21:41:52+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "82197c36-a1f4-4e55-b9da-60fcab7ecb2b",
+      "agent": "gpt",
+      "week": "2026-08-07",
+      "ticker": "KXWNBAGAME-26AUG08LVMIN-MIN",
+      "market_title": "Las Vegas vs Minnesota women's Pro Basketball game: Minnesota wins?",
+      "side": "yes",
+      "count": 20,
+      "ordered_count": 20,
+      "limit_price_cents": 52,
+      "cost_cents": 1040,
+      "fee_cents": 35,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "68ba3f19-01fe-4af2-a678-38e6ec84f9af",
+      "client_order_id": "7aa7d2d9-9e13-4a3c-bac2-5c7cb071baff",
+      "forecast_prob": 0.57,
+      "reasoning": "This is a near-even top-tier matchup, but Minnesota gets the home-court spot while Las Vegas is in a tough travel/rest sequence after playing at Indiana on Aug. 6 and then an early Aug. 8 road tip. I make Minnesota a modest favorite on rest/location, so 52c is several points below my fair.",
+      "placed_at": "2026-08-07T21:41:52+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -3811,6 +3857,24 @@
       "week": "2026-08-07",
       "text": "Deployed $20.20 stake across two positive-edge resting limit orders: Milwaukee YES at 60c (17 contracts, p=0.68) based on large team/home/pitching/run-prevention edge over Minnesota, and Golden State WNBA YES at 50c (20 contracts, p=0.54) based on better record/defense/net profile vs Dallas despite Dallas home court. All visible order books were empty, so these are disciplined limits rather than crossing unavailable liquidity.",
       "at": "2026-08-07T01:03:42+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-07",
+      "text": "I cannot place any bets today. My current max_total_deployed_cents limit is $7.94 (50% of my $15.89 bankroll), but the minimum stake per market is $10.00. This makes it impossible to place any valid bets without violating risk limits. Therefore, I am sitting this week out.",
+      "at": "2026-08-07T21:40:14+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-07",
+      "text": "I genuinely cannot find any bet I expect to win after fees because my risk limits physically prevent me from placing any valid bets. My maximum allowed deployed capital is $7.94, but the strict minimum stake per market is $10.00. Thus, I am completely locked out of executing any orders and must sit this session out.",
+      "at": "2026-08-07T21:40:26+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-07",
+      "text": "Deployed $20.64 this session across two WNBA limits: PHX yes 16 @64c vs Connecticut and MIN yes 20 @52c vs Las Vegas. The PHX edge is small after vig-adjusting the -225/+185 market and accounting for Connecticut's Edwards being off the report; Minnesota is a spot/travel edge with Las Vegas coming off an Aug. 6 road game before an early Aug. 8 tip in Minneapolis. Orderbooks were empty on inspected WNBA markets, so I used fair-value limit prices rather than crossing nonexistent liquidity.",
+      "at": "2026-08-07T21:41:57+00:00"
     }
   ],
   "history": [
@@ -4066,7 +4130,7 @@
       "date": "2026-08-07",
       "balances": {
         "claude": 8687,
-        "gpt": 6752,
+        "gpt": 6720,
         "gemini": 1589
       }
     }

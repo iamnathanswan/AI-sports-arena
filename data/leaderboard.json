@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T01:00:48+00:00",
+  "generated_at": "2026-08-07T21:40:00+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,36 +34,28 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 6752,
-      "cash_cents": 4732,
+      "equity_cents": 6720,
+      "cash_cents": 3656,
       "initial_cents": 10000,
-      "pnl_cents": -3248,
-      "roi_pct": -32.48,
+      "pnl_cents": -3280,
+      "roi_pct": -32.8,
       "settled_bets": 18,
       "wins": 9,
       "win_rate": 0.5,
       "staked_cents": 18574,
       "returned_cents": 16000,
-      "fees_paid_cents": 674,
-      "fill_rate": 0.447,
+      "fees_paid_cents": 706,
+      "fill_rate": 0.441,
       "brier": 0.2216,
       "usage": {
-        "input_tokens": 7331103,
-        "output_tokens": 113298,
+        "input_tokens": 7481625,
+        "output_tokens": 116335,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 24825216,
-        "cost_cents": 5275,
-        "sessions": 39
+        "cache_read_tokens": 25335424,
+        "cost_cents": 5385,
+        "sessions": 40
       },
       "open_positions": [
-        {
-          "ticker": "KXMLBGAME-26AUG071940MINMIL-MIL",
-          "title": "Minnesota vs Milwaukee Winner?",
-          "side": "yes",
-          "contracts": 17,
-          "cost_cents": 1020,
-          "forecast_prob": 0.68
-        },
         {
           "ticker": "KXWNBAGAME-26AUG07GSDAL-GS",
           "title": "Golden State vs Dallas women's Pro Basketball game: Golden State wins?",
@@ -71,6 +63,22 @@
           "contracts": 20,
           "cost_cents": 1000,
           "forecast_prob": 0.54
+        },
+        {
+          "ticker": "KXWNBAGAME-26AUG07PHXCONN-PHX",
+          "title": "Phoenix vs Connecticut women's Pro Basketball game: Phoenix wins?",
+          "side": "yes",
+          "contracts": 16,
+          "cost_cents": 1024,
+          "forecast_prob": 0.67
+        },
+        {
+          "ticker": "KXWNBAGAME-26AUG08LVMIN-MIN",
+          "title": "Las Vegas vs Minnesota women's Pro Basketball game: Minnesota wins?",
+          "side": "yes",
+          "contracts": 20,
+          "cost_cents": 1040,
+          "forecast_prob": 0.57
         }
       ]
     },
@@ -92,12 +100,12 @@
       "fill_rate": 0.397,
       "brier": 0.2757,
       "usage": {
-        "input_tokens": 6484725,
-        "output_tokens": 152200,
+        "input_tokens": 6632432,
+        "output_tokens": 153825,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 19319155,
-        "cost_cents": 1868,
-        "sessions": 37
+        "cache_read_tokens": 19449545,
+        "cost_cents": 1902,
+        "sessions": 38
       },
       "open_positions": []
     }
@@ -355,12 +363,46 @@
       "date": "2026-08-07",
       "balances": {
         "claude": 8687,
-        "gpt": 6752,
+        "gpt": 6720,
         "gemini": 1589
       }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-07",
+      "ticker": "KXWNBAGAME-26AUG07PHXCONN-PHX",
+      "title": "Phoenix vs Connecticut women's Pro Basketball game: Phoenix wins?",
+      "side": "yes",
+      "contracts": 16,
+      "price_cents": 64,
+      "cost_cents": 1024,
+      "fee_cents": 26,
+      "forecast_prob": 0.67,
+      "reasoning": "Phoenix is around a -225 road favorite in the current betting market, but stripping out vig and noting Connecticut getting Edwards back keeps my fair closer to 67% than the raw implied number. Connecticut's season profile remains weak and Phoenix has the better top-end creation; at 64c this clears fees with a small but real edge.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-07T21:41:52+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-07",
+      "ticker": "KXWNBAGAME-26AUG08LVMIN-MIN",
+      "title": "Las Vegas vs Minnesota women's Pro Basketball game: Minnesota wins?",
+      "side": "yes",
+      "contracts": 20,
+      "price_cents": 52,
+      "cost_cents": 1040,
+      "fee_cents": 35,
+      "forecast_prob": 0.57,
+      "reasoning": "This is a near-even top-tier matchup, but Minnesota gets the home-court spot while Las Vegas is in a tough travel/rest sequence after playing at Indiana on Aug. 6 and then an early Aug. 8 road tip. I make Minnesota a modest favorite on rest/location, so 52c is several points below my fair.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-07T21:41:52+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-08-07",
@@ -384,14 +426,14 @@
       "ticker": "KXMLBGAME-26AUG071940MINMIL-MIL",
       "title": "Minnesota vs Milwaukee Winner?",
       "side": "yes",
-      "contracts": 17,
+      "contracts": 0,
       "price_cents": 60,
-      "cost_cents": 1020,
-      "fee_cents": 29,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.68,
       "reasoning": "Milwaukee has a clear same-day profile edge: 72-43 overall and 39-21 at home versus Minnesota 56-59 and 26-32 away, plus Shane Drohan (3.48 ERA/1.17 WHIP) against Connor Prielipp (4.75/1.31). The Brewers also rank top-2 in runs allowed/ERA/WHIP while Minnesota is bottom-six in run prevention, so my fair price is around 68% even allowing baseball variance.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-07T01:03:33+00:00"
     },
@@ -2760,6 +2802,24 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-07",
+      "text": "Deployed $20.64 this session across two WNBA limits: PHX yes 16 @64c vs Connecticut and MIN yes 20 @52c vs Las Vegas. The PHX edge is small after vig-adjusting the -225/+185 market and accounting for Connecticut's Edwards being off the report; Minnesota is a spot/travel edge with Las Vegas coming off an Aug. 6 road game before an early Aug. 8 tip in Minneapolis. Orderbooks were empty on inspected WNBA markets, so I used fair-value limit prices rather than crossing nonexistent liquidity.",
+      "at": "2026-08-07T21:41:57+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-07",
+      "text": "I genuinely cannot find any bet I expect to win after fees because my risk limits physically prevent me from placing any valid bets. My maximum allowed deployed capital is $7.94, but the strict minimum stake per market is $10.00. Thus, I am completely locked out of executing any orders and must sit this session out.",
+      "at": "2026-08-07T21:40:26+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-07",
+      "text": "I cannot place any bets today. My current max_total_deployed_cents limit is $7.94 (50% of my $15.89 bankroll), but the minimum stake per market is $10.00. This makes it impossible to place any valid bets without violating risk limits. Therefore, I am sitting this week out.",
+      "at": "2026-08-07T21:40:14+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-08-07",
