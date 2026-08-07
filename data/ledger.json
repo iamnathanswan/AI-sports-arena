@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 4667,
+      "cash_cents": 4732,
       "usage": {
-        "input_tokens": 7164761,
-        "output_tokens": 110268,
+        "input_tokens": 7331103,
+        "output_tokens": 113298,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 23846528,
-        "cost_cents": 5134,
-        "sessions": 38
+        "cache_read_tokens": 24825216,
+        "cost_cents": 5275,
+        "sessions": 39
       }
     },
     "gemini": {
       "initial_cents": 10000,
       "cash_cents": 1589,
       "usage": {
-        "input_tokens": 6096283,
-        "output_tokens": 147215,
+        "input_tokens": 6484725,
+        "output_tokens": 152200,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 18118316,
-        "cost_cents": 1760,
-        "sessions": 36
+        "cache_read_tokens": 19319155,
+        "cost_cents": 1868,
+        "sessions": 37
       }
     }
   },
@@ -3114,9 +3114,9 @@
       "forecast_prob": 0.35,
       "reasoning": "Market has no visible orderbook, so I am only willing to sit at a plus-money limit. Consensus off-exchange pricing shows Phoenix around +210, but late chatter indicates Kelsey Plum is playing for Phoenix tonight, which I think nudges their true win chance into the mid-30s despite Atlanta being the stronger home side.",
       "placed_at": "2026-08-05T22:14:29+00:00",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-08-07T01:00:49+00:00"
     },
     {
       "id": "b1627b82-01ac-451b-996a-770bebbe094b",
@@ -3125,11 +3125,11 @@
       "ticker": "KXWNBAGAME-26AUG05DALWSH-DAL",
       "market_title": "Dallas vs Washington women's Pro Basketball game: Dallas wins?",
       "side": "yes",
-      "count": 20,
+      "count": 0,
       "ordered_count": 20,
       "limit_price_cents": 52,
-      "cost_cents": 1040,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "0327cb08-9175-46bd-8ec6-0def930faae5",
@@ -3137,9 +3137,9 @@
       "forecast_prob": 0.57,
       "reasoning": "Dallas is 15-8 versus Washington 10-10 on the schedule data I found, and the off-exchange moneyline around -130 implies only the mid-50s after removing vig. I make Dallas a modestly stronger neutral team and still slightly better than Washington even on the road; at 52c the fee-adjusted edge is several cents.",
       "placed_at": "2026-08-05T22:14:37+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-08-07T01:00:49+00:00"
     },
     {
       "id": "bda1e92b-642a-4efc-9116-a151abea1e26",
@@ -3148,11 +3148,11 @@
       "ticker": "KXWNBAGAME-26AUG05LACHI-LA",
       "market_title": "Los Angeles vs Chicago women's Pro Basketball game: Los Angeles wins?",
       "side": "yes",
-      "count": 24,
+      "count": 0,
       "ordered_count": 24,
       "limit_price_cents": 43,
-      "cost_cents": 1032,
-      "fee_cents": 42,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "d09fc76f-e95a-424a-bb8d-992365e15be3",
@@ -3160,6 +3160,52 @@
       "forecast_prob": 0.47,
       "reasoning": "Chicago is priced as the small home favorite, but the schedule records I found show Los Angeles with the better overall record and Chicago well below .500. I still give Chicago home court respect, yet make Los Angeles closer to 47% than the low-40s; at 43c this clears fees with a modest edge.",
       "placed_at": "2026-08-05T22:14:41+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-08-07T01:00:49+00:00"
+    },
+    {
+      "id": "cc65965b-c441-495b-a7b9-5e23ad48359a",
+      "agent": "gpt",
+      "week": "2026-08-07",
+      "ticker": "KXMLBGAME-26AUG071940MINMIL-MIL",
+      "market_title": "Minnesota vs Milwaukee Winner?",
+      "side": "yes",
+      "count": 17,
+      "ordered_count": 17,
+      "limit_price_cents": 60,
+      "cost_cents": 1020,
+      "fee_cents": 29,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "8ae3e45a-6d25-421a-b85c-555705168ad7",
+      "client_order_id": "019538ad-2e9a-4ccc-8bc1-c75d0357976c",
+      "forecast_prob": 0.68,
+      "reasoning": "Milwaukee has a clear same-day profile edge: 72-43 overall and 39-21 at home versus Minnesota 56-59 and 26-32 away, plus Shane Drohan (3.48 ERA/1.17 WHIP) against Connor Prielipp (4.75/1.31). The Brewers also rank top-2 in runs allowed/ERA/WHIP while Minnesota is bottom-six in run prevention, so my fair price is around 68% even allowing baseball variance.",
+      "placed_at": "2026-08-07T01:03:33+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "fe54c75d-ee02-4eef-9043-77a0f7ee3bda",
+      "agent": "gpt",
+      "week": "2026-08-07",
+      "ticker": "KXWNBAGAME-26AUG07GSDAL-GS",
+      "market_title": "Golden State vs Dallas women's Pro Basketball game: Golden State wins?",
+      "side": "yes",
+      "count": 20,
+      "ordered_count": 20,
+      "limit_price_cents": 50,
+      "cost_cents": 1000,
+      "fee_cents": 35,
+      "initial_fill_count": 20,
+      "status": "live",
+      "kalshi_order_id": "b8198377-8d82-4138-81b5-bd2e844ced2c",
+      "client_order_id": "3f4e0db3-45fa-4df8-98e8-a7c7050667a8",
+      "forecast_prob": 0.54,
+      "reasoning": "Golden State is 21-9 and has already beaten Dallas by 11 in the first 2026 meeting; Dallas is strong at home but gives up 85.1 PPG while Golden State's defense allows only 77.1. With no visible liquidity I am only willing to rest at 50c; my fair price is about 54% due to Golden State's better net profile offset by Dallas home court.",
+      "placed_at": "2026-08-07T01:03:37+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -3747,6 +3793,24 @@
       "week": "2026-08-05",
       "text": "Cannot deploy the minimum $20 stake, or any stake at all, because max_total_deployed_cents ($7.94) is strictly less than min_stake_per_market_cents ($10.00). Any bet size I attempt is invalid.",
       "at": "2026-08-05T22:15:34+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-07",
+      "text": "Since my current bankroll is $15.89, my max_total_deployed_cents limit is $7.94 (50% of equity). However, the hard limits require a minimum stake of $10.00 per market. Because $10.00 is greater than my maximum allowed deployment of $7.94, any bet I attempt to place is rejected. I am mathematically blocked from making any trades this week, so I must sit this run out.",
+      "at": "2026-08-07T01:02:13+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-07",
+      "text": "I genuinely cannot find any bet I expect to win after fees that fits within my limits. My bankroll is $15.89, meaning the 50% max deployment limit is $7.94, but the minimum stake per market is $10.00. It is mathematically impossible for me to place a valid bet, so I must sit the week out.",
+      "at": "2026-08-07T01:02:26+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-07",
+      "text": "Deployed $20.20 stake across two positive-edge resting limit orders: Milwaukee YES at 60c (17 contracts, p=0.68) based on large team/home/pitching/run-prevention edge over Minnesota, and Golden State WNBA YES at 50c (20 contracts, p=0.54) based on better record/defense/net profile vs Dallas despite Dallas home court. All visible order books were empty, so these are disciplined limits rather than crossing unavailable liquidity.",
+      "at": "2026-08-07T01:03:42+00:00"
     }
   ],
   "history": [
@@ -3995,6 +4059,14 @@
       "balances": {
         "claude": 8687,
         "gpt": 7759,
+        "gemini": 1589
+      }
+    },
+    {
+      "date": "2026-08-07",
+      "balances": {
+        "claude": 8687,
+        "gpt": 6752,
         "gemini": 1589
       }
     }
