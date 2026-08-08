@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 3656,
+      "cash_cents": 5630,
       "usage": {
-        "input_tokens": 7481625,
-        "output_tokens": 116335,
+        "input_tokens": 7631145,
+        "output_tokens": 120581,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 25335424,
-        "cost_cents": 5385,
-        "sessions": 40
+        "cache_read_tokens": 26066944,
+        "cost_cents": 5509,
+        "sessions": 41
       }
     },
     "gemini": {
       "initial_cents": 10000,
       "cash_cents": 1589,
       "usage": {
-        "input_tokens": 6632432,
-        "output_tokens": 153825,
+        "input_tokens": 6647044,
+        "output_tokens": 155323,
         "cache_write_tokens": 0,
         "cache_read_tokens": 19449545,
-        "cost_cents": 1902,
-        "sessions": 38
+        "cost_cents": 1907,
+        "sessions": 39
       }
     }
   },
@@ -3206,9 +3206,9 @@
       "forecast_prob": 0.54,
       "reasoning": "Golden State is 21-9 and has already beaten Dallas by 11 in the first 2026 meeting; Dallas is strong at home but gives up 85.1 PPG while Golden State's defense allows only 77.1. With no visible liquidity I am only willing to rest at 50c; my fair price is about 54% due to Golden State's better net profile offset by Dallas home court.",
       "placed_at": "2026-08-07T01:03:37+00:00",
-      "result": null,
-      "payout_cents": 0,
-      "settled_at": null
+      "result": "won",
+      "payout_cents": 2000,
+      "settled_at": "2026-08-08T21:31:31+00:00"
     },
     {
       "id": "35ba7cab-94e8-4468-a759-2a57b6b12778",
@@ -3217,11 +3217,11 @@
       "ticker": "KXWNBAGAME-26AUG07PHXCONN-PHX",
       "market_title": "Phoenix vs Connecticut women's Pro Basketball game: Phoenix wins?",
       "side": "yes",
-      "count": 16,
+      "count": 0,
       "ordered_count": 16,
       "limit_price_cents": 64,
-      "cost_cents": 1024,
-      "fee_cents": 26,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "d9c8c364-5bef-4f1f-9912-030496372c66",
@@ -3229,9 +3229,9 @@
       "forecast_prob": 0.67,
       "reasoning": "Phoenix is around a -225 road favorite in the current betting market, but stripping out vig and noting Connecticut getting Edwards back keeps my fair closer to 67% than the raw implied number. Connecticut's season profile remains weak and Phoenix has the better top-end creation; at 64c this clears fees with a small but real edge.",
       "placed_at": "2026-08-07T21:41:52+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-08-08T21:31:31+00:00"
     },
     {
       "id": "82197c36-a1f4-4e55-b9da-60fcab7ecb2b",
@@ -3240,11 +3240,11 @@
       "ticker": "KXWNBAGAME-26AUG08LVMIN-MIN",
       "market_title": "Las Vegas vs Minnesota women's Pro Basketball game: Minnesota wins?",
       "side": "yes",
-      "count": 20,
+      "count": 0,
       "ordered_count": 20,
       "limit_price_cents": 52,
-      "cost_cents": 1040,
-      "fee_cents": 35,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "68ba3f19-01fe-4af2-a678-38e6ec84f9af",
@@ -3252,6 +3252,52 @@
       "forecast_prob": 0.57,
       "reasoning": "This is a near-even top-tier matchup, but Minnesota gets the home-court spot while Las Vegas is in a tough travel/rest sequence after playing at Indiana on Aug. 6 and then an early Aug. 8 road tip. I make Minnesota a modest favorite on rest/location, so 52c is several points below my fair.",
       "placed_at": "2026-08-07T21:41:52+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-08-08T21:31:32+00:00"
+    },
+    {
+      "id": "e4f1dbe0-9329-46a4-a44d-ba6d108cc6d9",
+      "agent": "gpt",
+      "week": "2026-08-08",
+      "ticker": "KXWNBAGAME-26AUG08SEAPDX-PDX",
+      "market_title": "Seattle vs Portland women's Pro Basketball game: Portland wins?",
+      "side": "yes",
+      "count": 19,
+      "ordered_count": 19,
+      "limit_price_cents": 55,
+      "cost_cents": 1045,
+      "fee_cents": 33,
+      "initial_fill_count": 19,
+      "status": "live",
+      "kalshi_order_id": "9af5ae95-e3bb-472d-aea4-6f45ac402f46",
+      "client_order_id": "c46ba4ab-5ca8-4bd5-ab94-128fdbf8fd98",
+      "forecast_prob": 0.62,
+      "reasoning": "Portland is at home against a Seattle team shown at 6-27 in today's WNBA standings/schedule data, while Portland is 12-19 and has been the more competitive side. There is no visible Kalshi book liquidity, so I am resting a limit below my estimated fair value rather than chasing a bad fill; at 55c my 62% forecast leaves several cents of post-fee edge.",
+      "placed_at": "2026-08-08T21:33:00+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "e090150d-5b2b-44bc-8603-95d80d65ee08",
+      "agent": "gpt",
+      "week": "2026-08-08",
+      "ticker": "KXWNBAGAME-26AUG09LVNY-NY",
+      "market_title": "Las Vegas vs New York women's Pro Basketball game: New York wins?",
+      "side": "yes",
+      "count": 22,
+      "ordered_count": 22,
+      "limit_price_cents": 47,
+      "cost_cents": 1034,
+      "fee_cents": 39,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "016c7cbe-f33f-4c9f-85a8-050cfa95873f",
+      "client_order_id": "0d532d85-9b24-483d-95a3-f4f88d1713dc",
+      "forecast_prob": 0.54,
+      "reasoning": "Las Vegas is the stronger team overall, but it is coming off the early Aug. 8 road game at Minnesota and then has to travel to New York for a short-rest road spot. New York at home with a rest/travel edge is enough for me to make Liberty slightly better than a coin flip; I am only bidding 47c because the book is empty and the edge must survive fees.",
+      "placed_at": "2026-08-08T21:33:05+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -3875,6 +3921,24 @@
       "week": "2026-08-07",
       "text": "Deployed $20.64 this session across two WNBA limits: PHX yes 16 @64c vs Connecticut and MIN yes 20 @52c vs Las Vegas. The PHX edge is small after vig-adjusting the -225/+185 market and accounting for Connecticut's Edwards being off the report; Minnesota is a spot/travel edge with Las Vegas coming off an Aug. 6 road game before an early Aug. 8 tip in Minneapolis. Orderbooks were empty on inspected WNBA markets, so I used fair-value limit prices rather than crossing nonexistent liquidity.",
       "at": "2026-08-07T21:41:57+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-08",
+      "text": "Deployed $20.79 across two WNBA limit bids: Portland YES vs Seattle at 55c (19 contracts, 62% forecast) and New York YES vs Las Vegas at 47c (22 contracts, 54% forecast). Both books were empty, so I avoided crossing anything and rested limits with several cents of post-fee edge; the thesis is Portland home/record edge over a 6-27 Seattle team and New York's home/rest/travel edge against Las Vegas after its Aug. 8 road game at Minnesota.",
+      "at": "2026-08-08T21:33:09+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-08",
+      "text": "Bankroll constraints prevent placing bets this week: min_stake_per_market_cents is 1000 ( $10), but max_total_deployed_cents (50% of equity) is only 794 ( $7.94). Cannot place any valid bets due to conflicting hard limits. Sitting this week out.",
+      "at": "2026-08-08T21:33:22+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-08",
+      "text": "Cannot deploy $20 minimum because total cash is only $15.89, and max_total_deployed_cents limit is $7.94 (50% of equity). This is below the minimum allowed stake per market of $10.00 (1000 cents). It is mathematically impossible to place any valid bets this session.",
+      "at": "2026-08-08T21:33:31+00:00"
     }
   ],
   "history": [
@@ -4131,6 +4195,14 @@
       "balances": {
         "claude": 8687,
         "gpt": 6720,
+        "gemini": 1589
+      }
+    },
+    {
+      "date": "2026-08-08",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7709,
         "gemini": 1589
       }
     }
