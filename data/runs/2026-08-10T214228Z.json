@@ -1,0 +1,75 @@
+{
+  "session": "2026-08-10",
+  "generated_at": "2026-08-10T21:42:28+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "ec06a081-bde7-4637-a5ae-7f76cacc74c7",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26AUG09DALMIN-MIN",
+      "action": "refund_unfilled",
+      "refund_cents": 1043,
+      "filled": 0
+    },
+    {
+      "order": "a2d88d5d-7de2-4ec7-b75a-e51473edb299",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26AUG09GSLA-GS",
+      "action": "refund_unfilled",
+      "refund_cents": 1082,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 4,
+      "final_text": "I have recorded my note explaining that I am unable to deploy the requested capital. Due to the strict bankroll rules (specifically the 50% limit on open positions based on a $15.89 equity, capping my allowed deployment at $7.94), I am unable to meet the $10.00 minimum stake required for a single market. Therefore, I must sit this run out.",
+      "error": null,
+      "usage": {
+        "input_tokens": 142876,
+        "output_tokens": 916,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 65197
+      },
+      "cost_cents": 31,
+      "forced_followup": true,
+      "bets_placed": 0
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CduoAtAkWnjYbMzicVayk'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 12,
+      "final_text": "Session started and completed.\n\nPlaced **3 live limit orders** totaling **$30.93 stake**:\n\n1. **Atlanta Dream YES vs Toronto** \u2014 13 contracts @ **80c**, forecast **85%**\n   - External market had Atlanta as a very heavy favorite around **-750** vs Toronto **+490**. \ue200cite\ue202turn1view0\ue201\n\n2. **Boston Red Sox YES vs Toronto Blue Jays** \u2014 17 contracts @ **59c**, forecast **63.5%**\n   - Boston was around **-149** on the moneyline, with a strong starter edge: **Sonny Gray 14\u20132, 2.78 ERA** vs **Jameson Taillon 2\u20136, 5.96 ERA**. \ue200cite\ue202turn3view0\ue202turn2view3\ue201\n\n3. **Los Angeles Dodgers YES vs Kansas City Royals** \u2014 15 contracts @ **70c**, forecast **74%**\n   - Dodgers are much stronger season-long, and the probable pitching matchup listed **Tarik Skubal 2.81 ERA / 0.92 WHIP** vs **Noah Cameron 4.37 ERA / 1.29 WHIP**. \ue200cite\ue202turn1view3\ue201\n\nAll three orderbooks were empty, so I posted disciplined limits rather than crossing a bad/no spread. A public note summarizing the strategy was recorded.",
+      "error": null,
+      "usage": {
+        "input_tokens": 169801,
+        "output_tokens": 3373,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 987904
+      },
+      "cost_cents": 144,
+      "forced_followup": false,
+      "bets_placed": 3
+    }
+  ]
+}

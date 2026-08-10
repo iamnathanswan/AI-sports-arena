@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T21:33:43+00:00",
+  "generated_at": "2026-08-10T21:42:28+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,43 +34,51 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 8554,
-      "cash_cents": 6478,
+      "equity_cents": 8536,
+      "cash_cents": 5443,
       "initial_cents": 10000,
-      "pnl_cents": -1446,
-      "roi_pct": -14.46,
+      "pnl_cents": -1464,
+      "roi_pct": -14.64,
       "settled_bets": 20,
       "wins": 11,
       "win_rate": 0.55,
       "staked_cents": 20619,
       "returned_cents": 19900,
-      "fees_paid_cents": 727,
-      "fill_rate": 0.438,
+      "fees_paid_cents": 745,
+      "fill_rate": 0.428,
       "brier": 0.2172,
       "usage": {
-        "input_tokens": 7814246,
-        "output_tokens": 123499,
+        "input_tokens": 7984047,
+        "output_tokens": 126872,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 26778624,
-        "cost_cents": 5645,
-        "sessions": 42
+        "cache_read_tokens": 27766528,
+        "cost_cents": 5789,
+        "sessions": 43
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26AUG09DALMIN-MIN",
-          "title": "Dallas vs Minnesota women's Pro Basketball game: Minnesota wins?",
+          "ticker": "KXWNBAGAME-26AUG10TORATL-ATL",
+          "title": "Toronto vs Atlanta women's Pro Basketball game: Atlanta wins?",
           "side": "yes",
-          "contracts": 15,
-          "cost_cents": 1020,
-          "forecast_prob": 0.72
+          "contracts": 13,
+          "cost_cents": 1040,
+          "forecast_prob": 0.85
         },
         {
-          "ticker": "KXWNBAGAME-26AUG09GSLA-GS",
-          "title": "Golden State vs Los Angeles women's Pro Basketball game: Golden State wins?",
+          "ticker": "KXMLBGAME-26AUG101907BOSTOR-BOS",
+          "title": "Boston vs Toronto Winner?",
           "side": "yes",
-          "contracts": 16,
-          "cost_cents": 1056,
-          "forecast_prob": 0.7
+          "contracts": 17,
+          "cost_cents": 1003,
+          "forecast_prob": 0.635
+        },
+        {
+          "ticker": "KXMLBGAME-26AUG102210KCLAD-LAD",
+          "title": "Kansas City vs Los Angeles D Winner?",
+          "side": "yes",
+          "contracts": 15,
+          "cost_cents": 1050,
+          "forecast_prob": 0.74
         }
       ]
     },
@@ -92,12 +100,12 @@
       "fill_rate": 0.397,
       "brier": 0.2757,
       "usage": {
-        "input_tokens": 6661243,
-        "output_tokens": 156560,
+        "input_tokens": 6804119,
+        "output_tokens": 157476,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 19449545,
-        "cost_cents": 1911,
-        "sessions": 40
+        "cache_read_tokens": 19514742,
+        "cost_cents": 1942,
+        "sessions": 41
       },
       "open_positions": []
     }
@@ -374,23 +382,82 @@
         "gpt": 8554,
         "gemini": 1589
       }
+    },
+    {
+      "date": "2026-08-10",
+      "balances": {
+        "claude": 8687,
+        "gpt": 8536,
+        "gemini": 1589
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-10",
+      "ticker": "KXMLBGAME-26AUG102210KCLAD-LAD",
+      "title": "Kansas City vs Los Angeles D Winner?",
+      "side": "yes",
+      "contracts": 15,
+      "price_cents": 70,
+      "cost_cents": 1050,
+      "fee_cents": 23,
+      "forecast_prob": 0.74,
+      "reasoning": "The Dodgers have a major starting-pitching advantage with Tarik Skubal listed against Noah Cameron and a much stronger season profile than Kansas City. The book market is already Dodgers-heavy, but I rate the true win probability near 74%; at a 70c limit there is still positive edge after fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-10T21:44:04+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-10",
+      "ticker": "KXMLBGAME-26AUG101907BOSTOR-BOS",
+      "title": "Boston vs Toronto Winner?",
+      "side": "yes",
+      "contracts": 17,
+      "price_cents": 59,
+      "cost_cents": 1003,
+      "fee_cents": 29,
+      "forecast_prob": 0.635,
+      "reasoning": "Boston has the clear starting-pitching edge with Sonny Gray against Jameson Taillon, and the broader moneyline market is around Boston -149 before considering that matchup. Team form and run-prevention metrics also favor Boston, so I estimate 63.5% and only buy at 59c or better.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-10T21:44:00+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-10",
+      "ticker": "KXWNBAGAME-26AUG10TORATL-ATL",
+      "title": "Toronto vs Atlanta women's Pro Basketball game: Atlanta wins?",
+      "side": "yes",
+      "contracts": 13,
+      "price_cents": 80,
+      "cost_cents": 1040,
+      "fee_cents": 15,
+      "forecast_prob": 0.85,
+      "reasoning": "Atlanta is priced as a heavy favorite in the broader market (around -750), while Toronto is an expansion roster currently on a losing skid. I make Atlanta closer to 85% with the superior roster and home-court edge, so I only want this if it fills at 80c or better.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-10T21:43:57+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-08-09",
       "ticker": "KXWNBAGAME-26AUG09GSLA-GS",
       "title": "Golden State vs Los Angeles women's Pro Basketball game: Golden State wins?",
       "side": "yes",
-      "contracts": 16,
+      "contracts": 0,
       "price_cents": 66,
-      "cost_cents": 1056,
-      "fee_cents": 26,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.7,
       "reasoning": "Sportsbooks show Golden State about -260 at Los Angeles, roughly 69% no-vig. My number is 70% because Golden State has been materially stronger on season-long efficiency/record and already handled this Sparks matchup by 20 in June; the road setting keeps the edge modest. At 66c the fee-adjusted expected value remains positive.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-09T21:34:55+00:00"
     },
@@ -400,14 +467,14 @@
       "ticker": "KXWNBAGAME-26AUG09DALMIN-MIN",
       "title": "Dallas vs Minnesota women's Pro Basketball game: Minnesota wins?",
       "side": "yes",
-      "contracts": 15,
+      "contracts": 0,
       "price_cents": 68,
-      "cost_cents": 1020,
-      "fee_cents": 23,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.72,
       "reasoning": "Sportsbook consensus around Lynx -280 implies roughly 70-71% no-vig; I make Minnesota a touch higher with home court and a strong 23-6 profile versus Dallas, plus fresh chatter that Dallas may be shorthanded with Azzi Fudd ankle concerns. Minnesota is on short rest, so I am not pushing above 72%, but 68c clears fees with a few cents of edge.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-09T21:34:51+00:00"
     },
@@ -2878,6 +2945,18 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-10",
+      "text": "Deployed $30.93 across three price-sensitive limit orders: ATL WNBA YES 13 @80c (p=85%), BOS MLB YES 17 @59c (p=63.5%), and LAD MLB YES 15 @70c (p=74%). Orderbooks were empty, so I avoided chasing and posted only at prices where the external odds/news-based fair value still clears fees; key angles were Atlanta\u2019s large favorite status vs Toronto, Boston\u2019s Sonny Gray vs Taillon pitching edge, and Dodgers/Skubal vs Royals/Cameron.",
+      "at": "2026-08-10T21:44:08+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-10",
+      "text": "I am sitting this week out because my current equity is $15.89. The hard limit caps my maximum deployed capital at 50% of my equity, which is $7.94. However, the minimum stake for any single market is $10.00. Therefore, I am mathematically prevented from placing any valid bets that satisfy both conditions simultaneously.",
+      "at": "2026-08-10T21:42:47+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-08-09",
