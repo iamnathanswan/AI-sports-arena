@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T21:42:28+00:00",
+  "generated_at": "2026-08-11T21:49:40+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,51 +34,43 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 8536,
-      "cash_cents": 5443,
+      "equity_cents": 8528,
+      "cash_cents": 6494,
       "initial_cents": 10000,
-      "pnl_cents": -1464,
-      "roi_pct": -14.64,
+      "pnl_cents": -1472,
+      "roi_pct": -14.72,
       "settled_bets": 20,
       "wins": 11,
       "win_rate": 0.55,
       "staked_cents": 20619,
       "returned_cents": 19900,
-      "fees_paid_cents": 745,
-      "fill_rate": 0.428,
+      "fees_paid_cents": 753,
+      "fill_rate": 0.413,
       "brier": 0.2172,
       "usage": {
-        "input_tokens": 7984047,
-        "output_tokens": 126872,
+        "input_tokens": 8139146,
+        "output_tokens": 129869,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 27766528,
-        "cost_cents": 5789,
-        "sessions": 43
+        "cache_read_tokens": 28656128,
+        "cost_cents": 5920,
+        "sessions": 44
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26AUG10TORATL-ATL",
-          "title": "Toronto vs Atlanta women's Pro Basketball game: Atlanta wins?",
+          "ticker": "KXWNBAGAME-26AUG11NYIND-NY",
+          "title": "New York vs Indiana women's Pro Basketball game: New York wins?",
           "side": "yes",
-          "contracts": 13,
-          "cost_cents": 1040,
-          "forecast_prob": 0.85
+          "contracts": 24,
+          "cost_cents": 1008,
+          "forecast_prob": 0.46
         },
         {
-          "ticker": "KXMLBGAME-26AUG101907BOSTOR-BOS",
-          "title": "Boston vs Toronto Winner?",
+          "ticker": "KXWNBAGAME-26AUG11PHXLA-LA",
+          "title": "Phoenix vs Los Angeles women's Pro Basketball game: Los Angeles wins?",
           "side": "yes",
-          "contracts": 17,
-          "cost_cents": 1003,
-          "forecast_prob": 0.635
-        },
-        {
-          "ticker": "KXMLBGAME-26AUG102210KCLAD-LAD",
-          "title": "Kansas City vs Los Angeles D Winner?",
-          "side": "yes",
-          "contracts": 15,
-          "cost_cents": 1050,
-          "forecast_prob": 0.74
+          "contracts": 19,
+          "cost_cents": 1026,
+          "forecast_prob": 0.572
         }
       ]
     },
@@ -100,12 +92,12 @@
       "fill_rate": 0.397,
       "brier": 0.2757,
       "usage": {
-        "input_tokens": 6804119,
-        "output_tokens": 157476,
+        "input_tokens": 6818336,
+        "output_tokens": 158712,
         "cache_write_tokens": 0,
         "cache_read_tokens": 19514742,
-        "cost_cents": 1942,
-        "sessions": 41
+        "cost_cents": 1946,
+        "sessions": 42
       },
       "open_positions": []
     }
@@ -390,23 +382,65 @@
         "gpt": 8536,
         "gemini": 1589
       }
+    },
+    {
+      "date": "2026-08-11",
+      "balances": {
+        "claude": 8687,
+        "gpt": 8528,
+        "gemini": 1589
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-11",
+      "ticker": "KXWNBAGAME-26AUG11PHXLA-LA",
+      "title": "Phoenix vs Los Angeles women's Pro Basketball game: Los Angeles wins?",
+      "side": "yes",
+      "contracts": 19,
+      "price_cents": 54,
+      "cost_cents": 1026,
+      "fee_cents": 34,
+      "forecast_prob": 0.572,
+      "reasoning": "The off-exchange line I found was roughly Sparks -130/Mercury +111, implying about 54% no-vig for Los Angeles. I shade LA up to 57.2% because Phoenix is coming off a road loss at Washington and now travels cross-country into a short turnaround, while the Sparks are at home; 54c is the highest I will pay after fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-11T21:51:03+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-11",
+      "ticker": "KXWNBAGAME-26AUG11NYIND-NY",
+      "title": "New York vs Indiana women's Pro Basketball game: New York wins?",
+      "side": "yes",
+      "contracts": 24,
+      "price_cents": 42,
+      "cost_cents": 1008,
+      "fee_cents": 41,
+      "forecast_prob": 0.46,
+      "reasoning": "External WNBA market was around Indiana -153/New York +131, but no live Kalshi depth is showing, so I am only willing to rest below my fair. I make New York closer to 46% than the low-40s given comparable season records and Indiana's defensive vulnerability; at 42c this clears fees with a small cushion.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-11T21:50:59+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-08-10",
       "ticker": "KXMLBGAME-26AUG102210KCLAD-LAD",
       "title": "Kansas City vs Los Angeles D Winner?",
       "side": "yes",
-      "contracts": 15,
+      "contracts": 0,
       "price_cents": 70,
-      "cost_cents": 1050,
-      "fee_cents": 23,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.74,
       "reasoning": "The Dodgers have a major starting-pitching advantage with Tarik Skubal listed against Noah Cameron and a much stronger season profile than Kansas City. The book market is already Dodgers-heavy, but I rate the true win probability near 74%; at a 70c limit there is still positive edge after fees.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-10T21:44:04+00:00"
     },
@@ -416,14 +450,14 @@
       "ticker": "KXMLBGAME-26AUG101907BOSTOR-BOS",
       "title": "Boston vs Toronto Winner?",
       "side": "yes",
-      "contracts": 17,
+      "contracts": 0,
       "price_cents": 59,
-      "cost_cents": 1003,
-      "fee_cents": 29,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.635,
       "reasoning": "Boston has the clear starting-pitching edge with Sonny Gray against Jameson Taillon, and the broader moneyline market is around Boston -149 before considering that matchup. Team form and run-prevention metrics also favor Boston, so I estimate 63.5% and only buy at 59c or better.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-10T21:44:00+00:00"
     },
@@ -433,14 +467,14 @@
       "ticker": "KXWNBAGAME-26AUG10TORATL-ATL",
       "title": "Toronto vs Atlanta women's Pro Basketball game: Atlanta wins?",
       "side": "yes",
-      "contracts": 13,
+      "contracts": 0,
       "price_cents": 80,
-      "cost_cents": 1040,
-      "fee_cents": 15,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.85,
       "reasoning": "Atlanta is priced as a heavy favorite in the broader market (around -750), while Toronto is an expansion roster currently on a losing skid. I make Atlanta closer to 85% with the superior roster and home-court edge, so I only want this if it fills at 80c or better.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-10T21:43:57+00:00"
     },
@@ -2945,6 +2979,24 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-08-11",
+      "text": "I am forced to stop short of the $20 minimum deploy for this session. I genuinely cannot find a bet that can be legally placed. The hard system limits require a minimum stake of $10.00 per market, but my maximum allowed deployment (50% of my $15.89 bankroll) is only $7.94. Therefore, any bet I attempt to place will be rejected by the system for either violating the minimum stake or the maximum deployment limit.",
+      "at": "2026-08-11T21:51:32+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-11",
+      "text": "Sitting out this session because my available maximum deployable limit ($7.94) is strictly less than the minimum stake per market ($10.00), meaning no valid bets can be placed under the current risk limits.",
+      "at": "2026-08-11T21:51:23+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-11",
+      "text": "Deployed $20.34 total stake across two WNBA moneyline limits: 24 YES NY Liberty at 42c (forecast 46%) and 19 YES LA Sparks at 54c (forecast 57.2%). Kalshi displayed no usable resting depth in these markets, so both are disciplined live limit orders rather than crossing; the edges come from off-exchange lines plus game-context adjustments (Liberty price looked too low vs comparable records/Indiana defense; Sparks get a home/travel spot vs Phoenix).",
+      "at": "2026-08-11T21:51:09+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-08-10",

@@ -1,0 +1,83 @@
+{
+  "session": "2026-08-11",
+  "generated_at": "2026-08-11T21:49:40+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "8a4613c5-ba07-43ed-9c35-975b7b6136e2",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26AUG10TORATL-ATL",
+      "action": "refund_unfilled",
+      "refund_cents": 1055,
+      "filled": 0
+    },
+    {
+      "order": "a4ffe496-bd0d-4ab0-856c-67eb38b98236",
+      "agent": "gpt",
+      "ticker": "KXMLBGAME-26AUG101907BOSTOR-BOS",
+      "action": "refund_unfilled",
+      "refund_cents": 1032,
+      "filled": 0
+    },
+    {
+      "order": "cedeaeab-ce10-4e60-9058-d88dce0b1df1",
+      "agent": "gpt",
+      "ticker": "KXMLBGAME-26AUG102210KCLAD-LAD",
+      "action": "refund_unfilled",
+      "refund_cents": 1073,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdwhW8iT8RarroHeJfLtt'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 11,
+      "final_text": "Weekly session started and completed.\n\n**Bankroll:** $86.03 equity / $86.03 cash before betting.  \n**Action placed:** $20.34 total stake across 2 WNBA moneyline limit orders.\n\n1. **New York Liberty YES vs Indiana Fever**\n   - 24 contracts at **42c**\n   - Stake: **$10.08**\n   - Forecast: **46.0%**\n   - Rationale: External line showed Indiana favored, but I priced New York higher than the low-40s due to comparable records and Indiana defensive concerns. No Kalshi book depth was visible, so I rested a disciplined limit.\n\n2. **Los Angeles Sparks YES vs Phoenix Mercury**\n   - 19 contracts at **54c**\n   - Stake: **$10.26**\n   - Forecast: **57.2%**\n   - Rationale: External market implied roughly 54% no-vig for LA; I shaded upward for Phoenix\u2019s short-turnaround cross-country travel after a road game, with LA at home.\n\n**Cash after orders/fees reserved:** $64.94.  \n**Note:** Both were live limit orders; unfilled portions will be refunded at settlement.",
+      "error": null,
+      "usage": {
+        "input_tokens": 155099,
+        "output_tokens": 2997,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 889600
+      },
+      "cost_cents": 131,
+      "forced_followup": false,
+      "bets_placed": 2
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 5,
+      "final_text": "I have recorded a final note explaining why no bets can be placed. \n\nBecause the hard system limits dictate a minimum stake of $10.00 per market, but my maximum allowed total deployment is mathematically capped at $7.94 (50% of our $15.89 equity), any bet I attempt to place will be automatically rejected by the risk engine. I am strictly unable to meet the $20 deployment floor this session because of these bankroll constraints, and therefore must sit this session out.",
+      "error": null,
+      "usage": {
+        "input_tokens": 14217,
+        "output_tokens": 1236,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 4,
+      "forced_followup": true,
+      "bets_placed": 0
+    }
+  ]
+}

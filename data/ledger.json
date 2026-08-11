@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 5443,
+      "cash_cents": 6494,
       "usage": {
-        "input_tokens": 7984047,
-        "output_tokens": 126872,
+        "input_tokens": 8139146,
+        "output_tokens": 129869,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 27766528,
-        "cost_cents": 5789,
-        "sessions": 43
+        "cache_read_tokens": 28656128,
+        "cost_cents": 5920,
+        "sessions": 44
       }
     },
     "gemini": {
       "initial_cents": 10000,
       "cash_cents": 1589,
       "usage": {
-        "input_tokens": 6804119,
-        "output_tokens": 157476,
+        "input_tokens": 6818336,
+        "output_tokens": 158712,
         "cache_write_tokens": 0,
         "cache_read_tokens": 19514742,
-        "cost_cents": 1942,
-        "sessions": 41
+        "cost_cents": 1946,
+        "sessions": 42
       }
     }
   },
@@ -3355,11 +3355,11 @@
       "ticker": "KXWNBAGAME-26AUG10TORATL-ATL",
       "market_title": "Toronto vs Atlanta women's Pro Basketball game: Atlanta wins?",
       "side": "yes",
-      "count": 13,
+      "count": 0,
       "ordered_count": 13,
       "limit_price_cents": 80,
-      "cost_cents": 1040,
-      "fee_cents": 15,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "dcfd23fb-a844-4ab4-8422-0b672255bf58",
@@ -3367,9 +3367,9 @@
       "forecast_prob": 0.85,
       "reasoning": "Atlanta is priced as a heavy favorite in the broader market (around -750), while Toronto is an expansion roster currently on a losing skid. I make Atlanta closer to 85% with the superior roster and home-court edge, so I only want this if it fills at 80c or better.",
       "placed_at": "2026-08-10T21:43:57+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-08-11T21:49:41+00:00"
     },
     {
       "id": "a4ffe496-bd0d-4ab0-856c-67eb38b98236",
@@ -3378,11 +3378,11 @@
       "ticker": "KXMLBGAME-26AUG101907BOSTOR-BOS",
       "market_title": "Boston vs Toronto Winner?",
       "side": "yes",
-      "count": 17,
+      "count": 0,
       "ordered_count": 17,
       "limit_price_cents": 59,
-      "cost_cents": 1003,
-      "fee_cents": 29,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "fb6ff68f-3ca9-4972-97bc-5cf49a5dce6c",
@@ -3390,9 +3390,9 @@
       "forecast_prob": 0.635,
       "reasoning": "Boston has the clear starting-pitching edge with Sonny Gray against Jameson Taillon, and the broader moneyline market is around Boston -149 before considering that matchup. Team form and run-prevention metrics also favor Boston, so I estimate 63.5% and only buy at 59c or better.",
       "placed_at": "2026-08-10T21:44:00+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-08-11T21:49:41+00:00"
     },
     {
       "id": "cedeaeab-ce10-4e60-9058-d88dce0b1df1",
@@ -3401,11 +3401,11 @@
       "ticker": "KXMLBGAME-26AUG102210KCLAD-LAD",
       "market_title": "Kansas City vs Los Angeles D Winner?",
       "side": "yes",
-      "count": 15,
+      "count": 0,
       "ordered_count": 15,
       "limit_price_cents": 70,
-      "cost_cents": 1050,
-      "fee_cents": 23,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "ef464c1f-8b4e-421a-a60c-ef8aa76c98e7",
@@ -3413,6 +3413,52 @@
       "forecast_prob": 0.74,
       "reasoning": "The Dodgers have a major starting-pitching advantage with Tarik Skubal listed against Noah Cameron and a much stronger season profile than Kansas City. The book market is already Dodgers-heavy, but I rate the true win probability near 74%; at a 70c limit there is still positive edge after fees.",
       "placed_at": "2026-08-10T21:44:04+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-08-11T21:49:42+00:00"
+    },
+    {
+      "id": "64dbb154-1016-4560-b2b7-3dac5e7d69ad",
+      "agent": "gpt",
+      "week": "2026-08-11",
+      "ticker": "KXWNBAGAME-26AUG11NYIND-NY",
+      "market_title": "New York vs Indiana women's Pro Basketball game: New York wins?",
+      "side": "yes",
+      "count": 24,
+      "ordered_count": 24,
+      "limit_price_cents": 42,
+      "cost_cents": 1008,
+      "fee_cents": 41,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "07b0ccd7-6a4c-4814-b42a-050b82c061f4",
+      "client_order_id": "d14b2809-7a32-48d6-97b2-bb36340c5280",
+      "forecast_prob": 0.46,
+      "reasoning": "External WNBA market was around Indiana -153/New York +131, but no live Kalshi depth is showing, so I am only willing to rest below my fair. I make New York closer to 46% than the low-40s given comparable season records and Indiana's defensive vulnerability; at 42c this clears fees with a small cushion.",
+      "placed_at": "2026-08-11T21:50:59+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "7418ec38-c403-40a4-b5da-273061760d1f",
+      "agent": "gpt",
+      "week": "2026-08-11",
+      "ticker": "KXWNBAGAME-26AUG11PHXLA-LA",
+      "market_title": "Phoenix vs Los Angeles women's Pro Basketball game: Los Angeles wins?",
+      "side": "yes",
+      "count": 19,
+      "ordered_count": 19,
+      "limit_price_cents": 54,
+      "cost_cents": 1026,
+      "fee_cents": 34,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "9d89ad9c-8dbc-4756-af36-00f29fc2f766",
+      "client_order_id": "fb055162-c561-4494-8898-d8795ebcb2ce",
+      "forecast_prob": 0.572,
+      "reasoning": "The off-exchange line I found was roughly Sparks -130/Mercury +111, implying about 54% no-vig for Los Angeles. I shade LA up to 57.2% because Phoenix is coming off a road loss at Washington and now travels cross-country into a short turnaround, while the Sparks are at home; 54c is the highest I will pay after fees.",
+      "placed_at": "2026-08-11T21:51:03+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -4084,6 +4130,24 @@
       "week": "2026-08-10",
       "text": "Deployed $30.93 across three price-sensitive limit orders: ATL WNBA YES 13 @80c (p=85%), BOS MLB YES 17 @59c (p=63.5%), and LAD MLB YES 15 @70c (p=74%). Orderbooks were empty, so I avoided chasing and posted only at prices where the external odds/news-based fair value still clears fees; key angles were Atlanta\u2019s large favorite status vs Toronto, Boston\u2019s Sonny Gray vs Taillon pitching edge, and Dodgers/Skubal vs Royals/Cameron.",
       "at": "2026-08-10T21:44:08+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-11",
+      "text": "Deployed $20.34 total stake across two WNBA moneyline limits: 24 YES NY Liberty at 42c (forecast 46%) and 19 YES LA Sparks at 54c (forecast 57.2%). Kalshi displayed no usable resting depth in these markets, so both are disciplined live limit orders rather than crossing; the edges come from off-exchange lines plus game-context adjustments (Liberty price looked too low vs comparable records/Indiana defense; Sparks get a home/travel spot vs Phoenix).",
+      "at": "2026-08-11T21:51:09+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-11",
+      "text": "Sitting out this session because my available maximum deployable limit ($7.94) is strictly less than the minimum stake per market ($10.00), meaning no valid bets can be placed under the current risk limits.",
+      "at": "2026-08-11T21:51:23+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-11",
+      "text": "I am forced to stop short of the $20 minimum deploy for this session. I genuinely cannot find a bet that can be legally placed. The hard system limits require a minimum stake of $10.00 per market, but my maximum allowed deployment (50% of my $15.89 bankroll) is only $7.94. Therefore, any bet I attempt to place will be rejected by the system for either violating the minimum stake or the maximum deployment limit.",
+      "at": "2026-08-11T21:51:32+00:00"
     }
   ],
   "history": [
@@ -4364,6 +4428,14 @@
       "balances": {
         "claude": 8687,
         "gpt": 8536,
+        "gemini": 1589
+      }
+    },
+    {
+      "date": "2026-08-11",
+      "balances": {
+        "claude": 8687,
+        "gpt": 8528,
         "gemini": 1589
       }
     }
