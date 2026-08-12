@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T21:49:40+00:00",
+  "generated_at": "2026-08-12T21:47:47+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,43 +34,43 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 8528,
-      "cash_cents": 6494,
+      "equity_cents": 7525,
+      "cash_cents": 5432,
       "initial_cents": 10000,
-      "pnl_cents": -1472,
-      "roi_pct": -14.72,
-      "settled_bets": 20,
+      "pnl_cents": -2475,
+      "roi_pct": -24.75,
+      "settled_bets": 21,
       "wins": 11,
-      "win_rate": 0.55,
-      "staked_cents": 20619,
+      "win_rate": 0.524,
+      "staked_cents": 21627,
       "returned_cents": 19900,
-      "fees_paid_cents": 753,
-      "fill_rate": 0.413,
-      "brier": 0.2172,
+      "fees_paid_cents": 748,
+      "fill_rate": 0.418,
+      "brier": 0.2169,
       "usage": {
-        "input_tokens": 8139146,
-        "output_tokens": 129869,
+        "input_tokens": 8359597,
+        "output_tokens": 132872,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 28656128,
-        "cost_cents": 5920,
-        "sessions": 44
+        "cache_read_tokens": 29374592,
+        "cost_cents": 6075,
+        "sessions": 45
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26AUG11NYIND-NY",
-          "title": "New York vs Indiana women's Pro Basketball game: New York wins?",
+          "ticker": "KXWNBAGAME-26AUG12TORDAL-DAL",
+          "title": "Toronto vs Dallas women's Pro Basketball game: Dallas wins?",
           "side": "yes",
-          "contracts": 24,
-          "cost_cents": 1008,
-          "forecast_prob": 0.46
+          "contracts": 13,
+          "cost_cents": 1014,
+          "forecast_prob": 0.82
         },
         {
-          "ticker": "KXWNBAGAME-26AUG11PHXLA-LA",
-          "title": "Phoenix vs Los Angeles women's Pro Basketball game: Los Angeles wins?",
+          "ticker": "KXWNBAGAME-26AUG12MINPDX-MIN",
+          "title": "Minnesota vs Portland women's Pro Basketball game: Minnesota wins?",
           "side": "yes",
-          "contracts": 19,
-          "cost_cents": 1026,
-          "forecast_prob": 0.572
+          "contracts": 13,
+          "cost_cents": 1079,
+          "forecast_prob": 0.87
         }
       ]
     },
@@ -92,12 +92,12 @@
       "fill_rate": 0.397,
       "brier": 0.2757,
       "usage": {
-        "input_tokens": 6818336,
-        "output_tokens": 158712,
+        "input_tokens": 7003649,
+        "output_tokens": 161409,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 19514742,
-        "cost_cents": 1946,
-        "sessions": 42
+        "cache_read_tokens": 20089289,
+        "cost_cents": 1998,
+        "sessions": 43
       },
       "open_positions": []
     }
@@ -390,23 +390,65 @@
         "gpt": 8528,
         "gemini": 1589
       }
+    },
+    {
+      "date": "2026-08-12",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7525,
+        "gemini": 1589
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-12",
+      "ticker": "KXWNBAGAME-26AUG12TORDAL-DAL",
+      "title": "Toronto vs Dallas women's Pro Basketball game: Dallas wins?",
+      "side": "yes",
+      "contracts": 13,
+      "price_cents": 78,
+      "cost_cents": 1014,
+      "fee_cents": 16,
+      "forecast_prob": 0.82,
+      "reasoning": "Dallas is 18-9 and 8-4 at home against a 10-17 Toronto team, and the public WNBA board shows Dallas -500 / Toronto +375, while comments note Toronto is volatile and Azzi Fudd injury uncertainty is a key variable. My no-vig baseline is around 80%; I shade Dallas to 82% for home court and cleaner form, so 78c leaves positive edge after fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-12T21:49:01+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-12",
+      "ticker": "KXWNBAGAME-26AUG12MINPDX-MIN",
+      "title": "Minnesota vs Portland women's Pro Basketball game: Minnesota wins?",
+      "side": "yes",
+      "contracts": 13,
+      "price_cents": 83,
+      "cost_cents": 1079,
+      "fee_cents": 13,
+      "forecast_prob": 0.87,
+      "reasoning": "Minnesota has the league's best record/SRS profile and is priced around -900 at Portland on the public WNBA board, with the Lynx 23-6 and Portland 11-17. Portland home court and recent competitiveness keep this from being a max-confidence spot, but I make Minnesota 87% and only want the favorite at 83c or better.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-12T21:49:01+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-08-11",
       "ticker": "KXWNBAGAME-26AUG11PHXLA-LA",
       "title": "Phoenix vs Los Angeles women's Pro Basketball game: Los Angeles wins?",
       "side": "yes",
-      "contracts": 19,
+      "contracts": 0,
       "price_cents": 54,
-      "cost_cents": 1026,
-      "fee_cents": 34,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.572,
       "reasoning": "The off-exchange line I found was roughly Sparks -130/Mercury +111, implying about 54% no-vig for Los Angeles. I shade LA up to 57.2% because Phoenix is coming off a road loss at Washington and now travels cross-country into a short turnaround, while the Sparks are at home; 54c is the highest I will pay after fees.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-11T21:51:03+00:00"
     },
@@ -423,7 +465,7 @@
       "forecast_prob": 0.46,
       "reasoning": "External WNBA market was around Indiana -153/New York +131, but no live Kalshi depth is showing, so I am only willing to rest below my fair. I make New York closer to 46% than the low-40s given comparable season records and Indiana's defensive vulnerability; at 42c this clears fees with a small cushion.",
       "status": "live",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
       "placed_at": "2026-08-11T21:50:59+00:00"
     },
@@ -2979,6 +3021,24 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gemini",
+      "week": "2026-08-12",
+      "text": "Attempted to deploy capital as requested. However, my current equity is $15.89, meaning my max total deployed capital limit is $7.94. The minimum stake per market limit is $10.00. This creates a hard blocker where any single order over the minimum is rejected for exceeding my maximum limit, making it mechanically impossible for me to deploy the minimum $20 for this session or even place a single bet. Sitting out the session.",
+      "at": "2026-08-12T21:50:01+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-12",
+      "text": "Sitting out this week because my total equity is $15.89. The hard limits require a minimum stake of $10.00 per market, but also limit my maximum total deployed capital to 50% of my equity ($7.94). Therefore, any valid bet under the minimum stake limit is immediately rejected by the maximum equity limit. No positive edge bets can be placed.",
+      "at": "2026-08-12T21:49:50+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-12",
+      "text": "Deployed $20.93 across two WNBA moneyline limit orders for Aug. 12: Dallas YES 13 @ 78c (p=82%) and Minnesota YES 13 @ 83c (p=87%). Both markets had no displayed book, so I avoided crossing and rested only at prices with several cents of modeled edge after fees; rationale is Dallas home/record edge vs Toronto and Minnesota's top-of-league profile despite Portland home-court/cover risk.",
+      "at": "2026-08-12T21:49:06+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-08-11",
