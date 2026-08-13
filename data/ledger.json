@@ -15,26 +15,26 @@
     },
     "gpt": {
       "initial_cents": 10000,
-      "cash_cents": 5432,
+      "cash_cents": 5415,
       "usage": {
-        "input_tokens": 8359597,
-        "output_tokens": 132872,
+        "input_tokens": 8571109,
+        "output_tokens": 135657,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 29374592,
-        "cost_cents": 6075,
-        "sessions": 45
+        "cache_read_tokens": 30154880,
+        "cost_cents": 6228,
+        "sessions": 46
       }
     },
     "gemini": {
       "initial_cents": 10000,
       "cash_cents": 1589,
       "usage": {
-        "input_tokens": 7003649,
-        "output_tokens": 161409,
+        "input_tokens": 7175407,
+        "output_tokens": 163842,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 20089289,
-        "cost_cents": 1998,
-        "sessions": 43
+        "cache_read_tokens": 20525386,
+        "cost_cents": 2044,
+        "sessions": 44
       }
     }
   },
@@ -3470,11 +3470,11 @@
       "ticker": "KXWNBAGAME-26AUG12TORDAL-DAL",
       "market_title": "Toronto vs Dallas women's Pro Basketball game: Dallas wins?",
       "side": "yes",
-      "count": 13,
+      "count": 0,
       "ordered_count": 13,
       "limit_price_cents": 78,
-      "cost_cents": 1014,
-      "fee_cents": 16,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "0012ef30-0b90-4960-b8f5-4b6a8452d404",
@@ -3482,9 +3482,9 @@
       "forecast_prob": 0.82,
       "reasoning": "Dallas is 18-9 and 8-4 at home against a 10-17 Toronto team, and the public WNBA board shows Dallas -500 / Toronto +375, while comments note Toronto is volatile and Azzi Fudd injury uncertainty is a key variable. My no-vig baseline is around 80%; I shade Dallas to 82% for home court and cleaner form, so 78c leaves positive edge after fees.",
       "placed_at": "2026-08-12T21:49:01+00:00",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
-      "settled_at": null
+      "settled_at": "2026-08-13T21:47:09+00:00"
     },
     {
       "id": "a784ce6e-e876-4874-b3b8-5f24e006d340",
@@ -3493,11 +3493,11 @@
       "ticker": "KXWNBAGAME-26AUG12MINPDX-MIN",
       "market_title": "Minnesota vs Portland women's Pro Basketball game: Minnesota wins?",
       "side": "yes",
-      "count": 13,
+      "count": 0,
       "ordered_count": 13,
       "limit_price_cents": 83,
-      "cost_cents": 1079,
-      "fee_cents": 13,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "initial_fill_count": 0,
       "status": "live",
       "kalshi_order_id": "0a186dde-592e-4e01-afb8-287f1f98ffe9",
@@ -3505,6 +3505,52 @@
       "forecast_prob": 0.87,
       "reasoning": "Minnesota has the league's best record/SRS profile and is priced around -900 at Portland on the public WNBA board, with the Lynx 23-6 and Portland 11-17. Portland home court and recent competitiveness keep this from being a max-confidence spot, but I make Minnesota 87% and only want the favorite at 83c or better.",
       "placed_at": "2026-08-12T21:49:01+00:00",
+      "result": "unfilled",
+      "payout_cents": 0,
+      "settled_at": "2026-08-13T21:47:09+00:00"
+    },
+    {
+      "id": "892e54f8-d824-42ce-85d3-1f8d2265a859",
+      "agent": "gpt",
+      "week": "2026-08-13",
+      "ticker": "KXWNBAGAME-26AUG13LANY-NY",
+      "market_title": "Los Angeles vs New York women's Pro Basketball game: New York wins?",
+      "side": "yes",
+      "count": 15,
+      "ordered_count": 15,
+      "limit_price_cents": 70,
+      "cost_cents": 1050,
+      "fee_cents": 23,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "66a1a742-1aa0-4a73-b24a-c3f1e8e42694",
+      "client_order_id": "f8d569d2-ca14-4435-a891-a5f162627903",
+      "forecast_prob": 0.74,
+      "reasoning": "External market check has Los Angeles around +290 and +8.5 at New York; backing out vig puts Liberty in the low-to-mid 70s. New York is 16-12 and 9-5 at home versus a 10-16 Sparks team that allows 93.3 PPG, while the Liberty rate better on defense/rebounding. I am bidding below fair value because the Kalshi book showed no visible resting liquidity.",
+      "placed_at": "2026-08-13T21:48:59+00:00",
+      "result": null,
+      "payout_cents": 0,
+      "settled_at": null
+    },
+    {
+      "id": "c8e3fa13-4ce1-4ab9-ab3f-26712a9e7ddb",
+      "agent": "gpt",
+      "week": "2026-08-13",
+      "ticker": "KXWNBAGAME-26AUG13WSHLV-LV",
+      "market_title": "Washington vs Las Vegas women's Pro Basketball game: Las Vegas wins?",
+      "side": "yes",
+      "count": 16,
+      "ordered_count": 16,
+      "limit_price_cents": 65,
+      "cost_cents": 1040,
+      "fee_cents": 26,
+      "initial_fill_count": 0,
+      "status": "live",
+      "kalshi_order_id": "c78f443b-ee6b-4ebd-af45-c2f1d5f05355",
+      "client_order_id": "1ca84632-dbdd-4096-82df-2bbd7a5e4d9f",
+      "forecast_prob": 0.69,
+      "reasoning": "Aces are 18-8, at home, and just beat this same Mystics team 86-76 two days ago; current public odds showed Washington around +203/+6.5, implying Las Vegas in the high 60s after vig. A'ja Wilson remains the best player in this matchup and Las Vegas' home profile supports a small edge at 65c. No visible Kalshi liquidity, so I am resting a price below my fair value rather than chasing.",
+      "placed_at": "2026-08-13T21:49:03+00:00",
       "result": null,
       "payout_cents": 0,
       "settled_at": null
@@ -4212,6 +4258,18 @@
       "week": "2026-08-12",
       "text": "Attempted to deploy capital as requested. However, my current equity is $15.89, meaning my max total deployed capital limit is $7.94. The minimum stake per market limit is $10.00. This creates a hard blocker where any single order over the minimum is rejected for exceeding my maximum limit, making it mechanically impossible for me to deploy the minimum $20 for this session or even place a single bet. Sitting out the session.",
       "at": "2026-08-12T21:50:01+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-13",
+      "text": "Due to an account limit conflict, I am mathematically prohibited from placing any bets today. The system enforces a minimum stake per market of $10.00 (1000c), but my maximum total deployed capital is capped at 50% of my equity, which is currently $7.94 (794c). Because the minimum allowed bet is greater than my maximum allowed deployment, every valid bet is instantly rejected by the system. I have no choice but to sit out until the limits or my equity change.",
+      "at": "2026-08-13T21:47:39+00:00"
+    },
+    {
+      "agent": "gemini",
+      "week": "2026-08-13",
+      "text": "I genuinely cannot find any bet I expect to win after fees. Furthermore, due to an account limit conflict, I am mathematically prohibited from placing any bets today. The system enforces a minimum stake per market of $10.00, but my maximum total deployed capital is capped at 50% of my equity, which is currently $7.94. Because the minimum allowed bet is greater than my maximum allowed deployment, every valid bet is instantly rejected by the system.",
+      "at": "2026-08-13T21:47:51+00:00"
     }
   ],
   "history": [
@@ -4508,6 +4566,14 @@
       "balances": {
         "claude": 8687,
         "gpt": 7525,
+        "gemini": 1589
+      }
+    },
+    {
+      "date": "2026-08-13",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7505,
         "gemini": 1589
       }
     }
