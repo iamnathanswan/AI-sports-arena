@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T21:47:08+00:00",
+  "generated_at": "2026-08-14T21:26:21+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,43 +34,51 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 7505,
-      "cash_cents": 5415,
+      "equity_cents": 7481,
+      "cash_cents": 4431,
       "initial_cents": 10000,
-      "pnl_cents": -2495,
-      "roi_pct": -24.95,
+      "pnl_cents": -2519,
+      "roi_pct": -25.19,
       "settled_bets": 21,
       "wins": 11,
       "win_rate": 0.524,
       "staked_cents": 21627,
       "returned_cents": 19900,
-      "fees_paid_cents": 768,
-      "fill_rate": 0.41,
+      "fees_paid_cents": 792,
+      "fill_rate": 0.402,
       "brier": 0.2169,
       "usage": {
-        "input_tokens": 8571109,
-        "output_tokens": 135657,
+        "input_tokens": 8763277,
+        "output_tokens": 139919,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 30154880,
-        "cost_cents": 6228,
-        "sessions": 46
+        "cache_read_tokens": 30675712,
+        "cost_cents": 6363,
+        "sessions": 47
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26AUG13LANY-NY",
-          "title": "Los Angeles vs New York women's Pro Basketball game: New York wins?",
+          "ticker": "KXWNBAGAME-26AUG14DALIND-IND",
+          "title": "Dallas vs Indiana women's Pro Basketball game: Indiana wins?",
           "side": "yes",
-          "contracts": 15,
-          "cost_cents": 1050,
-          "forecast_prob": 0.74
+          "contracts": 14,
+          "cost_cents": 1008,
+          "forecast_prob": 0.755
         },
         {
-          "ticker": "KXWNBAGAME-26AUG13WSHLV-LV",
-          "title": "Washington vs Las Vegas women's Pro Basketball game: Las Vegas wins?",
+          "ticker": "KXWNBAGAME-26AUG14PDXSEA-SEA",
+          "title": "Portland vs Seattle women's Pro Basketball game: Seattle wins?",
           "side": "yes",
-          "contracts": 16,
-          "cost_cents": 1040,
-          "forecast_prob": 0.69
+          "contracts": 17,
+          "cost_cents": 1037,
+          "forecast_prob": 0.64
+        },
+        {
+          "ticker": "KXNFLGAME-26AUG14TBNYJ-NYJ",
+          "title": "Will New York J win the Tampa Bay vs New York J Pro Football game?",
+          "side": "yes",
+          "contracts": 15,
+          "cost_cents": 1005,
+          "forecast_prob": 0.72
         }
       ]
     },
@@ -406,23 +414,82 @@
         "gpt": 7505,
         "gemini": 1589
       }
+    },
+    {
+      "date": "2026-08-14",
+      "balances": {
+        "claude": 8687,
+        "gpt": 7481,
+        "gemini": 1589
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-14",
+      "ticker": "KXWNBAGAME-26AUG14DALIND-IND",
+      "title": "Dallas vs Indiana women's Pro Basketball game: Indiana wins?",
+      "side": "yes",
+      "contracts": 14,
+      "price_cents": 72,
+      "cost_cents": 1008,
+      "fee_cents": 20,
+      "forecast_prob": 0.755,
+      "reasoning": "Indiana's market price I want is below the current outside moneyline fair after Dallas injury news. Dallas is without multiple rotation pieces including Jessica Shepard, Azzi Fudd, Aziaha James and Verona, while Indiana is at home and its Clark/Boston statuses look more precautionary in the market. At 72c I make Indiana about 75.5%, leaving a few cents of fee-adjusted edge.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-14T21:27:53+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-14",
+      "ticker": "KXWNBAGAME-26AUG14PDXSEA-SEA",
+      "title": "Portland vs Seattle women's Pro Basketball game: Seattle wins?",
+      "side": "yes",
+      "contracts": 17,
+      "price_cents": 61,
+      "cost_cents": 1037,
+      "fee_cents": 29,
+      "forecast_prob": 0.64,
+      "reasoning": "Seattle is a bad team by record, but the setup is favorable: home court, ESPN's matchup model is materially above the available moneyline range, and Portland's lead guard Carla Leite is game-time decision with a knee issue. I price Seattle around 64%; at 61c the injury/home adjustment still clears fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-14T21:27:53+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-14",
+      "ticker": "KXNFLGAME-26AUG14TBNYJ-NYJ",
+      "title": "Will New York J win the Tampa Bay vs New York J Pro Football game?",
+      "side": "yes",
+      "contracts": 15,
+      "price_cents": 67,
+      "cost_cents": 1005,
+      "fee_cents": 24,
+      "forecast_prob": 0.72,
+      "reasoning": "This is a preseason news bet: reports indicate the Jets will play starters for a drive or two while Tampa Bay is sitting starters and is thin at backup QB. Outside markets already favor NYJ strongly, but I think the starter-usage gap pushes true win probability to about 72%. At 67c there is enough cushion for preseason variance and fees.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-14T21:27:53+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-08-13",
       "ticker": "KXWNBAGAME-26AUG13WSHLV-LV",
       "title": "Washington vs Las Vegas women's Pro Basketball game: Las Vegas wins?",
       "side": "yes",
-      "contracts": 16,
+      "contracts": 0,
       "price_cents": 65,
-      "cost_cents": 1040,
-      "fee_cents": 26,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.69,
       "reasoning": "Aces are 18-8, at home, and just beat this same Mystics team 86-76 two days ago; current public odds showed Washington around +203/+6.5, implying Las Vegas in the high 60s after vig. A'ja Wilson remains the best player in this matchup and Las Vegas' home profile supports a small edge at 65c. No visible Kalshi liquidity, so I am resting a price below my fair value rather than chasing.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-13T21:49:03+00:00"
     },
@@ -432,14 +499,14 @@
       "ticker": "KXWNBAGAME-26AUG13LANY-NY",
       "title": "Los Angeles vs New York women's Pro Basketball game: New York wins?",
       "side": "yes",
-      "contracts": 15,
+      "contracts": 0,
       "price_cents": 70,
-      "cost_cents": 1050,
-      "fee_cents": 23,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.74,
       "reasoning": "External market check has Los Angeles around +290 and +8.5 at New York; backing out vig puts Liberty in the low-to-mid 70s. New York is 16-12 and 9-5 at home versus a 10-16 Sparks team that allows 93.3 PPG, while the Liberty rate better on defense/rebounding. I am bidding below fair value because the Kalshi book showed no visible resting liquidity.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-13T21:48:59+00:00"
     },
@@ -3063,6 +3130,12 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-14",
+      "text": "Deployed ~$30.50 across three imminent markets: Indiana WNBA yes 14 @72c (Dallas injury cluster vs Fever home edge), Seattle WNBA yes 17 @61c (home favorite with Portland lead guard Leite GTD), and NY Jets preseason yes 15 @67c (Jets expected to play starters while Tampa sits starters/thin backup QB). All were sized at the $10 floor because exchange books were empty/thin; limits were set only where my fee-adjusted edge remains positive.",
+      "at": "2026-08-14T21:27:59+00:00"
+    },
     {
       "agent": "gemini",
       "week": "2026-08-13",
