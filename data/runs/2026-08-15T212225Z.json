@@ -1,0 +1,84 @@
+{
+  "session": "2026-08-15",
+  "generated_at": "2026-08-15T21:22:25+00:00",
+  "dry_run": false,
+  "settlement_events": [
+    {
+      "order": "e8157353-17b1-417d-a59d-fa425ce3b170",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26AUG14DALIND-IND",
+      "action": "refund_unfilled",
+      "refund_cents": 1028,
+      "filled": 0
+    },
+    {
+      "order": "a3581b45-57e4-47ed-a401-71dd5dfd6d7e",
+      "agent": "gpt",
+      "ticker": "KXWNBAGAME-26AUG14PDXSEA-SEA",
+      "action": "settled",
+      "result": "lost",
+      "contracts": 17,
+      "payout_cents": 0,
+      "kalshi_order_id": "79fcdc34-e9cb-4a7e-baec-5a6766fbd14a"
+    },
+    {
+      "order": "3bef4433-52ed-483b-8943-9030debf5098",
+      "agent": "gpt",
+      "ticker": "KXNFLGAME-26AUG14TBNYJ-NYJ",
+      "action": "refund_unfilled",
+      "refund_cents": 1029,
+      "filled": 0
+    }
+  ],
+  "agent_runs": [
+    {
+      "agent": "gpt",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "turns": 10,
+      "final_text": "Weekly betting session started and completed.\n\n**Bankroll before betting:** $64.88 cash / $64.88 equity  \n**Open positions before betting:** none  \n**Risk room available:** $32.44 max deployed\n\n### Bets placed\n\n1. **UFC 330 \u2014 Islam Makhachev YES**\n   - **Market:** `KXUFCFIGHT-26AUG15MAKMGI-MAK`\n   - **Order:** Buy YES, 14 contracts @ 72\u00a2\n   - **Stake:** $10.08 + $0.20 fee\n   - **Forecast:** 76%\n   - **Rationale:** Market odds around -320 to -350 imply Makhachev in the mid/high-70s after vig; I priced him at 76% and only bid at 72\u00a2 to preserve edge after fees.\n\n2. **WNBA \u2014 Washington Mystics YES vs Los Angeles Sparks**\n   - **Market:** `KXWNBAGAME-26AUG15LAWSH-WSH`\n   - **Order:** Buy YES, 15 contracts @ 68\u00a2\n   - **Stake:** $10.20 + $0.23 fee\n   - **Forecast:** 71.5%\n   - **Rationale:** Consensus moneyline around Washington -250 / Los Angeles +245 normalizes near 71%; I priced Washington at 71.5% and bid 68\u00a2 to retain positive expected value.\n\n**Total deployed:** $20.28 before fees  \n**Cash remaining after orders/fees:** $44.17\n\nI also recorded the session note explaining the strategy: both orders are thin-book, positive-edge limit bids placed below fair value rather than chasing poor fills.",
+      "error": null,
+      "usage": {
+        "input_tokens": 152165,
+        "output_tokens": 3000,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 795008
+      },
+      "cost_cents": 125,
+      "forced_followup": false,
+      "bets_placed": 2
+    },
+    {
+      "agent": "gemini",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "turns": 0,
+      "final_text": "",
+      "error": "ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. ', 'status': 'RESOURCE_EXHAUSTED'}}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    },
+    {
+      "agent": "claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "turns": 0,
+      "final_text": "",
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce5EkEUjxrUmwJ8R2osAy'}",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0
+      },
+      "cost_cents": 0,
+      "bets_placed": 0
+    }
+  ]
+}

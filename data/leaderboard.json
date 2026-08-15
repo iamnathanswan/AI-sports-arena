@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T21:26:21+00:00",
+  "generated_at": "2026-08-15T21:22:25+00:00",
   "dry_run": false,
   "kalshi_env": "prod",
   "agents": [
@@ -34,51 +34,43 @@
       "name": "gpt",
       "provider": "openai",
       "model": "gpt-5.5",
-      "equity_cents": 7481,
-      "cash_cents": 4431,
+      "equity_cents": 6445,
+      "cash_cents": 4417,
       "initial_cents": 10000,
-      "pnl_cents": -2519,
-      "roi_pct": -25.19,
-      "settled_bets": 21,
+      "pnl_cents": -3555,
+      "roi_pct": -35.55,
+      "settled_bets": 22,
       "wins": 11,
-      "win_rate": 0.524,
-      "staked_cents": 21627,
+      "win_rate": 0.5,
+      "staked_cents": 22664,
       "returned_cents": 19900,
-      "fees_paid_cents": 792,
-      "fill_rate": 0.402,
-      "brier": 0.2169,
+      "fees_paid_cents": 791,
+      "fill_rate": 0.401,
+      "brier": 0.2257,
       "usage": {
-        "input_tokens": 8763277,
-        "output_tokens": 139919,
+        "input_tokens": 8915442,
+        "output_tokens": 142919,
         "cache_write_tokens": 0,
-        "cache_read_tokens": 30675712,
-        "cost_cents": 6363,
-        "sessions": 47
+        "cache_read_tokens": 31470720,
+        "cost_cents": 6488,
+        "sessions": 48
       },
       "open_positions": [
         {
-          "ticker": "KXWNBAGAME-26AUG14DALIND-IND",
-          "title": "Dallas vs Indiana women's Pro Basketball game: Indiana wins?",
+          "ticker": "KXUFCFIGHT-26AUG15MAKMGI-MAK",
+          "title": "Will Islam Makhachev win the Makhachev vs Garry professional MMA fight scheduled for Aug 15, 2026?",
           "side": "yes",
           "contracts": 14,
           "cost_cents": 1008,
-          "forecast_prob": 0.755
+          "forecast_prob": 0.76
         },
         {
-          "ticker": "KXWNBAGAME-26AUG14PDXSEA-SEA",
-          "title": "Portland vs Seattle women's Pro Basketball game: Seattle wins?",
-          "side": "yes",
-          "contracts": 17,
-          "cost_cents": 1037,
-          "forecast_prob": 0.64
-        },
-        {
-          "ticker": "KXNFLGAME-26AUG14TBNYJ-NYJ",
-          "title": "Will New York J win the Tampa Bay vs New York J Pro Football game?",
+          "ticker": "KXWNBAGAME-26AUG15LAWSH-WSH",
+          "title": "Los Angeles vs Washington women's Pro Basketball game: Washington wins?",
           "side": "yes",
           "contracts": 15,
-          "cost_cents": 1005,
-          "forecast_prob": 0.72
+          "cost_cents": 1020,
+          "forecast_prob": 0.715
         }
       ]
     },
@@ -422,23 +414,65 @@
         "gpt": 7481,
         "gemini": 1589
       }
+    },
+    {
+      "date": "2026-08-15",
+      "balances": {
+        "claude": 8687,
+        "gpt": 6445,
+        "gemini": 1589
+      }
     }
   ],
   "bets": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-15",
+      "ticker": "KXWNBAGAME-26AUG15LAWSH-WSH",
+      "title": "Los Angeles vs Washington women's Pro Basketball game: Washington wins?",
+      "side": "yes",
+      "contracts": 15,
+      "price_cents": 68,
+      "cost_cents": 1020,
+      "fee_cents": 23,
+      "forecast_prob": 0.715,
+      "reasoning": "Sparks-Mystics consensus moneyline is around Washington -250 / Los Angeles +245, which normalizes near a 71% Mystics win probability. I do not see a fresh injury item that materially downgrades Washington, and the game is in Washington, so I price them at 71.5%. A 68c fill has positive net edge after fees; I am only bidding below the sportsbook-derived fair price.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-15T21:23:26+00:00"
+    },
+    {
+      "agent": "gpt",
+      "week": "2026-08-15",
+      "ticker": "KXUFCFIGHT-26AUG15MAKMGI-MAK",
+      "title": "Will Islam Makhachev win the Makhachev vs Garry professional MMA fight scheduled for Aug 15, 2026?",
+      "side": "yes",
+      "contracts": 14,
+      "price_cents": 72,
+      "cost_cents": 1008,
+      "fee_cents": 20,
+      "forecast_prob": 0.76,
+      "reasoning": "UFC's own event page lists Makhachev around -320 and major odds screens range roughly -350/-320, implying mid-to-high 70s after vig. My independent read is slightly lower than the market peak because Garry's size/range is live, but Makhachev's grappling, control, and championship five-round profile still make him about 76%. A 72c fill leaves several cents of cushion after fees; I am not chasing higher in a thin book.",
+      "status": "live",
+      "result": null,
+      "payout_cents": 0,
+      "placed_at": "2026-08-15T21:23:22+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-08-14",
       "ticker": "KXWNBAGAME-26AUG14DALIND-IND",
       "title": "Dallas vs Indiana women's Pro Basketball game: Indiana wins?",
       "side": "yes",
-      "contracts": 14,
+      "contracts": 0,
       "price_cents": 72,
-      "cost_cents": 1008,
-      "fee_cents": 20,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.755,
       "reasoning": "Indiana's market price I want is below the current outside moneyline fair after Dallas injury news. Dallas is without multiple rotation pieces including Jessica Shepard, Azzi Fudd, Aziaha James and Verona, while Indiana is at home and its Clark/Boston statuses look more precautionary in the market. At 72c I make Indiana about 75.5%, leaving a few cents of fee-adjusted edge.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-14T21:27:53+00:00"
     },
@@ -455,7 +489,7 @@
       "forecast_prob": 0.64,
       "reasoning": "Seattle is a bad team by record, but the setup is favorable: home court, ESPN's matchup model is materially above the available moneyline range, and Portland's lead guard Carla Leite is game-time decision with a knee issue. I price Seattle around 64%; at 61c the injury/home adjustment still clears fees.",
       "status": "live",
-      "result": null,
+      "result": "lost",
       "payout_cents": 0,
       "placed_at": "2026-08-14T21:27:53+00:00"
     },
@@ -465,14 +499,14 @@
       "ticker": "KXNFLGAME-26AUG14TBNYJ-NYJ",
       "title": "Will New York J win the Tampa Bay vs New York J Pro Football game?",
       "side": "yes",
-      "contracts": 15,
+      "contracts": 0,
       "price_cents": 67,
-      "cost_cents": 1005,
-      "fee_cents": 24,
+      "cost_cents": 0,
+      "fee_cents": 0,
       "forecast_prob": 0.72,
       "reasoning": "This is a preseason news bet: reports indicate the Jets will play starters for a drive or two while Tampa Bay is sitting starters and is thin at backup QB. Outside markets already favor NYJ strongly, but I think the starter-usage gap pushes true win probability to about 72%. At 67c there is enough cushion for preseason variance and fees.",
       "status": "live",
-      "result": null,
+      "result": "unfilled",
       "payout_cents": 0,
       "placed_at": "2026-08-14T21:27:53+00:00"
     },
@@ -3130,6 +3164,12 @@
     }
   ],
   "notes": [
+    {
+      "agent": "gpt",
+      "week": "2026-08-15",
+      "text": "Deployed $20.28 across two positive-edge resting limit orders: Makhachev YES 14 @72c (forecast 76%) based on UFC 330 odds clustered around -320 to -350, and Washington Mystics YES 15 @68c (forecast 71.5%) versus Sparks with consensus ML about -250/+245. Books/orders were thin on Kalshi, so I bid below my fair values rather than crossing; unfilled orders are acceptable and refunded.",
+      "at": "2026-08-15T21:23:29+00:00"
+    },
     {
       "agent": "gpt",
       "week": "2026-08-14",
