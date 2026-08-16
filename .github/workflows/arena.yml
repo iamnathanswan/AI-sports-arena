@@ -1,11 +1,7 @@
 name: AI Sports Arena — daily run
 
 on:
-  schedule:
-    # 21:00 UTC daily (~5pm ET): after most MLB lineups/pitchers and injury
-    # news are out, before most evening first pitches and tip-offs — so agents
-    # act on fresh, decision-relevant news. Settles finished markets first.
-    - cron: "0 21 * * *"
+  # Daily auto-run disabled — the arena only runs when triggered manually.
   workflow_dispatch: {}
   push:
     branches: [main]
